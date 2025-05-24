@@ -106291,77 +106291,126 @@ Live Event「매일매일 DHO 두뇌 트레이닝」항해자 검정 연습 시�
 
 생태 조사\, 생물학 랭크 8','생태 조사 8, 생물학 8','서고','생물학','마르세이유','12227',5366,'','[5287]',0,'','1. 북미 대륙 동쪽 연안\, 북동쪽 거대고목 부근에서 생태 조사');
 
---allData업데이트
+CREATE TABLE IF NOT EXISTS allData (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    category TEXT,
+    isComplete INTEGER DEFAULT 0
+);
+
 INSERT OR REPLACE INTO allData (id, name, category, isComplete)
 SELECT 
     d.id, 
     '발견물 - [발견물] ' || d.name AS name, 
     'discovery' AS category, 
-    COALESCE(a.isComplete, 0) -- 완료 상태 기존 값 유지 또는 기본값 0
+    COALESCE(a.isComplete, 0) -- 기존 값 유지 또는 기본값 0
 FROM discovery d
 LEFT JOIN allData a ON d.id = a.id
-
 UNION
 SELECT 
     q.id, 
     '퀘스트 - [퀘스트] ' || q.name AS name, 
     'quest' AS category, 
-    COALESCE(a.isComplete, 0) -- 완료 상태 기존 값 유지 또는 기본값 0
+    COALESCE(a.isComplete, 0)
 FROM quest q
 LEFT JOIN allData a ON q.id = a.id
-
 UNION
 SELECT 
     t.id, 
     '보물지도 - [보물지도] ' || t.name, 
     'treasuremap' AS category,
-    COALESCE(a.isComplete, 0) -- 완료 상태 기존 값 유지 또는 기본값 0
+    COALESCE(a.isComplete, 0)
 FROM treasuremap t
 LEFT JOIN allData a ON t.id = a.id
-
 UNION
 SELECT 
     s.id, 
     '침몰선 - [침몰선] ' || s.name, 
     'shipwreck' AS category,
-    COALESCE(a.isComplete, 0) -- 완료 상태 기존 값 유지 또는 기본값 0
+    COALESCE(a.isComplete, 0)
 FROM shipwreck s
 LEFT JOIN allData a ON s.id = a.id
-
 UNION
 SELECT 
-    c.id, 
-    '소비품 - [소비품] ' || c.name, 
+    s.id, 
+    '유적 던전 - [유적 던전] ' || s.name, 
+    'dungeon' AS category,
+    COALESCE(a.isComplete, 0)
+FROM dungeon s
+LEFT JOIN allData a ON s.id = a.id
+UNION
+SELECT 
+    s.id, 
+    '소비품 - [소비품] ' || s.name, 
     'consumable' AS category,
-    COALESCE(a.isComplete, 0) -- 완료 상태 기존 값 유지 또는 기본값 0
-FROM consumable c
-LEFT JOIN allData a ON c.id = a.id
-
+    COALESCE(a.isComplete, 0)
+FROM consumable s
+LEFT JOIN allData a ON s.id = a.id
 UNION
 SELECT 
-    r.id, 
-    '레시피 책 - [레시피 책] ' || r.name, 
-    'recipeBook' AS category,
-    COALESCE(a.isComplete, 0) -- 완료 상태 기존 값 유지 또는 기본값 0
-FROM recipebook r
-LEFT JOIN allData a ON r.id = a.id
-
+    s.id, 
+    '레시피 책 - [레시피 책] ' || s.name, 
+    'recipebook' AS category,
+    COALESCE(a.isComplete, 0)
+FROM recipebook s
+LEFT JOIN allData a ON s.id = a.id
 UNION
 SELECT 
-    r.id, 
-    '레시피 - [레시피] ' || r.name, 
+    s.id, 
+    '레시피 - [레시피] ' || s.name, 
     'recipe' AS category,
-    COALESCE(a.isComplete, 0) -- 완료 상태 기존 값 유지 또는 기본값 0
-FROM recipe r
-LEFT JOIN allData a ON r.id = a.id
-
+    COALESCE(a.isComplete, 0)
+FROM recipe s
+LEFT JOIN allData a ON s.id = a.id
 UNION
 SELECT 
     s.id, 
     '선박 - [선박] ' || s.name, 
     'ship' AS category,
-    COALESCE(a.isComplete, 0) -- 완료 상태 기존 값 유지 또는 기본값 0
+    COALESCE(a.isComplete, 0)
 FROM ship s
+LEFT JOIN allData a ON s.id = a.id
+UNION
+SELECT 
+    s.skill_id, 
+    '선박 스킬 - [선박 스킬] ' || s.name, 
+    'shipSkill' AS category,
+    COALESCE(a.isComplete, 0)
+FROM shipSkill s
+LEFT JOIN allData a ON s.skill_id = a.id
+WHERE typeof(s.skill_id) = 'integer'
+UNION
+SELECT 
+    s.id, 
+    '테크닉 - [테크닉] ' || s.name, 
+    'technic' AS category,
+    COALESCE(a.isComplete, 0)
+FROM technic s
+LEFT JOIN allData a ON s.id = a.id
+UNION
+SELECT 
+    s.id, 
+    '육상NPC - [육상NPC] ' || s.name, 
+    'landnpc' AS category,
+    COALESCE(a.isComplete, 0)
+FROM landnpc s
+LEFT JOIN allData a ON s.id = a.id
+WHERE s.name IS NOT NULL
+UNION
+SELECT 
+    s.id, 
+    '판매NPC - [판매NPC] ' || s.npc, 
+    'npcsale' AS category,
+    COALESCE(a.isComplete, 0)
+FROM npcsale s
+LEFT JOIN allData a ON s.id = a.id
+UNION
+SELECT 
+    s.id, 
+    '필드 - [필드] ' || s.name, 
+    'field' AS category,
+    COALESCE(a.isComplete, 0)
+FROM field s
 LEFT JOIN allData a ON s.id = a.id;
 
 COMMIT;
