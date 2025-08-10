@@ -19,6 +19,9 @@ if exist "%DEST_DIR%\dhoDatabase.sqlite3" (
 ) else (
     echo dhoDatabase.sqlite3 not found, copying the file...
     copy "%SOURCE_FILE%" "%DEST_DIR%\"
+    echo updateing db
+    cd sql
+    call "update.bat"
 )
 
 REM 복사 완료 메시지
