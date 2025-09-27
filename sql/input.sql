@@ -95,6 +95,32 @@ CREATE TABLE "dungeon" (
 	"boss_completed"	TEXT,
 	PRIMARY KEY("id")
 );
+DROP TABLE IF EXISTS "equipment";
+CREATE TABLE "equipment" (
+	"id"	INTEGER NOT NULL,
+	"name"	TEXT,
+	"additional_name"	TEXT,
+	"description"	TEXT,
+	"EXACT"	TEXT,
+	"category"	TEXT,
+	"공격력"	INTEGER,
+	"방어력"	INTEGER,
+	"복장예절"	INTEGER,
+	"변장도"	INTEGER,
+	"내구도"	INTEGER,
+	"skill"	TEXT,
+	"usage_Effect"	TEXT,
+	"equipment_Effect"	TEXT,
+	"features"	TEXT,
+	"획득 방법"	TEXT,
+	"필요 직업 계열"	TEXT,
+	"필요 명성"	TEXT,
+	"필요 악명"	TEXT,
+	"필요 성별"	TEXT,
+	"필요 작위"	TEXT,
+	"필요 호칭"	TEXT,
+	PRIMARY KEY("id")
+);
 DROP TABLE IF EXISTS "field";
 CREATE TABLE "field" (
 	"id"	INTEGER NOT NULL,
@@ -14305,6 +14331,5482 @@ INSERT INTO "dungeon" VALUES (34488,'기자 피라미드 상계층',NULL,'장치
 문장 - 리바이어던(1회 한정)
 선박 데코 - 해룡의 송곳니(빨강), 해룡의 지느러미(빨강)
 교역품 - 대리석, 백금 광석(거래 불가), 용혈');
+INSERT INTO "equipment" VALUES (6582,'코모두스 황제의 검',NULL,'고대 로마의 폭군，코모두스 황제의
+것이라고 전해지는 검.','TRUE','무기 (검)',20,NULL,5,NULL,50,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (6583,'트리스탄의 검',NULL,'잉글랜드의 기사, 트리스탄이 애용했다고 하는 검.','TRUE','무기 (검)',30,NULL,5,NULL,100,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6584,'독일 기사단장의 검',NULL,'독일 기사단의 단장이 애용 했다는 장검.','TRUE','무기 (검)',22,NULL,5,NULL,70,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (6585,'보석세공 탁상시계',NULL,'보석세공이 훌륭한 탁상 시계.
+어느 장인의 유품이다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'800',NULL,NULL,NULL,NULL),
+ (6586,'오토1세의 왕관',NULL,'신성 로마 제국의 초대 황제의 것으로 여겨지는 호화스런 왕관.','TRUE','머리',NULL,12,30,NULL,200,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6587,'구약성서',NULL,'그리스도교 성전 중의 하나. 종교적으로 중요한 기술이 많다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2287, "name": "종교학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6588,'유채기술의 역사',NULL,'유채기술의 역사가 적혀있는 책.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200',NULL,NULL,NULL,NULL),
+ (6589,'시집',NULL,'훌륭한 시가 많이 적혀 있는책. 마음을 움직이게 할 수 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6590,'오지브웨 부적',NULL,'아메리카 원주민으로부터 전해지는 부적. 실이 악몽을 붙잡아 묶는다고 여겨진다','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2290, "name": "채집", "value": 1}]','[{"ref": 1369, "name": "불면증 해소"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6591,'동식물도감',NULL,'여러 동식물의 생태가 적혀있는 책.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2281, "name": "생물학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6592,'솔로몬왕의 작은 열쇠',NULL,'전설적인 왕, 솔로몬의 것이라고 불리는 아주 귀중한 책.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2285, "name": "자물쇠 따기", "value": 1}]','[{"ref": 1403, "name": "주술"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6593,'고대의 서사시',NULL,'고대 서사시. 당시의 사정을 아는 데 있어서 중요한 기술이 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2270, "name": "고고학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6594,'지리학입문',NULL,'지리학의 기초가 적혀있는 책.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2289, "name": "지리학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200',NULL,NULL,NULL,NULL),
+ (6595,'고대 의복',NULL,'고대 백성들이 입었다고 여겨지는 독특한 양식의 의복.','TRUE','몸',NULL,10,NULL,NULL,80,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (6596,'역사서',NULL,'고대 역사서. 당시의 사정을 아는 데 있어서 중요한 기술이 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2270, "name": "고고학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6597,'신성 문자의 부적',NULL,'고대 이집트 문자가 기록된 희한한 힘을 가지고 있다는 부적.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2270, "name": "고고학", "value": 1}]','[{"ref": 2295, "name": "경계"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6598,'켈트 팔찌',NULL,'켈트 지방에서 예로부터 전해지는 양식으로 만들어진 팔찌.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'800',NULL,NULL,NULL,NULL),
+ (6599,'팔랑크스의 창',NULL,'고대 그리스 신화의 중장보병대가 사용했던 아주 긴 철창.
+
+※ 실제 역사의 ''사리사(Σάρισσα)''와 동일한 무기.','TRUE','무기 (창)',20,NULL,10,NULL,70,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (6600,'고대의 법전',NULL,'고대 법률을 정리한 것. 아주 귀중한 자료이다.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6601,'달의 부적',NULL,'희귀한 양식의 달을 본떴다고 여겨지는 부적.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2270, "name": "고고학", "value": 1}]','[{"ref": 1407, "name": "주술(선풍)"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6602,'그리스신의 부적',NULL,'그리스 신의 이름을 새긴 부적. 배를 덮치는 재난을 막아준다고 한다.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2278, "name": "미술", "value": 2}]','[{"ref": 2272, "name": "구제"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6603,'그리스여신의 부적',NULL,'그리스 여신의 이름을 새긴 부적. 재앙을 쫓아 버린다고 한다.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2278, "name": "미술", "value": 2}]','[{"ref": 1358, "name": "전염병 회복"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6604,'이집트여신의 부적',NULL,'이집트 여신의 이름을 새긴 부적. 재앙을 없앤다고 한다.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2278, "name": "미술", "value": 2}]','[{"ref": 1447, "name": "모든 상태 회복(복수)"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6605,'항해기술입문',NULL,'안전하게 항해하는 기술이 적혀 있는 책.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200',NULL,NULL,NULL,NULL),
+ (6606,'힌두여신의 부적',NULL,'힌두 여신의 이름을 새긴 부적.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2278, "name": "미술", "value": 2}]','[{"ref": 1405, "name": "주술(낙뢰)"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6607,'불교경전',NULL,'불교 경전 중의 하나. 종교적으로 중요한 기술이 많다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2287, "name": "종교학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6608,'아프리카신의 부적',NULL,'아프리카 신의 이름을 새긴 부적. 적에게 심한 고통을 준다고 한다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2278, "name": "미술", "value": 2}]','[{"ref": 1404, "name": "주술(화염)"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6609,'힌두신의 부적',NULL,'힌두신의 이름을 새긴 부적. 주인을 지킨다고 한다.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2278, "name": "미술", "value": 2}]','[{"ref": 1404, "name": "주술(화염)"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6610,'보석상자',NULL,'아름다운 세공의 보석 상자. 예술적 가치가 높다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2306, "name": "보관", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'800',NULL,NULL,NULL,NULL),
+ (6611,'녹슨 보검',NULL,'화려한 장식을 붙인 검. 낡아서 녹이 슬고 있다.','TRUE','무기 (검)',14,NULL,NULL,NULL,50,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (6612,'금장갑옷',NULL,'금으로 훌륭한 세공이 이루어진 호화스런 갑옷.','TRUE','몸',NULL,50,30,NULL,100,'[{"ref": 2300, "name": "귀금속 거래", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (6613,'은장갑옷',NULL,'은으로 훌륭한 세공이 이루어진 호화스런 갑옷.','TRUE','몸',NULL,45,30,NULL,100,'[{"ref": 2300, "name": "귀금속 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (6614,'제사용 단검',NULL,'고대 제례에서 사용되었다고 여겨지는 장식이 있는 단검.','TRUE','무기 (던지는 나이프)',15,NULL,10,NULL,50,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (6615,'짐승신의 부적',NULL,'전설상의 동물의 모습이 그려져 있는 부적. 주인을 지켜준다고 한다.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2329, "name": "돌격", "value": 1}]','[{"ref": 2330, "name": "방어"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6616,'상감세공갑옷',NULL,'상감세공으로 세공이 이루어진 호화스런 갑옷.','TRUE','몸',NULL,50,30,NULL,100,'[{"ref": 2304, "name": "미술품 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (6617,'귀부인의 드레스',NULL,'호화스런 장식이 이루어진 드레스. 세련된 양식이 특징.','TRUE','몸',NULL,25,60,NULL,100,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,'여성',NULL,NULL),
+ (6618,'게이볼그',NULL,'켈트 신화의 영웅이 애용했다고 하는 창. 주인에게 재앙을 가져 온다.','TRUE','무기 (창)',90,NULL,10,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'11,000',NULL,NULL,NULL,NULL),
+ (6619,'군신의 창',NULL,'군신의 힘이 깃들어져 있다고 하는 낡은 창','TRUE','무기 (창)',34,12,NULL,NULL,30,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}, {"ref": 2344, "name": "총격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (6620,'라발나스왕의 검',NULL,'히타이트를 흥하게 한 왕이 애용했다고 불리는 검.','TRUE','무기 (검)',60,NULL,5,NULL,100,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6621,'라비리스',NULL,'크레타 문명의 상징인 훌륭한 양날 도끼.','TRUE','무기 (도끼)',48,NULL,10,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (6622,'롤랑의 뿔피리',NULL,'성기사 롤랑의 뿔 피리. 상아의 훌륭한 세공이 이루어져 있다.','TRUE','도구',NULL,NULL,NULL,NULL,20,'[{"ref": 2288, "name": "주연", "value": 2}]','[{"ref": 2339, "name": "전술"}]',NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (6623,'바다 민족의 검',NULL,'히타이트를 멸망시켰다는 수수께끼의 민족이 남긴 철로 만든 검.','TRUE','무기 (검)',28,NULL,NULL,NULL,80,'[{"ref": 2328, "name": "노 젓기", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (6624,'발뭉',NULL,'전설에서 얘기되는 지크프리트가 애용했다는 명검.','TRUE','무기 (검)',90,NULL,10,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'9,000',NULL,NULL,NULL,NULL),
+ (6625,'브뤼냐크',NULL,'켈트 신화의 태양신 루의 것으로 불리는 빛의 창.','TRUE','무기 (창)',79,NULL,10,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'11,000',NULL,NULL,NULL,NULL),
+ (6626,'빛의 플루트',NULL,'이집트 왕가에 전해지는 피리. 듣는 사람을 혼란 시킨다고 한다.','TRUE','도구',NULL,NULL,10,NULL,100,'[{"ref": 2295, "name": "경계", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (6627,'살라딘의 검',NULL,'아이유브 왕조의 영웅이 애용했다고 불리는 검.','TRUE','무기 (검)',55,NULL,10,10,100,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2339, "name": "전술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6628,'아바스의 검',NULL,'아랍을 지배했던 아바스 왕조의 영웅이 애용했다고 하는 검.','TRUE','무기 (검)',25,NULL,5,NULL,80,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6629,'알렉산더 대왕의 검',NULL,'마케도니아의 왕 알렉산더의 것이라 알려진 검.','TRUE','무기 (검)',60,NULL,10,NULL,100,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,NULL,NULL,NULL),
+ (6630,'엑스캘리버',NULL,'왕과 함께 있고, 호수로 돌아갔다고 전해지는 전설의 명검.','TRUE','무기 (검)',100,NULL,10,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (6631,'오도아케르의 검',NULL,'고대 이탈리아 패자, 오도아케르가 이용했다고 하는 검.','TRUE','무기 (검)',18,NULL,5,NULL,70,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6632,'제노비아여왕의 작은 검',NULL,'팔미라 여왕, 제노비아가 애용했다는 단검.','TRUE','무기 (던지는 나이프)',32,NULL,10,NULL,100,'[{"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6633,'찬드라굽타왕의 검',NULL,'인도의 전설적인 왕이 애용했다고 불리는 검.','TRUE','무기 (검)',31,NULL,10,NULL,100,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6634,'츄이로바',NULL,'응고니가 사용하는 무기. 타격 뿐만이 아니라 갑자기 찌르는 일도 가능.','TRUE','무기 (도끼)',30,NULL,NULL,NULL,50,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (6635,'프라가라흐',NULL,'켈트 신화의 태양신 루의 것으로 불리는 검.','TRUE','무기 (검)',88,NULL,10,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (6636,'다리우스１세의 투구',NULL,'페르시아 왕, 다리우스1세가 애용했다고 불리는 투구.','TRUE','머리',NULL,30,25,NULL,100,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6637,'도곤의 가면',NULL,'반디아가라 고원에 사는 도곤이 의식 때 쓰는 가면.','TRUE','머리',NULL,NULL,NULL,NULL,100,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2281, "name": "생물학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6638,'람세스 2세의 머리장식',NULL,'이집트의 파라오，람세스 2세의
+것으로 여겨지는 머리 장식.','TRUE','머리',NULL,5,30,NULL,150,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (6639,'로로의 투구',NULL,'바이킹의 영웅, 로로가 애용했다고 하는 투구.','TRUE','머리',NULL,30,25,NULL,100,'[{"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (6640,'술탄의 왕관',NULL,'술탄이 소장하고 있던 보석 속에서 발견된 왕관.','TRUE','머리',NULL,8,30,NULL,200,'[{"ref": 2321, "name": "향료 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6641,'스키피오의 투구',NULL,'로마의 명장 스키피오가 애용했다고 불리는 투구.','TRUE','머리',NULL,35,25,NULL,250,'[{"ref": 2339, "name": "전술", "value": 2}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6642,'아가멤논의 황금마스크',NULL,'그리스 신화의 왕, 아가멤논의 데스마스크라고 불리는 가면.','TRUE','머리',NULL,20,NULL,NULL,250,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6643,'아그리피나의 머리장식',NULL,'고대 로마 비극의 왕비가 달고 있었다고 하는 머리 장식.','TRUE','머리',NULL,12,20,NULL,150,'[{"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (6644,'아우렐리아누스황제의 투구',NULL,'로마 제국의 아우렐리아누스가 애용했다고 불리는 투구.','TRUE','머리',NULL,25,25,NULL,100,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6645,'오로라 공주의 티아라',NULL,'잠자는 숲속의 공주의 전설이 전해지는 작은 왕관.','TRUE','머리',NULL,16,20,NULL,250,'[{"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (6646,'요루바왕국의 신관의 가면',NULL,'아프리카의 신관이 제례에서 사용했다고 여겨지는 독자 양식의 가면.','TRUE','머리',NULL,23,NULL,NULL,250,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2281, "name": "생물학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'400',NULL,NULL,NULL,NULL),
+ (6647,'제례용가면',NULL,'제례에서 사용되었다고 여겨지는 독특한 장식과 양식의 가면.','TRUE','머리',NULL,13,NULL,NULL,200,'[{"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (6648,'카를대제의 왕관',NULL,'프랑크 왕국의 카를 대제의 것이라고 일컬어지는 호화스런 왕관.','TRUE','머리',NULL,14,30,NULL,200,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6649,'투그릴베그의 왕관',NULL,'터키 술탄의 것이라고 전해지는 왕관.','TRUE','머리',NULL,14,30,NULL,250,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2307, "name": "보석 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6650,'투탕카멘 마스크',NULL,'이집트의 왕, 투탕카멘의 분묘에서 발견된 황금 가면.','TRUE','머리',NULL,25,NULL,NULL,250,'[{"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2270, "name": "고고학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6651,'패왕의 보관',NULL,'소유하는 자에게 권력을 가져다 준다는 전설을 가진 관.','TRUE','머리',NULL,15,30,NULL,150,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6652,'피투하나왕관',NULL,'히타이트의 전설적인 왕의 것이라고 일컬어지는 아름다운 왕관.','TRUE','머리',NULL,16,30,NULL,150,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2270, "name": "고고학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6653,'호랑이머리 투구',NULL,'백호의 머리를 바탕으로한 투구. 보는 이를 압도한다.','TRUE','머리',20,4,NULL,NULL,100,'[{"ref": 2334, "name": "수탈", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,NULL,NULL,NULL),
+ (6654,'훌륭한 왕의 왕관',NULL,'이베리아의 고왕국의 것이라고 불리는 왕관.','TRUE','머리',NULL,9,30,NULL,100,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6655,'재규어 무늬 칸가',NULL,'재규어의 모피를 배합한 미려한 간카.','TRUE','몸',NULL,12,NULL,15,100,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6656,'다리우스３세의 갑옷',NULL,'페르시아 왕, 다리우스 3세가 애용했다고 하는 갑옷.','TRUE','몸',NULL,55,30,NULL,150,'[{"ref": 2306, "name": "보관", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6657,'데메트리오스１세의 갑옷',NULL,'마케도니아의 영웅 데메트리오스1세가 애용했다고 하는 갑옷.','TRUE','몸',NULL,50,25,NULL,150,'[{"ref": 2328, "name": "노 젓기", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,500',NULL,NULL,NULL,NULL),
+ (6658,'바다 민족의 갑옷',NULL,'히타이트를 멸망시켰다는 수수께끼의 민족이 남긴 철로 만든 갑옷.','TRUE','몸',NULL,45,20,NULL,100,'[{"ref": 2277, "name": "돛 조종", "value": 1}, {"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (6659,'사자왕의 갑옷',NULL,'사자왕 리처드가 원정 때 입었다고 하는 갑옷.','TRUE','몸',NULL,70,30,NULL,250,'[{"ref": 2329, "name": "돌격", "value": 2}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,'남성',NULL,NULL),
+ (6660,'알렉산더 대왕의 갑옷',NULL,'마케도니아의 왕 알렉산더가 애용했다는 갑옷.','TRUE','몸',NULL,55,25,NULL,250,'[{"ref": 2339, "name": "전술", "value": 3}, {"ref": 2346, "name": "통솔", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (6661,'에파미논다스의 갑옷',NULL,'그리스의 영웅 에파미논다스가 애용했다고 하는 갑옷.','TRUE','몸',NULL,50,25,NULL,150,'[{"ref": 2339, "name": "전술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'4,500',NULL,NULL,NULL,NULL),
+ (6662,'카이사르의 갑옷',NULL,'고대 로마의 영웅, 카이사르가 애용했다고 하는 갑옷.','TRUE','몸',NULL,55,25,NULL,250,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (6663,'클레오파트라의 가슴장식',NULL,'이집트 여왕, 클레오파트라가 입었다고 하는 장식이 된 드레스.','TRUE','몸',NULL,20,30,NULL,250,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,500',NULL,'여성',NULL,NULL),
+ (6664,'템플기사단장의 갑옷',NULL,'템플 기사단이 입었다고 전해지는 갑옷.','TRUE','몸',NULL,45,30,NULL,250,'[{"ref": 2330, "name": "방어", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'3,500',NULL,'남성',NULL,NULL),
+ (6665,'프리드리히1세의 갑옷',NULL,'붉은 수염의 왕, 프리드리히1세가 애용했다고 하는 갑옷.','TRUE','몸',NULL,60,30,NULL,250,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,'남성',NULL,NULL),
+ (6666,'하트셉수트 가슴장식',NULL,'이집트 여왕 하트셉수트가 입었다고 하는 드레스.','TRUE','몸',NULL,20,30,NULL,250,'[{"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,'여성',NULL,NULL),
+ (6667,'백은제 미튼',NULL,'투구，갑옷과 같이 몸에 대는 미튼형의 건틀릿.','TRUE','팔',NULL,13,5,NULL,70,NULL,NULL,NULL,NULL,NULL,NULL,'1,200',NULL,NULL,NULL,NULL),
+ (6668,'백은제 그리브',NULL,'투구, 갑옷과 같이 몸에 대는 무릎 밑을 덥는 철의 부츠.','TRUE','다리',NULL,17,9,NULL,70,NULL,NULL,NULL,NULL,NULL,NULL,'1,200',NULL,NULL,NULL,NULL),
+ (6669,'가비알 송곳니 장식',NULL,'가비알 송곳니로 만든 팔찌. 선원들의 사기를 높인다','TRUE','장신구',5,NULL,NULL,NULL,20,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6670,'고대신의 부적',NULL,'이름도 모르는 고대 신의 저주를 이어 받는다고 하는 부적.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2270, "name": "고고학", "value": 1}]','[{"ref": 1403, "name": "주술"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6671,'고대의 목걸이',NULL,'켈트 지방의 독특한 목걸이. 높은 지위의 증명이 되었다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2283, "name": "생태 조사", "value": 2}, {"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6672,'골든 스타',NULL,NULL,'TRUE','장신구',NULL,NULL,NULL,NULL,200,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6673,'공작석 보석상자',NULL,'공작석이 여기저기 박힌 아름다운 세공의 보석상자','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2306, "name": "보관", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (6674,'그림감정술',NULL,'그림을 감정하는 기술이 적혀 있는 책.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2280, "name": "보물 감정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200',NULL,NULL,NULL,NULL),
+ (6675,'금 갑충석',NULL,'희귀한 벌레를 본뜬 금장신구. 이집트에서 만들어졌다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2281, "name": "생물학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6676,'명군 오브',NULL,'현명한 왕이 가지고 있었다는 옥주. 보는 사람의 마음을 하나로 만든다.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2346, "name": "통솔", "value": 1}]','[{"ref": 2346, "name": "통솔"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6677,'밍크 모피',NULL,'밍크에서 얻어지는 모피. 촉감이 좋고 외형도 아름답다','TRUE','장신구',NULL,NULL,10,NULL,10,'[{"ref": 2310, "name": "섬유 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6678,'바질리스크 눈동자',NULL,'옐로우 토파즈를 배합한, 신비한 빛을 발하는 반지','TRUE','장신구',NULL,NULL,10,NULL,20,'[{"ref": 2300, "name": "귀금속 거래", "value": 1}, {"ref": 2307, "name": "보석 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6679,'베다',NULL,'인도 바라문교의 경전. 종교적으로 중요한 기술이 많다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2287, "name": "종교학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6680,'성모의 부적',NULL,'선원을 수호한다고 소문난 성모 명을 새긴 부적.
+피로도 회복 20','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2278, "name": "미술", "value": 1}]','[{"ref": 1376, "name": "피로도 회복"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6681,'신약성서',NULL,'그리스도교 성전 중의 하나. 종교적으로 중요한 기술이 많다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2287, "name": "종교학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6682,'아폴로나비 브로치',NULL,'아폴로 나비를 본뜬 것. 붉은 보석이 박혀있다','TRUE','장신구',NULL,NULL,5,NULL,20,'[{"ref": 2298, "name": "공예품 거래", "value": 1}, {"ref": 2296, "name": "공업품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6683,'이집트신의 부적',NULL,'이집트 신의 이름을 새긴 부적. 적을 움직이지 못하게 하는 힘을 지니고 있다고 한다.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2278, "name": "미술", "value": 2}]','[{"ref": 1405, "name": "주술(낙뢰)"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6684,'태양의 부적',NULL,'희귀한 양식의 태양을 본떴다고 여겨지는 부적.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2270, "name": "고고학", "value": 1}]','[{"ref": 1451, "name": "작렬공격(적 전원)"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6685,'테사로니케의 팔찌',NULL,'마케도니아 왕녀 텟사로니케가 의모에게 바쳤다고 하는 팔찌','TRUE','장신구',NULL,NULL,10,NULL,20,'[{"ref": 2281, "name": "생물학", "value": 2}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6686,'함무라비법전',NULL,'설형문자로 새겨진 석판 법전.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2346, "name": "통솔", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6687,'카이사르의 검',NULL,'고대 로마의 영웅, 카이사르가 애용했다고 하는 검.
+
+※ 카이사르가 생전에 사용한 검의 이름은 ''노란 죽음(Crocea Mors)''으로 알려져 있다.','TRUE','무기 (검)',35,NULL,5,NULL,100,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (6688,'카멜레온',NULL,'카멜레온의 봉제인형
+장비하면 머리가 무거워진다.','FALSE','머리',NULL,4,NULL,NULL,100,'[{"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (6689,'구름표범 무늬 칸가',NULL,'구름표범의 모피를 배합한 미려한 간카.','TRUE','몸',NULL,12,NULL,15,100,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (6690,'원근법의 기초',NULL,'원근법의 기초가 적혀있는 책','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200',NULL,NULL,NULL,NULL),
+ (6691,'장군 오브',NULL,'고대 명장이 가지고 있었다는 옥주. 주인을 지킨다고 한다.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2330, "name": "방어", "value": 1}]','[{"ref": 2330, "name": "방어"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6692,'차도르',NULL,'아랍 여성이 자주 입는
+전신을 완전히 덮는 장의.','FALSE','몸',NULL,4,10,35,30,'[{"ref": 2312, "name": "염료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,100',NULL,'여성',NULL,NULL),
+ (6693,'보라색 차도르',NULL,'강달소라로 선명하게 물들인
+아랍 여성이 잘 입는 장의.','TRUE','몸',NULL,5,18,40,35,'[{"ref": 2312, "name": "염료 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'1,300',NULL,'여성',NULL,NULL),
+ (6694,'레이스업 부츠',NULL,'끈으로 끝까지 짜서 고정하는
+세련된 부츠.','FALSE','다리',NULL,5,8,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'200',NULL,NULL,NULL,NULL),
+ (6695,'공작석 귀걸이',NULL,'공작석을 박아 넣은 예술적인 가치가 높은 귀걸이.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2312, "name": "염료 거래", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6696,'갈릴레오식 망원경',NULL,'학자 갈릴레오 갈릴레이가
+고안한 아주 우수한 망원경.','TRUE','도구',NULL,NULL,NULL,NULL,40,'[{"ref": 2284, "name": "인식", "value": 2}, {"ref": 2274, "name": "기뢰발견", "value": 1}]','[{"ref": 2284, "name": "인식"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6697,'교황의 주석 지팡이',NULL,'교황이 제례 때 사용했던 훌륭한 장식이 이루어진 주석 지팡이.','TRUE','무기 (곤봉 지팡이)',8,NULL,8,NULL,35,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2323, "name": "회계", "value": 2}]',NULL,NULL,NULL,NULL,'교역','560',NULL,NULL,NULL,NULL),
+ (6698,'성자의 주석 지팡이',NULL,'이름있는 성인이 사용했다고 하는 주석 지팡이.','TRUE','무기 (곤봉 지팡이)',9,NULL,9,NULL,40,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2323, "name": "회계", "value": 2}]',NULL,NULL,NULL,NULL,'교역','600',NULL,NULL,NULL,NULL),
+ (6699,'육분의',NULL,'별의 위치로 지금 있는 위치를 확인하는 도구. 아주 정밀도가 높다.','TRUE','도구',NULL,NULL,NULL,NULL,40,'[{"ref": 2289, "name": "지리학", "value": 2}]','[{"ref": 2291, "name": "측량"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6700,'성대신의 토가',NULL,'요직에 있는 대 귀족만이 착용할 수 있는 아주 호화스런 장의.','TRUE','몸',NULL,15,45,NULL,50,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2309, "name": "사교", "value": 3}]',NULL,NULL,NULL,NULL,'교역','4,000',NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (6701,'알바',NULL,'사제정도의 높은 승려가 제례
+할때 입는 호화스런 장의.','FALSE','몸',NULL,20,30,NULL,40,'[{"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,'모험','3,500',NULL,NULL,'[{"ref": 2013, "name": "칠등훈작사"}]',NULL),
+ (6702,'성왕갑옷',NULL,'프랑스 성왕, 루이9세가 애용했다고 하는 갑옷.','TRUE','몸',NULL,60,30,NULL,150,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,'남성',NULL,NULL),
+ (6703,'미튼',NULL,'모직이나 모피로 만드는
+따뜻한 장갑. 손가락이 나뉘어져 있지 않다.','FALSE','팔',NULL,2,2,NULL,30,'[{"ref": 2277, "name": "돛 조종", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6704,'아베스타',NULL,'조로아스터교의 경전. 종교적으로 중요한 기술이 많다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2287, "name": "종교학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6705,'캐리비안 셔츠',NULL,'카리브 해의 남성복.
+독특한 모양의 염색이 특징적이다.','FALSE','몸',NULL,6,NULL,10,35,'[{"ref": 2275, "name": "낚시", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'700',NULL,'남성',NULL,NULL),
+ (6706,'해양측량기술교본',NULL,'해양측량기술의 기초가 적혀있는 책.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2291, "name": "측량", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200',NULL,NULL,NULL,NULL),
+ (6707,'다이아몬드 귀걸이',NULL,'다이아몬드를 곁들인
+
+아주 아름다운 귀걸이.','TRUE','장신구',NULL,NULL,80,NULL,20,'[{"ref": 2307, "name": "보석 거래", "value": 2}, {"ref": 2298, "name": "공예품 거래", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'800',NULL,NULL,NULL,NULL),
+ (6708,'철도끼',NULL,'나무꾼이 사용하는 도끼. 무기로서도 꽤 강력.','TRUE','무기 (도끼)',18,NULL,NULL,NULL,5,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6709,'폭군 오브',NULL,'잔인한 왕이 가지고 있었다는
+옥주. 보는 사람의 마음을 어지럽게 한다.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2313, "name": "운용", "value": 1}]','[{"ref": 2329, "name": "돌격"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6710,'모험기',NULL,'모험가의 기록. 해상의 재해에서 벗어나는 요령이 적혀 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2286, "name": "조달", "value": 1}]','[{"ref": 2272, "name": "구제"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6711,'염소 가죽을 씌운 탬버린',NULL,'탬버린 위에 염소 가죽을 씌운 것. 고가품이다. 사용시 피로도 1회복','TRUE','도구',NULL,NULL,NULL,NULL,75,'[{"ref": 2288, "name": "주연", "value": 1}]','[{"ref": 1483, "name": "탬버린 연주"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6712,'은손거울',NULL,'뛰어난 은세공 기술이 구사된 아름다운 손거울','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2281, "name": "생물학", "value": 2}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6713,'이비스의 지팡이',NULL,'고대 이집트의 신을 본뜬 장식이 이루어진 지팡이.','TRUE','무기 (곤봉 지팡이)',11,NULL,2,NULL,25,'[{"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,'모험','880',NULL,NULL,NULL,NULL),
+ (6714,'해양생물도감',NULL,'여러 해양생물의 생태가 적혀 있는 책.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2275, "name": "낚시", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200',NULL,NULL,NULL,NULL),
+ (6715,'화석도감',NULL,'발견된 많은 화석이 적혀있는 책.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2270, "name": "고고학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200',NULL,NULL,NULL,NULL),
+ (6716,'깃털 머리장식',NULL,'아프리카의 새의 깃털을 사용한
+산뜻한 머리 장식.','FALSE','머리',NULL,4,NULL,NULL,250,'[{"ref": 2277, "name": "돛 조종", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,000',NULL,'여성',NULL,NULL),
+ (6717,'호로새 깃털 장식',NULL,'호로새 깃털을 가공한 정도의 간단한 날개 장식','TRUE','장신구',NULL,NULL,NULL,10,10,'[{"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6718,'듀랜달',NULL,'성기사 롤랑이 마지막까지 애용 했다고 하는 명검.','TRUE','무기 (검)',66,NULL,10,NULL,100,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2325, "name": "검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'9,000',NULL,NULL,NULL,NULL),
+ (6719,'프란시스코파 수녀의 옷',NULL,'프란시스코파의 수녀가 주로 입는 검소한 장의.','TRUE','몸',NULL,3,10,NULL,30,'[{"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200',NULL,'여성',NULL,NULL),
+ (6720,'의학서',NULL,'고대 의사가 정리한 의술서. 참고가 되는 기술이 많다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2336, "name": "외과의술", "value": 1}]','[{"ref": 2336, "name": "외과의술"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6721,'녹슨 에스토크',NULL,'녹슨 에스토크','TRUE','무기 (검)',10,NULL,NULL,NULL,20,NULL,NULL,NULL,NULL,NULL,'전투','800',NULL,NULL,NULL,NULL),
+ (6722,'털부츠',NULL,'모피가 곁들여진 따뜻하고
+튼튼한 추운 지방의 부츠.','FALSE','다리',NULL,7,10,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'400',NULL,NULL,NULL,NULL),
+ (6723,'털달린 보닛',NULL,'차양을 위로 접은 긴 차양의
+장식 모자에 깃털 장식을 첨가한 것.','FALSE','머리',NULL,4,16,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'750',NULL,NULL,NULL,NULL),
+ (6724,'양가죽 장식 페티코트',NULL,'양의 피혁으로 만든 상의와
+짧은 스커트를 조합한 옷.','FALSE','몸',NULL,6,5,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'300',NULL,'여성',NULL,NULL),
+ (6725,'신궁의 지팡이',NULL,'고대 이집트의 신관이 제사에 사용했다는 지팡이.','TRUE','무기 (곤봉 지팡이)',10,NULL,1,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,'800',NULL,NULL,NULL,NULL),
+ (6726,'백단부채',NULL,'백단의 부채살을 가지고 있는 부채. 좋은 향기가 난다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6727,'페르시안 드레스',NULL,'조끼의 위에서부터 상의를
+여미는 페르시아의 전통적인 예장.','FALSE','몸',NULL,2,28,35,30,'[{"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,050',NULL,'여성',NULL,NULL),
+ (6728,'은회색 트가리누',NULL,'귀중한 은색 쥐의 모피 코트와 셔츠를 곁들인 여장.','TRUE','몸',NULL,15,35,10,10,'[{"ref": 2291, "name": "측량", "value": 2}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,'모험','2,700',NULL,NULL,'[{"ref": 2011, "name": "준칠등훈작사"}]',NULL),
+ (6729,'캐리비안 헌터',NULL,'카리브의 사냥꾼이 제례에서 입는 의장.
+몸에도 모양을 채색한다.','FALSE','몸',2,5,10,10,10,'[{"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'900',NULL,'남성',NULL,NULL),
+ (6730,'캐리비안 드레스',NULL,'카리브 여성이 제례 등에
+입는 무용을 위한 의상.','FALSE','몸',NULL,2,5,10,10,'[{"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'800',NULL,'여성',NULL,NULL),
+ (6731,'해적 코트',NULL,'사략해적의 이름을 붙인 코트.
+대해적만이 입을 수 있다.','FALSE','몸',16,26,5,25,45,'[{"ref": 2332, "name": "속사", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,'전투','3,500',NULL,NULL,NULL,NULL),
+ (6732,'위대한 전사의 창',NULL,'전설에서 얘기되는 위대한 전사의 힘이 머문다고 하는 나무 창.','TRUE','무기 (창)',32,NULL,NULL,NULL,50,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 2}]',NULL,NULL,NULL,NULL,'전투','1,400',NULL,NULL,NULL,NULL),
+ (6733,'마사이 목걸이',NULL,'마사이의 전통 양식으로 만들어진 아름다운 목걸이.','TRUE','장신구',5,NULL,NULL,5,30,'[{"ref": 2292, "name": "탐색", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6734,'딩카 팔찌',NULL,'딩카의 전통 양식으로 만들어진 검소한 팔찌.','TRUE','장신구',NULL,5,NULL,5,30,'[{"ref": 2292, "name": "탐색", "value": 2}, {"ref": 2283, "name": "생태 조사", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6735,'딩카 반지',NULL,'딩카의 전통 양식으로 만들어진 독특한 반지.','TRUE','장신구',NULL,5,NULL,5,30,'[{"ref": 2290, "name": "채집", "value": 2}, {"ref": 2283, "name": "생태 조사", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6736,'플레이트 아머',NULL,'전신을 덮는 아주 튼튼하고 무거운 갑옷.','TRUE','몸',NULL,50,20,NULL,50,'[{"ref": 2330, "name": "방어", "value": 2}]',NULL,NULL,NULL,NULL,'전투','3,000',NULL,NULL,'[{"ref": 2013, "name": "칠등훈작사"}]',NULL),
+ (6737,'링레트위그',NULL,'머리를 만 모양의 가발.
+귀족의 정장이 되어 있다.','FALSE','머리',NULL,NULL,20,NULL,20,'[{"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'800',NULL,NULL,NULL,NULL),
+ (6738,'아르마딜로의 철가죽',NULL,'큰 아르마딜로의 딱딱한 가죽을 벗겨낸 것.','TRUE','장신구',NULL,5,NULL,NULL,20,'[{"ref": 2330, "name": "방어", "value": 2}]','[{"ref": 2330, "name": "방어"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6739,'녹슨 숏소드',NULL,'칼날이 나가 버린 단검. 무기로서는 어쩐지 불안하다.','TRUE','무기 (던지는 나이프)',7,NULL,NULL,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6740,'이빠진 롱소드',NULL,'칼날이 나가 버린 단검.','TRUE','무기 (검)',9,NULL,NULL,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6741,'과부 그즈리즈르의 갑옷',NULL,'바이킹 영웅의 이름을 붙인 바이킹 독자적 양식의 갑옷','TRUE','몸',22,40,NULL,5,50,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (6742,'프란시스코파 수도의',NULL,'프란시스코파의 수도승이 주로 입는 검소한 장의.','TRUE','몸',NULL,3,7,NULL,30,'[{"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'100',NULL,'남성',NULL,NULL),
+ (6743,'추기경 지팡이',NULL,'추기경이 제례 때 사용했던 장식이 이루어진 지팡이.','TRUE','무기 (곤봉 지팡이)',7,NULL,7,NULL,30,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,'교역','520',NULL,NULL,NULL,NULL),
+ (6744,'용의 부적',NULL,'용의 모습이 새겨진 부적. 불꽃의 마력을 내포하고 있다고 한다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2325, "name": "검술", "value": 1}]','[{"ref": 1404, "name": "주술(화염)"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6745,'천사의 탁상시계',NULL,'천사의 조각이 새겨져 있는 탁상 시계. 예술적 가치가 높다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2278, "name": "미술", "value": 1}, {"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'700',NULL,NULL,NULL,NULL),
+ (6746,'조사용 외눈안경',NULL,'한쪽 눈에 끼는 안경. 주변을 조사할 때 편리.','TRUE','장신구',NULL,NULL,NULL,NULL,15,NULL,'[{"ref": 2290, "name": "채집"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6747,'코르세아코트',NULL,'사략해적의 이름을 붙인 코트.
+대해적만이 입을 수 있다.','FALSE','몸',10,20,5,20,60,'[{"ref": 2332, "name": "속사", "value": 1}]',NULL,NULL,NULL,NULL,'전투','2,400',NULL,NULL,NULL,NULL),
+ (6748,'드레드 헤어',NULL,'머리를 술로 나누어 복잡하게 따는 아프리카 독자의 헤어스타일.','TRUE','머리',NULL,NULL,NULL,15,10,NULL,NULL,NULL,NULL,NULL,NULL,'300',NULL,'여성',NULL,NULL),
+ (6749,'투르크멘의 팔찌',NULL,'투르크멘의 장식 기법으로 만들어진 훌륭한 팔찌.','TRUE','장신구',NULL,5,NULL,5,30,'[{"ref": 2290, "name": "채집", "value": 2}, {"ref": 2293, "name": "행군", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6750,'오스만 군복',NULL,'오스만 투르크 병사가 입는
+활동하기 편한 옷.','FALSE','몸',NULL,15,15,30,35,'[{"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,050',NULL,'남성',NULL,NULL),
+ (6751,'나무 창',NULL,'나무로 만들어진 간소한 창. 독특한 양식의 창끝을 하고 있다.','TRUE','무기 (창)',22,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,'전투','1,200',NULL,NULL,NULL,NULL),
+ (6752,'용감한 전사의 창',NULL,'그 용감함으로 알려진 위대한 전사의 힘이 머문다는 나무 창.','TRUE','무기 (창)',30,NULL,NULL,NULL,45,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 2}]',NULL,NULL,NULL,NULL,'전투','1,360',NULL,NULL,NULL,NULL),
+ (6753,'전사의 창',NULL,'이름이 있는 전사가 사용했다고 하는 나무 창.','TRUE','무기 (창)',30,NULL,NULL,NULL,40,'[{"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,'전투','1,320',NULL,NULL,NULL,NULL),
+ (6754,'깃털달린 솜브레로',NULL,'긴 차양의 모자에 깃털 장식을
+단 것. 해적이 즐겨 쓴다.','FALSE','머리',NULL,4,8,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6755,'솜브레로',NULL,'긴 차양이 특징인 모자.
+카리브 해적이 즐겨 쓴다.','FALSE','머리',NULL,4,4,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'250',NULL,NULL,NULL,NULL),
+ (6756,'카리브 민족의상',NULL,'카리브의 남성이 입는 짧은
+조끼와 바지를 조합한 옷.','FALSE','몸',NULL,5,NULL,10,10,NULL,NULL,NULL,NULL,NULL,NULL,'600',NULL,'남성',NULL,NULL),
+ (6757,'해적셔츠',NULL,'해적이 즐겨 입는 셔츠.
+두껍고 튼튼하지만 가볍고 활동하기 편하다.','FALSE','몸',NULL,7,NULL,4,35,NULL,NULL,NULL,NULL,NULL,NULL,'300',NULL,NULL,NULL,NULL),
+ (6758,'낚시도구',NULL,'낚시하기에 편리한 도구.','TRUE','장신구',NULL,NULL,NULL,NULL,10,NULL,'[{"ref": 2275, "name": "낚시"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6759,'사냥꾼의 창',NULL,'위대한 사냥꾼이 사용했다고 하는 나무 창.','TRUE','무기 (창)',28,NULL,NULL,NULL,35,'[{"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,'전투','1,280',NULL,NULL,NULL,NULL),
+ (6760,'망원경',NULL,'아주 흔히 볼 수 있는 망원경. 모험가에게는 빠질 수 없는 도구','TRUE','도구',NULL,NULL,NULL,NULL,15,'[{"ref": 2284, "name": "인식", "value": 1}]','[{"ref": 2284, "name": "인식"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6761,'아프로위그',NULL,'둥글게 자른 고수머리 가발.','FALSE','머리',NULL,5,NULL,20,10,NULL,NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6762,'이빠진 카트라스',NULL,'칼날이 나간 카트라스.','TRUE','무기 (검)',11,NULL,NULL,NULL,20,NULL,NULL,NULL,NULL,NULL,'전투','400',NULL,NULL,NULL,NULL),
+ (6763,'이가 빠진 시미터',NULL,'칼날이 나가 버린 시미터.','TRUE','무기 (검)',10,NULL,NULL,10,20,NULL,NULL,NULL,NULL,NULL,'전투','800',NULL,NULL,NULL,NULL),
+ (6764,'터번',NULL,'천을 머리에 감은，아랍에서는
+널리 사용되는 모자.','FALSE','머리',NULL,3,5,20,30,NULL,NULL,NULL,NULL,NULL,NULL,'450',NULL,NULL,NULL,NULL),
+ (6765,'미사용 알바',NULL,'사제 정도의 높은 승려가 미사할때 입는 호화스런 장의.','TRUE','몸',NULL,22,35,NULL,10,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,NULL,'모험','4,000',NULL,NULL,'[{"ref": 2013, "name": "칠등훈작사"}]',NULL),
+ (6766,'도도 깃털부채',NULL,'희귀한 새인 도도의 깃털로 만들어진 아주 귀중한 부채.','TRUE','도구',NULL,NULL,20,NULL,40,'[{"ref": 2323, "name": "회계", "value": 2}, {"ref": 2306, "name": "보관", "value": 2}]',NULL,NULL,NULL,NULL,'교역','1,400',NULL,NULL,NULL,NULL),
+ (6767,'숙련된 어부의 낚시도구',NULL,'솜씨가 뛰어난 어부가 고안한 최고의 낚시 도구.
+
+메모리얼 앨범 보상이기도 함','TRUE','장신구',NULL,NULL,NULL,NULL,15,'[{"ref": 2275, "name": "낚시", "value": 1}]','[{"ref": 2275, "name": "낚시"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6768,'아라비안슈즈',NULL,'아라비아에서는 일반적인
+발끝이 굽은 단화.','FALSE','다리',NULL,2,7,15,30,NULL,NULL,NULL,NULL,NULL,NULL,'200',NULL,NULL,NULL,NULL),
+ (6769,'깃털달린 터번',NULL,'희귀한 새의 깃털을 곁들여
+두르는 터번.','FALSE','머리',NULL,4,10,20,30,NULL,NULL,NULL,NULL,NULL,NULL,'600',NULL,NULL,NULL,NULL),
+ (6770,'실크숄',NULL,'비단만으로 만들어진 사치스런 숄. 아주 고가이다.','TRUE','장신구',NULL,NULL,4,NULL,20,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'300',NULL,NULL,NULL,NULL),
+ (6771,'보석세공용 손거울',NULL,'보석을 가득 박아 훌륭한 세공을 한 손거울.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'800',NULL,NULL,NULL,NULL),
+ (6772,'조선공의 망치',NULL,'조선공 사이에서 널리 사용되는 망치. 수리등에 편리.','TRUE','도구',NULL,NULL,NULL,NULL,5,'[{"ref": 2318, "name": "주조", "value": 1}, {"ref": 2333, "name": "수리", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6773,'시미터',NULL,'베어 내기 위해 날카롭게 굽어 있는 도신을 하고 있는 칼.','TRUE','무기 (검)',18,NULL,NULL,10,30,NULL,NULL,NULL,NULL,NULL,'전투','880',NULL,NULL,NULL,NULL),
+ (6774,'캐러벨라',NULL,'서로 베어 내기 위한 고안이 이루어져 있는 터키의 실전용 칼.','TRUE','무기 (검)',24,NULL,NULL,12,35,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,'전투','920',NULL,NULL,NULL,NULL),
+ (6775,'라크스샬키',NULL,'아랍의 댄서가 입는 노출이
+많은 전통적인 무도 의상.','FALSE','몸',NULL,NULL,NULL,30,10,'[{"ref": 2276, "name": "대화술", "value": 1}, {"ref": 2288, "name": "주연", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,200',NULL,'여성',NULL,NULL),
+ (6776,'히잡',NULL,'아랍 여성이 천을 조합하여
+붙인 일종의 터번.','FALSE','머리',NULL,2,7,20,30,NULL,NULL,NULL,NULL,NULL,NULL,'500',NULL,'여성',NULL,NULL),
+ (6777,'샤벨',NULL,'기병이 주로 사용하는 가볍고 길어서 베어 내기에 적합한 칼.','TRUE','무기 (검)',26,NULL,NULL,NULL,35,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,'전투','520',NULL,NULL,NULL,NULL),
+ (6778,'슈비이처 사벨',NULL,'베고, 찌르고 어느 쪽으로도 사용할 수 있게 고안되어 있는 장도.','TRUE','무기 (검)',28,NULL,NULL,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,'전투','560',NULL,NULL,NULL,NULL),
+ (6779,'금장식 샌들',NULL,'금으로 장식된 샌들.
+부유한 상인이 잘 신는다.','FALSE','다리',NULL,1,7,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6780,'적동제 갑옷',NULL,'붉은색동으로 만들어진 아름다운 갑옷. 아주 튼튼하며 실전용.','TRUE','몸',NULL,65,20,NULL,10,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,'전투','4,000',NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (6781,'호화 목걸이',NULL,'아름다운 장식이 되어 있는 목걸이. 보석이 가득 박혀 있다.','TRUE','장신구',NULL,NULL,20,NULL,20,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'800',NULL,NULL,NULL,NULL),
+ (6782,'광맥을 찾는 사람의 다우징로드',NULL,'광부가 애용했다는 광맥을 찾기 위한 봉.','TRUE','장신구',NULL,NULL,NULL,NULL,15,NULL,'[{"ref": 2292, "name": "탐색"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6783,'밸리 댄서',NULL,'아랍의 댄서가 입는 노출이
+많은 전통적인 무도 의상.','FALSE','몸',NULL,NULL,5,30,10,'[{"ref": 2276, "name": "대화술", "value": 1}, {"ref": 2288, "name": "주연", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,'여성',NULL,NULL),
+ (6784,'타조 깃털부채',NULL,'타조의 깃털로 만들어진 부채. 아주 비싼 것이다.','TRUE','도구',NULL,NULL,16,NULL,35,'[{"ref": 2323, "name": "회계", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,'교역','1,000',NULL,NULL,NULL,NULL),
+ (6785,'향수',NULL,'몸에 뿌려 사용하는 향료. 다양한 향기의 향료가 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,5,NULL,'[{"ref": 1389, "name": "복장예절 강화"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6786,'향유',NULL,'방향을 넣은 기름. 다양한 용도에 사용한다.','TRUE','장신구',NULL,NULL,NULL,NULL,5,NULL,'[{"ref": 1389, "name": "복장예절 강화"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6787,'사리후드',NULL,'여성이 두르는 인도에서는
+흔한 천으로 된 두건.','FALSE','머리',NULL,2,2,22,30,NULL,NULL,NULL,NULL,NULL,NULL,'500',NULL,'여성',NULL,NULL),
+ (6788,'인도 편사로 만든 숄',NULL,'최상급의 인도 편사를 사용하여 만들어진 숄.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6789,'모험가의 수기',NULL,'모험가가 남긴 쪽지. 음식을 찾는 실마리가 된다.','TRUE','장신구',NULL,NULL,NULL,NULL,15,NULL,'[{"ref": 2286, "name": "조달"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6790,'철선 포획망',NULL,'철사로 짠 아주 튼튼한 망. 동물을 잡는 데 편리.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2283, "name": "생태 조사", "value": 1}]','[{"ref": 2283, "name": "생태 조사"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6791,'카타르',NULL,'인도의 독특한, 베어 내기 위해 칼날이 고안된 칼.','TRUE','무기 (검)',26,NULL,NULL,10,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,'전투','960',NULL,NULL,NULL,NULL),
+ (6792,'상아제 리코더',NULL,'상아로 만들어진 피리. 공예품으로서의 가치도 높다.','TRUE','도구',NULL,NULL,NULL,NULL,100,'[{"ref": 2313, "name": "운용", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1482, "name": "피리 연주"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6793,'백은식 갑옷',NULL,'훌륭한 장식이 되어 있는 의례용 갑옷.','TRUE','몸',5,75,30,NULL,15,'[{"ref": 2330, "name": "방어", "value": 3}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,'전투','5,000',NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (6794,'초리','옷,생산','인도의 유복한 여성의 의장.
+호화스런 장식으로 이루어져 있다.','FALSE','몸',NULL,15,35,20,50,NULL,NULL,NULL,NULL,NULL,NULL,'3,000',NULL,'여성','[{"ref": 2011, "name": "준칠등훈작사"}]',NULL),
+ (6795,'부겐빌레아',NULL,'색이 선명한 남국의 꽃.
+머리 장식으로서 사용한다.','FALSE','머리',NULL,NULL,4,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,'400',NULL,'여성',NULL,NULL),
+ (6796,'캐리비안 샌들',NULL,'카리브 해 사람들이 주로 신는
+샌들.','FALSE','다리',NULL,1,1,3,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6797,'주트제 아라비아망토',NULL,'마로 만든 여행용 복장.
+아랍대상의 상인들이 즐겨 입는다.','FALSE','몸',NULL,12,10,40,45,'[{"ref": 2313, "name": "운용", "value": 1}, {"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,300',NULL,'남성',NULL,NULL),
+ (6798,'수정 귀걸이',NULL,'수정 세공으로 만들어진 귀걸이. 훌륭한 장식이 이루어져있다.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2310, "name": "섬유 거래", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6799,'조선공의 톱',NULL,'조선공 사이에서 널리
+사용되는 톱. 수리등에 편리.','TRUE','도구',NULL,NULL,NULL,NULL,5,'[{"ref": 2341, "name": "조선", "value": 1}, {"ref": 2297, "name": "공예", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6800,'함대 사관용 코트아르디',NULL,'배 위에서 움직이기 편하게 하기 위해 만들어진 튼튼한 옷','TRUE','몸',NULL,9,8,NULL,40,'[{"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'600',NULL,'남성',NULL,NULL),
+ (6801,'시트파 수녀의 옷',NULL,'시트파 수녀가 주로 입는 검소한 장의.','TRUE','몸',NULL,3,10,NULL,30,'[{"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'300',NULL,'여성',NULL,NULL),
+ (6802,'사순절용 알바',NULL,'높은 승려가 사순절에 입는 호화스런 장의.','TRUE','몸',NULL,22,35,NULL,10,'[{"ref": 2278, "name": "미술", "value": 1}, {"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,'모험','4,000',NULL,NULL,'[{"ref": 2013, "name": "칠등훈작사"}]',NULL),
+ (6803,'황금 파이프',NULL,'담배를 피우기 위한 도구. 금으로 되어있어 가치가 높다.','TRUE','장신구',NULL,NULL,NULL,5,30,'[{"ref": 2288, "name": "주연", "value": 2}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6804,'보석터번',NULL,'보석을 곁들인 터번.
+유복한 상인들이 잘 하는 머리 장식.','FALSE','머리',NULL,4,20,22,35,NULL,NULL,NULL,NULL,NULL,'교역','1,200',NULL,NULL,NULL,NULL),
+ (6805,'소매달린 망토',NULL,'오스만 투르크 시민이 잘 입는
+조끼와 바지.','FALSE','몸',NULL,5,10,30,35,NULL,NULL,NULL,NULL,NULL,NULL,'750',NULL,'남성',NULL,NULL),
+ (6806,'쿠훌린의 팔찌',NULL,'켈트의 영웅, 쿠훌린이 하고 있었다고 여겨지는 팔찌.','TRUE','장신구',5,NULL,NULL,NULL,10,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]','[{"ref": 2348, "name": "회피"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6807,'흑태자의 갑옷',NULL,'에드워드 흑태자 것과 같은 검게 칠한 갑옷','TRUE','몸',10,50,20,NULL,10,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,'전투','4,000',NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (6808,'쉘와니',NULL,'인도의 대귀족이나 영주가
+입는 아주 호화스런 장식을 한 옷.','FALSE','몸',NULL,15,40,30,50,NULL,NULL,NULL,NULL,NULL,NULL,'3,000',NULL,'남성','[{"ref": 2011, "name": "준칠등훈작사"}]',NULL),
+ (6809,'켄트',NULL,'금 장식을 한 천을 조합한
+아프리카 여성의 옷.','FALSE','몸',NULL,3,17,NULL,30,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'여성',NULL,NULL),
+ (6810,'쥐스토코르',NULL,'숙련된 제독만이
+입을 수 있는 선원 코트.','FALSE','몸',NULL,20,25,NULL,40,'[{"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,'모험','2,500',NULL,NULL,NULL,NULL),
+ (6811,'벨벳 쥐스토코르',NULL,'벨벳원단으로 우아함을 첨가한
+숙련된 제독을 위한 코트.','FALSE','몸',NULL,26,30,NULL,60,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,'모험','3,000',NULL,NULL,'[{"ref": 2011, "name": "준칠등훈작사"}]',NULL),
+ (6812,'호루스의 지팡이',NULL,'고대 이집트의 신을 본뜬 장식이 이루어진 지팡이.','TRUE','무기 (곤봉 지팡이)',14,NULL,5,NULL,40,'[{"ref": 2292, "name": "탐색", "value": 2}, {"ref": 2306, "name": "보관", "value": 2}]',NULL,NULL,NULL,NULL,'모험','1,000',NULL,NULL,NULL,NULL),
+ (6813,'실크손수건',NULL,'비단으로 만들어진 손수건. 아주 고가품이다.','TRUE','장신구',NULL,NULL,3,NULL,20,'[{"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'300',NULL,NULL,NULL,NULL),
+ (6814,'조범술 지침서',NULL,'바람을 이용하여 돛을 조종하는 응용 기술이 적혀 있는 서적.','TRUE','장신구',NULL,NULL,NULL,NULL,10,'[{"ref": 2277, "name": "돛 조종", "value": 2}]','[{"ref": 2291, "name": "측량"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6815,'황토염색복',NULL,'베닌 여성이 입는 전통적
+복장. 아름다운 감색 염색이 특징.','FALSE','몸',NULL,4,7,25,35,'[{"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'700',NULL,'여성',NULL,NULL),
+ (6816,'벨벳쿠션',NULL,'고가의 벨벳원단으로 만들어진 쿠션. 감촉이 좋다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2313, "name": "운용", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'600',NULL,NULL,NULL,NULL),
+ (6817,'교황청 보초 코트아르디',NULL,'세밀한 자수를 넣어 고상하고 튼튼함을 겸비한 옷','TRUE','몸',NULL,8,9,NULL,40,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'600',NULL,'남성',NULL,NULL),
+ (6818,'테루시오스플레이트',NULL,'에스파니아 군의 중보병이
+사용하는 갑옷. 굉장히 튼튼함.','FALSE','몸',NULL,25,15,NULL,45,'[{"ref": 2330, "name": "방어", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (6819,'공작석 브로치',NULL,'공작석을 박아 넣은
+
+예술적인 가치가 높은 브로치.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2312, "name": "염료 거래", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6820,'공작석 반지',NULL,'공작석을 박아 넣은
+
+예술적인 가치가 높은 반지.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2312, "name": "염료 거래", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6821,'공작석 목걸이',NULL,'공작석을 박아 넣은
+
+예술적인 가치가 높은 목걸이.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2312, "name": "염료 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6822,'공작석 헤어밴드',NULL,'공작석을 박아 넣은
+
+예술적인 가치가 높은 머리 장식.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2312, "name": "염료 거래", "value": 2}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6823,'줄루족 전사의 의상',NULL,'줄루 전사가 입는
+전통적인 의장.','FALSE','몸',10,2,5,25,35,'[{"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'700',NULL,'남성',NULL,NULL),
+ (6824,'다이아몬드 브로치',NULL,'다이아몬드를 곁들인
+
+아주 아름다운 브로치.','TRUE','장신구',NULL,NULL,80,NULL,20,'[{"ref": 2307, "name": "보석 거래", "value": 2}, {"ref": 2292, "name": "탐색", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'800',NULL,NULL,NULL,NULL),
+ (6825,'다이아몬드 반지',NULL,'다이아몬드를 곁들인
+
+아주 아름다운 반지.','TRUE','장신구',NULL,NULL,80,NULL,20,'[{"ref": 2307, "name": "보석 거래", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'800',NULL,NULL,NULL,NULL),
+ (6826,'다이아몬드 목걸이',NULL,'다이아몬드를 곁들인
+
+아주 아름다운 목걸이.','TRUE','장신구',NULL,NULL,80,NULL,20,'[{"ref": 2307, "name": "보석 거래", "value": 2}, {"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'800',NULL,NULL,NULL,NULL),
+ (6827,'다이아몬드 헤어밴드',NULL,'다이아몬드를 곁들인
+
+아주 아름다운 머리장식.','TRUE','장신구',NULL,NULL,80,NULL,20,'[{"ref": 2307, "name": "보석 거래", "value": 2}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'800',NULL,NULL,NULL,NULL),
+ (6828,'수정 브로치','구입','수정 세공으로 만들어진 브로치. 훌륭한 장식이 이루어져 있다.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2310, "name": "섬유 거래", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6829,'수정 반지',NULL,'수정 세공으로 만들어진 반지. 훌륭한 장식이 이루어져있다.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2310, "name": "섬유 거래", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6830,'수정 헤어밴드',NULL,'수정 세공으로 만들어진 헤어밴드. 훌륭한 장식이 이루어져있다.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2310, "name": "섬유 거래", "value": 2}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6831,'에메랄드 브로치',NULL,'에메랄드가 곁들여진
+세공이 훌륭한 브로치.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2303, "name": "무기류 거래", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6832,'에메랄드 반지',NULL,'에메랄드가 곁들여진
+세공이 훌륭한 반지.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2303, "name": "무기류 거래", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6833,'에메랄드 귀걸이',NULL,'에메랄드가 곁들여진
+세공이 훌륭한 귀걸이.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2303, "name": "무기류 거래", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6834,'에메랄드 목걸이',NULL,'에메랄드가 곁들여진
+세공이 훌륭한 목걸이.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2303, "name": "무기류 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6835,'에메랄드 헤어밴드',NULL,'에메랄드가 곁들여진
+세공이 훌륭한 머리 장식.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2303, "name": "무기류 거래", "value": 2}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6836,'마사이 비즈',NULL,'마사이의 여성이 입는 전통적
+복장. 호화로운 장식이 특징','FALSE','몸',NULL,5,15,NULL,30,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'900',NULL,'여성',NULL,NULL),
+ (6837,'페즈',NULL,'북아프리카의 전통적인
+용기 모양의 모자.','FALSE','머리',NULL,3,5,10,30,NULL,NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6838,'황금 브로치',NULL,'금세공으로 만들어진 브로치.
+
+장식이 훌륭하다.','TRUE','장신구',NULL,NULL,32,NULL,20,'[{"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6839,'황금 반지',NULL,'금세공으로 만들어진 반지.
+
+장식이 훌륭하다.','TRUE','장신구',NULL,NULL,32,NULL,20,'[{"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6840,'황금 귀걸이',NULL,'금세공으로 만들어진 귀걸이.
+장식이 훌륭하다.','TRUE','장신구',NULL,NULL,32,NULL,20,'[{"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6841,'황금 목걸이',NULL,'금세공으로 만들어진 목걸이.
+
+장식이 훌륭하다.','TRUE','장신구',NULL,NULL,32,NULL,20,'[{"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6842,'황금 헤어밴드',NULL,'금세공으로 만들어진 머리
+
+장식. 장식이 훌륭하다.','TRUE','장신구',NULL,NULL,32,NULL,20,'[{"ref": 2300, "name": "귀금속 거래", "value": 2}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6843,'다마스크직물 아랍해적셔츠',NULL,'호화스런 다마스크 직물의 긴 가운을 셔츠에 조합시킨 상인복.','TRUE','몸',NULL,10,15,40,35,'[{"ref": 2306, "name": "보관", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'2,400',NULL,'남성','[{"ref": 2011, "name": "준칠등훈작사"}]',NULL),
+ (6844,'간드라',NULL,'북아프리카의 전통적인
+여성복. 선명한 배색이 특징적.','FALSE','몸',NULL,8,10,25,30,'[{"ref": 2315, "name": "잡화 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'750',NULL,'여성',NULL,NULL),
+ (6845,'튤리팸',NULL,'평상시 보다 크고 두껍게
+두르는 터번. 장식도 단다.','FALSE','머리',NULL,3,NULL,27,30,NULL,NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6846,'터번형 두건',NULL,'차양이 없는 모자에
+천을 두르는 간단한 터번.','FALSE','머리',NULL,2,NULL,20,30,NULL,NULL,NULL,NULL,NULL,NULL,'400',NULL,NULL,NULL,NULL),
+ (6847,'아라비아 망토',NULL,'대상인이 입는 아랍 여장.
+햇빛과 더위를 막도록 고안되어 있다.','FALSE','몸',NULL,8,5,35,40,'[{"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,100',NULL,'남성',NULL,NULL),
+ (6848,'은 브로치',NULL,'은세공으로 만들어진 브로치.
+
+공예품으로써 높은 가치가 있다.','TRUE','장신구',NULL,NULL,25,NULL,20,'[{"ref": 2299, "name": "광물 거래", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6849,'은 반지',NULL,'은세공으로 만들어진 훌륭한
+반지. 공예품으로써 높은 가치가 있다.','TRUE','장신구',NULL,NULL,25,NULL,20,'[{"ref": 2299, "name": "광물 거래", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6850,'은 귀걸이',NULL,'은세공으로 만들어진 귀걸이.
+공예품으로써 높은 가치가 있다.','TRUE','장신구',NULL,NULL,25,NULL,20,'[{"ref": 2299, "name": "광물 거래", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6851,'헤어네트',NULL,'머리를 말아 장식이 달려 있는
+네트로 덮는 여성의 머리 모양.','FALSE','머리',NULL,NULL,20,NULL,25,'[{"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'800',NULL,'여성',NULL,NULL),
+ (6852,'은 목걸이',NULL,'은세공으로 만들어진 목걸이.
+공예로서의 가치가 높다','TRUE','장신구',NULL,NULL,25,NULL,20,'[{"ref": 2299, "name": "광물 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6853,'은 헤어밴드',NULL,'은세공으로 만들어진 머리
+장식. 공예품으로써 높은 가치가 있다.','TRUE','장신구',NULL,NULL,25,NULL,20,'[{"ref": 2299, "name": "광물 거래", "value": 2}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6854,'공작털장식터번',NULL,'고가의 공작 깃털을 곁들여
+쓰는 터번.','FALSE','머리',NULL,NULL,15,20,30,NULL,NULL,NULL,NULL,NULL,NULL,'750',NULL,NULL,NULL,NULL),
+ (6855,'오깔',NULL,'천을 머리에 씌워 끈으로 맨
+아라비아 특유의 간이 모자.','FALSE','머리',NULL,2,NULL,20,30,NULL,NULL,NULL,NULL,NULL,NULL,'400',NULL,'남성',NULL,NULL),
+ (6856,'터키석 브로치',NULL,'아름다운 터키석을 박아 넣은 브로치. 공예적 가치가 높다.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2320, "name": "총포류 거래", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6857,'터키석 반지',NULL,'아름다운 터키석을 박아 넣은 반지. 공예적 가치가 높다.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2320, "name": "총포류 거래", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6858,'터키석 귀걸이',NULL,'아름다운 터키석을 박아 넣은 귀걸이. 공예적 가치가 높다.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2320, "name": "총포류 거래", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6859,'터키석 목걸이',NULL,'아름다운 터키석을 박아 넣은 목걸이. 공예적 가치가 높다.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2320, "name": "총포류 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6860,'터키석 헤어밴드',NULL,'아름다운 터키석을 박아 넣은 반지. 공예적 가치가 높다.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2320, "name": "총포류 거래", "value": 2}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6861,'파자마',NULL,'인도의 전통적인 귀족 의상.
+호화로운 금 장식이 특징이다.','FALSE','몸',NULL,15,35,20,30,NULL,NULL,NULL,NULL,NULL,NULL,'2,400',NULL,'남성','[{"ref": 2011, "name": "준칠등훈작사"}]',NULL),
+ (6862,'사르와르',NULL,'인도 여성의 입는 전통적인
+장의. 예장으로서 사용한다.','FALSE','몸',NULL,8,10,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'1,200',NULL,'여성',NULL,NULL),
+ (6863,'힌두 모자',NULL,'인도 특유의 천을 짜서 만드는
+원통형 모자.','FALSE','머리',NULL,5,20,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (6864,'마하라자터번',NULL,'인도 대귀족이나 영주가
+의식때 사용하는 터번.','FALSE','머리',NULL,8,25,20,30,NULL,NULL,NULL,NULL,NULL,NULL,'1,500',NULL,'남성',NULL,NULL),
+ (6865,'루비 브로치',NULL,'아주 희귀한 큰 루비가
+박혀 있는 브로치.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2321, "name": "향료 거래", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6866,'루비 반지',NULL,'아주 희귀한 큰 루비가
+박혀 있는 반지.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2321, "name": "향료 거래", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6867,'루비 귀걸이',NULL,'아주 희귀한 큰 루비가
+박혀 있는 귀걸이.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2321, "name": "향료 거래", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6868,'루비 목걸이',NULL,'아주 희귀한 큰 루비가
+박혀 있는 목걸이.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2321, "name": "향료 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6869,'루비 헤어밴드',NULL,'아주 희귀한 큰 루비가
+박혀 있는 머리 장식.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2321, "name": "향료 거래", "value": 2}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6870,'도티',NULL,'인도 전사가 입는 의장.
+아주 편한 옷이다.','FALSE','몸',10,10,5,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'1,200',NULL,'남성',NULL,NULL),
+ (6871,'사파이어 브로치','구입','사파이어가 곁들여진 아름다운 브로치.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2319, "name": "직물 거래", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6872,'사파이어 반지',NULL,'사파이어가 곁들여진 아름다운 반지.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2319, "name": "직물 거래", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6873,'사파이어 귀걸이',NULL,'사파이어가 곁들여진 아름다운 귀걸이.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2319, "name": "직물 거래", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6874,'사파이어 목걸이',NULL,'사파이어가 곁들여진 아름다운 목걸이.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2319, "name": "직물 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6875,'사파이어 헤어밴드',NULL,'사파이어가 곁들여진 아름다운 머리 장식.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2319, "name": "직물 거래", "value": 2}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6876,'나사제 옐렉',NULL,'나사원단을 사용한
+고가의 아랍 여장.','FALSE','몸',NULL,11,NULL,30,40,'[{"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'750',NULL,NULL,NULL,NULL),
+ (6877,'버클부츠',NULL,'가죽 벨트와 금속 장식을 단
+부츠. 무척 흔한 물건이다.','FALSE','다리',NULL,2,NULL,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6878,'원수 보좌관의 토가',NULL,'요직에 있는 대 귀족만이 착용할 수 있는 아주 호화스런 장의.','TRUE','몸',NULL,20,40,NULL,25,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,'교역','4,000',NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (6879,'벨벳제 저킨',NULL,'고가의 벨벳을 곁들인 조끼.
+튼튼하고 활동하기 편하다.','FALSE','몸',NULL,8,12,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'400',NULL,NULL,NULL,NULL),
+ (6880,'이슬람 장의',NULL,'아랍 해적들이 즐겨 입는
+활동하기 편한 옷.','FALSE','몸',NULL,10,NULL,30,35,NULL,NULL,NULL,NULL,NULL,NULL,'750',NULL,'남성',NULL,NULL),
+ (6881,'터키병사모자',NULL,'오스만 투르크 병사가 쓰는
+용기 형태를 한 모자.','FALSE','머리',NULL,5,NULL,25,30,NULL,NULL,NULL,NULL,NULL,NULL,'450',NULL,'남성',NULL,NULL),
+ (6882,'가죽부츠',NULL,'가죽에 섬세한 장식이 된
+부츠. 세련된 신발이다.','FALSE','다리',NULL,7,9,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'300',NULL,NULL,NULL,NULL),
+ (6883,'글러브',NULL,'가죽 장갑. 아주 튼튼하고
+세련된 양식.','FALSE','팔',NULL,3,5,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6884,'저킨',NULL,'옷 속에 무엇인가를 넣어
+두꺼운 조끼. 튼튼하고 활동하기 편하다.','FALSE','몸',NULL,4,7,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'120',NULL,NULL,NULL,NULL),
+ (6885,'펠트제 튜닉',NULL,'두꺼운 모직원단으로 만들어진
+단의. 따뜻하고 튼튼하다.','FALSE','몸',NULL,3,3,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'100',NULL,NULL,NULL,NULL),
+ (6886,'페티코트',NULL,'짧은 스커트와 몸에 곁들인
+상의를 조합한 여성용 옷.','FALSE','몸',NULL,3,3,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'100',NULL,'여성',NULL,NULL),
+ (6887,'브르통',NULL,'둥근 모자의 차양을 위로
+접은 것. 상인 등이 자주 사용한다.','FALSE','머리',NULL,1,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6888,'깃털달린 브르통',NULL,'차양을 위로 접은 둥근 모자에
+깃털 장식을 단 것.','FALSE','머리',NULL,2,7,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'200',NULL,NULL,NULL,NULL),
+ (6889,'리본슈즈',NULL,'혁제인 단화. 리본 장식을 다는
+것으로 예장용에도 사용한다.','FALSE','다리',NULL,2,8,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'100',NULL,NULL,NULL,NULL),
+ (6890,'숏소드',NULL,'짧은 검. 호신용으로서는 충분하지만 강한 적에게는 대항할 수 없다.','TRUE','무기 (던지는 나이프)',9,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6891,'사제 지팡이',NULL,'사제가 제례 때 사용했던 장식이 되어 있는 지팡이.','TRUE','무기 (곤봉 지팡이)',5,NULL,5,NULL,20,NULL,NULL,NULL,NULL,NULL,'교역','400',NULL,NULL,NULL,NULL),
+ (6892,'카발리에 재킷',NULL,'교역상인들 사이에서 자주 애용되고 있는 의복.
+약식의 예장으로도 사용한다.','FALSE','몸',NULL,6,10,NULL,30,NULL,NULL,NULL,NULL,NULL,'교역','400',NULL,NULL,NULL,NULL),
+ (6893,'나사제 항해자의 모피코트',NULL,'나사로 장식된 고가의 예복.
+어깨의 둥근 장식이 특징','FALSE','몸',NULL,10,15,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'650',NULL,NULL,NULL,NULL),
+ (6894,'트리코른',NULL,'차양을 위로 접어，
+3개의 각을 가진 모자. 삼각모','FALSE','머리',NULL,2,13,NULL,30,NULL,NULL,NULL,NULL,NULL,'모험','300',NULL,NULL,NULL,NULL),
+ (6895,'펠트제 악톤',NULL,'두꺼운 모직원단을 사용한
+다소 고상하게 만들어낸 여행자 옷.','FALSE','몸',NULL,4,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'100',NULL,'남성',NULL,NULL),
+ (6896,'버커니어 조끼',NULL,'잉글랜드 사략해적의 이름을
+붙인 옷. 튼튼하여 싸움에 적합하다.','FALSE','몸',NULL,8,NULL,5,35,NULL,NULL,NULL,NULL,NULL,NULL,'200',NULL,NULL,NULL,NULL),
+ (6897,'린넬제 페티코트',NULL,'아마로 만드는 고급 원단을
+사용한 여성용 상의와 스커트.','FALSE','몸',NULL,4,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'300',NULL,'여성',NULL,NULL),
+ (6898,'깃털달린 트리코른',NULL,'삼각모에 깃털장식을 단 물건.','FALSE','머리',NULL,2,16,NULL,35,NULL,NULL,NULL,NULL,NULL,'모험','600',NULL,NULL,NULL,NULL),
+ (6899,'6줄 기타',NULL,'6현의 기타. 아주 복잡한 음색을 연주할 수 있다.','TRUE','도구',NULL,NULL,NULL,NULL,100,'[{"ref": 2276, "name": "대화술", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1481, "name": "기타 연주"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6900,'간이 망원경',NULL,'가볍게 사용할 수 있는 망원경. 정밀도는 그다지 높지 않다.','TRUE','도구',NULL,NULL,NULL,NULL,10,NULL,'[{"ref": 2284, "name": "인식"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6901,'게브의 지팡이',NULL,'고대 이집트의 신을 본뜬 장식이 이루어진 지팡이.','TRUE','무기 (곤봉 지팡이)',13,NULL,4,NULL,35,'[{"ref": 2292, "name": "탐색", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,'모험','940',NULL,NULL,NULL,NULL),
+ (6902,'기사르메',NULL,'브리튼 섬에서 예로부터 사용되고 있는 칼날이 큰 창.','TRUE','무기 (창)',26,NULL,NULL,NULL,35,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'700',NULL,NULL,NULL,NULL),
+ (6903,'나타르의 지팡이',NULL,'고대 이집트의 신을 본뜬 장식이 이루어진 지팡이.','TRUE','무기 (곤봉 지팡이)',12,NULL,3,NULL,30,'[{"ref": 2292, "name": "탐색", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,'모험',NULL,NULL,NULL,NULL,NULL),
+ (6904,'다우징 로드',NULL,'가까이에 뭔가가 숨겨져 있으면 혼자서 움직이는 희한한 봉.','TRUE','장신구',NULL,NULL,NULL,NULL,10,NULL,'[{"ref": 2292, "name": "탐색"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6905,'단검',NULL,'가지고 다니기에 편리한 짧은 칼. 호신용으로 밖에 도움이 되지 않는다.','TRUE','무기 (던지는 나이프)',6,NULL,NULL,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6906,'단풍나무제 바이올린',NULL,'단풍나무로 만들어진 바이올린. 공예품으로서의 가치도 있다.','TRUE','도구',NULL,NULL,NULL,NULL,75,'[{"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1484, "name": "바이올린 연주"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6907,'대나무 빗자루',NULL,'청소에 사용하는 빗자루.','TRUE','무기 (검)',3,NULL,NULL,NULL,10,'[{"ref": 2308, "name": "봉제", "value": 1}]','[{"ref": 1368, "name": "갑판 청소"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6908,'딩카 전사의 창',NULL,'딩카 전사가 사용하는 전통적인 창.','TRUE','무기 (창)',30,NULL,NULL,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,'전투','1,360',NULL,NULL,NULL,NULL),
+ (6909,'랜스',NULL,'중기병이 돌격에 사용하는, 무겁고 강력한 창.','TRUE','무기 (창)',28,NULL,NULL,NULL,40,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,'전투','1,320',NULL,NULL,NULL,NULL),
+ (6910,'로즈우드제 리코더',NULL,'장미 나무로 만들어진 피리. 느낌이 있는 악기이다.','TRUE','도구',NULL,NULL,NULL,NULL,75,'[{"ref": 2313, "name": "운용", "value": 1}]','[{"ref": 1482, "name": "피리 연주"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6911,'롱소드',NULL,'장검. 기사나 용병등에게 널리 사용되는 흔한 무기.','TRUE','무기 (검)',16,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6912,'류트',NULL,'음유시인이 널리 사용하는 현악기. 흔한 악기이다.','TRUE','도구',NULL,NULL,NULL,NULL,50,NULL,'[{"ref": 1481, "name": "기타 연주"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6913,'리코더',NULL,'나무로 만든 피리. 연주가 간단한 아주 흔한 악기.','TRUE','도구',NULL,NULL,NULL,NULL,50,NULL,'[{"ref": 1482, "name": "피리 연주"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6914,'마인고쉬',NULL,'손을 지키는 쇠장식이 달린 단검. 호신에는 충분.','TRUE','무기 (던지는 나이프)',11,NULL,NULL,NULL,40,'[{"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6915,'미늘창',NULL,'도끼 같은 칼날과 창의 끝을 조합한 창병의 무기.','TRUE','무기 (창)',34,NULL,NULL,NULL,50,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2330, "name": "방어", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'1,400',NULL,NULL,NULL,NULL),
+ (6916,'바스타드소드',NULL,'모양이 길고 양손으로 드는 것도 가능한 장검. 아주 무겁고 위력이 높다.','TRUE','무기 (검)',24,NULL,NULL,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6917,'바이올린',NULL,'4개의 현을 활로 켜는 현악기. 이탈리아에서 최초로 발명되었다.','TRUE','도구',NULL,NULL,NULL,NULL,50,NULL,'[{"ref": 1484, "name": "바이올린 연주"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6918,'바제라드',NULL,'직선 모양으로 특징이 있는 단검. 널리 사용되고 있는 칼이다.','TRUE','무기 (던지는 나이프)',10,NULL,NULL,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6919,'브로드소드',NULL,'칼날의 폭이 넓고 싸움에서의 위력을 중시하여 만들어진 장검.','TRUE','무기 (검)',22,NULL,NULL,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6920,'비웨라',NULL,'이베리아 지방에서 특히 널리 퍼진 현악기. 납작한 몸통이 특징.','TRUE','도구',NULL,NULL,NULL,NULL,75,'[{"ref": 2276, "name": "대화술", "value": 1}]','[{"ref": 1481, "name": "기타 연주"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6921,'사교 지팡이',NULL,'사교가 제례 때 사용했던 장식이 이루어진 지팡이.','TRUE','무기 (곤봉 지팡이)',6,NULL,6,NULL,25,'[{"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,'교역','480',NULL,NULL,NULL,NULL),
+ (6922,'사분의',NULL,'별의 위치로 지금 있는 위치를 확인하는 도구.','TRUE','도구',NULL,NULL,NULL,NULL,10,NULL,'[{"ref": 2291, "name": "측량"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6923,'스냅록식 사격총',NULL,'햄머와 부싯돌로 점화하는 사격용 총.','TRUE','무기 (총)',10,NULL,NULL,NULL,25,'[{"ref": 2344, "name": "총격", "value": 1}]','[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6924,'스키아보나',NULL,'슬라브 지방을 기원으로 하는 폭이 넓은 장검. 독특한 날밑이 특징.','TRUE','무기 (검)',32,NULL,NULL,NULL,45,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,'전투','600',NULL,NULL,NULL,NULL),
+ (6925,'스틸레트',NULL,'푹 찌르는데 적합한 앞이 뾰족한 단검.','TRUE','무기 (던지는 나이프)',12,NULL,NULL,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'700',NULL,NULL,NULL,NULL),
+ (6926,'스피아',NULL,'널리 군에서 사용되는 양손용의 창.','TRUE','무기 (창)',18,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'300',NULL,NULL,NULL,NULL),
+ (6927,'에스토크',NULL,'갑옷을 관통하기 위해서 칼날을 단련해 낸 장검.','TRUE','무기 (검)',18,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,'전투','880',NULL,NULL,NULL,NULL),
+ (6928,'타르와르',NULL,'인도가 기원인, 베어 내기 위해 길게 휜 칼날을 가지고 있는 칼.','TRUE','무기 (검)',30,NULL,NULL,12,45,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,'전투','1,000',NULL,NULL,NULL,NULL),
+ (6929,'탬버린',NULL,'방울을 단 타악기. 북처럼 씌운 가죽을 두드린다.','TRUE','도구',NULL,NULL,NULL,NULL,50,NULL,'[{"ref": 1483, "name": "탬버린 연주"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6930,'파이크',NULL,'기병에 대항하기 위해서 보병이 나열하는 아주 긴 모양을 한 창.','TRUE','무기 (창)',30,NULL,NULL,NULL,45,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2330, "name": "방어", "value": 2}]',NULL,NULL,NULL,NULL,'전투','1,360',NULL,NULL,NULL,NULL),
+ (6931,'플람베르그',NULL,'파도 치는 형태를 가지고 있는 아름다운 검. 아주 큰 위력을 가진다.','TRUE','무기 (검)',28,NULL,NULL,NULL,45,'[{"ref": 2325, "name": "검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6932,'플뢰레',NULL,'검술 연습용으로서 만들어진 검. 실전에서도 사용할 수 있는 위력이 있다.','TRUE','무기 (검)',24,NULL,NULL,NULL,35,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,'전투','920',NULL,NULL,NULL,NULL),
+ (6933,'하프스 보병 창',NULL,'튀니스 주변을 지배했던 하프스왕조의 보병이 사용했던 창.','TRUE','무기 (창)',22,NULL,NULL,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,'전투','1,360',NULL,NULL,NULL,NULL),
+ (6934,'화승격발식 사격총',NULL,'화약을 장치한 줄로 점화하는 사격용 총.','TRUE','무기 (총)',8,NULL,NULL,NULL,20,NULL,'[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6935,'흑단제 탬버린',NULL,'틀이 흑단의 나무로 만들어진 최고급 탬버린','TRUE','도구',NULL,NULL,NULL,NULL,100,'[{"ref": 2288, "name": "주연", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1483, "name": "탬버린 연주"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6936,'백로의 깃털부채',NULL,'백로의 깃털로 만들어진 부채. 아주 비싼 것이다','TRUE','도구',NULL,NULL,14,NULL,30,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,'교역','800',NULL,NULL,NULL,NULL),
+ (6937,'깃털달린 모리온헬름',NULL,'철 투구에 깃털 장식을 단 것.
+왕궁 병사등이 사용한다.','FALSE','머리',NULL,20,15,NULL,40,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,'전투','1,200',NULL,NULL,NULL,NULL),
+ (6938,'깃털달린 바이코르느해트',NULL,'2각모자에 깃털 장식을 단 것.
+선원들 사이에서 널리 사용된다.','FALSE','머리',NULL,3,16,NULL,35,NULL,NULL,NULL,NULL,NULL,'전투','600',NULL,NULL,NULL,NULL),
+ (6939,'깃털달린 베레모',NULL,'베레모에 깃털 장식을 단 것.
+여장에 자주 사용된다.','FALSE','머리',NULL,1,5,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'100',NULL,NULL,NULL,NULL),
+ (6940,'깃털달린 볼러',NULL,'부드러운 장식을 단 둥근
+모자에 깃털 장식을 단 것.','FALSE','머리',NULL,4,19,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'900',NULL,NULL,NULL,NULL),
+ (6941,'깃털달린 스페니시토크',NULL,'차양이 짧고 둥근 중산 모자에
+깃털 장식을 단 것.','FALSE','머리',NULL,1,13,NULL,35,NULL,NULL,NULL,NULL,NULL,'교역','200',NULL,NULL,NULL,NULL),
+ (6942,'깃털달린 청교도모자',NULL,'폭이 넓고 긴 차양이 특징인
+모자에 깃털 장식을 단 것.','FALSE','머리',NULL,2,17,NULL,35,NULL,NULL,NULL,NULL,NULL,'모험','400',NULL,NULL,NULL,NULL),
+ (6943,'깃털달린 플랫캡',NULL,'넙적하고 차양이 짧은 모자에
+깃털 장식을 단 것.','FALSE','머리',NULL,2,5,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'200',NULL,NULL,NULL,NULL),
+ (6944,'노르만헬름',NULL,'큰 각이 특징인 바이킹투구.
+상대를 위압하는 외관.','FALSE','머리',12,25,NULL,NULL,10,'[{"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (6945,'니트모',NULL,'모직으로 머리를 덮는 천모자.
+장인에게 널리 사용되고 있다.','FALSE','머리',NULL,2,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'100',NULL,NULL,NULL,NULL),
+ (6946,'모리온헬름',NULL,'얼굴 쪽이 열린 철로 만든 투구.
+보초등 경장 병사가 사용한다.','FALSE','머리',NULL,20,10,NULL,35,NULL,NULL,NULL,NULL,NULL,'전투','1,000',NULL,NULL,NULL,NULL),
+ (6947,'미트라',NULL,'고위 승려가 제례 때 쓰는
+호화스런 장식의 모자.','FALSE','머리',NULL,5,25,NULL,20,NULL,NULL,NULL,NULL,NULL,'모험','1,500',NULL,NULL,NULL,NULL),
+ (6948,'바이코르느해트',NULL,'2각모. 챙의 양쪽을 꺾어，
+두 개의 뿔을 세운 것처럼 보이는 모자.','FALSE','머리',NULL,3,12,NULL,30,NULL,NULL,NULL,NULL,NULL,'전투','300',NULL,NULL,NULL,NULL),
+ (6949,'보닛',NULL,'긴 차양을 위로 접어，장식이
+있는 모자.','FALSE','머리',NULL,4,13,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (6950,'볼러',NULL,'둥근 모자 주위에 부드러운
+장식을 단 것.','FALSE','머리',NULL,4,16,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'700',NULL,NULL,NULL,NULL),
+ (6951,'비레타',NULL,'나라의 요직에 있는
+대귀족만이 착용할 수 있는 모자.','FALSE','머리',NULL,2,23,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,'1,200',NULL,NULL,NULL,NULL),
+ (6952,'샤프롱의 두건',NULL,'장식이 달린 큰 원형 모자.','FALSE','머리',NULL,3,20,NULL,25,NULL,NULL,NULL,NULL,NULL,'교역','1,000',NULL,NULL,NULL,NULL),
+ (6953,'수도승머리',NULL,'수도승이 쓰는 가발.','TRUE','머리',NULL,1,7,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (6954,'술탄터번',NULL,'술탄이 두르는 터번.
+고급 천과 장식을 많이 사용한다.','FALSE','머리',NULL,5,25,20,30,NULL,NULL,NULL,NULL,NULL,NULL,'1,400',NULL,'남성',NULL,NULL),
+ (6957,'아프리카 깃털장식',NULL,'줄루 전사가 다는
+큰 깃털 장식.','FALSE','머리',NULL,6,NULL,10,30,NULL,NULL,NULL,NULL,NULL,NULL,'450',NULL,'남성',NULL,NULL),
+ (6958,'어릿광대 제스터의 모자',NULL,'광대가 쓰는 선명한
+색이나는 모자.','FALSE','머리',NULL,1,NULL,NULL,30,'[{"ref": 2305, "name": "바디 랭귀지", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'700',NULL,NULL,NULL,NULL),
+ (6959,'에스코피욘',NULL,'귀족 부인의 외출 등에
+사용하는 우아한 모자.','FALSE','머리',NULL,4,25,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,'1,200',NULL,'여성',NULL,NULL),
+ (6960,'월계관',NULL,'그리스 신화의 아폴론신이 쓰고 있었다고 여겨지는 왕관','TRUE','머리',NULL,NULL,8,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,'3,500',NULL,NULL,NULL,NULL),
+ (6961,'웽플',NULL,'수녀가 쓰는 검소한 두건.','FALSE','머리',NULL,1,7,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,'100',NULL,'여성',NULL,NULL),
+ (6962,'장미 머리장식',NULL,'자연스럽게 피는 아름다운 장미
+머리 장식으로 이용한다.','FALSE','머리',NULL,NULL,4,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,'2,000',NULL,'여성',NULL,NULL),
+ (6963,'제독 모자',NULL,'제독들 사이에서 자주
+사용되는 차양을 접은 모자.','FALSE','머리',NULL,1,7,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6964,'차도르','머리','이슬람 여성이 착용하는 두건.
+얼굴을 가리도록 깊게 쓴다.','FALSE','머리',NULL,4,7,20,30,NULL,NULL,NULL,NULL,NULL,NULL,'600',NULL,'여성',NULL,NULL),
+ (6965,'청교도모자',NULL,'폭이 넓고 긴 차양이 특징인
+모자. 청교도에게 애용되어 이름이 붙었다.','FALSE','머리',NULL,2,14,NULL,30,NULL,NULL,NULL,NULL,NULL,'모험','150',NULL,NULL,NULL,NULL),
+ (6966,'캐리비안 깃털장식',NULL,'카리브 사냥꾼이 제례에서
+다는 깃털 장식.','FALSE','머리',NULL,2,2,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'400',NULL,'남성',NULL,NULL),
+ (6967,'커치프',NULL,'여성들의 머리를 덮은 데 사용하는 천.
+집안 일을 하는 데 편리.','FALSE','머리',NULL,3,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (6968,'코이프',NULL,'부인이 자주 사용하는 두건.
+머리를 덮기 때문에 집안일을 하는 데 편리.','FALSE','머리',NULL,1,NULL,2,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (6969,'크로스 헬름',NULL,'갑옷과 조합하여 입는
+완전히 얼굴을 덮는 철 투구.','FALSE','머리',NULL,35,10,NULL,70,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,'전투','1,500',NULL,NULL,NULL,NULL),
+ (6970,'플랫캡',NULL,'넙적하고 차양이 짧은 모자.
+여장으로서 자주 사용된다.','FALSE','머리',NULL,2,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6971,'화관',NULL,'아프리카에 피는 산뜻한 꽃을
+관으로 한 것.','FALSE','머리',NULL,NULL,4,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,'2,000',NULL,'여성',NULL,NULL),
+ (6972,'가죽질레',NULL,'몸에 모양을 그려 과시하는
+습관. 사기가 높아지고 공격이 강해진다.','FALSE','몸',8,8,NULL,12,40,'[{"ref": 2328, "name": "노 젓기", "value": 1}]',NULL,NULL,NULL,NULL,'전투','500',NULL,NULL,NULL,NULL),
+ (6973,'검은색 조젯제 드레스',NULL,'아주 고가인 천을 듬뿍 사용한 검고 우아한 드레스.','TRUE','몸',NULL,NULL,45,NULL,20,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2295, "name": "경계", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'4,500',NULL,'여성','[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (6974,'공단으로 만든 유럽귀족남자상의',NULL,'공단원단을 사용한 고급옷.
+예복으로서도 사용할 수 있는 우아함이 있다.','FALSE','몸',NULL,10,35,NULL,25,'[{"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'1,800',NULL,NULL,NULL,NULL),
+ (6975,'공단제 러프칼라 드레스',NULL,'고가의 공단원단을 듬뿍
+사용한 목 둘레를 판 의복 선이 특징인 드레스.','FALSE','몸',NULL,NULL,50,NULL,20,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2295, "name": "경계", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성','[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (6976,'공단제 항해자의 모피코트',NULL,'고가의 공단원단이 곁들여진 예복. 어깨의 둥근 장식이 특징.','TRUE','몸',NULL,10,20,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'800',NULL,NULL,NULL,NULL),
+ (6977,'근위 기사의 갑옷',NULL,'근위기사가 착용하는 갑옷. 아름다운 세공때문에 의례에서도 사용된다.','TRUE','몸',NULL,55,30,NULL,10,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,'전투','4,000',NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (6978,'금박장식 갑옷',NULL,'금으로 호화스럽게 장식된 갑옷. 의식등에서 사용되었다.','TRUE','몸',NULL,70,35,NULL,100,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,'전투','4,000',NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (6979,'낙타모직 아라비아망토',NULL,'낙타털로 만들어진 여장. 밤의 혹독한 추위도 막을 수 있다.','TRUE','몸',NULL,14,15,45,45,'[{"ref": 2313, "name": "운용", "value": 2}, {"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,'남성',NULL,NULL),
+ (6980,'다그리에',NULL,'에이프런을 곁들인 여성복.
+싸기 때문에 많은 사람이 입는다.','FALSE','몸',NULL,3,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (6981,'다마스크 직물 쉬르꼬',NULL,'서아시아 독자의 직물인
+다마스크 직물로 만들어진 여행자 옷.','FALSE','몸',NULL,10,8,5,35,'[{"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'600',NULL,NULL,NULL,NULL),
+ (6982,'더블릿',NULL,'레이스를 소매에 곁들인
+고급 옷. 관리등이 자주 입는다.','FALSE','몸',NULL,5,25,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'900',NULL,NULL,NULL,NULL),
+ (6983,'러프칼라 드레스',NULL,'목 둘레에 판 의복선의 장식이
+특징적인 전통적 양식의 호화스런 드레스.','FALSE','몸',NULL,NULL,50,NULL,20,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,200',NULL,'여성','[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (6984,'레이스 카발리에 재킷',NULL,'레이스를 소매에 곁들인
+상인복. 행세깨나 하는 상인에게 인기.','FALSE','몸',NULL,8,12,NULL,30,'[{"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,'교역','600',NULL,NULL,NULL,NULL),
+ (6985,'르네상스 드레스',NULL,'대담한 양식의 드레스.
+다른 지방의 것과 비교하여 장식을 덜 했다.','FALSE','몸',NULL,NULL,42,NULL,20,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,'여성','[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (6986,'마른 체형인 헤르키의 갑옷',NULL,'바이킹 영웅의 이름을 붙인 바이킹 독자적 양식의 갑옷','TRUE','몸',20,35,NULL,5,10,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (6987,'마스케티아보디스',NULL,'마오리민족의 드레스.
+상체부에 모코를 그려넣는다.','FALSE','몸',NULL,17,23,NULL,40,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,400',NULL,NULL,NULL,NULL),
+ (6988,'몰라퀼트',NULL,'카리브 해 여성의 전통적인옷.
+복잡한 모양의 염색이 특징.','FALSE','몸',NULL,6,10,NULL,35,'[{"ref": 2275, "name": "낚시", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'700',NULL,'여성',NULL,NULL),
+ (6989,'바 메이드 드레스',NULL,'주점에서 일하는 여성이
+입는 옷. 목 둘레를 크게 판 의복 선이 특징.','FALSE','몸',NULL,1,5,NULL,30,'[{"ref": 2288, "name": "주연", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'150',NULL,'여성',NULL,NULL),
+ (6990,'바이킹 메일',NULL,'바이킹 독자 양식의 갑옷. 용맹함을 과시하는 장식이 특징.','TRUE','몸',18,30,NULL,5,20,'[{"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,700',NULL,NULL,NULL,NULL),
+ (6991,'백여우털의 트가리누',NULL,'귀중한 백여우의 털을 곁들인 모피코트와 셔츠를 곁들인 여장.','TRUE','몸',NULL,15,35,10,40,'[{"ref": 2291, "name": "측량", "value": 2}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,'모험','2,700',NULL,NULL,'[{"ref": 2011, "name": "준칠등훈작사"}]',NULL),
+ (6992,'베네딕트파 수녀의 옷',NULL,'베네딕트파의 수녀가 주로 입는 검소한 장의.','TRUE','몸',NULL,3,10,NULL,30,'[{"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200',NULL,'여성',NULL,NULL),
+ (6993,'베네딕트파 수도의',NULL,'베네딕트파의 수도승이 주로입는 검소한 장의.','TRUE','몸',NULL,3,7,NULL,30,'[{"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'100',NULL,'남성',NULL,NULL),
+ (6994,'벨벳제 튜닉',NULL,'고가의 벨벳원단으로 만든
+단의.','FALSE','몸',NULL,4,4,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'300',NULL,NULL,NULL,NULL),
+ (6995,'보디스',NULL,'경보병이 예장용으로 입는
+상의와 바지를 조합한 옷.','FALSE','몸',NULL,15,20,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (6996,'부활절용 알바',NULL,'높은 승려가 부활절에 입는 호화스런 장의.','TRUE','몸',NULL,22,35,NULL,10,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,NULL,'모험','4,000',NULL,NULL,'[{"ref": 2013, "name": "칠등훈작사"}]',NULL),
+ (6997,'브레스트 플레이트',NULL,'두꺼운 철판으로 몸을
+지키면서 너무 무거워 지지 않도록 고안된 갑옷.','FALSE','몸',NULL,20,12,NULL,40,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (6998,'빨간 털을 한 소르스틴의 갑옷',NULL,'바이킹 영웅의 이름을 붙인 바이킹 독자적 양식의 갑옷','TRUE','몸',25,35,NULL,5,50,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (6999,'빨간 털을 한 에이리크의 갑옷',NULL,'바이킹 영웅의 이름을 붙인 바이킹 독자적 양식의 갑옷','TRUE','몸',20,35,NULL,5,50,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7000,'사려깊은 아우즈르의 갑옷',NULL,'바이킹 영웅의 이름을 붙인 바이킹 독자적 양식의 갑옷','TRUE','몸',20,35,NULL,5,10,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7001,'사슴가죽 장식 페티코트',NULL,'사슴 가죽으로 만든 상의와
+짧은 스커트를 조합해 만든 옷.','FALSE','몸',NULL,8,6,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'500',NULL,'여성',NULL,NULL),
+ (7002,'사슴가죽제 조끼',NULL,'사슴가죽으로 만든 방한용 조끼.
+할동하기 편하며 고급스럽다.','FALSE','몸',NULL,3,5,NULL,40,NULL,NULL,NULL,NULL,NULL,NULL,'300',NULL,NULL,NULL,NULL),
+ (7003,'살리',NULL,'인도 여성의 전통적인 의상.
+선명하게 염색한 천이 특징.','FALSE','몸',NULL,12,13,30,30,'[{"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,'여성',NULL,NULL),
+ (7004,'성탄절용 알바',NULL,'높은 승려가 강탄제에 입는 호화스런 장의.','TRUE','몸',NULL,25,40,NULL,50,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,NULL,'모험','5,000',NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (7005,'소가죽 조끼',NULL,'소가죽으로 만든 방한용 조끼.
+활동하기 편하며 고급스럽다.','FALSE','몸',NULL,2,4,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'100',NULL,NULL,NULL,NULL),
+ (7006,'수녀의 옷',NULL,'수녀가 입는 검소한 장의.','FALSE','몸',NULL,2,8,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'200',NULL,'여성',NULL,NULL),
+ (7008,'수도의',NULL,'수도사가 입는 검소한 장의.','FALSE','몸',NULL,1,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7009,'순교절용 알바',NULL,'높은 승려가 순교절에 입는 호화스런 장의.','TRUE','몸',NULL,22,35,NULL,10,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,NULL,'모험','4,000',NULL,NULL,'[{"ref": 2013, "name": "칠등훈작사"}]',NULL),
+ (7010,'쉬르꼬',NULL,'얇은 코트와 셔츠를 곁들인
+아주 흔한 여장.','FALSE','몸',NULL,8,7,5,30,NULL,NULL,NULL,NULL,NULL,NULL,'400',NULL,NULL,NULL,NULL),
+ (7011,'스카라무슈',NULL,'광대가 입는 딱 전신을 감싸는
+복장. 화려한 모양이 특징.','FALSE','몸',NULL,NULL,NULL,15,30,'[{"ref": 2305, "name": "바디 랭귀지", "value": 1}, {"ref": 2288, "name": "주연", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,400',NULL,NULL,NULL,NULL),
+ (7012,'시트파 수도의',NULL,'시트파 수도승이 주로 입는 검소한 장의.','TRUE','몸',NULL,3,7,NULL,30,'[{"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'100',NULL,'남성',NULL,NULL),
+ (7013,'실크로 만든 유럽귀족남자상의',NULL,'비단원단을 사용한 고급옷.
+예복으로서도 사용할 수 있는 우아함이 있다.','FALSE','몸',NULL,5,35,NULL,25,'[{"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,400',NULL,NULL,NULL,NULL),
+ (7014,'악톤',NULL,'활동하기 편하고 튼튼한 옷.
+모험가들 사이에서 특히 널리 입혀지고 있다.','FALSE','몸',NULL,3,3,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7015,'알렉키노',NULL,'광대가 입는 딱 전신을 감싸는
+복장. 화려한 모양이 특징.','FALSE','몸',NULL,NULL,NULL,15,30,'[{"ref": 2305, "name": "바디 랭귀지", "value": 2}, {"ref": 2288, "name": "주연", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'1,600',NULL,NULL,NULL,NULL),
+ (7016,'어릿광대 제스터의 타이츠',NULL,'광대가 입는 딱 전신을 감싸는
+복장. 화려한 모양이 특징.','FALSE','몸',NULL,NULL,NULL,15,30,'[{"ref": 2305, "name": "바디 랭귀지", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,200',NULL,NULL,NULL,NULL),
+ (7017,'에이프런 드레스',NULL,'부인이 입는 에이프런을
+곁들인옷. 집안일을 할 때 편리.','FALSE','몸',NULL,1,NULL,NULL,30,'[{"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7018,'옐렉',NULL,'조끼와 넉넉한 바지를 조합한
+아랍 여장.','FALSE','몸',NULL,7,NULL,30,35,NULL,NULL,NULL,NULL,NULL,NULL,'600',NULL,NULL,NULL,NULL),
+ (7019,'웨딩 드레스',NULL,'결혼식에서 입는 순백색 드레스. 전통적인 양식으로 목 둘레를 판 의복선에 특징.','TRUE','몸',NULL,NULL,50,NULL,20,'[{"ref": 2295, "name": "경계", "value": 3}, {"ref": 2309, "name": "사교", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,'여성','[{"ref": 2017, "name": "육등훈작사"}]',NULL),
+ (7020,'유럽 귀족남자 상의',NULL,'귀족이 즐겨 입는 고급옷.
+예복으로서도 사용할 수 있는 우아함이 있다.','FALSE','몸',NULL,5,30,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7021,'인도람 염색 드레스',NULL,'아름다운 인도쪽으로 염색한 목 둘레에 특징이 있는 드레스.','TRUE','몸',NULL,NULL,50,NULL,20,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2295, "name": "경계", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'5,500',NULL,'여성','[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (7022,'인도의 붉은색 드레스',NULL,'인도꼭두서니로 선명하게 물들여진 고가의 드레스.','TRUE','몸',NULL,NULL,45,NULL,20,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2295, "name": "경계", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'4,500',NULL,'여성','[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (7023,'장송용 알바',NULL,'사제정도의 높은 승려가 장례할때 입는 호화스런 장의.','TRUE','몸',NULL,22,35,NULL,10,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,NULL,'모험','4,000',NULL,NULL,'[{"ref": 2013, "name": "칠등훈작사"}]',NULL),
+ (7024,'제독 쥐스토코르',NULL,'숙련된 제독만이
+입을 수 있는 선원 코트.','FALSE','몸',5,30,40,NULL,45,'[{"ref": 2286, "name": "조달", "value": 2}, {"ref": 2348, "name": "회피", "value": 2}]',NULL,NULL,NULL,NULL,'모험','4,500',NULL,NULL,'[{"ref": 2013, "name": "칠등훈작사"}]',NULL),
+ (7025,'질레트',NULL,'몸에 모양을 그려 과시하는
+습관. 사기가 높아지고 공격이 강해진다.','FALSE','몸',5,8,NULL,10,40,NULL,NULL,NULL,NULL,NULL,'전투','350',NULL,NULL,NULL,NULL),
+ (7026,'캐발리에보디스',NULL,'경기병이 예장용으로 입는
+상의와 바지를 조합한 옷.','FALSE','몸',NULL,15,30,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,600',NULL,NULL,NULL,NULL),
+ (7027,'코트아르디',NULL,'가죽을 포개어 꿰맨 튼튼하고
+활동하기 편한 옷.
+경장의 병사도 사용한다.','FALSE','몸',NULL,6,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'150',NULL,'남성',NULL,NULL),
+ (7028,'코튼제 악톤',NULL,'면원단을 사용한
+다소 고상하게만들어진 여행자 옷.','FALSE','몸',NULL,5,6,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'300',NULL,'남성',NULL,NULL),
+ (7029,'코튼제 이슬람장의',NULL,'아랍 해적들이 즐겨 입는옷.
+보다 좋은 원단을 사용하고 있다.','FALSE','몸',NULL,10,NULL,30,40,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'900',NULL,'남성',NULL,NULL),
+ (7030,'쿠르타',NULL,'인도 남성들이 입는 흔한 옷.
+가볍고 활동하기 매우 편하다.','FALSE','몸',NULL,10,10,30,30,'[{"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,'남성',NULL,NULL),
+ (7031,'토가',NULL,'고위 귀족이 입는 호화스런
+장의. 세련된 장식이 이루어져 있다.','FALSE','몸',NULL,10,40,NULL,40,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,'교역','3,000',NULL,NULL,'[{"ref": 2013, "name": "칠등훈작사"}]',NULL),
+ (7032,'트위드제 페티코트',NULL,'여성이 아름답게 보이는 것을
+의식하여 만들어진 상의와 스커트.','FALSE','몸',NULL,5,6,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'450',NULL,'여성',NULL,NULL),
+ (7033,'티리안 퍼플 러프칼라 드레스',NULL,'아름다운 보라색으로 물들여진 목 둘레를 판 의복선에 특징이 있는 드레스.','TRUE','몸',NULL,NULL,50,NULL,20,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2295, "name": "경계", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'5,500',NULL,'여성','[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (7034,'펠트제 저킨',NULL,'두꺼운 모직원단에
+무엇인가를 넣어 만든 조끼.
+튼튼하고 활동하기 편하다.','FALSE','몸',NULL,6,9,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'200',NULL,NULL,NULL,NULL),
+ (7035,'해적조끼',NULL,'해적이나 선원이 잘 입는 옷.
+아주 튼튼하여 싸움에 적합하다.','FALSE','몸',NULL,10,NULL,8,40,NULL,NULL,NULL,NULL,NULL,NULL,'300',NULL,NULL,NULL,NULL),
+ (7036,'백은제 글러브',NULL,'투구, 갑옷과 같이 몸에 대는 글러브형의 건틀릿.','TRUE','팔',NULL,13,5,NULL,70,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7037,'아이언 글러브',NULL,'투구，갑옷과 같이 몸에 대는
+글러브형의 건틀릿.','FALSE','팔',NULL,12,4,NULL,70,NULL,NULL,NULL,NULL,NULL,NULL,'1,200',NULL,NULL,NULL,NULL),
+ (7038,'아이언 미튼',NULL,'투구, 갑옷과 같이 몸에 대는 미튼형의 건틀릿.','TRUE','팔',NULL,12,4,NULL,70,NULL,NULL,NULL,NULL,NULL,NULL,'1,200',NULL,NULL,NULL,NULL),
+ (7039,'그리브',NULL,'투구, 갑옷과 같이 몸에 대는 무릎 밑을 덥는 철의 부츠.','TRUE','다리',NULL,16,8,NULL,70,NULL,NULL,NULL,NULL,NULL,NULL,'1,200',NULL,NULL,NULL,NULL),
+ (7040,'라이딩 부츠',NULL,'기병이 말을 탈 때 신는 부츠.
+테두리가 접혀 있는 것이 특징.','FALSE','다리',NULL,6,11,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'400',NULL,NULL,NULL,NULL),
+ (7041,'부츠',NULL,'흔히 볼 수 있는 가죽 부츠.
+튼튼하여 여행에 자주 사용한다.','FALSE','다리',NULL,2,NULL,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7042,'쁠렌느',NULL,'세련된 양식의 단화.
+발끝이 뾰족한 것이 특징.','FALSE','다리',NULL,2,10,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,'200',NULL,NULL,NULL,NULL),
+ (7043,'스트랩슈즈',NULL,'끈을 통과시켜 발에 제대로
+고정할 수 있도록 만든 가죽 단화.','FALSE','다리',NULL,2,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7044,'앵클부츠',NULL,'발뒤꿈치에 쇠장식을 단
+세련된 형태의 부츠.','FALSE','다리',NULL,4,7,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'80',NULL,NULL,NULL,NULL),
+ (7045,'크로스스트랩 샌들',NULL,'끈을 십자로 조합하는
+것으로 발에 고정하는 샌들.','FALSE','다리',NULL,1,NULL,5,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7046,'가짜점',NULL,'얼굴의 인상을 바꾸기 위해 붙이는 점. 화장 도구 중의 하나.','TRUE','장신구',NULL,NULL,5,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,'100',NULL,NULL,NULL,NULL),
+ (7047,'강철선 포획망',NULL,'철사로 짠 아주 튼튼한그물.
+동물을 잡는 데 편리.','TRUE','장신구',NULL,NULL,NULL,NULL,10,'[{"ref": 2283, "name": "생태 조사", "value": 1}]','[{"ref": 2283, "name": "생태 조사"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7048,'고양이 장식',NULL,'고양이를 본뜬 장식물. 이것을 보면 쥐가 도망간다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1359, "name": "쥐 퇴치"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7049,'명탐험가의 수기',NULL,'전설적인 탐험가의 문서. 음식을 찾는 단서가 된다.','TRUE','장신구',NULL,NULL,NULL,NULL,25,NULL,'[{"ref": 2286, "name": "조달"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7050,'미노타우로스의 부적',NULL,'소의 머리와 사람의 몸을 한 요괴를 새긴 부적. 지니고 있는 사람에게 강한 힘을 준다고 한다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2325, "name": "검술", "value": 1}]','[{"ref": 2329, "name": "돌격"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7051,'바이킹 뿔피리',NULL,'바이킹이 바다에서의 싸움에 사용하는 뿔피리.','TRUE','장신구',NULL,NULL,NULL,NULL,20,NULL,'[{"ref": 2348, "name": "회피"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7052,'산호 귀걸이',NULL,'아주 고가의 산호를 곁들인
+아름다운 세공의 귀걸이.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2298, "name": "공예품 거래", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7053,'산호빗',NULL,'산호로 만들어진 빗. 공예적 가치가 아주 높다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2281, "name": "생물학", "value": 1}, {"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7054,'실크레이스',NULL,'최상급 비단으로 만든 레이스. 아름다운 세공으로 만들어져 있다.','TRUE','장신구',NULL,NULL,5,NULL,20,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'300',NULL,NULL,NULL,NULL),
+ (7055,'은 파이프',NULL,'담배를 피우기 위한 도구. 은세공으로 아름답게 만들어져 있다.','TRUE','장신구',NULL,NULL,5,NULL,30,'[{"ref": 2276, "name": "대화술", "value": 1}, {"ref": 2288, "name": "주연", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'300',NULL,NULL,NULL,NULL),
+ (7056,'이슈타르의 목걸이',NULL,'바빌로니아의 여신, 이슈타르의 축복을 얻을 수 있다는 부적.','TRUE','장신구',NULL,NULL,5,NULL,20,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2280, "name": "보물 감정", "value": 1}]','[{"ref": 1389, "name": "복장예절 강화"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7057,'진주 귀걸이',NULL,'아주 고가의 진주를 곁들인
+아름다운 세공의 귀걸이.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2322, "name": "향신료 거래", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7058,'진주 브로치',NULL,'아주 고가의 진주를 곁들인
+아름다운 세공의 브로치.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2322, "name": "향신료 거래", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7059,'진주 헤어밴드',NULL,'아주 고가의 진주를 곁들인
+아름다운 세공의 머리 장식.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2322, "name": "향신료 거래", "value": 2}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7060,'호박 귀걸이',NULL,'호박이 곁들여진
+세공이 훌륭한 귀걸이.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2317, "name": "주류 거래", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7061,'호박 목걸이',NULL,'호박이 곁들여진
+세공이 훌륭한 목걸이.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2317, "name": "주류 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7062,'호박 반지',NULL,'호박이 곁들여진
+세공이 훌륭한 반지.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2317, "name": "주류 거래", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7063,'호박 브로치',NULL,'호박이 곁들여진
+세공이 훌륭한 브로치.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2317, "name": "주류 거래", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7064,'호박 헤어밴드',NULL,'호박이 곁들여진
+세공이 훌륭한 머리 장식.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2317, "name": "주류 거래", "value": 2}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7065,'호박 파이프',NULL,'호박으로 만들어진 아주 고가의 파이프.','TRUE','장신구',NULL,NULL,NULL,5,30,'[{"ref": 2276, "name": "대화술", "value": 2}, {"ref": 2288, "name": "주연", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'800',NULL,NULL,NULL,NULL),
+ (7066,'파이살 전용옷',NULL,'이중의 호화스런 장의를 셔츠에 조합한 아랍 귀족의 옷.','TRUE','몸',NULL,15,35,40,35,'[{"ref": 2321, "name": "향료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,400',NULL,'남성','[{"ref": 2011, "name": "준칠등훈작사"}]',NULL),
+ (7067,'마사이 서클릿',NULL,'마사이의 전통 양식으로 만들어진 아름다운 서클릿.','TRUE','장신구',5,NULL,NULL,5,30,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7068,'곰 구두',NULL,'곰을 본뜬 구두. 신으면 꽤 덥다.','TRUE','다리',NULL,6,NULL,10,100,'[{"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7069,'곰 장갑',NULL,'곰을 본뜬 장갑. 끼면 꽤 덥다.','TRUE','팔',NULL,2,NULL,NULL,100,'[{"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (7070,'군신의 부적',NULL,'군신의 힘이 깃들어져 있다는 부적. 싸우는 자를 승리로 이끈다.','TRUE','장신구',8,8,NULL,10,30,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2347, "name": "포술", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'100,000',NULL,NULL,NULL,NULL),
+ (7071,'곰 옷',NULL,'곰을 본뜬 옷. 입으면 꽤 덥다.','TRUE','몸',NULL,10,NULL,20,100,'[{"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (7072,'곰 모자',NULL,'곰을 본뜬 모자. 쓰면 꽤 덥다.','TRUE','머리',NULL,8,NULL,15,100,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (7073,'아랍해적셔츠',NULL,'아랍 상인이 즐겨 입는
+긴 가운과 셔츠.','FALSE','몸',NULL,10,10,40,30,'[{"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,000',NULL,'남성',NULL,NULL),
+ (7074,'개량형 사분의',NULL,'지금 있는 위치를 확인하는 도구. 주위의 지형도 확인할 수 있다.','TRUE','도구',NULL,NULL,NULL,NULL,15,'[{"ref": 2289, "name": "지리학", "value": 1}]','[{"ref": 2291, "name": "측량"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7075,'홍옥의 부활절 달걀',NULL,'보석을 장식하고 있는 특별한 부활절 달걀','TRUE','장신구',NULL,NULL,20,NULL,50,'[{"ref": 2278, "name": "미술", "value": 1}, {"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2276, "name": "대화술", "value": 3}]','[{"ref": 1447, "name": "모든 상태 회복(복수)"}]',NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7076,'칠라늄',NULL,'마라타가 사용한 무기. 칼날이 완만하게 휘어져 있는 단도.
+
+개인상으로 파는분 봤습니다... 가이아섭 리스본에서요 입수경로 확인하는대로 다시 올릴께요','TRUE','무기 (던지는 나이프)',28,NULL,NULL,NULL,50,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7077,'튜닉',NULL,'아주 흔한 천으로 만든 단의.
+활동하기 편하기 때문에 여행자들이 잘 입는다.','FALSE','몸',NULL,1,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7078,'나무 파이프',NULL,'담배를 피우기 위해 사용하는 목제 도구.
+
+아마존 상류 상륙지  거대고목에서 탐색.  발견경험치 25','TRUE','장신구',NULL,NULL,NULL,5,30,'[{"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'100',NULL,NULL,NULL,NULL),
+ (7079,'인도 남색 차도르',NULL,'암청색으로 산뜻하게 염색한 아랍 여성의 장의.','TRUE','몸',NULL,5,15,40,35,'[{"ref": 2312, "name": "염료 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'1,300',NULL,'여성',NULL,NULL),
+ (7083,'항해자의 모피코트',NULL,'어깨의 둥근 장식이 특징인 고가의 예복.
+관리등이 잘 입는다.','FALSE','몸',NULL,8,12,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7084,'벨벳리본',NULL,'고가의 벨벳원단으로 만들어진 리본.','TRUE','장신구',NULL,NULL,3,NULL,20,'[{"ref": 2316, "name": "조리", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'350',NULL,NULL,NULL,NULL),
+ (7085,'카츠발게르',NULL,'북유럽이나 독일에서 잘 사용되는 무거운 검. 모양이 독특하다.','TRUE','무기 (던지는 나이프)',12,NULL,NULL,NULL,45,'[{"ref": 2348, "name": "회피", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7086,'줄루 전사의 방패',NULL,'아프리카 남부에 사는 줄루의 전사가 가지는 방패.','TRUE','도구',NULL,20,NULL,12,100,'[{"ref": 2330, "name": "방어", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'4,500',NULL,NULL,NULL,NULL),
+ (7087,'마사이 전사의 방패',NULL,'마사이의 전사가 가지는 방패. 소가죽으로 되어 있다.','TRUE','도구',NULL,20,NULL,12,100,'[{"ref": 2330, "name": "방어", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'4,500',NULL,NULL,NULL,NULL),
+ (7088,'응고니 모자',NULL,'아프리카 남동부에 사는 응고니의 모자.','TRUE','머리',NULL,5,NULL,10,40,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2294, "name": "가축 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'3,500',NULL,NULL,NULL,NULL),
+ (7089,'코튼제 코트아르디',NULL,'면원단에 가죽을 포개어
+튼튼하고 활동하기 편한 옷.
+경장의 병사도 사용한다.','FALSE','몸',NULL,NULL,7,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'400',NULL,'남성',NULL,NULL),
+ (7090,'외눈안경',NULL,'한쪽 눈에 끼는 안경. 두드러진 것을 발견하는 데 편리.','TRUE','장신구',NULL,NULL,NULL,NULL,10,NULL,'[{"ref": 2290, "name": "채집"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7091,'카트라스',NULL,'선원이 잘 사용하는 굽어 있고 예리한 칼날을 가지고 있는 긴 칼.','TRUE','무기 (검)',20,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,'전투','480',NULL,NULL,NULL,NULL),
+ (7092,'여행자의 수기',NULL,'여행자가 남긴 쪽지. 음식을 찾는 실마리가 된다.','TRUE','장신구',NULL,NULL,NULL,NULL,10,NULL,'[{"ref": 2286, "name": "조달"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7093,'스페니시토크',NULL,'차양이 짧고 둥근 모자.
+운두가 높고 둥근 모양이 특징적이다.','FALSE','머리',NULL,1,10,NULL,30,NULL,NULL,NULL,NULL,NULL,'교역','100',NULL,NULL,NULL,NULL),
+ (7094,'수정 목걸이',NULL,'수정 세공으로 만들어진 목걸이. 훌륭한 장식이 이루어져있다.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2310, "name": "섬유 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7095,'산호 머리장식',NULL,'아주 고가의 산호를 곁들인 아름다운 세공의 머리 장식.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2298, "name": "공예품 거래", "value": 2}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7096,'산호 브로치',NULL,'아주 고가의 산호를 곁들인
+아름다운 세공의 브로치.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2298, "name": "공예품 거래", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7097,'산호 반지',NULL,'아주 고가의 산호를 곁들인
+아름다운 세공의 반지.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2298, "name": "공예품 거래", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7098,'산호 목걸이',NULL,'아주 고가의 산호를 곁들인
+아름다운 세공의 목걸이.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2298, "name": "공예품 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7099,'진주 반지',NULL,'아주 고가의 진주를 곁들인
+아름다운 세공의 반지.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2322, "name": "향신료 거래", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7100,'진주 목걸이',NULL,'아주 고가의 진주를 곁들인
+아름다운 세공의 목걸이.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2322, "name": "향신료 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7101,'마노 목걸이',NULL,'마노가 곁들여진
+아름다운 목걸이.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2314, "name": "의약품 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7102,'마노 귀걸이',NULL,'마노가 곁들여진
+아름다운 귀걸이.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2314, "name": "의약품 거래", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7103,'마노 헤어밴드',NULL,'마노가 곁들여진
+아름다운 머리 장식.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2314, "name": "의약품 거래", "value": 2}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7104,'마노 반지',NULL,'마노가 곁들여진
+아름다운 반지.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2314, "name": "의약품 거래", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7105,'마노 브로치',NULL,'마노가 곁들여진
+아름다운 브로치.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2314, "name": "의약품 거래", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7106,'카라 더블릿',NULL,'레이스를 소매에 곁들인
+고급 옷. 관리등이 자주 입는다.','FALSE','몸',NULL,7,27,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'1,100',NULL,NULL,NULL,NULL),
+ (7107,'감독관 토가',NULL,'요직에 있는 대 귀족만이 착용할 수 있는 아주 호화스런 장의.','TRUE','몸',NULL,10,40,NULL,25,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,'교역','4,000',NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (7108,'트가리누',NULL,'모피 코트와 셔츠를 곁들인
+여행자 옷.','FALSE','몸',NULL,10,40,10,35,'[{"ref": 2291, "name": "측량", "value": 1}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,'모험','2,300',NULL,NULL,NULL,NULL),
+ (7109,'에그먼트 백작의 지휘지팡이',NULL,'네덜란드 독립파 귀족인 에그먼트 백작이 사용했던 지휘지팡이','TRUE','장신구',NULL,NULL,20,NULL,20,'[{"ref": 2348, "name": "회피", "value": 2}, {"ref": 2279, "name": "보급", "value": 2}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7110,'무스에',NULL,'카리브 여성이 두르는 두건.
+전통적인 복장이다.','FALSE','머리',NULL,1,1,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'300',NULL,'여성',NULL,NULL),
+ (7111,'스트로 햇',NULL,'카리브 남성들이 강한 햇빛에
+견디기 위해 쓰는 모자.','FALSE','머리',NULL,1,1,10,30,NULL,NULL,NULL,NULL,NULL,NULL,'300',NULL,'남성',NULL,NULL),
+ (7112,'벨기에레이스',NULL,'벨기에 지방의 장인들의 훌륭한 기법으로 만들어진 레이스.','TRUE','장신구',NULL,NULL,3,NULL,20,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'250',NULL,NULL,NULL,NULL),
+ (7113,'깃털부채',NULL,'깃털을 조합한 부채. 귀부인의 소도구로서 사용한다.','TRUE','도구',NULL,NULL,10,NULL,20,NULL,NULL,NULL,NULL,NULL,'교역','400',NULL,NULL,NULL,NULL),
+ (7114,'대림절용 알바',NULL,'높은 승려가 대강절에 입는 호화스런 장의.','TRUE','몸',NULL,22,35,NULL,10,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,NULL,'모험','4,000',NULL,NULL,'[{"ref": 2013, "name": "칠등훈작사"}]',NULL),
+ (7115,'적동제 그리브',NULL,'갑옷과 같이 몸에 부착하는
+무릎를 덮는 적동의 부츠','TRUE','다리',NULL,17,10,NULL,70,NULL,NULL,NULL,NULL,NULL,NULL,'1,200',NULL,NULL,NULL,NULL),
+ (7116,'적동제 글러브',NULL,'투구, 갑옷과 같이 몸에 대는 글러브형의 건틀릿.','TRUE','팔',NULL,13,6,NULL,70,NULL,NULL,NULL,NULL,NULL,NULL,'1,200',NULL,NULL,NULL,NULL),
+ (7117,'빅토리아의 목걸이',NULL,'베네치아의 귀족 아가씨 빅토리아로부터 받은 목걸이','TRUE','장신구',NULL,NULL,20,NULL,20,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2288, "name": "주연", "value": 2}, {"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7118,'원로원 의원의 토가',NULL,'요직에 있는 대 귀족만이 착용할 수 있는 아주 호화스런 장의','TRUE','몸',NULL,18,42,NULL,25,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,'교역','4,000',NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (7119,'칼드',NULL,'페르시아지방의 외날 단검. 날끝이 날카로워 찌르기 공격에 적당하다.','TRUE','무기 (던지는 나이프)',14,NULL,10,NULL,40,NULL,NULL,NULL,NULL,NULL,'모험','800',NULL,NULL,NULL,NULL),
+ (7120,'에티엔의 지팡이',NULL,'소년십자군을 인솔한 에티엔이 가지고 있었다고 하는 지팡이','TRUE','무기 (곤봉 지팡이)',4,NULL,NULL,NULL,50,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2293, "name": "행군", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7121,'쵸라',NULL,'페르시아지방의 단검. 칼날과 날밑이 하나로 되어있다.','TRUE','무기 (던지는 나이프)',16,NULL,NULL,NULL,40,NULL,NULL,NULL,NULL,NULL,NULL,'800',NULL,NULL,NULL,NULL),
+ (7122,'나루나리',NULL,'인도에서 만들어진 노끈으로 점화시키는 단순한 총.','TRUE','무기 (총)',20,NULL,NULL,NULL,35,NULL,'[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'1,300',NULL,NULL,NULL,NULL),
+ (7123,'카마칸민족 모자',NULL,'카마칸민족의 모자.
+전체적으로 기묘한 무늬가 들어
+가 있다.','TRUE','머리',NULL,5,NULL,15,30,NULL,NULL,NULL,NULL,NULL,NULL,'1,100',NULL,'남성',NULL,NULL),
+ (7124,'뱅크',NULL,'인도에서 폭넓게 사용되는 낫모양의 칼날을 가진 단검.
+
+
+레인지 중거리','TRUE','무기 (던지는 나이프)',30,NULL,NULL,NULL,57,NULL,NULL,NULL,NULL,NULL,'모험','2,000',NULL,NULL,NULL,NULL),
+ (7125,'토라돌',NULL,'인도에서 만들어진 고성능의 화승점화식 총.','TRUE','무기 (총)',23,NULL,NULL,NULL,30,NULL,'[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'1,900',NULL,NULL,NULL,NULL),
+ (7126,'바쥬라',NULL,'대장장이신 트바슈트리가 만들었다고 전해지는 인드라신의 무기','TRUE','무기 (곤봉 지팡이)',50,NULL,NULL,NULL,100,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (7127,'흑요석 검',NULL,'칼날이 흑요석으로 된 검. 내구도는 그다지 높지 않다.','TRUE','무기 (검)',38,NULL,NULL,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (7128,'라운데르 단검',NULL,'칼자루에 손이 미끄러지지 않도록 원반이 달린 단검.','TRUE','무기 (던지는 나이프)',17,NULL,NULL,NULL,40,NULL,NULL,NULL,NULL,NULL,NULL,'850',NULL,NULL,NULL,NULL),
+ (7129,'재규어전사의 가면',NULL,'아스텍전사를 테마로 한 황금 가면.','TRUE','머리',10,10,NULL,NULL,250,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (7130,'콘체로스 머리장식',NULL,'신대륙의 의식에서 사용되는
+크고 화려한 투구.','FALSE','머리',10,5,NULL,10,30,NULL,NULL,NULL,NULL,NULL,NULL,'1,200',NULL,NULL,NULL,NULL),
+ (7131,'쥴리앙의 반지',NULL,'프랑스의 보물탐색가 쥴리앙으로부터 받은 반지','TRUE','장신구',NULL,NULL,20,NULL,20,'[{"ref": 2305, "name": "바디 랭귀지", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7132,'맹공 지침서 제 1권',NULL,'공격에 대해 기록한 서적.
+육상전에서 파워 테크닉의
+사용이 쉬워진다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7133,'기수 지침서 제 1권',NULL,'공격에 대하여 기록한 서적.
+육상전에서 페인트 테크닉의
+사용이 쉬워진다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7134,'비취 가면',NULL,'팔렌케유적에서 발견된
+비취로 만들어진 기묘한 가면.','TRUE','머리',NULL,5,NULL,NULL,250,'[{"ref": 2299, "name": "광물 거래", "value": 1}, {"ref": 2270, "name": "고고학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (7135,'칠흑의 보석왕관',NULL,'훌륭한 세공과 호화스런 장식의 왕관 (아카데미 10승 이상 보상 아이템)','TRUE','머리',NULL,12,30,NULL,50,'[{"ref": 2289, "name": "지리학", "value": 1}, {"ref": 2309, "name": "사교", "value": 2}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,'[{"ref": 2021, "name": "오등훈작사"}]',NULL),
+ (7136,'서펜타인록크식총',NULL,'S자형의 기구로 점화용의 노끈과 방아쇠를 일체화시킨 총.','TRUE','무기 (총)',18,NULL,NULL,NULL,30,NULL,'[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'900',NULL,NULL,NULL,NULL),
+ (7137,'연격 지침서 제 1권',NULL,'공격에 대하여 기록한 서적.
+육상전에서 퀵 테크닉의
+사용이 쉬워진다.
+
+퀵특화 +2','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1445, "name": "퀵특화"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7138,'활용 지침서 제 1권',NULL,'아이템 활용법 서적.
+육상전에서 아이템 테크닉의
+사용이 쉬워진다.
+
+아이템 특화 +2','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1446, "name": "아이템 특화"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7139,'챤 발름왕의 왕관',NULL,'커다한 흑요석으로 장식된 왕의 권위를 나타내는 왕관.','TRUE','머리',NULL,10,NULL,NULL,200,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (7140,'엔베라전사의 신타',NULL,'엔베라민족의 남성용 의상.
+기하학적인 무늬의 염색이 특징적.','FALSE','몸',12,6,NULL,15,25,'[{"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,400',NULL,'남성',NULL,NULL),
+ (7141,'에나구아',NULL,'엔베라민족의 여성용 의상.
+아름답게 비즈로 세공되어 있다.','FALSE','몸',12,6,NULL,15,25,'[{"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,400',NULL,'여성',NULL,NULL),
+ (7142,'콘체로스용 위필',NULL,'신대륙의 무도용 의상.
+태양을 상징하는 장식이 달려 있다.','FALSE','몸',5,10,NULL,10,35,'[{"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,500',NULL,'여성',NULL,NULL),
+ (7143,'잠비야',NULL,'아라비아 지방의 휘어진 단검. 칼자루및 칼집에 장식이 들어가 있다.','TRUE','무기 (던지는 나이프)',12,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'700',NULL,NULL,NULL,NULL),
+ (7144,'페슈카드',NULL,'S자형의 칼날을 가진 페르시아및 인도북부지역의 단검.','TRUE','무기 (던지는 나이프)',18,NULL,NULL,NULL,45,NULL,NULL,NULL,NULL,NULL,NULL,'900',NULL,NULL,NULL,NULL),
+ (7145,'금세공된 도끼창',NULL,'신대륙에서 사용하는 도끼창
+아름답게 금세공되어 있다','TRUE','무기 (창)',26,NULL,5,NULL,30,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,500',NULL,NULL,NULL,NULL),
+ (7146,'유리알 헤어밴드',NULL,'아름다운 채색의 유리알이 곁들여진 아름다운 머리 장식.','TRUE','장신구',NULL,NULL,20,NULL,20,'[{"ref": 2315, "name": "잡화 거래", "value": 1}, {"ref": 2282, "name": "생존", "value": 1}]','[{"ref": 2272, "name": "구제"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7147,'버커니어 코트',NULL,'사략해적의 이름을 붙인 코트.
+대해적만이 입을 수 있다.','FALSE','몸',12,24,5,20,40,'[{"ref": 2332, "name": "속사", "value": 2}]',NULL,NULL,NULL,NULL,'전투','3,000',NULL,NULL,NULL,NULL),
+ (7148,'쿠판쟈르',NULL,'아라비아어로 `고기자르는 칼`을 의미하는 외날 단검.','TRUE','무기 (던지는 나이프)',22,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'1,150',NULL,NULL,NULL,NULL),
+ (7149,'바타데코라','생산','세비야의 봄축제에서 착용하는
+아름다운 드레스.','FALSE','몸',NULL,5,25,NULL,60,'[{"ref": 2304, "name": "미술품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (7150,'콜트','생산','세비야의 봄축제에서 착용하는
+웅장한 복장.','FALSE','몸',NULL,10,25,NULL,60,'[{"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (7151,'콘체로스용 로파',NULL,'신대륙의 남성이 무도용으로
+입는 옷. 금 장식이 아름답다.','FALSE','몸',8,8,NULL,10,30,'[{"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,500',NULL,'남성',NULL,NULL),
+ (7152,'뮤케렛트록크식 총',NULL,'화문이 자동으로 열리는 부싯돌점화식의 사격용 총.','TRUE','무기 (총)',15,NULL,NULL,NULL,30,'[{"ref": 2435, "name": "저격술", "value": 1}]','[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'1,200',NULL,NULL,NULL,NULL),
+ (7153,'스냅한스식 사격총',NULL,'화문을 수동으로 열어 부싯돌로 점화하는 사격용 총.','TRUE','무기 (총)',12,NULL,NULL,NULL,25,NULL,'[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'800',NULL,NULL,NULL,NULL),
+ (7154,'휠락식 사격총',NULL,'회전하는 휠에 부싯돌을 대어 점화하는 사격용 총.','TRUE','무기 (총)',16,NULL,NULL,NULL,35,'[{"ref": 2435, "name": "저격술", "value": 1}]','[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'1,800',NULL,NULL,NULL,NULL),
+ (7155,'히페토텍의 마스크',NULL,'풍작의 신 히페토텍의 숭배에 사용된 것으로 보이는 금 마스크.','TRUE','머리',NULL,10,NULL,NULL,250,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2288, "name": "주연", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,NULL,NULL,NULL),
+ (7156,'드래곤 지팡이',NULL,'신대륙에서 출토된 드래곤의
+뼈로 만들어진 기묘한 지팡이.','TRUE','무기 (곤봉 지팡이)',10,NULL,NULL,NULL,100,'[{"ref": 2281, "name": "생물학", "value": 1}, {"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (7157,'깃털장식된 신타',NULL,'카야포민족의 남성용 의상.
+붉은 문양으로 몸에 색칠을 한다.','FALSE','몸',12,6,NULL,20,30,'[{"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,800',NULL,'남성',NULL,NULL),
+ (7158,'퓨지리아총',NULL,'독일에서 만들어진 부싯돌점화식 총.','TRUE','무기 (총)',29,NULL,NULL,NULL,50,NULL,'[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7159,'버커니어 수렵총',NULL,'버커니어가 수렵에 사용하는 길고 큰 총.','TRUE','무기 (총)',22,NULL,NULL,NULL,40,'[{"ref": 2435, "name": "저격술", "value": 1}]','[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (7160,'망토&더블릿',NULL,'조끼와 망토를 맞춰서 입는
+고급 옷. 귀족의 여장에 사용한다.','FALSE','몸',NULL,10,30,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (7161,'기수 지침서 제 2권',NULL,'공격에 대하여 기록한 서적.
+육상전에서 페인트 테크닉의
+사용이 쉬워진다.
+----
+페인트 특화 +4','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7162,'브란다바스',NULL,'장전을 간단하게 하기 위해 총구가 깔대기모양으로 된 총.','TRUE','무기 (총)',31,NULL,NULL,NULL,50,NULL,'[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'3,200',NULL,NULL,NULL,NULL),
+ (7163,'기수 지침서 제 4권',NULL,'공격에 대하여 기록한 서적.
+육상전에서 페인트 테크닉의
+사용이 쉬워진다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7164,'비취 반지',NULL,'아름다운 비취를 박아 넣은 반지. 공예적 가치가 높다.
+
+(중남미 상업도 2만 돌파, 20만 이상 투자 후 구입가능)','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2303, "name": "무기류 거래", "value": 1}, {"ref": 2313, "name": "운용", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7165,'다크',NULL,'스코틀랜드 하이랜더의 단검. 다양한 용도로 사용한다.','TRUE','무기 (던지는 나이프)',17,NULL,NULL,NULL,40,'[{"ref": 2431, "name": "던지기 기술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'1,300',NULL,NULL,NULL,NULL),
+ (7166,'활용 지침서 제 4권',NULL,'아이템 활용법 서적.
+육상전에서 아이템 테크닉의
+사용이 쉬워진다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7167,'카미사 라와레로',NULL,'신대륙의 일반적인 의복
+아름다운 자수가 특징적이다.','FALSE','몸',NULL,12,5,NULL,35,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,200',NULL,'남성',NULL,NULL),
+ (7168,'살미엔트 길드제독모자',NULL,'살미엔트 길드에 소속되어있는 것을 나타내는 모자.','TRUE','머리',NULL,2,5,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7169,'연격 지침서 제 2권',NULL,'공격에 대하여 기록한 서적.
+육상전에서 퀵 테크닉의
+사용이 쉬워진다.
+
+퀵특화 +4','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7170,'코맨더 쥐스토코르',NULL,'해전에 숙련된 자 만이 입을 수 있는 코트.','TRUE','몸',8,42,30,NULL,50,'[{"ref": 2347, "name": "포술", "value": 2}, {"ref": 2335, "name": "수평사격", "value": 2}]',NULL,NULL,NULL,NULL,'전투','30,000',NULL,NULL,NULL,NULL),
+ (7171,'해적 쥐스토코르',NULL,'해전에 숙련된 자 만이 입을 수 있는 코트.','TRUE','몸',12,40,30,NULL,50,'[{"ref": 2342, "name": "조타", "value": 2}, {"ref": 2329, "name": "돌격", "value": 2}]',NULL,NULL,NULL,NULL,'전투','30,000',NULL,NULL,NULL,NULL),
+ (7172,'게베르 총',NULL,'네덜란드어로 소총을 의미하는 부싯돌점화식 총.','TRUE','무기 (총)',33,NULL,NULL,NULL,50,'[{"ref": 2435, "name": "저격술", "value": 1}]','[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'3,600',NULL,NULL,NULL,NULL),
+ (7173,'나가 얼굴，목 장식',NULL,'나가의 전통 양식으로 만드는 사람의 얼굴 장식이 달려 있는 목걸이.','TRUE','장신구',5,NULL,NULL,5,30,'[{"ref": 2330, "name": "방어", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7174,'토마호크',NULL,'던지기용으로도 사용가능한 소형 전투용 도끼.','TRUE','무기 (던지는 나이프)',29,NULL,NULL,NULL,60,NULL,NULL,NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (7175,'카삭＆더블릿',NULL,'조끼와 카삭을 맞춰서 입는 고급 옷. 귀족의 여장에 사용한다.','TRUE','몸',NULL,12,40,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'1,200',NULL,NULL,NULL,NULL),
+ (7176,'면으로 된 캐리비안 드레스',NULL,'카리브 여성이 제례 등에
+입는 무용을 위한 의상.','FALSE','몸',NULL,2,8,10,30,'[{"ref": 2283, "name": "생태 조사", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'900',NULL,'여성',NULL,NULL),
+ (7177,'로그우드염색 보닛',NULL,'긴 차양의 장식모자를 로그우드로 검게 염색한 것.','TRUE','머리',NULL,10,16,NULL,35,'[{"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7178,'겨우살이나무　리스',NULL,'겨우살이 나무의 잎으로 만든 
+크리스마스리스.　행복을 가져온다고 한다','TRUE','장신구',NULL,NULL,NULL,NULL,80,'[{"ref": 2277, "name": "돛 조종", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}, {"ref": 2331, "name": "소화", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7179,'민스트렐',NULL,'방랑의 음유시인 테오도르가 애용하던 단검','TRUE','무기 (던지는 나이프)',32,NULL,NULL,NULL,100,'[{"ref": 2276, "name": "대화술", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7180,'황금의 양손',NULL,'광대의 양손을 거듭개량하여 만든 화려한 글러브.','TRUE','팔',NULL,15,10,NULL,50,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2300, "name": "귀금속 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'80,000',NULL,NULL,'[{"ref": 2025, "name": "사등훈작사"}]',NULL),
+ (7181,'광대의 양손',NULL,'선인들의 시행착오를 거쳐 만들어진 금으로 된 글러브.','TRUE','팔',NULL,12,8,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,'[{"ref": 2013, "name": "칠등훈작사"}]',NULL),
+ (7182,'흑요석 창',NULL,'칼날이 흑요석으로 된 창. 내구도는 그다지 높지 않다.','TRUE','무기 (창)',42,NULL,NULL,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (7183,'연금술사의 나이프',NULL,'연금술사의 제자가 재료수집에 사용하는 나이프.','TRUE','무기 (던지는 나이프)',7,NULL,NULL,NULL,50,NULL,'[{"ref": 2290, "name": "채집"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7184,'명주로 된 캐리비안 드레스',NULL,'카리브 여성이 제례 등에
+입는 무용을 위한 의상.','FALSE','몸',NULL,2,10,10,30,'[{"ref": 2283, "name": "생태 조사", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'여성',NULL,NULL),
+ (7185,'6월의 신부',NULL,'친미파 상인 페드로의 아내 이자벨이 결혼선물로 부친에게서 받은 총','TRUE','무기 (총)',28,NULL,NULL,NULL,100,'[{"ref": 2294, "name": "가축 거래", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]','[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7186,'백조 깃털부채',NULL,'백조의 깃털로 만들어진 부채.
+귀부인의 소도구로서 사용한다.','TRUE','도구',NULL,NULL,12,NULL,25,'[{"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,'교역','600',NULL,NULL,NULL,NULL),
+ (7187,'키라비',NULL,'독벌일파임을 입증하는 긴 검.
+
+※ 크리스마스 이벤트 군인용 보상품입니다','TRUE','무기 (검)',36,16,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7188,'아크버스',NULL,'사람 손으로 노끈에 불을 붙혀 
+화약을 점화시키는 초기의 총.','TRUE','무기 (총)',19,NULL,NULL,NULL,45,NULL,'[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7189,'드라군 머스켓',NULL,'기병용으로 총길이를 짧게한 부싯돌점화식 총.','TRUE','무기 (총)',27,NULL,NULL,NULL,40,'[{"ref": 2435, "name": "저격술", "value": 1}]','[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'3,200',NULL,NULL,NULL,NULL),
+ (7190,'오팔 목걸이',NULL,'오팔이 곁들여진 세공이 훌륭한 목걸이.','TRUE','장신구',NULL,NULL,30,NULL,20,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7191,'오팔 브로치',NULL,'오팔이 곁들여진 세공이 훌륭한 브로치.','TRUE','장신구',NULL,NULL,30,NULL,20,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7192,'폰쵸풍의 위필',NULL,'신대륙의 일반적인 옷
+여러가지 무늬가 그려져 있다.','FALSE','몸',NULL,12,5,NULL,35,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,200',NULL,'여성',NULL,NULL),
+ (7193,'깃털장식된 카스코',NULL,'아름다운 깃털로
+머리전체를 뒤덮는 모자.','FALSE','머리',NULL,8,NULL,10,30,NULL,NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'여성',NULL,NULL),
+ (7194,'아마존의 꽃모자',NULL,'아마존에 피는 아름다운 색상의
+꽃으로 만든 머리 장식.','FALSE','머리',NULL,NULL,4,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,'1,500',NULL,'여성',NULL,NULL),
+ (7195,'보라전사의 파노',NULL,'보라민족의 남성용 의상.
+흰 문양으로 몸을 색칠한다.','FALSE','몸',12,6,NULL,15,35,'[{"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,600',NULL,'남성',NULL,NULL),
+ (7196,'보라민족의 튜니카',NULL,'보라민족의 여성용 의상.
+몸을 흰 문양으로 칠한다.','FALSE','몸',3,11,NULL,15,35,'[{"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,600',NULL,'여성',NULL,NULL),
+ (7197,'깃털장식의 파하',NULL,'카야포민족의 여성용 의상.
+몸 전체에 문양을 그려 넣는다.','FALSE','몸',12,6,NULL,20,30,'[{"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,800',NULL,'여성',NULL,NULL),
+ (7198,'큰새의 깃털관',NULL,'큰 새의 깃털이 하늘을 향해
+펼져진 아름다운 머리장식.','FALSE','머리',NULL,8,NULL,10,30,NULL,NULL,NULL,NULL,NULL,NULL,'1,300',NULL,NULL,NULL,NULL),
+ (7199,'카야포민족 모자',NULL,'카야포민족의 모자
+머리를 중심으로 깃털이 펼쳐진다.','FALSE','머리',NULL,5,NULL,15,30,NULL,NULL,NULL,NULL,NULL,NULL,'1,200',NULL,NULL,NULL,NULL),
+ (7200,'피체가티',NULL,'인도남동부에서 사용되는 
+칼날이 도끼처럼 사각으로 된 단검.','TRUE','무기 (던지는 나이프)',33,NULL,NULL,NULL,52,NULL,NULL,NULL,NULL,NULL,'모험','1,800',NULL,NULL,NULL,NULL),
+ (7201,'샤이트팡',NULL,'인도에서 만들어진
+매우 크고 긴 화승점화식 총.','TRUE','무기 (총)',26,NULL,NULL,NULL,50,NULL,'[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'2,700',NULL,NULL,NULL,NULL),
+ (7202,'코람비',NULL,'낫모양의 칼날을 가진 가는 단검.','TRUE','무기 (던지는 나이프)',35,NULL,NULL,NULL,80,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7203,'조범술 입문서',NULL,'바람을 이용하여 돛을 조종하는데 있어서의 
+기본 기술이 적혀 있는 책.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2277, "name": "돛 조종", "value": 1}]','[{"ref": 2291, "name": "측량"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7204,'탄기',NULL,'동인도의 콘드인이 사용하는 소형 도끼.','TRUE','무기 (던지는 나이프)',32,NULL,NULL,NULL,60,'[{"ref": 2431, "name": "던지기 기술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'2,300',NULL,NULL,NULL,NULL),
+ (7205,'에페',NULL,'귀족이나 기사의 결투에서 사용하는 길고 날카로운 찌르기 위한 검.','TRUE','무기 (검)',26,NULL,NULL,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,'전투','960',NULL,NULL,NULL,NULL),
+ (7206,'스콜피우스',NULL,'사막의 민족이 사용하는, 독특한 단검. 다양한 용도로 사용한다.','TRUE','무기 (던지는 나이프)',22,NULL,NULL,NULL,55,'[{"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (7207,'야타건',NULL,'터키의 정예병, 예니체리가 사용하는 휘어진 형태의 반달형 칼.','TRUE','무기 (던지는 나이프)',26,NULL,NULL,NULL,60,'[{"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,'모험','6,000',NULL,NULL,NULL,NULL),
+ (7208,'레이피어',NULL,'가볍게 취급하기 쉬운 검. 총 때문에 갑옷이 소용없게 되어서 퍼졌다.','TRUE','무기 (검)',30,NULL,NULL,NULL,45,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,'전투','1,000',NULL,NULL,NULL,NULL),
+ (7209,'청금석 헤어밴드',NULL,'청금석이 곁들여진 아름다운 머리 장식.
+(논전 5승 이상 상품입니다.)','TRUE','장신구',NULL,NULL,30,NULL,50,'[{"ref": 2301, "name": "기호품 거래", "value": 1}, {"ref": 2282, "name": "생존", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7210,'지라하복크',NULL,'갑옷의 이음새 부분을 겨냥토록 고안된 페르시아 단검.','TRUE','무기 (던지는 나이프)',24,NULL,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'1,800',NULL,NULL,NULL,NULL),
+ (7211,'쿠마',NULL,'흑해 동쪽 해안의 그루지야인이 사용하는 아름다운 장식의 단검.','TRUE','무기 (던지는 나이프)',23,NULL,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'1,300',NULL,NULL,NULL,NULL),
+ (7212,'파란옥의 부활절 달걀',NULL,'보석을 장식하고 있는 특별한 부활절 달걀
+
+부활절이벤트로 얻을수있는 이벤트물품.','TRUE','장신구',NULL,NULL,20,NULL,50,'[{"ref": 2307, "name": "보석 거래", "value": 1}, {"ref": 2304, "name": "미술품 거래", "value": 1}, {"ref": 2309, "name": "사교", "value": 3}]','[{"ref": 1447, "name": "모든 상태 회복(복수)"}]',NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7213,'원거리 포격 지도서',NULL,'원거리의 배에 대한 포격의 응용 기술이 기록된 서적.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2345, "name": "탄도학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7214,'실크리본',NULL,'최상급 비단을 사치스럽게 사용한 고가의 리본.','TRUE','장신구',NULL,NULL,2,NULL,20,'[{"ref": 2316, "name": "조리", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'300',NULL,NULL,NULL,NULL),
+ (7215,'포술 지도서',NULL,'함대 포격전의 기본 기술이 기록된 서적.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2347, "name": "포술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7216,'버커니어셔츠',NULL,'잉글랜드 사략해적의 이름을
+붙인 셔츠. 해적이 즐겨 입는다.','FALSE','몸',NULL,4,NULL,2,35,NULL,NULL,NULL,NULL,NULL,NULL,'100',NULL,NULL,NULL,NULL),
+ (7217,'콘체로스 샌들',NULL,'신대륙의 의식에 사용되는 샌들.
+나무 열매 방울이 달려 있다.','FALSE','다리',NULL,4,NULL,8,30,NULL,NULL,NULL,NULL,NULL,NULL,'1,300',NULL,NULL,NULL,NULL),
+ (7218,'하라디',NULL,'라지프트가 사용하는 무기. 양쪽에 칼날이 붙은 특수한 단검.','TRUE','무기 (던지는 나이프)',16,NULL,NULL,NULL,50,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7219,'상감 나이프',NULL,'칼자루에 기묘한 세공이 들어간 나이프
+실전용으로는 적합하지 않다.','TRUE','무기 (던지는 나이프)',8,NULL,NULL,NULL,30,'[{"ref": 2278, "name": "미술", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7220,'달문장의 나이프',NULL,'달의 힘을 주입해 만들었다는 특별한 나이프.','TRUE','무기 (던지는 나이프)',10,NULL,NULL,NULL,50,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2289, "name": "지리학", "value": 1}, {"ref": 2291, "name": "측량", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7221,'켈트어 사전',NULL,'켈트어를 번역하기 위한 사전.','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1397, "name": "켈트어 번역"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7222,'게르만어 사전',NULL,'북유럽의 언어를 번역하기 위한 사전','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1394, "name": "게르만어 번역"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7223,'로망어 사전',NULL,'남유럽의 언어를 번역하기 위한 사전','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1395, "name": "로망어 번역"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7224,'케이프&더블릿',NULL,'조끼와 케이프를 맞춰서 입는
+고급 옷. 귀족의 여장에 사용한다.','FALSE','몸',NULL,10,35,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'2,400',NULL,NULL,NULL,NULL),
+ (7225,'심황으로 염색한 모로',NULL,'모로 민족의 남성 의상. 자수가 아름답다.','TRUE','몸',NULL,10,NULL,NULL,50,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,500',NULL,'남성',NULL,NULL),
+ (7226,'빛나는 돌의 반지',NULL,'온화하게 빛나는 돌이 장식된 신비한 반지','TRUE','장신구',NULL,NULL,NULL,NULL,100,'[{"ref": 2279, "name": "보급", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,'캐시 아이템, 이벤트 보상',NULL,NULL,NULL,NULL,NULL,NULL),
+ (7227,'카메오 헤어밴드',NULL,'부조 세공을 한 머리 장식.
+예술적인 가치가 아주 높다.','TRUE','장신구',NULL,NULL,20,NULL,20,'[{"ref": 2279, "name": "보급", "value": 1}]','[{"ref": 2272, "name": "구제"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7228,'프라이티스','생산','생화로 장식된 아름다운 모자. 의식에 사용 된다.','TRUE','머리',NULL,NULL,NULL,NULL,30,'[{"ref": 2304, "name": "미술품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,200',NULL,'여성',NULL,NULL),
+ (7229,'지치뿌리로 염색한 룽구스드레스',NULL,'룽구스 민족의 의상. 손과 발에 금속 링을 착용한다.','TRUE','몸',NULL,10,NULL,NULL,50,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,'여성',NULL,NULL),
+ (7230,'지치뿌리로 염색한 바틱',NULL,'납결염색한 천으로 만들어진 의상. 몸에 둘러서 입는다.','TRUE','몸',NULL,8,25,NULL,55,'[{"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,500',NULL,'여성',NULL,NULL),
+ (7231,'대황으로 염색한 와스트라',NULL,'의식에 사용하는 의상. 섬세한 자수와 무늬가 아름답다.','TRUE','몸',NULL,14,NULL,NULL,50,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (7232,'가삿트스아','붉은색','아시아의 왕족이 입는 의상
+금으로 장식되어 있다．','FALSE','몸',NULL,16,30,NULL,55,'[{"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,'남성',NULL,NULL),
+ (7233,'번왕의 아랍해적셔츠',NULL,'번왕 등 부유한 인물의 평상복으로서 사용하는 아랍 상인복.','TRUE','몸',NULL,15,20,40,35,'[{"ref": 2306, "name": "보관", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'2,700',NULL,'남성','[{"ref": 2011, "name": "준칠등훈작사"}]',NULL),
+ (7234,'동유럽어 사전',NULL,'그리스어와 슬라브어를 번역하기 위한 사전','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1396, "name": "동유럽어 번역"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7235,'아메리카어 사전',NULL,'아메리카대륙의 언어를 번역하기 위한 사전','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1402, "name": "아메리카어 번역"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7236,'나라티하파티 왕의 비수',NULL,'문예에 취해 있던 바간 왕조의 왕의 단검.','TRUE','무기 (던지는 나이프)',40,NULL,10,NULL,100,'[{"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2288, "name": "주연", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (7237,'사랑의 시집-바다',NULL,'성안토니오 축제에서 여성이 남성에게 전하는 바다와 사랑을 쓴 시집','TRUE','장신구',NULL,NULL,NULL,NULL,25,'[{"ref": 2276, "name": "대화술", "value": 1}]','[{"ref": 1393, "name": "조리 스킬 강화"}]',NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7238,'와스트라','생산','의식에 사용하는 의상
+섬세한 자수와 무늬가 아름답다．','FALSE','몸',NULL,12,NULL,NULL,35,'[{"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,'여성',NULL,NULL),
+ (7239,'룽구스드레스','생산','룽구스 민족의 의상
+손과 발에 금속 링을 착용한다．','FALSE','몸',NULL,8,NULL,NULL,35,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,'여성',NULL,NULL),
+ (7240,'바틱','생산','납결염색한 천으로 만들어진 의상
+몸에 둘러서 입는다．','FALSE','몸',NULL,8,20,NULL,35,'[{"ref": 2312, "name": "염료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (7241,'지치뿌리로 염색한 와스트라',NULL,'지아딘 북서쪽 
+2차필드 입구 앞에서 유적도둑(Lv53) 잡으니까 주네요
+유적도둑 레어몹이네요','TRUE','몸',NULL,14,NULL,NULL,50,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2280, "name": "보물 감정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,'여성',NULL,NULL),
+ (7242,'광대의 양다리',NULL,'광대의 양손을 바탕으로 특별한 방법으로 만들어 낸 그리브.','TRUE','다리',NULL,13,8,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,'[{"ref": 2013, "name": "칠등훈작사"}]',NULL),
+ (7243,'나쿠스인','파란색','용맹한 여전사의 의복.
+아름다운 금세공 장식이 달려 있다.','FALSE','몸',16,36,NULL,NULL,55,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,'여성',NULL,NULL),
+ (7244,'황금의 양다리',NULL,'광대의 양다리를 개량한 호화로운 그리브.','TRUE','다리',NULL,16,8,NULL,50,'[{"ref": 2293, "name": "행군", "value": 1}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'80,000',NULL,NULL,'[{"ref": 2025, "name": "사등훈작사"}]',NULL),
+ (7245,'검정색 차도르',NULL,'초목 염색으로 색을 들인 아랍 여성이 자주 입는 장의','TRUE','몸',NULL,5,15,40,35,'[{"ref": 2312, "name": "염료 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'1,300',NULL,'여성',NULL,NULL),
+ (7246,'아프로아시아어 사전',NULL,'아라비아어, 헤브라이어, 고대 이집트어를 번역하기 위한 사전','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1399, "name": "아프로아시아어 번역"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7247,'인도양어 사전',NULL,'인도어나 페르시아어를 번역하기 위한 사전','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1401, "name": "인도양어 번역"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7248,'아프리카어 사전',NULL,'아프리카어를 번역할 수 있는 사전','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1398, "name": "아프리카어 번역"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7249,'알타이어 사전',NULL,'터키어 등을 번역하기 위한 사전','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1400, "name": "알타이어 번역"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7250,'나포 곤봉',NULL,'아마존의 선주민이 사용하는 기묘한 모양의 곤봉','TRUE','무기 (곤봉 지팡이)',24,NULL,NULL,5,30,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,500',NULL,NULL,NULL,NULL),
+ (7251,'포술가의 수기',NULL,'배에 효과적으로 피해를 주는 방법이 쓰여져 있는 포술가의 수기','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2326, "name": "관통", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7252,'녹주석의 부활절 달걀',NULL,'보석을 장식하고 있는 특별한 부활절 달걀','TRUE','장신구',NULL,NULL,20,NULL,50,'[{"ref": 2348, "name": "회피", "value": 1}, {"ref": 2333, "name": "수리", "value": 1}, {"ref": 2324, "name": "감시", "value": 3}]','[{"ref": 1447, "name": "모든 상태 회복(복수)"}]',NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7253,'바론',NULL,'바론신의 모습을 본뜬 것으로
+기원의식 등에 사용된다．','FALSE','머리',NULL,NULL,NULL,NULL,250,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2304, "name": "미술품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'남성',NULL,NULL),
+ (7254,'고승의 법의',NULL,'덕이 높은 불교 승려의 의복을
+누벼서 만든 법의．','FALSE','몸',NULL,NULL,NULL,NULL,100,'[{"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,'남성',NULL,NULL),
+ (7255,'지오차임쿠','보라색','아시아의 왕족이 쓰는 모자
+금으로 장식되어 있다．','FALSE','머리',NULL,8,15,NULL,40,'[{"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7256,'쟈오차이스아','보라색','아시아의 왕족이 입는 의상
+금으로 장식되어 있다．','FALSE','몸',NULL,12,25,NULL,50,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'남성',NULL,NULL),
+ (7257,'타한인','지도,녹색허리띠','용맹한 여전사의 의복.
+아름다운 금세공 장식이 달려 있다.','FALSE','몸',8,28,NULL,NULL,45,'[{"ref": 2325, "name": "검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'6,500',NULL,'여성',NULL,NULL),
+ (7258,'다야쿠의 깃털모자','생산','다야쿠 민족의 모자．
+커다란 깃털 장식이 달려 있다．','FALSE','머리',NULL,4,NULL,NULL,100,NULL,NULL,NULL,NULL,NULL,NULL,'2,500',NULL,NULL,NULL,NULL),
+ (7259,'다야쿠전사의 테라','생산','다야쿠 민족의 전사가 입는 의상
+전사의 몸에는 문신이 그려져 있다．','FALSE','몸',12,8,NULL,NULL,35,'[{"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (7260,'사룽','생산','원통형의 의상
+허리부분을 접어 입는다．','FALSE','몸',NULL,8,NULL,NULL,35,'[{"ref": 2312, "name": "염료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,'남성',NULL,NULL),
+ (7261,'아선염색 한 사룽',NULL,'원통형의 의상. 허리부분을 접어 입는다.
+
+아체 자경단은 동남아 해역에서 출몰합니다
+
+정확히는 자카르타 남쪽과 팔렘방과 말라카 사이 해역에서 출몰합니다.. ^^','TRUE','몸',NULL,10,NULL,NULL,45,'[{"ref": 2310, "name": "섬유 거래", "value": 1}, {"ref": 2312, "name": "염료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,'남성',NULL,NULL),
+ (7262,'피하카엣타',NULL,'실론섬에서 사용되는 단검. 칼날 안쪽이 휘어져 있다.
+
+실론 문 밖 실론 여단lv25 드랍','TRUE','무기 (던지는 나이프)',38,NULL,NULL,NULL,60,NULL,NULL,NULL,NULL,NULL,NULL,'2,100',NULL,NULL,NULL,NULL),
+ (7263,'누아 전사의 창',NULL,'누아 전사가 사용하는 전통적인 창
+나일강 중부 누아산적(Lv11) 드랍템','TRUE','무기 (창)',32,NULL,NULL,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,'전투','1,400',NULL,NULL,NULL,NULL),
+ (7264,'기수 지침서 제 3권',NULL,'공격에 대하여 기록한 서적.
+육상전에서 페인트 테크닉의
+사용이 쉬워진다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7265,'박물학자의 외눈안경',NULL,'한쪽 눈에 끼는 안경. 유명한 학자가 애용했다고 한다.','TRUE','장신구',NULL,NULL,NULL,NULL,25,NULL,'[{"ref": 2290, "name": "채집"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7266,'무녀의 팔다',NULL,'신대륙의 무녀가 입는 드레스.
+제례 시 입는다.','FALSE','몸',NULL,8,15,NULL,35,'[{"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,800',NULL,'여성',NULL,NULL),
+ (7267,'색실무늬 운크',NULL,'신대륙의 수렵인이 입는 옷
+섬세한 자수가 들어가 있다.','FALSE','몸',NULL,15,NULL,10,35,'[{"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,200',NULL,'남성',NULL,NULL),
+ (7268,'카메오 귀걸이',NULL,'부조 세공을 한 귀걸이.
+예술적인 가치가 아주 높다.','TRUE','장신구',NULL,NULL,20,NULL,20,'[{"ref": 2293, "name": "행군", "value": 1}]','[{"ref": 2272, "name": "구제"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7269,'백은장식의 보석왕관',NULL,'훌륭한 세공과 호화스런 장식의 왕관','TRUE','머리',NULL,12,33,NULL,55,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2276, "name": "대화술", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'36,000',NULL,NULL,'[{"ref": 2025, "name": "사등훈작사"}]',NULL),
+ (7270,'와소드',NULL,'독일 용병이 즐겨 사용하는 싸움을 위한 장검.','TRUE','무기 (검)',28,10,NULL,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7271,'사랑의 시집-대지',NULL,'성안토니오 축제에서 여성이 남성에게 전하는 대지와 사랑을 쓴 시집','TRUE','장신구',NULL,NULL,NULL,NULL,25,'[{"ref": 2276, "name": "대화술", "value": 1}, {"ref": 2305, "name": "바디 랭귀지", "value": 1}]','[{"ref": 1393, "name": "조리 스킬 강화"}]',NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7272,'사랑의 시집-태양',NULL,'성안토니오 축제에서 여성이 남성에게 전하는 태양과 사랑을 쓴 시집
+(일본과는 옵션이 다름)','TRUE','장신구',NULL,NULL,NULL,NULL,25,'[{"ref": 2276, "name": "대화술", "value": 2}, {"ref": 2309, "name": "사교", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7273,'바다색 만제리코의 작은 화분',NULL,'성안토니오 축제에서 남성이 여성에게 애정을 담아 전하는 푸른 작은 화분','TRUE','장신구',NULL,NULL,NULL,NULL,25,'[{"ref": 2306, "name": "보관", "value": 1}]','[{"ref": 1393, "name": "조리 스킬 강화"}]',NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7274,'바탕색 만제리코의 작은 화분',NULL,'성안토니오 축제에서 남성이 여성에게 애정을 담아 전하는 갈색 작은 화분','TRUE','장신구',NULL,NULL,NULL,NULL,25,'[{"ref": 2306, "name": "보관", "value": 1}, {"ref": 2313, "name": "운용", "value": 1}]','[{"ref": 1393, "name": "조리 스킬 강화"}]',NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7275,'햇빛색 만제리코의 작은 화분',NULL,'성안토니오 축제에서 남성이 여성에게 애정을 담아 전하는 노란색 작은 화분
+(일본 것과는 옵션이 다름)','TRUE','장신구',NULL,NULL,NULL,NULL,25,'[{"ref": 2306, "name": "보관", "value": 2}, {"ref": 2313, "name": "운용", "value": 2}, {"ref": 2281, "name": "생물학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7276,'탐색용 곡괭이',NULL,'지중에 묻혀 있는 것을 파내기 위해 사용하는 도구.','TRUE','도구',NULL,NULL,NULL,NULL,5,'[{"ref": 2292, "name": "탐색", "value": 2}]','[{"ref": 2292, "name": "탐색"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7277,'녹차염색 한 사룽',NULL,'비라우탄 산적 LV38 .드랍. 페구북쪽
+
+원통형의 의상. 허리부분을 접어 입는다.','TRUE','몸',NULL,10,NULL,NULL,45,'[{"ref": 2312, "name": "염료 거래", "value": 1}, {"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,'남성',NULL,NULL),
+ (7278,'라이트 시미터',NULL,'사막의 백성들이 널리 사용하는 반달형의 가벼운 칼.','TRUE','무기 (검)',20,NULL,NULL,12,30,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,'전투',NULL,NULL,NULL,NULL,NULL),
+ (7279,'파르시온',NULL,'칼날의 폭이 넓고 무거워서 위력이 높은, 베어 내기 위한 칼.','TRUE','무기 (검)',20,NULL,NULL,12,35,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,'전투',NULL,NULL,NULL,NULL,NULL),
+ (7280,'나스르 보병 창',NULL,'나스르 왕조 보병의 창.','TRUE','무기 (창)',22,NULL,NULL,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,'전투','1,320',NULL,NULL,NULL,NULL),
+ (7281,'노르만 기병 창',NULL,'노르만 기병이 돌격에 사용한 날카롭고 무거운 창.','TRUE','무기 (창)',24,NULL,NULL,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,400',NULL,NULL,NULL,NULL),
+ (7282,'이크르',NULL,'남아프리카 쿠바인이 사용하는
+칼날이 나뭇잎과 같은 단검.','TRUE','무기 (던지는 나이프)',20,NULL,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,'모험','1,000',NULL,NULL,NULL,NULL),
+ (7283,'비체크',NULL,'터키가 기원인 외날 단검. 페르시아및 인도에도 전해졌다.','TRUE','무기 (던지는 나이프)',37,NULL,NULL,NULL,55,'[{"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,900',NULL,NULL,NULL,NULL),
+ (7284,'브리치로더식 사격총',NULL,'총 뒷부분에 탄환을 장전하는 사격용 총.','TRUE','무기 (총)',18,NULL,NULL,NULL,40,'[{"ref": 2435, "name": "저격술", "value": 1}]','[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,'교역','6,000',NULL,NULL,NULL,NULL),
+ (7285,'재쟈일',NULL,'부싯돌점화식 총. 총밑부분이 넓고 멀리까지 날아간다.','TRUE','무기 (총)',24,NULL,NULL,NULL,50,NULL,'[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'2,200',NULL,NULL,NULL,NULL),
+ (7286,'샤를르빌',NULL,'프랑스에서 만들어진 고성능의 부싯돌점화식 총.','TRUE','무기 (총)',25,NULL,NULL,NULL,50,NULL,'[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'2,200',NULL,NULL,NULL,NULL),
+ (7287,'브라운베스',NULL,'잉글랜드에서 만들어진 고성능 부싯돌점화식 총.','TRUE','무기 (총)',25,NULL,NULL,NULL,50,NULL,'[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'2,500',NULL,NULL,NULL,NULL),
+ (7288,'페트로넬',NULL,'총을 가슴부분에 고정시키도록 궁리되어진 기병용 총.','TRUE','무기 (총)',28,NULL,NULL,NULL,35,'[{"ref": 2435, "name": "저격술", "value": 1}]','[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'3,500',NULL,NULL,NULL,NULL),
+ (7289,'반두이챠크마키',NULL,'인도에서 사용되어진 부싯돌점화식 총.','TRUE','무기 (총)',30,NULL,NULL,NULL,50,NULL,'[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'3,100',NULL,NULL,NULL,NULL),
+ (7290,'트로와빌',NULL,'프랑스 근위총사대 대장의 이름이 붙혀진 고성능 총.','TRUE','무기 (총)',32,NULL,NULL,NULL,55,'[{"ref": 2435, "name": "저격술", "value": 2}]','[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'3,800',NULL,NULL,NULL,NULL),
+ (7291,'카라바인 총',NULL,'기병용으로 총길이를 짧게한 고성능 부싯돌점화식 총.','TRUE','무기 (총)',35,NULL,NULL,NULL,40,'[{"ref": 2435, "name": "저격술", "value": 2}]','[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'4,400',NULL,NULL,NULL,NULL),
+ (7292,'빈랑으로 염색한 모로',NULL,'모로 민족의 남성 의상. 자수가 아름답다.','TRUE','몸',NULL,10,NULL,NULL,50,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,500',NULL,'남성',NULL,NULL),
+ (7293,'라이딩 글러브',NULL,'승마할 때 끼는 장갑. 손가락이 없는 것이 특징. 
+(캐릭터 생성시 기본 지급 아이템)','FALSE','팔',NULL,1,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7294,'측량법 입문서',NULL,'측량술의 기초가 기록된 서적.','TRUE','장신구',NULL,NULL,NULL,NULL,10,NULL,'[{"ref": 2291, "name": "측량"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7295,'콜세어 셔츠',NULL,'프랑스 사략해적의 이름을
+붙인 셔츠. 해적이 즐겨 입는다.','FALSE','몸',NULL,1,NULL,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7296,'두건',NULL,'머리에 두르는 천.
+선원들의 머리 장식으로서 널리 사용된다.','FALSE','머리',NULL,1,NULL,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7297,'베레모',NULL,'천이나 가죽으로 만들어진
+차양이 없는 둥근 모자. 흔한 것이다.','FALSE','머리',NULL,1,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7298,'바론구',NULL,'민다나오 섬 주변에서 사용되는 상당히 무거운 단검
+
+바렌츠 일가(Lv40) 2팟 잡았더니 주네요','TRUE','무기 (던지는 나이프)',44,NULL,NULL,NULL,45,NULL,NULL,NULL,NULL,NULL,'모험','5,000',NULL,NULL,NULL,NULL),
+ (7299,'마젤란의 항해지',NULL,'마젤란의 힘든 항해를 상세하게 기록한 서적.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2289, "name": "지리학", "value": 2}]','[{"ref": 1401, "name": "인도양어 번역"}]',NULL,NULL,NULL,NULL,'25,000',NULL,NULL,NULL,NULL),
+ (7300,'익스큐셔너',NULL,'이름그대로 처량한 이를 처단하는 해적용의 긴 검.','TRUE','무기 (검)',36,NULL,NULL,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,'2500',NULL,NULL,NULL),
+ (7301,'행운의 레이브 갑옷',NULL,'바이킹 영웅의 이름을 붙인 바이킹 독자적 양식의 갑옷','TRUE','몸',20,40,5,5,50,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7302,'기묘한 인형',NULL,'검은 수염이 만든 인형.
+소유하는 이를 수호한다.','TRUE','장신구',NULL,NULL,NULL,NULL,15,'[{"ref": 2348, "name": "회피", "value": 1}, {"ref": 2338, "name": "응급처치", "value": 1}]','[{"ref": 1403, "name": "주술"}]',NULL,NULL,NULL,NULL,NULL,'1500',NULL,NULL,NULL),
+ (7303,'이글페더',NULL,'독수리 깃털 모양의 장식품. 불가사의한 힘이 깃든다고 한다.','TRUE','장신구',NULL,NULL,10,NULL,5,'[{"ref": 2277, "name": "돛 조종", "value": 2}, {"ref": 2300, "name": "귀금속 거래", "value": 3}, {"ref": 2329, "name": "돌격", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7304,'아스텍카렌더',NULL,'달력이 새겨진 돌 모양의 장식품. 몸을 지키는 부적으로 사용한다.','TRUE','장신구',NULL,NULL,10,NULL,5,'[{"ref": 2291, "name": "측량", "value": 2}, {"ref": 2285, "name": "자물쇠 따기", "value": 1}, {"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7305,'아스텍 오팔',NULL,'커다란 오팔. 호화롭게 장식되어 있다.','TRUE','장신구',NULL,NULL,10,NULL,5,'[{"ref": 2307, "name": "보석 거래", "value": 3}, {"ref": 2338, "name": "응급처치", "value": 2}, {"ref": 2336, "name": "외과의술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7306,'여행자의 아뮬렛',NULL,'연금술로 만들어진 여행자들을 위한 부적.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2282, "name": "생존", "value": 1}, {"ref": 2277, "name": "돛 조종", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7307,'학자의 아뮬렛',NULL,'연금술로 만들어진 학자들을 위한 부적.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2278, "name": "미술", "value": 1}, {"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7308,'조끼',NULL,'셔츠에 모직 단의를 겹쳐 입는
+아주 흔한 옷.','FALSE','몸',NULL,1,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7309,'가죽조끼',NULL,'가죽으로 만들어진 조끼.
+튼튼하고 활동하기 편하여
+상인들이 즐겨 입는다.','FALSE','몸',NULL,1,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7310,'편력 기사의 갑옷',NULL,'제국을 도는 기사가 애용했다고 전해지는 갑옷.','TRUE','몸',NULL,55,20,NULL,55,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,'전투','4,000',NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (7311,'성채 기사 갑옷',NULL,'성이나 성채를 지키는 장군의 갑옷. 실전용으로 아주 튼튼하다.','TRUE','몸',NULL,50,25,NULL,55,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,'전투','4,000',NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (7312,'포르반코트',NULL,'악명높은 해적을 위한 코트．
+피가 물든 듯한 색을 띄고 있다','FALSE','몸',12,36,NULL,20,50,'[{"ref": 2342, "name": "조타", "value": 1}, {"ref": 2347, "name": "포술", "value": 1}, {"ref": 2335, "name": "수평사격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,'5000',NULL,NULL,NULL),
+ (7313,'백담비털 코트',NULL,'귀중한 흰담비의 모피코트와 셔츠를 곁들인 여장.','TRUE','몸',NULL,15,35,10,40,'[{"ref": 2291, "name": "측량", "value": 2}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,'모험','2,700',NULL,NULL,'[{"ref": 2011, "name": "준칠등훈작사"}]',NULL),
+ (7314,'세이블 털가죽 트가리누',NULL,'세이블의 털가죽으로 만든 의상．
+악명높은 이만이 장비할 수 있다．','FALSE','몸',16,32,NULL,10,50,'[{"ref": 2342, "name": "조타", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,'5000',NULL,NULL,NULL),
+ (7315,'푸른색 조젯제 드레스',NULL,'아주 고가인 천을 듬뿍 사용한 푸르고 우아한 드레스.','TRUE','몸',NULL,NULL,48,NULL,20,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2295, "name": "경계", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'4,500',NULL,'여성','[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (7316,'모닝드레스',NULL,'전통적인 양식의 암적색 드레스. 낮의 제례에 착용한다.','TRUE','몸',NULL,NULL,50,NULL,20,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2295, "name": "경계", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,'여성','[{"ref": 2017, "name": "육등훈작사"}]',NULL),
+ (7317,'검정 나사제 아랍해적셔츠',NULL,'검정 나사원단으로 만든
+고가 아랍 상인의 옷.','TRUE','몸',NULL,15,10,40,35,'[{"ref": 2306, "name": "보관", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'2,400',NULL,'남성','[{"ref": 2011, "name": "준칠등훈작사"}]',NULL),
+ (7318,'독수리전사의 창',NULL,'독수리 전사가 사용하는 흑요석으로 된 창. 내구도는 그다지 높지 않다','TRUE','무기 (창)',38,NULL,NULL,NULL,35,'[{"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (7319,'금색의 팔다',NULL,'전체가 금으로 장식된 특별한 드레스. 신성함을 느끼게 한다.','TRUE','몸',NULL,8,15,NULL,15,NULL,NULL,NULL,NULL,NULL,NULL,'5,500',NULL,'여성',NULL,NULL),
+ (7320,'금색의 로파',NULL,'전체가 금으로 장식된 특별한 로파. 신성함을 느끼게 한다.','TRUE','몸',NULL,8,NULL,10,15,NULL,NULL,NULL,NULL,NULL,NULL,'5,500',NULL,'남성',NULL,NULL),
+ (7321,'가삿트스아','노란색','아시아의 왕족이 입는 의상
+금으로 장식되어 있다．','FALSE','몸',NULL,16,30,NULL,55,'[{"ref": 2322, "name": "향신료 거래", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,'남성',NULL,NULL),
+ (7322,'가삿트스아','파란색','아시아의 왕족이 입는 의상
+금으로 장식되어 있다．','FALSE','몸',NULL,16,30,NULL,55,'[{"ref": 2300, "name": "귀금속 거래", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,'남성',NULL,NULL),
+ (7323,'다야쿠전사의 테라','탐색','다야쿠 민족의 전사가 입는 의상
+전사의 몸에는 문신이 그려져 있다．','FALSE','몸',8,4,NULL,NULL,25,'[{"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,800',NULL,'남성',NULL,NULL),
+ (7324,'다야쿠전사의 테라','내구45-응용검술부스','다야쿠 민족의 전사가 입는 의상
+전사의 몸에는 문신이 그려져 있다．','FALSE','몸',16,12,NULL,NULL,45,'[{"ref": 2431, "name": "던지기 기술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,'남성',NULL,NULL),
+ (7325,'다야쿠전사의 테라','내구45-검술부스','다야쿠 민족의 전사가 입는 의상
+전사의 몸에는 문신이 그려져 있다．','FALSE','몸',16,12,NULL,NULL,45,'[{"ref": 2431, "name": "던지기 기술", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,'남성',NULL,NULL),
+ (7326,'다야쿠전사의 테라','내구45-돌격부스','다야쿠 민족의 전사가 입는 의상
+전사의 몸에는 문신이 그려져 있다．','FALSE','몸',16,12,NULL,NULL,45,'[{"ref": 2431, "name": "던지기 기술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,'남성',NULL,NULL),
+ (7327,'대황으로 염색한 모로',NULL,'모로 민족의 남성 의상. 자수가 아름답다.','TRUE','몸',NULL,10,NULL,NULL,50,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,500',NULL,'남성',NULL,NULL),
+ (7328,'모로','생산','모로 민족의 남성 의상
+자수가 아름답다．','FALSE','몸',NULL,8,NULL,NULL,35,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,500',NULL,'남성',NULL,NULL),
+ (7329,'나쿠스인','흰색','용맹한 여전사의 의복.
+아름다운 금세공 장식이 달려 있다.','FALSE','몸',16,36,NULL,NULL,55,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,'여성',NULL,NULL),
+ (7330,'나쿠스인','연두색','웅장한 여전사의 복장. 아름다운 금세공 장식이 달려 있다.','TRUE','몸',12,32,NULL,NULL,50,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,800',NULL,'여성',NULL,NULL),
+ (7331,'타한인','지도,청색허리띠','용맹한 여전사의 의복.
+아름다운 금세공 장식이 달려 있다.','FALSE','몸',8,28,NULL,NULL,45,'[{"ref": 2329, "name": "돌격", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'6,500',NULL,'여성',NULL,NULL),
+ (7332,'타한인','드랍,붉은허리띠','용맹한 여전사의 의복.
+아름다운 금세공 장식이 달려 있다.','TRUE','몸',12,32,NULL,NULL,50,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,800',NULL,'여성',NULL,NULL),
+ (7333,'마이카눈으로 염색한 바틱',NULL,'납결염색한 천으로 만들어진 의상. 몸에 둘러서 입는다.','TRUE','몸',NULL,8,25,NULL,55,'[{"ref": 2322, "name": "향신료 거래", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,500',NULL,'여성',NULL,NULL),
+ (7334,'룽구스드레스','탐색','룽구스 민족의 의상
+손과 발에 금속 링을 착용한다．','FALSE','몸',NULL,4,NULL,NULL,20,'[{"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,500',NULL,'여성',NULL,NULL),
+ (7335,'잎으로 염색한 룽구스드레스',NULL,'룽구스 민족의 의상. 손과 발에 금속 링을 착용한다.','TRUE','몸',NULL,10,NULL,NULL,50,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,'여성',NULL,NULL),
+ (7336,'아선염색 한 룽구스드레스',NULL,'룽구스 민족의 의상. 손과 발에 금속 링을 착용한다.','TRUE','몸',NULL,10,NULL,NULL,50,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,'여성',NULL,NULL),
+ (7337,'재규어전사의 검',NULL,'재규어전사가 사용하는 흑요석으로 된 검.
+내구도는 그다지 높지 않다.','TRUE','무기 (검)',34,NULL,NULL,NULL,35,'[{"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (7338,'로그우드로 염색한 바이코르느해트',NULL,'검게 염색된 2각 모자. 악명높은 이만이 장비할 수 있다.','TRUE','머리',8,12,NULL,NULL,35,'[{"ref": 2334, "name": "수탈", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,'2500',NULL,NULL,NULL),
+ (7339,'로그우드로 염색한 솜브레로',NULL,'긴 차양의 검게 염색된 모자.
+악명높은 이만이 장비할 수 있다.','TRUE','머리',8,12,NULL,NULL,35,'[{"ref": 2334, "name": "수탈", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,'2500',NULL,NULL,NULL),
+ (7340,'가사트무쿠',NULL,'아시아의 왕족이 쓰는 모자
+금으로 장식되어 있다．','FALSE','머리',NULL,10,20,NULL,50,'[{"ref": 2313, "name": "운용", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (7341,'다야쿠의 깃털모자','수탈','다야쿠 민족의 모자. 커다란 깃털 장식이 달려 있다.','TRUE','머리',8,8,NULL,NULL,100,'[{"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,500',NULL,NULL,NULL,NULL),
+ (7342,'신발','내구30','가죽으로 만들어진 아주 흔한
+단화.','FALSE','다리',NULL,2,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7343,'포르반부츠',NULL,'검게 염색된 구두. 악명높은 이만이 장비할 수 있다.','TRUE','다리',12,16,NULL,NULL,35,'[{"ref": 2328, "name": "노 젓기", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,'3000',NULL,NULL,NULL),
+ (7344,'포르반 글러브',NULL,'검게 염색된 장갑. 악명높은 이만이 장비할 수 있다.','TRUE','팔',8,4,NULL,NULL,30,'[{"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,'2000',NULL,NULL,NULL),
+ (7345,'나이프',NULL,'가지고 다니기에 편리한
+짧은 칼. 호신용으로 밖에 도움이 되지 않는다.','FALSE','도구',NULL,NULL,NULL,NULL,100,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7346,'바데 바데',NULL,'말레이인 사이에서 사용되는 〈 모양의 칼자루가 달린 단검.','TRUE','무기 (던지는 나이프)',40,NULL,NULL,NULL,55,NULL,NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (7347,'킨드잘',NULL,'흑해 동쪽 해안 지역에서 사용되는 양날로 된 단검.','TRUE','무기 (던지는 나이프)',25,NULL,NULL,NULL,45,'[{"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,600',NULL,NULL,NULL,NULL),
+ (7348,'고로키',NULL,'말레이 반도에서 사용되는 단검. 도끼같은 모양이지만 칼끝이 날카롭다.','TRUE','무기 (던지는 나이프)',42,NULL,NULL,NULL,45,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7349,'타리본',NULL,'루손 섬 주변에서 사용되는 칼날이 삼각형인 단검.','TRUE','무기 (던지는 나이프)',40,NULL,NULL,NULL,55,'[{"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,'모험','4,500',NULL,NULL,NULL,NULL),
+ (7350,'흑단제 바이올린',NULL,'흑단 나무로 만들어진 최고급 바이올린.','TRUE','도구',NULL,NULL,NULL,NULL,100,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]','[{"ref": 1484, "name": "바이올린 연주"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7351,'스렌드라지트',NULL,'가루다 신의 모습을 닮았다는 하라디의 명검.','TRUE','무기 (던지는 나이프)',44,NULL,NULL,NULL,65,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2348, "name": "회피", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (7352,'캄피란',NULL,'이방민족이 사용하는 외날 무기. 처단에 사용하기도 한다.','TRUE','무기 (검)',46,NULL,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7353,'다',NULL,'칼날과 칼자루에 아름다운 문양이 새겨져 있는 외날 검.','TRUE','무기 (검)',38,NULL,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (7354,'쿠리스',NULL,'말레이 민족 특유의 단검. 아름다운 장식과 문양이 새겨져 있다.','TRUE','무기 (던지는 나이프)',38,NULL,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,500',NULL,NULL,NULL,NULL),
+ (7355,'캐시미어숄',NULL,'염소에서 얻어 낸 최상급의 원단이 많이 사용된 숄.','TRUE','장신구',NULL,NULL,5,NULL,20,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2295, "name": "경계", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'450',NULL,NULL,NULL,NULL),
+ (7356,'여신상의 탁상시계',NULL,'여신의 조각이 새겨져 있는 탁상 시계. 예술적 가치가 높다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2278, "name": "미술", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'800',NULL,NULL,NULL,NULL),
+ (7357,'연금술식 다우징로드',NULL,'연금술사가 고안한 광맥 찾기를 위한 한 쌍의 봉.','TRUE','장신구',NULL,NULL,NULL,NULL,25,NULL,'[{"ref": 2292, "name": "탐색"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7358,'명제독의 지휘봉',NULL,'이름 있는 대제독이 사용했다고 하는 지휘 지팡이.','TRUE','장신구',3,2,5,NULL,20,'[{"ref": 2339, "name": "전술", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]','[{"ref": 2339, "name": "전술"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7359,'코란',NULL,'이슬람교의 성전. 종교적으로 중요한 기술이 많다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2287, "name": "종교학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7360,'근거리 포격 지도서',NULL,'근거리의 배에 대한 포격의 응용 기술이 기록된 서적.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2335, "name": "수평사격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7361,'프레스테 조안의 검',NULL,'전설 속 동방 국가의 군주인 프레스테 조안이 사용했다고 알려진 검
+
+2008년 여름 프레스테 조안 이벤트','TRUE','무기 (검)',15,NULL,5,NULL,100,'[{"ref": 2278, "name": "미술", "value": 1}, {"ref": 2313, "name": "운용", "value": 1}, {"ref": 2325, "name": "검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7362,'프레스테 조안의 완갑',NULL,'전설 속 동방 국가의 군주인 프레스테 조안이 사용했다고 알려진 완갑
+
+2008년 여름 프레스테 조안 이벤트
+보르도 교회 던전 앨범 완성 보상','TRUE','팔',NULL,12,10,NULL,70,'[{"ref": 2277, "name": "돛 조종", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (7363,'프레스테 조안의 각갑',NULL,'전설 속 동방 국가의 군주인 프레스테 조안이 사용했다고 알려진 각갑옷
+
+2008년 여름 프레스테 조안 이벤트
+시라쿠사 교회 던전 앨범 완성 보상','TRUE','다리',NULL,21,10,NULL,70,NULL,NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7364,'프레스테 조안의 투구',NULL,'전설 속 동방 국가의 군주인 프레스테 조안이 사용했다고 알려진 투구
+
+2008년 여름 프레스테 조안 이벤트
+리마 교회 던전 앨범 완성 보상','TRUE','머리',NULL,20,10,NULL,70,'[{"ref": 2369, "name": "조미료 거래", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (7365,'프레스테 조안의 갑옷',NULL,'전설 속 동방 국가의 군주인 프레스테 조안이 사용했다고 알려진 갑옷
+
+2008년 여름 프레스테 조안 이벤트
+메모리얼 앨범 보상으로 획득 가능','TRUE','몸',NULL,50,30,NULL,100,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2347, "name": "포술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,500',NULL,NULL,NULL,NULL),
+ (7366,'복각 흑태자의 갑옷',NULL,'연금술에 의해 이전의 모습으로 복원된 흑태자의 갑옷','TRUE','몸',15,60,30,NULL,150,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,'전투','4,000',NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (7367,'정제 금박장식 갑옷',NULL,'연금술에 의해 강화된 금박장식 갑옷','TRUE','몸',NULL,80,40,NULL,220,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,'전투','4,000',NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (7368,'복각 편력기사의 갑옷',NULL,'연금술에 의해 이전의 모습으로 복원된 편력 기사의 갑옷','TRUE','몸',NULL,60,25,NULL,200,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,'전투','4,000',NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (7369,'복각 성채기사 갑옷',NULL,'연금술에 의해 이전의 모습으로 복원된 성채 기사의 갑옷','TRUE','몸',NULL,56,30,NULL,215,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,'전투','4,000',NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (7370,'복각 근위기사의 갑옷',NULL,'연금술에 의해 이전의 모습으로 복원된 근위 기사의 갑옷','TRUE','몸',NULL,65,35,NULL,150,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,'전투','4,000',NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (7371,'복각 적동제 갑옷',NULL,'연금술에 의해 이전의 모습으로 복원된 적동제 갑옷','TRUE','몸',NULL,70,25,NULL,150,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,'전투','4,000',NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (7372,'아노야타왕의 검',NULL,'바간 왕조 시대를 연 아노야타왕이 사용한 검.','TRUE','무기 (검)',66,NULL,10,NULL,100,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'16,000',NULL,NULL,NULL,NULL),
+ (7373,'가쟈마다의 검',NULL,'마자파히트 왕조의 명재상이 사용하던 검．','TRUE','무기 (검)',62,NULL,5,NULL,100,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7374,'쿠리스 페라완',NULL,'말레이 민족 특유의 단검, 아름다운 장식과 문양이 새겨져 있다．','TRUE','무기 (던지는 나이프)',40,NULL,NULL,NULL,60,'[{"ref": 2348, "name": "회피", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7375,'쿠리스 란포크',NULL,'말레이 민족 특유의 단검. 아름다운 장식과 문양이 새겨져 있다．','TRUE','무기 (던지는 나이프)',44,NULL,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (7376,'뚜껑이 부서진 소르피누르의 갑옷',NULL,'바이킹 영웅의 이름을 붙인 바이킹 독자적 양식의 갑옷','TRUE','몸',20,35,NULL,5,50,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7377,'열부 프레이디스의 갑옷',NULL,'바이킹 영웅의 이름을 붙인 바이킹 독자적 양식의 갑옷','TRUE','몸',20,35,NULL,5,50,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7378,'의협심이 강한 카를루세비니의 갑옷',NULL,'바이킹 영웅의 이름을 붙인 바이킹 독자적 양식의 갑옷','TRUE','몸',22,35,NULL,5,50,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7379,'쟈오차이스아','녹색','아시아의 왕족이 입는 의상
+금으로 장식되어 있다．','FALSE','몸',NULL,12,25,NULL,50,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'남성',NULL,NULL),
+ (7380,'지오차임쿠','분홍색','아시아의 왕족이 쓰는 모자
+금으로 장식되어 있다．','FALSE','머리',NULL,8,15,NULL,40,'[{"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7381,'지오차임쿠','노란색','아시아의 왕족이 쓰는 모자
+금으로 장식되어 있다．','FALSE','머리',NULL,8,15,NULL,40,'[{"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7382,'흑옥 브로치',NULL,'검은 구슬이 곁들여진
+세공이 훌륭한 브로치.','TRUE','장신구',NULL,NULL,30,NULL,30,'[{"ref": 2298, "name": "공예품 거래", "value": 2}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7383,'다목으로 염색한 와스트라',NULL,'의식에 사용하는 의상
+섬세한 자수와 무늬가 아름답다.','TRUE','몸',NULL,14,NULL,NULL,50,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2270, "name": "고고학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,'여성',NULL,NULL),
+ (7384,'흑진주 귀걸이',NULL,'아주 희귀한 흑진주가 박혀 있는 목걸이.','TRUE','장신구',NULL,NULL,40,NULL,50,'[{"ref": 2304, "name": "미술품 거래", "value": 1}, {"ref": 2331, "name": "소화", "value": 1}, {"ref": 2273, "name": "구조", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7385,'황동제 그리브',NULL,'갑옷과 맞추어 신는 무릎을 덮는 황동제 부츠．','TRUE','다리',NULL,20,10,NULL,70,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7386,'유리알 브로치',NULL,'아름다운 채색의 유리알이
+곁들여진 아름다운 브로치.','TRUE','장신구',NULL,NULL,20,NULL,20,'[{"ref": 2315, "name": "잡화 거래", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]','[{"ref": 2272, "name": "구제"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7387,'강철제 그리브',NULL,'투구, 갑옷과 같이 몸에대는 무릎밑을 덥는 철의부츠','TRUE','다리',NULL,19,9,NULL,70,NULL,NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (7388,'금양모기사단 훈장',NULL,'에스파니아 왕가가 주재하는 세속기사단，금양모기사단의 훈장','TRUE','장신구',NULL,NULL,20,NULL,50,'[{"ref": 2310, "name": "섬유 거래", "value": 2}, {"ref": 2339, "name": "전술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,'[{"ref": 2017, "name": "육등훈작사"}]',NULL),
+ (7389,'청금석 귀걸이',NULL,'청금석이 곁들여진 아름다운 귀걸이.','TRUE','장신구',NULL,NULL,30,NULL,50,'[{"ref": 2301, "name": "기호품 거래", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7390,'연격 지침서 제 3권',NULL,'공격에 대하여 기록한 서적.
+육상전에서 퀵 테크닉의
+사용이 쉬워진다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7391,'보충용 괭이',NULL,'농장에 꼭 필요한 괭이. 개인 농장에 보충해 둔다. 농지기술도 상승 보정1','TRUE','도구',4,NULL,NULL,NULL,30,NULL,'[{"ref": 2290, "name": "채집"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7392,'보충용 어망',NULL,'투망어법용의 그물.
+개인 농장에 보충해둔다. 어장기술도 상승보정1','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 2275, "name": "낚시"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7393,'보충용 양초',NULL,'갱도를 밝게 비추는 양초.
+개인 농장에 보충해둔다. 광맥기술도 상승보정1','TRUE','장신구',NULL,NULL,2,NULL,30,NULL,'[{"ref": 1404, "name": "주술(화염)"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7394,'보충용 벨',NULL,'동물을 불러모으는 벨.
+개인 농장에 보충해둔다. 목장기술도 상승보정1','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1371, "name": "향수병 해소"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7395,'서부태평양제도의 지도',NULL,'태평양서부 제도의 위치를 상세하게 기록한 해도.','TRUE','장신구',NULL,NULL,NULL,NULL,50,'[{"ref": 2289, "name": "지리학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7396,'쿠페의 전승기',NULL,'아오테아로아에 남는 쿠페의 전승을 정리한 서적.','TRUE','장신구',NULL,NULL,NULL,NULL,50,'[{"ref": 2289, "name": "지리학", "value": 1}, {"ref": 2270, "name": "고고학", "value": 1}]',NULL,NULL,NULL,NULL,'모험','15,000',NULL,NULL,NULL,NULL),
+ (7397,'솔로몬의 반지',NULL,'고대 솔로몬왕의 반지. 동물과 대화가 가능해진다고 한다.','TRUE','장신구',NULL,NULL,NULL,NULL,50,'[{"ref": 2283, "name": "생태 조사", "value": 2}, {"ref": 2281, "name": "생물학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'25,000',NULL,NULL,NULL,NULL),
+ (7398,'남태평양횡단항로도',NULL,'남태평양 횡단을 위한 항로를 극명하게 기록한 해도.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2289, "name": "지리학", "value": 2}, {"ref": 2270, "name": "고고학", "value": 1}]','[{"ref": 2291, "name": "측량"}]',NULL,NULL,NULL,'모험','30,000',NULL,NULL,NULL,NULL),
+ (7399,'큰새의 깃털모자','수탈','거대한 새의 깃털을 사용한 푸푼데타민족의 모자.','TRUE','머리',NULL,12,NULL,10,45,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,400',NULL,NULL,NULL,NULL),
+ (7400,'서컴라이너망토',NULL,'특별한 호칭을 가진 자만이 입을 수 있는 코트.','TRUE','몸',NULL,40,50,NULL,50,'[{"ref": 2277, "name": "돛 조종", "value": 2}, {"ref": 2286, "name": "조달", "value": 2}, {"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,'남성',NULL,'[{"ref": 1945, "name": "서컴라이너"}]'),
+ (7401,'엘레나의 묵주',NULL,'마젤란의 유품으로써 그의 딸 엘레나에게 물려준 묵주.','TRUE','장신구',NULL,NULL,NULL,NULL,50,'[{"ref": 2282, "name": "생존", "value": 2}, {"ref": 2279, "name": "보급", "value": 1}, {"ref": 2287, "name": "종교학", "value": 1}]','[{"ref": 1377, "name": "충성 상승"}]',NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,NULL),
+ (7402,'안드레아교관의 지팡이',NULL,'중급 모험가전공 수료기념으로 안드레아교관이 보내는 지팡이.','TRUE','무기 (곤봉 지팡이)',6,NULL,2,NULL,100,'[{"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,'모험','500',NULL,NULL,NULL,NULL),
+ (7403,'테세우스의 토시',NULL,'테세우스의 힘이 들어있다는 건틀릿.','TRUE','팔',6,14,9,NULL,50,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,'전투','25,000',NULL,NULL,NULL,NULL),
+ (7404,'마티아스교관의 검',NULL,'중급 군인 전공 수료기념으로
+마티아스교관이 보내는 검.','TRUE','무기 (검)',15,NULL,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,'전투','500',NULL,NULL,NULL,NULL),
+ (7405,'파푸아헤어','드랍,가축','원형모양의 모자에 깃털을 장식한
+파푸아민족의 모자.','FALSE','머리',NULL,8,NULL,15,40,'[{"ref": 2294, "name": "가축 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'3,500',NULL,'남성',NULL,NULL),
+ (7406,'교복',NULL,'항해자 양성학교의 학생에게 주어지는 바다색의 제복.','TRUE','몸',NULL,12,20,10,100,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[{"ref": 1961, "name": "훈련생"}]'),
+ (7407,'교모',NULL,'항해자 양성학교의 학생에게 주어지는 바다색의 교모.','TRUE','머리',NULL,4,20,10,100,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[{"ref": 1961, "name": "훈련생"}]'),
+ (7408,'스쿨트가리누',NULL,'항해자 양성학교의 졸업생에게 주어지는 여행자 의복.','TRUE','몸',NULL,12,40,NULL,100,'[{"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,'모험','500',NULL,NULL,NULL,'[{"ref": 1953, "name": "모험과정졸업생"}]'),
+ (7409,'그레고리교관의 주석 지팡이',NULL,'중급 상인전공 수료기념으로 그레고리교관이 보내는 주석지팡이.','TRUE','무기 (곤봉 지팡이)',2,NULL,6,NULL,100,'[{"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,'교역','500',NULL,NULL,NULL,NULL),
+ (7410,'돌도끼',NULL,'도끼 머리부분이 돌로 된 무기.','TRUE','무기 (도끼)',12,NULL,NULL,NULL,20,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2333, "name": "수리", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (7411,'쿠페의 목창',NULL,'한그루의 나무로 만들어진 창.
+창끝이 매우 날카롭다.','TRUE','무기 (창)',46,NULL,NULL,NULL,100,'[{"ref": 2275, "name": "낚시", "value": 1}, {"ref": 2329, "name": "돌격", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (7412,'스쿨샤마르',NULL,'상급항해학교 졸업생에게 지급 되는 옷.','TRUE','몸',NULL,6,40,NULL,100,'[{"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,'교역','500',NULL,NULL,NULL,'[{"ref": 1955, "name": "상업과정졸업생"}]'),
+ (7413,'서컴라이너로브',NULL,'특별 호칭을 가진 자만이 입을 수 있는 드레스.','TRUE','몸',NULL,40,50,NULL,50,'[{"ref": 2277, "name": "돛 조종", "value": 2}, {"ref": 2286, "name": "조달", "value": 2}, {"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,'여성',NULL,'[{"ref": 1945, "name": "서컴라이너"}]'),
+ (7414,'큰새의 깃털모자','생산','거대한 새의 깃털을 사용한
+푸푼데타민족의 모자.','FALSE','머리',NULL,8,NULL,10,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7415,'마오리의 깃털장식','내구30','틀어올린 머리를 새의 깃털로
+장식하는 마오리민족의 헤어스타일.','FALSE','머리',NULL,4,NULL,10,30,NULL,NULL,NULL,NULL,NULL,NULL,'2,200',NULL,NULL,NULL,NULL),
+ (7416,'마오리의 깃털장식','내구45','틀어올린 머리를 새의 깃털로 장식하는 마오리민족의 헤어스타일.','TRUE','머리',NULL,8,NULL,10,45,'[{"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,200',NULL,NULL,NULL,NULL),
+ (7417,'파푸아헤어','탐색','원형모양의 모자에 깃털을 장식한
+파푸아민족의 모자.','FALSE','머리',NULL,4,NULL,15,20,NULL,NULL,NULL,NULL,NULL,NULL,'2,500',NULL,'남성',NULL,NULL),
+ (7418,'깃털모자','내구20','깃털이 여러 겹으로 겹쳐진
+트로브리앤드섬의 머리장식.','FALSE','머리',NULL,4,NULL,15,20,NULL,NULL,NULL,NULL,NULL,NULL,'2,400',NULL,'여성',NULL,NULL),
+ (7419,'깃털모자','내구40, 조달 부스터','깃털이 여러 겹으로 겹쳐진
+트로브리앤드섬의 머리장식.','FALSE','머리',NULL,8,NULL,15,40,'[{"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7420,'오픈크라운',NULL,'틀어올린 머리를 공작의 깃털과
+커다란 꽃으로 장식하는 귀부인의 헤어스타일.','FALSE','머리',NULL,4,30,NULL,40,'[{"ref": 2309, "name": "사교", "value": 3}]',NULL,NULL,NULL,NULL,'교역','22,000',NULL,'여성',NULL,NULL),
+ (7421,'코트햇',NULL,'모피로 장식된 세련된 모자.
+큰 행사 시에 사용된다.','FALSE','머리',NULL,6,30,NULL,40,'[{"ref": 2309, "name": "사교", "value": 3}]',NULL,NULL,NULL,NULL,'교역','22,000',NULL,NULL,NULL,NULL),
+ (7422,'카사도르크라운','전술','해적으로부터 되찾은 보물로
+장식되어 있는 현상금 사냥꾼의 모자.','FALSE','머리',12,12,NULL,NULL,40,'[{"ref": 2348, "name": "회피", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,'전투','30,000',NULL,NULL,NULL,NULL),
+ (7423,'파이랫츠크라운',NULL,'불쌍한 희생자로부터 약탈한 보물로
+장식되어 있는 흉악한 해적모자.','FALSE','머리',16,8,NULL,NULL,40,'[{"ref": 2348, "name": "회피", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,'6000',NULL,NULL,NULL),
+ (7424,'도바','탐색','트로브리앤드섬의 민족의상.
+스커트 모양이 특징적이다.','FALSE','몸',NULL,8,NULL,15,20,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,800',NULL,'여성',NULL,NULL),
+ (7425,'도바','생산','트로브리앤드섬의 민족의상. 스커트 모양이 특징적이다.','TRUE','몸',NULL,8,NULL,15,35,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,200',NULL,'여성',NULL,NULL),
+ (7426,'도바','육상드랍','트로브리앤드섬의 민족의상. 스커트 모양이 특징적이다.
+
+회색.','TRUE','몸',NULL,12,NULL,15,45,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,200',NULL,'여성',NULL,NULL),
+ (7427,'마오리워리어','내구30','마오리족 전사의 의상.
+몸전체에 모코를 그려넣는다.','FALSE','몸',12,6,NULL,10,30,'[{"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7428,'마오리워리어','내구40','마오리족 전사의 의상.
+몸전체에 모코를 그려넣는다.','FALSE','몸',16,8,NULL,10,40,'[{"ref": 2431, "name": "던지기 기술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,900',NULL,'남성',NULL,NULL),
+ (7429,'마오리드레스','내구30','마오리민족의 드레스.
+상체부에 모코를 그려넣는다.','FALSE','몸',12,6,NULL,10,30,'[{"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,800',NULL,'여성',NULL,NULL),
+ (7430,'마오리드레스','내구40','마오리민족의 드레스.
+상체부에 모코를 그려넣는다.','FALSE','몸',16,8,NULL,10,40,'[{"ref": 2431, "name": "던지기 기술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,'여성',NULL,NULL),
+ (7431,'푸푼데타','노랑','푸푼데타민족의 의상.
+앞쪽에 커다란 목걸이가 장식되어진다.','FALSE','몸',NULL,8,NULL,15,35,'[{"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7432,'푸푼데타','파랑','푸푼데타민족의 의상.
+앞쪽에 커다란 목걸이가 장식되어진다.','FALSE','몸',NULL,12,NULL,15,45,'[{"ref": 2283, "name": "생태 조사", "value": 1}, {"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,500',NULL,'여성',NULL,NULL),
+ (7434,'보충용 채굴미튼',NULL,'채굴을 수월하게 하는 미튼.
+개인 농장에 보충하여 둔다. 광맥기술도 상승보정2','TRUE','팔',NULL,2,NULL,NULL,60,'[{"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7435,'보충용 가래',NULL,'농작에 꼭 필요한 가래.
+개인 농장에 보충해 둔다. 농지기술도 상승보정2','TRUE','도구',10,NULL,NULL,NULL,60,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7436,'보충용 낫',NULL,'농작에 꼭 필요한 낫.
+개인 농장에 보충해 둔다. 농지기술도 상승보정3','TRUE','도구',12,NULL,NULL,NULL,15,NULL,'[{"ref": 2286, "name": "조달"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7437,'보충용 곡괭이',NULL,'채굴작업에 꼭 필요한 곡괭이.
+개인 농장에 보충해 둔다. 광맥기술도 상승보정3','TRUE','도구',12,NULL,NULL,NULL,15,NULL,'[{"ref": 2292, "name": "탐색"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7438,'보충용 갈퀴',NULL,'해변에서 조개류를 채취하는데 사용하는 갈퀴.
+개인 농장에 보충해 둔다. 어장기술도 상승보정3','TRUE','도구',12,NULL,NULL,NULL,15,NULL,'[{"ref": 2290, "name": "채집"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7439,'보충용 브러시',NULL,'동물을 돌보는데 사용하는 브러시.
+개인 농장에 보충해 둔다. 목장기술도 상승보정2','TRUE','도구',NULL,NULL,NULL,NULL,60,'[{"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7440,'보충용 사료통',NULL,'동물의 사료가 들어있는 통.
+개인 농장에 보충해 둔다. 목장기술도 상승보정3','TRUE','장신구',NULL,NULL,NULL,NULL,15,NULL,'[{"ref": 1360, "name": "침수 회복"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7441,'보충용 낚시도구셋트',NULL,'육상및 배낚시의 낚시도구셋트.
+개인 농장에 보충해 둔다. 어장기술도 상승보정2','TRUE','장신구',NULL,NULL,NULL,NULL,60,'[{"ref": 2275, "name": "낚시", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7442,'아스트롤라베',NULL,'놋쇠로 만들어진 천체 관측기구.
+항성의 측정이나 삼각측량에 사용되었다.','TRUE','도구',NULL,NULL,NULL,NULL,15,'[{"ref": 2291, "name": "측량", "value": 1}, {"ref": 2289, "name": "지리학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7443,'제독의 아스트롤라베',NULL,'유명한 제독이 사용한 아스트롤라베.','TRUE','도구',NULL,NULL,NULL,NULL,25,'[{"ref": 2291, "name": "측량", "value": 1}, {"ref": 2289, "name": "지리학", "value": 1}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7444,'디바이더',NULL,'삼각자과 더불어 항로설계에 사용되어지는 거리를 산출하는 도구.','TRUE','도구',NULL,NULL,NULL,NULL,15,'[{"ref": 2291, "name": "측량", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7445,'제독의 디바이더',NULL,'유명한 제독이 사용한 디바이더.','TRUE','도구',NULL,NULL,NULL,NULL,25,'[{"ref": 2291, "name": "측량", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}, {"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7446,'직각기',NULL,'별칭「야곱의 지팡이」라고도 불린다.
+항성과 비교하는 위도계측기구.','TRUE','도구',NULL,NULL,NULL,NULL,15,'[{"ref": 2291, "name": "측량", "value": 1}, {"ref": 2284, "name": "인식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7447,'제독의 직각기',NULL,'유명한 제독이 사용한 직각기.','TRUE','도구',NULL,NULL,NULL,NULL,25,'[{"ref": 2291, "name": "측량", "value": 1}, {"ref": 2284, "name": "인식", "value": 1}, {"ref": 2432, "name": "관리기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7448,'공작 드레스','생산','공작을 테마로 만들어진
+아름다운 색상의 요염한 드레스.','FALSE','몸',NULL,NULL,55,NULL,50,'[{"ref": 2276, "name": "대화술", "value": 2}, {"ref": 2309, "name": "사교", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,'여성',NULL,NULL),
+ (7449,'테브테쥬',NULL,'칼날이 무수한 상어 이빨로 되어있는 무기.','TRUE','무기 (검)',38,NULL,NULL,NULL,55,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (7450,'코치아테',NULL,'마오리민족이 사용하는 특수한 곤봉. 바이올린과 비슷한 모양이다.','TRUE','무기 (곤봉 지팡이)',40,NULL,NULL,NULL,55,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'12,500',NULL,NULL,NULL,NULL),
+ (7451,'바히네모전사의 방패',NULL,'바히네모전사가 소유하는 방패.
+표면에 기묘한 그림이 그려져 있다.','TRUE','도구',NULL,24,NULL,NULL,100,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'14,800',NULL,NULL,NULL,NULL),
+ (7452,'어벤져',NULL,'해적이 사용하는 작은 도끼. 희생자의 피로 얼룩져 있다.','TRUE','무기 (던지는 나이프)',36,NULL,NULL,NULL,60,'[{"ref": 2330, "name": "방어", "value": 1}, {"ref": 2348, "name": "회피", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,'4000',NULL,NULL,NULL),
+ (7453,'버커니어쥐스토코르','포술 부스터','불쌍한 희생자로부터 빼앗은 보석으로
+장식되어진 잔인한 해적 의상.','FALSE','몸',12,32,NULL,25,50,'[{"ref": 2342, "name": "조타", "value": 2}, {"ref": 2347, "name": "포술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,'9000',NULL,NULL,NULL),
+ (7454,'버커니어쥐스토코르','수평사격 부스터','불쌍한 희생자로부터 빼앗은 보석으로
+장식되어진 잔인한 해적 의상.','FALSE','몸',12,32,NULL,25,50,'[{"ref": 2342, "name": "조타", "value": 1}, {"ref": 2335, "name": "수평사격", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,'9000',NULL,NULL,NULL),
+ (7455,'카사도르쥐스토코르',NULL,'특별한 호칭을 가진 현상금사냥꾼만이 입을 수 있는 코트.','TRUE','몸',8,48,NULL,25,50,'[{"ref": 2348, "name": "회피", "value": 1}, {"ref": 2347, "name": "포술", "value": 1}, {"ref": 2345, "name": "탄도학", "value": 2}]',NULL,NULL,NULL,NULL,'전투','125,000',NULL,NULL,NULL,'[{"ref": 1951, "name": "카사도르"}]'),
+ (7456,'카사도르코트','탄도학 부스터','해전 경험을 쌓은 현상금 사냥꾼만이
+입을 수 있는 코트.','FALSE','몸',8,44,NULL,25,50,'[{"ref": 2348, "name": "회피", "value": 1}, {"ref": 2347, "name": "포술", "value": 1}, {"ref": 2345, "name": "탄도학", "value": 1}]',NULL,NULL,NULL,NULL,'전투','100,000',NULL,NULL,NULL,NULL),
+ (7457,'카사도르코트','수평사격 부스터','해전 경험을 쌓은 현상금 사냥꾼만이
+입을 수 있는 코트.','FALSE','몸',8,44,NULL,25,50,'[{"ref": 2348, "name": "회피", "value": 1}, {"ref": 2347, "name": "포술", "value": 1}, {"ref": 2335, "name": "수평사격", "value": 1}]',NULL,NULL,NULL,NULL,'전투','100,000',NULL,NULL,NULL,NULL),
+ (7458,'제너럴퀴래스','검술 부스터','해전의 경험을 쌓은 군인만이
+입을 수 있는 멋진 갑옷.','FALSE','몸',NULL,80,35,NULL,50,'[{"ref": 2342, "name": "조타", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,'전투','100,000',NULL,NULL,NULL,NULL),
+ (7459,'제너럴퀴래스','회피 부스터','해전의 경험을 쌓은 군인만이
+입을 수 있는 멋진 갑옷.','FALSE','몸',NULL,80,35,NULL,50,'[{"ref": 2342, "name": "조타", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,'전투','100,000',NULL,NULL,NULL,NULL),
+ (7460,'깃털모자','내구40, 가축거래 부스터','깃털이 여러 겹으로 겹쳐진
+트로브리앤드섬의 머리장식.','FALSE','머리',NULL,8,NULL,15,40,'[{"ref": 2294, "name": "가축 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'3,400',NULL,'여성',NULL,NULL),
+ (7461,'오닉스 반지',NULL,'아름다운 검은색 마노를 박아 넣은 반지.
+공예적 가치가 높다.','TRUE','장신구',NULL,NULL,30,NULL,30,'[{"ref": 2334, "name": "수탈", "value": 1}, {"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7462,'마오리워리어','돌격+2','마오리족 전사의 의상.
+몸전체에 모코를 그려넣는다.
+(연두색)','FALSE','몸',16,8,NULL,10,40,'[{"ref": 2329, "name": "돌격", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'6,900',NULL,'남성',NULL,NULL),
+ (7463,'마오리드레스','돌격+2','마오리족 전사의 의상.
+몸전체에 모코를 그려넣는다.','FALSE','몸',16,8,NULL,10,40,'[{"ref": 2329, "name": "돌격", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,'여성',NULL,NULL),
+ (7464,'복각 백은식 갑옷',NULL,'연금술에 의하여 예전의 형태로 소생된 백은식 갑옷','TRUE','몸',10,80,35,NULL,155,'[{"ref": 2330, "name": "방어", "value": 3}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,'전투','5,000',NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]',NULL),
+ (7465,'풍요의 토시',NULL,'태양과 풍요의 신 데메테르의 힘이 들어가 있다는 토시.','TRUE','팔',NULL,13,10,NULL,50,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,NULL),
+ (7466,'디안의 그리브',NULL,'의술의 신 디안 케트의 힘이 깃든 그리브.','TRUE','다리',NULL,19,6,NULL,50,'[{"ref": 2336, "name": "외과의술", "value": 1}]',NULL,NULL,NULL,NULL,'전투','20,000',NULL,NULL,'[{"ref": 2021, "name": "오등훈작사"}]',NULL),
+ (7467,'타파','수탈','이비민족의 의상.
+허리부분에 커다란 잎이
+달려있다.','FALSE','몸',NULL,12,NULL,15,45,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,400',NULL,'남성',NULL,NULL),
+ (7468,'누아자의 손',NULL,'전설의 아거트람을 본뜬 토시.','TRUE','팔',8,15,8,NULL,50,'[{"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,'전투','40,000',NULL,NULL,NULL,NULL),
+ (7469,'콘설코트','회계+2','대상인을 위해 만들어진 의상.
+화려한 장식품으로 장식되어 있다.','FALSE','몸',NULL,20,55,NULL,50,'[{"ref": 2323, "name": "회계", "value": 2}]',NULL,NULL,NULL,NULL,'교역','50,000',NULL,NULL,NULL,NULL),
+ (7470,'콘설코트','회계+1 사교+4','대상인을 위해 만들어진 의상.
+화려한 장식품으로 장식되어 있다.','FALSE','몸',NULL,20,55,NULL,50,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2309, "name": "사교", "value": 4}]',NULL,NULL,NULL,NULL,'교역','50,000',NULL,NULL,NULL,NULL),
+ (7471,'부와야쥬르망토','탐색','특별히 우수한 항해자만이
+입을 수 있는 코트.','FALSE','몸',NULL,32,50,NULL,50,'[{"ref": 2277, "name": "돛 조종", "value": 2}, {"ref": 2292, "name": "탐색", "value": 2}]',NULL,NULL,NULL,NULL,'모험','55,000',NULL,'남성',NULL,NULL),
+ (7472,'부와야쥬르로브','탐색','특별히 뛰어난 항해자만이
+입을 수 있는 드레스.','FALSE','몸',NULL,32,50,NULL,50,'[{"ref": 2277, "name": "돛 조종", "value": 2}, {"ref": 2292, "name": "탐색", "value": 2}]',NULL,NULL,NULL,NULL,'모험','55,000',NULL,'여성',NULL,NULL),
+ (7473,'성녀의 미튼',NULL,'성녀가 요리로 사람을 대접할 때에 사용했다는 미튼.','TRUE','팔',NULL,2,10,NULL,40,'[{"ref": 2316, "name": "조리", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (7474,'지혜의 글러브',NULL,'연금술에 정통한 자가 개량한 글러브.','TRUE','팔',NULL,8,6,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (7475,'파푸아헤어','드랍,조달','원형모양의 모자에 깃털을 장식한
+파푸아민족의 모자.','FALSE','머리',NULL,8,NULL,15,40,'[{"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,500',NULL,'남성',NULL,NULL),
+ (7476,'파푸아','탐색','파푸아민족의 의상. 몸에 흰 문양을 그려넣는다.','TRUE','몸',NULL,6,NULL,15,20,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,500',NULL,'남성',NULL,NULL),
+ (7477,'파푸아','생산','파푸아민족의 의상.
+몸에 흰 문양을 그려넣는다.','FALSE','몸',NULL,8,NULL,15,35,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,'남성',NULL,NULL),
+ (7478,'파푸아','드랍','파푸아민족의 의상. 몸에 흰 문양을 그려넣는다.','TRUE','몸',NULL,12,NULL,15,45,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,'남성',NULL,NULL),
+ (7479,'청금석 목걸이',NULL,'청금석이 곁들여진 아름다운 목걸이','TRUE','장신구',NULL,NULL,30,NULL,50,'[{"ref": 2301, "name": "기호품 거래", "value": 1}, {"ref": 2324, "name": "감시", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7480,'인도쪽색 왕관',NULL,'훌륭한 세공과 호화스런 장식의 왕관.
+(11차 아카데미, 엘그레코컵 10승 이상 상품)','TRUE','머리',NULL,12,30,NULL,50,'[{"ref": 2292, "name": "탐색", "value": 1}, {"ref": 2309, "name": "사교", "value": 2}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,'[{"ref": 2021, "name": "오등훈작사"}]',NULL),
+ (7481,'마레샬퀴래스','생산','특별한 호칭을 가진 자만이 입을 수 있는 멋진 갑옷','TRUE','몸',NULL,90,35,NULL,50,'[{"ref": 2342, "name": "조타", "value": 2}, {"ref": 2348, "name": "회피", "value": 1}, {"ref": 2338, "name": "응급처치", "value": 2}]',NULL,NULL,NULL,NULL,'전투','125,000',NULL,NULL,NULL,'[{"ref": 1949, "name": "마레샬"}]'),
+ (7482,'지혜의 부츠',NULL,'연금술에 정통한 자가 개량한 부츠.','TRUE','다리',NULL,9,6,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (7483,'세샤트의 부츠',NULL,'계측과 기록를 관할하는 신의 힘이 깃든 부츠.','TRUE','다리',NULL,10,NULL,NULL,45,'[{"ref": 2291, "name": "측량", "value": 1}, {"ref": 2289, "name": "지리학", "value": 1}, {"ref": 2305, "name": "바디 랭귀지", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,'[{"ref": 2017, "name": "육등훈작사"}]',NULL),
+ (7484,'방랑자의 부츠',NULL,'세계를 여행하는 모험가를 위해 강화 된 부츠.
+생물 발견이 용이해진다.','TRUE','다리',NULL,10,NULL,NULL,45,'[{"ref": 2282, "name": "생존", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}, {"ref": 2281, "name": "생물학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,'[{"ref": 2017, "name": "육등훈작사"}]',NULL),
+ (7485,'사냥꾼의 장갑',NULL,'사냥꾼을 불의의 사고로부터 막아준다고 전해지는 글러브.','TRUE','팔',NULL,10,NULL,NULL,40,'[{"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7486,'안내의 장갑',NULL,'보물찾기가 수월해진다는 불가사의한 힘을 가진 글러브.','TRUE','팔',NULL,10,NULL,NULL,40,'[{"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (7487,'카사도르크라운','방어','해적으로부터 되찾은 보물로
+장식되어 있는 현상금 사냥꾼의 모자.','FALSE','머리',12,12,NULL,NULL,40,'[{"ref": 2348, "name": "회피", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,'전투','30,000',NULL,NULL,NULL,'[{"ref": 1951, "name": "카사도르"}]'),
+ (7488,'골리앗의 검',NULL,'구약성서에 전해지는, 고대 용사가 지니고 있었다는 검.','TRUE','무기 (검)',95,NULL,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (7489,'스타 루비 헤어밴드',NULL,'아주 귀중한 별이 반짝이는 듯한 루비를 곁들인 머리 장식.','TRUE','장신구',NULL,NULL,50,NULL,20,'[{"ref": 2321, "name": "향료 거래", "value": 2}, {"ref": 2294, "name": "가축 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (7490,'스타 루비 귀걸이',NULL,'아주 귀중한 별이 반짝이는 듯한 루비를 곁들인 귀걸이.','TRUE','장신구',NULL,NULL,50,NULL,20,'[{"ref": 2321, "name": "향료 거래", "value": 2}, {"ref": 2293, "name": "행군", "value": 2}, {"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (7491,'가넷트 브로치',NULL,'석류석이 곁들여진 세공이 훌륭한 브로치.','TRUE','장신구',NULL,NULL,40,NULL,30,'[{"ref": 2311, "name": "식료품 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7492,'황동제 글러브',NULL,'투구, 갑옷과 같이 몸에 대는 글러브형의 건틀릿','TRUE','팔',5,15,10,NULL,70,'[{"ref": 2303, "name": "무기류 거래", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7493,'지혜로운 군주의 명검',NULL,'고대의 지혜로운 군주가 사용했다고 하는 전설의 명검．불가사의한 힘이 깃든다．','TRUE','무기 (검)',15,NULL,15,NULL,70,'[{"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2309, "name": "사교", "value": 3}, {"ref": 2325, "name": "검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7494,'현인의 낡은 지팡이',NULL,'전설속의 현인이 사용했다고 하는 지팡이．불가사의한 힘이 깃든다．','TRUE','무기 (곤봉 지팡이)',10,NULL,20,NULL,70,'[{"ref": 2281, "name": "생물학", "value": 2}, {"ref": 2306, "name": "보관", "value": 3}, {"ref": 2338, "name": "응급처치", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7495,'짙은 보라색의 보석왕관',NULL,'훌륭한 세공과 호화스런 장식의 왕관.','TRUE','머리',NULL,10,30,NULL,50,'[{"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,'[{"ref": 2017, "name": "육등훈작사"}]',NULL),
+ (7496,'황금장식의 보석왕관',NULL,'훌륭한 세공과 호화스런 장식의 왕관.','TRUE','머리',NULL,12,35,NULL,60,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2276, "name": "대화술", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'48,000',NULL,NULL,'[{"ref": 2029, "name": "삼등훈작사"}]',NULL),
+ (7497,'진한 주홍의 보석왕관',NULL,'훌륭한 세공과 호화스런 장식의 왕관.','TRUE','머리',NULL,12,30,NULL,50,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2278, "name": "미술", "value": 1}, {"ref": 2276, "name": "대화술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'24,000',NULL,NULL,'[{"ref": 2021, "name": "오등훈작사"}]',NULL),
+ (7498,'짙은 녹색 왕관',NULL,'훌륭한 세공과 호화스런 장식의 왕관.','TRUE','머리',NULL,14,30,NULL,60,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2283, "name": "생태 조사", "value": 1}, {"ref": 2276, "name": "대화술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'42,000',NULL,NULL,'[{"ref": 2025, "name": "사등훈작사"}]',NULL),
+ (7499,'오렌지색 왕관',NULL,'훌륭한 세공과 호화스런 장식의 왕관','TRUE','머리',NULL,10,30,NULL,30,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2285, "name": "자물쇠 따기", "value": 1}, {"ref": 2276, "name": "대화술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'48,000',NULL,NULL,'[{"ref": 2029, "name": "삼등훈작사"}]',NULL),
+ (7500,'흑옥 헤어밴드',NULL,'검은 구슬이 곁들여진 세공이 훌륭한 머리 장식.','TRUE','장신구',NULL,NULL,30,NULL,30,'[{"ref": 2298, "name": "공예품 거래", "value": 1}, {"ref": 2273, "name": "구조", "value": 1}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7501,'가넷트 반지',NULL,'석류석이 곁들여진 세공이 훌륭한 반지.','TRUE','장신구',NULL,NULL,40,NULL,50,'[{"ref": 2311, "name": "식료품 거래", "value": 1}, {"ref": 2291, "name": "측량", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7502,'오닉스 브로치',NULL,'아름다운 검은색 마노를 박아 넣은 브로치.
+공예적 가치가 높다.','TRUE','장신구',NULL,NULL,30,NULL,30,'[{"ref": 2330, "name": "방어", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7503,'부와야쥬르로브','채집','일찍이 이름을 날린 항해자가
+착용했던 드레스.','FALSE','몸',NULL,32,50,NULL,50,'[{"ref": 2277, "name": "돛 조종", "value": 2}, {"ref": 2290, "name": "채집", "value": 2}]',NULL,NULL,NULL,NULL,'모험','55,000',NULL,'여성',NULL,NULL),
+ (7504,'부와야쥬르망토','채집','일찍이 이름을 날린 항해자가
+착용했던 코트.','FALSE','몸',NULL,32,50,NULL,50,'[{"ref": 2277, "name": "돛 조종", "value": 2}, {"ref": 2290, "name": "채집", "value": 2}]',NULL,NULL,NULL,NULL,'모험','55,000',NULL,'남성',NULL,NULL),
+ (7505,'오닉스 귀걸이',NULL,'아름다운 검은색 마노를 박아 넣은귀걸이.
+공예적 가치가 높다.','TRUE','장신구',NULL,NULL,30,NULL,70,'[{"ref": 2277, "name": "돛 조종", "value": 2}, {"ref": 2289, "name": "지리학", "value": 2}, {"ref": 2284, "name": "인식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7506,'오닉스 헤어밴드',NULL,'아름다운 검은색 마노를 박아 넣은 머리 장식.
+공예적 가치가 높다.','TRUE','장신구',NULL,NULL,30,NULL,70,'[{"ref": 2347, "name": "포술", "value": 1}, {"ref": 2339, "name": "전술", "value": 2}, {"ref": 2336, "name": "외과의술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7507,'오닉스 목걸이',NULL,'아름다운 검은색 마노를 박아 넣은 목걸이. 공예적 가치가 높다.','TRUE','장신구',NULL,NULL,30,NULL,70,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2313, "name": "운용", "value": 2}, {"ref": 2295, "name": "경계", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7508,'황동제 미튼',NULL,'투구, 갑옷과 같이 몸에 대는 미튼형의 건틀릿.','TRUE','팔',3,17,10,NULL,70,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2296, "name": "공업품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7509,'흑진주 목걸이',NULL,'아주 희귀한 흑진주가
+
+박혀 있는 목걸이.','TRUE','장신구',NULL,NULL,40,NULL,50,'[{"ref": 2304, "name": "미술품 거래", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}, {"ref": 2331, "name": "소화", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (7510,'캣아이 헤어밴드',NULL,'귀중한 묘안석을 곁들인 굉장히 훌륭한 머리 장식.','TRUE','장신구',NULL,NULL,40,NULL,50,'[{"ref": 2369, "name": "조미료 거래", "value": 1}, {"ref": 2324, "name": "감시", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7511,'캣아이 목걸이',NULL,'귀중한 묘안석을 곁들인 굉장히 훌륭한 목걸이','TRUE','장신구',NULL,NULL,40,NULL,50,'[{"ref": 2369, "name": "조미료 거래", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7512,'캣아이 귀걸이',NULL,'귀중한 묘안석을 곁들인 굉장히 훌륭한 귀걸이.','TRUE','장신구',NULL,NULL,40,NULL,50,'[{"ref": 2369, "name": "조미료 거래", "value": 1}, {"ref": 2273, "name": "구조", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7513,'청금석 브로치',NULL,'청금석이 곁들여진 아름다운 브로치.','TRUE','장신구',NULL,NULL,30,NULL,30,'[{"ref": 2301, "name": "기호품 거래", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7514,'스타 루비 반지',NULL,'아주 귀중한 별이 반짝이는 듯한 루비를 곁들인 반지.','TRUE','장신구',NULL,NULL,50,NULL,20,'[{"ref": 2321, "name": "향료 거래", "value": 2}, {"ref": 2313, "name": "운용", "value": 2}, {"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (7515,'스타 루비 목걸이',NULL,'아주 귀중한 별이 반짝이는 듯한 루비를 곁들인 목걸이.','TRUE','장신구',NULL,NULL,50,NULL,20,'[{"ref": 2321, "name": "향료 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 2}, {"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (7516,'강철제 글러브',NULL,'투구，갑옷과 같이 몸에 대는 글러브형의 건틀릿.','TRUE','팔',NULL,16,5,NULL,70,NULL,NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (7517,'오팔 반지','트레져박스','세계일주 레이스 달성을 축하해서 바르보사가 선물한 반지.','TRUE','장신구',NULL,NULL,NULL,NULL,50,'[{"ref": 2430, "name": "항해기술", "value": 2}, {"ref": 2277, "name": "돛 조종", "value": 2}, {"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,'캐시 아이템, 이벤트 보상',NULL,NULL,NULL,NULL,NULL,NULL),
+ (7518,'아벨람민족의 장신구',NULL,'뉴기니 섬의 민족이
+전투시에 몸에 두르는 의상.','FALSE','몸',16,16,NULL,15,100,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'16,500',NULL,NULL,NULL,NULL),
+ (7519,'비운의 황금 빗',NULL,'조국에 있는 부인에게 보낼 예정이었던 금으로 만든 빗.','TRUE','장신구',NULL,NULL,25,NULL,35,'[{"ref": 2300, "name": "귀금속 거래", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7520,'자수정 헤어밴드',NULL,'자수정이 곁들여진 아름다운 머리 장식.','TRUE','장신구',NULL,NULL,40,NULL,50,'[{"ref": 2296, "name": "공업품 거래", "value": 1}, {"ref": 2324, "name": "감시", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7521,'가넷트 귀걸이',NULL,'석류석이 곁들여진 세공이 훌륭한 귀걸이.','TRUE','장신구',NULL,NULL,40,NULL,50,'[{"ref": 2311, "name": "식료품 거래", "value": 1}, {"ref": 2273, "name": "구조", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7522,'오팔 귀걸이',NULL,'오팔이 곁들어진 세공이 훌륭한 귀걸이.','TRUE','장신구',NULL,NULL,30,NULL,20,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7523,'스타 루비 브로치',NULL,'아주 귀중한 별이 반짝이는 듯한 루비를 곁들인 브로치.','TRUE','장신구',NULL,NULL,50,NULL,20,'[{"ref": 2321, "name": "향료 거래", "value": 2}, {"ref": 2306, "name": "보관", "value": 2}, {"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (7524,'명의의 메스',NULL,'선의가 생전에 사용했던 메스.
+무수한 생명을 구해 온 물품.','TRUE','장신구',NULL,NULL,NULL,NULL,15,'[{"ref": 2336, "name": "외과의술", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7525,'흑옥 반지',NULL,'검은 구슬이 곁들여진 세공이 훌륭한 반지.','TRUE','장신구',NULL,NULL,30,NULL,50,'[{"ref": 2298, "name": "공예품 거래", "value": 1}, {"ref": 2313, "name": "운용", "value": 1}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7526,'타파','지도,빨강','이비민족의 의상.
+허리부분에 커다란 잎이
+달려있다.','FALSE','몸',NULL,8,NULL,15,35,'[{"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,400',NULL,'남성',NULL,NULL),
+ (7527,'타파','지도,흰색','이비민족의 의상.
+허리부분에 커다란 잎이
+달려있다.','FALSE','몸',NULL,8,NULL,15,35,'[{"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,400',NULL,'남성',NULL,NULL),
+ (7528,'장미 꽃다발',NULL,'예쁘게 핀 장미 꽃으로 만든 꽃다발
+「열정적인 사랑」을 표현하고 있다.','TRUE','장신구',NULL,NULL,20,NULL,20,'[{"ref": 2276, "name": "대화술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7529,'죄과의 아스트롤라베',NULL,'침몰의 원인이 된 아스트롤라베.','TRUE','도구',NULL,NULL,NULL,NULL,40,'[{"ref": 2444, "name": "인양", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}, {"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7530,'흑옥 목걸이',NULL,'검은 구슬이 곁들여진 세공이 훌륭한 목걸이.','TRUE','장신구',NULL,NULL,30,NULL,50,'[{"ref": 2298, "name": "공예품 거래", "value": 1}, {"ref": 2291, "name": "측량", "value": 1}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7531,'카르네바레아비트',NULL,'뛰어난 항해자만이 받을 수 있는 의상.
+매우 화려하다.','FALSE','몸',NULL,5,NULL,5,5,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7532,'마스케라',NULL,'뛰어난 항해자만이 받을 수 있는 가면.
+매우 화려하다.','FALSE','머리',NULL,5,NULL,5,5,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7533,'맹공 지침서 제 3권',NULL,'공격에 대해 기록한 서적.
+육상전에서 파워 테크닉의
+사용이 쉬워진다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7534,'특수주문 카르네바레아비트',NULL,'카르네바레의 변장으로
+사용되는 화려한 의상.','FALSE','몸',NULL,8,NULL,30,60,'[{"ref": 2276, "name": "대화술", "value": 1}, {"ref": 2305, "name": "바디 랭귀지", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (7535,'특수주문 마스케라',NULL,'카르네바레의 변장으로 사용되는
+화려한 가면.','FALSE','머리',NULL,6,NULL,20,60,'[{"ref": 2276, "name": "대화술", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (7536,'카메오 브로치',NULL,'부조 세공을 한 브로치. 예술적인 가치가 아주 높다.
+
+2008년 베네치아 사육제 도중 입수함','TRUE','장신구',NULL,NULL,20,NULL,20,'[{"ref": 2306, "name": "보관", "value": 1}]','[{"ref": 2272, "name": "구제"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7537,'레이븐 더블릿',NULL,'조끼와 케이프를 맞춰서 입는 고급옷.','TRUE','몸',NULL,20,40,NULL,60,'[{"ref": 2289, "name": "지리학", "value": 1}, {"ref": 2281, "name": "생물학", "value": 1}, {"ref": 2293, "name": "행군", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'2,800',NULL,NULL,NULL,NULL),
+ (7538,'청금석 반지',NULL,'청금석이 곁들여진 아름다운 반지.','TRUE','장신구',NULL,NULL,30,NULL,50,'[{"ref": 2301, "name": "기호품 거래", "value": 1}, {"ref": 2313, "name": "운용", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7539,'정령의 가면',NULL,'들도적으로부터 탈환한 물품 중에 있던 정령을 본 떠 만든 호화로운 가면.','TRUE','머리',NULL,10,NULL,5,250,'[{"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7540,'레이븐 쥐스토코르',NULL,'우수한 항해자만이 입을 수 있는 코트.
+칠흑색으로 염색한 특제.','TRUE','몸',20,40,NULL,25,100,'[{"ref": 2444, "name": "인양", "value": 1}, {"ref": 2323, "name": "회계", "value": 2}, {"ref": 2347, "name": "포술", "value": 2}]',NULL,NULL,NULL,'캐시 아이템, 이벤트 보상',NULL,'100,000',NULL,NULL,NULL,NULL),
+ (7541,'강철제 미튼',NULL,'투구，갑옷과 같이 몸에 대는 미튼형의 건틀릿.','TRUE','팔',NULL,16,5,NULL,70,NULL,NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (7542,'맹공 지침서 제 4권',NULL,'공격에 대해 기록한 서적.
+육상전에서 파워 테크닉의
+사용이 쉬워진다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7543,'마린 블루 신발',NULL,'끈을 통과시켜 발에 제대로
+
+고정할 수 있도록 만든 바다색 구두.
+
+교복에 잘 어울린다.','TRUE','다리',NULL,4,10,NULL,100,'[{"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7544,'마린 블루 글러브',NULL,'바다색으로 염색한 장갑
+교복에 잘 어울린다.','TRUE','팔',NULL,2,NULL,NULL,100,'[{"ref": 2277, "name": "돛 조종", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7545,'배우의 빗',NULL,'극단의 배우가 사용하는 빗','TRUE','장신구',NULL,NULL,NULL,NULL,5,NULL,'[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7546,'마르코 폴로 연구일지',NULL,'마르코 폴로에 대해서
+어떤 학자가 연구한 성과이다.','TRUE','장신구',NULL,NULL,NULL,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7547,'마르코 폴로 모험담',NULL,'마르코 폴로의 모험담이
+기록되어 있는 책이다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2286, "name": "조달", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7548,'우등생 증서',NULL,'과외수업에서 성적이 우수한 학생에게
+수여하는 증서.','TRUE','장신구',NULL,NULL,20,NULL,60,'[{"ref": 2277, "name": "돛 조종", "value": 1}, {"ref": 2323, "name": "회계", "value": 1}, {"ref": 2347, "name": "포술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7549,'폭군의 팔찌',NULL,'폭군이 끼고 있던 팔찌
+몸에 부착하고 있으면 폭군의
+낙인이 찍힌다.','TRUE','장신구',10,NULL,NULL,NULL,60,'[{"ref": 2276, "name": "대화술", "value": 1}, {"ref": 2305, "name": "바디 랭귀지", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7550,'명품 유럽 귀족남자 상의',NULL,'최우수길드의 명품 유럽 귀족남자 상의.','TRUE','몸',NULL,15,35,NULL,30,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,'[{"ref": 1947, "name": "우수길드회원"}]'),
+ (7551,'명품 망토＆더블릿',NULL,'최우수길드의 명품
+망토＆더블릿.','TRUE','몸',NULL,14,40,NULL,30,'[{"ref": 2347, "name": "포술", "value": 1}, {"ref": 2315, "name": "잡화 거래", "value": 1}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,'[{"ref": 1947, "name": "우수길드회원"}]'),
+ (7552,'명품 보디스',NULL,'최우수길드의 명품 보디스.','TRUE','몸',NULL,20,30,NULL,30,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2330, "name": "방어", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,'[{"ref": 1947, "name": "우수길드회원"}]'),
+ (7553,'명품 페티코트',NULL,'최우수길드의 명품 페티코트.','TRUE','몸',NULL,10,10,NULL,30,'[{"ref": 2294, "name": "가축 거래", "value": 1}, {"ref": 2313, "name": "운용", "value": 1}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'여성',NULL,'[{"ref": 1947, "name": "우수길드회원"}]'),
+ (7554,'명품 미트라프',NULL,'최우수길드의 명품 미트라프','TRUE','몸',NULL,18,35,45,30,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2315, "name": "잡화 거래", "value": 1}, {"ref": 2321, "name": "향료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'남성',NULL,'[{"ref": 1947, "name": "우수길드회원"}]'),
+ (7555,'명품 초리',NULL,'최우수길드의 명품 초리.','TRUE','몸',NULL,17,40,25,30,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2321, "name": "향료 거래", "value": 1}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'여성',NULL,'[{"ref": 1947, "name": "우수길드회원"}]'),
+ (7556,'명품 라크스샬키',NULL,'최우수길드의
+명품 라크스샬키','TRUE','몸',NULL,NULL,10,40,30,'[{"ref": 2310, "name": "섬유 거래", "value": 1}, {"ref": 2276, "name": "대화술", "value": 1}, {"ref": 2288, "name": "주연", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'여성',NULL,'[{"ref": 1947, "name": "우수길드회원"}]'),
+ (7557,'명품 쉘와니',NULL,'최우수길드의
+명품 쉘와니.','TRUE','몸',NULL,17,40,30,30,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'남성',NULL,'[{"ref": 1947, "name": "우수길드회원"}]'),
+ (7558,'명품 르네상스 드레스',NULL,'최우수길드의
+명품 르네상스 드레스.','TRUE','몸',NULL,NULL,50,NULL,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2295, "name": "경계", "value": 2}, {"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'여성',NULL,'[{"ref": 1947, "name": "우수길드회원"}]'),
+ (7559,'명품 러프칼라 드레스',NULL,'최우수길드의
+명품 러프칼라 드레스.','TRUE','몸',NULL,NULL,50,NULL,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2295, "name": "경계", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'여성',NULL,'[{"ref": 1947, "name": "우수길드회원"}]'),
+ (7560,'어부의 낚시도구',NULL,'어부들 사이에 넓게 사용되고 있는 낚시도구','TRUE','장신구',NULL,NULL,NULL,NULL,10,NULL,'[{"ref": 2275, "name": "낚시"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7561,'흑옥 귀걸이',NULL,'19차 아카데미 5~9승 보상품','TRUE','장신구',NULL,NULL,30,NULL,50,'[{"ref": 2298, "name": "공예품 거래", "value": 1}, {"ref": 2277, "name": "돛 조종", "value": 1}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7562,'활용 지침서 제 2권',NULL,'아이템 활용법 서적.
+육상전에서 아이템 테크닉의
+사용이 쉬워진다.
+: 아이템 특화 +4','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1446, "name": "아이템 특화"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7563,'신혼용 사리',NULL,'인도 여성의 전통적이 의상.
+선명하게 염색한 천이 특징.
+신부가 입기 위한 특별 주문품.','TRUE','몸',NULL,12,13,30,30,'[{"ref": 2295, "name": "경계", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,'여성',NULL,NULL),
+ (7564,'검투사의 투구',NULL,'로마의 콜로세움에서 생사를 걸고 싸운 검투사를 위한 투구.','TRUE','머리',NULL,30,25,NULL,100,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (7565,'관두의','퀘스트','머리를 내는 구멍이 뚫린
+한 장의 천으로 만든 안데스의
+전통적인 의복.','FALSE','몸',NULL,25,20,NULL,60,'[{"ref": 2286, "name": "조달", "value": 2}, {"ref": 2290, "name": "채집", "value": 1}, {"ref": 2275, "name": "낚시", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (7566,'잉카 튜닉','구입','잉카의 남성이 평상복으로
+착용하는 의복.','FALSE','몸',NULL,12,NULL,NULL,50,'[{"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (7567,'잉카 의복','구입','잉카의 여성이 평상복으로
+착용하는 의복.','FALSE','몸',NULL,12,NULL,NULL,50,'[{"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (7568,'잉카 노블 드레스','1권생산','잉카의 귀족이 입는 드레스.
+아름다운 금으로 장식되어 있다.','FALSE','몸',NULL,20,30,NULL,40,'[{"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'여성',NULL,NULL),
+ (7569,'칩차의 부적',NULL,'칩차 민족 사이에서 옛날부터 전해오는 유서있는 부적. 족장의 동생 과만이 손수 만든 것.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2298, "name": "공예품 거래", "value": 2}]',NULL,NULL,NULL,NULL,'교역','10,000',NULL,NULL,NULL,NULL),
+ (7570,'트라피체의 반지',NULL,'트라피체 에메랄드가 잘 조화된 아름다운 반지.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2307, "name": "보석 거래", "value": 2}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,'교역','10,000',NULL,NULL,NULL,NULL),
+ (7571,'잉카 고관의 의복',NULL,'잉카 황제에게 인정받은 자가 입을 수 있는 의복.','TRUE','몸',NULL,30,30,NULL,60,'[{"ref": 2300, "name": "귀금속 거래", "value": 3}, {"ref": 2323, "name": "회계", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,NULL,'[{"ref": 1965, "name": "키푸 카마욕"}]'),
+ (7572,'잉카 노블 망토','생산','잉카의 귀족이 입는 망토.
+자수와 금으로 장식되어 있다.','FALSE','몸',NULL,20,30,NULL,40,'[{"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'남성',NULL,NULL),
+ (7573,'잉카 고관의 관두의',NULL,'잉카 황제에게 인정받은 자가 입을 수 있는 관두의.','TRUE','몸',NULL,25,20,NULL,60,'[{"ref": 2292, "name": "탐색", "value": 2}, {"ref": 2284, "name": "인식", "value": 1}, {"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,NULL,'[{"ref": 1965, "name": "키푸 카마욕"}]'),
+ (7574,'잉카 고관의 무의복',NULL,'잉카 황제에게 인정받은 자가 입을 수 있는 무의복','TRUE','몸',10,28,28,NULL,60,'[{"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}, {"ref": 2338, "name": "응급처치", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,NULL,'[{"ref": 1965, "name": "키푸 카마욕"}]'),
+ (7575,'잉카의 민족 모자',NULL,'잉카의 사람들이 애용하는
+자수가 들어간 소박한 모자.','FALSE','머리',NULL,4,NULL,NULL,40,NULL,NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (7576,'잉카 커치프',NULL,'잉카의 여성이 착용하는
+전통적인 두건.','FALSE','머리',NULL,4,NULL,NULL,40,NULL,NULL,NULL,NULL,NULL,NULL,'4,000',NULL,'여성',NULL,NULL),
+ (7577,'황금 코로나','녹색,탐색','황금으로 만든 관.
+섬세한 장식이 들어가 있다.','FALSE','머리',NULL,5,15,NULL,40,'[{"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7578,'금세공 머리 장식',NULL,'금세공으로 장식된 머리 장식.
+대량의 금이 사용되어 있다.','FALSE','머리',NULL,5,15,NULL,40,'[{"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'남성',NULL,NULL),
+ (7579,'칩차민족의 황금의상','퀘스트','칩차 민족의 무희가
+의식 때에 입는 의상.','FALSE','몸',10,28,28,NULL,60,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'40,000',NULL,NULL,NULL,NULL),
+ (7580,'잉카 튜닉','쿠스코구입','잉카의 남성이 평상복으로 착용하는 의복.','TRUE','몸',NULL,15,NULL,NULL,50,'[{"ref": 2286, "name": "조달", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (7581,'잉카 의복','빨간색','잉카의 여성이 평상복으로 착용하는 의복.','TRUE','몸',NULL,15,NULL,NULL,50,'[{"ref": 2286, "name": "조달", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7582,'역대 추장의 의복','퀘스트','역대 추장으로부터 물려받은
+호화로운 의복.','FALSE','몸',NULL,30,30,NULL,60,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2319, "name": "직물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'35,000',NULL,NULL,NULL,NULL),
+ (7583,'잉카 의복','녹색','잉카의 여성이 평상복으로
+착용하는 의복.','FALSE','몸',NULL,18,NULL,NULL,50,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2284, "name": "인식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (7584,'잉카 튜닉','녹색','잉카의 남성이 평상복으로 착용하는 의복.','TRUE','몸',NULL,18,NULL,NULL,50,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2284, "name": "인식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (7585,'칩차민족의 황금의상','지도','칩차 민족의 무희가
+의식 때에 입는 의상.','FALSE','몸',10,28,28,NULL,60,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2431, "name": "던지기 기술", "value": 1}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'40,000',NULL,NULL,NULL,NULL),
+ (7586,'역대 추장의 의복','지도','역대 추장으로부터 물려받은
+호화로운 의복.','FALSE','몸',NULL,30,30,NULL,60,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2298, "name": "공예품 거래", "value": 1}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'35,000',NULL,NULL,NULL,NULL),
+ (7587,'관두의','육상 드랍','머리를 내는 구멍이 뚫린
+한 장의 천으로 만든 안데스의
+전통적인 의복.','FALSE','몸',NULL,25,20,NULL,60,'[{"ref": 2286, "name": "조달", "value": 2}, {"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (7588,'관두의','지도','머리를 내는 구멍이 뚫린
+한 장의 천으로 만든 안데스의
+전통적인 의복.','FALSE','몸',NULL,25,20,NULL,60,'[{"ref": 2286, "name": "조달", "value": 2}, {"ref": 2292, "name": "탐색", "value": 1}, {"ref": 2283, "name": "생태 조사", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (7589,'역대 추장의 의복','드랍','역대 추장으로부터 물려받은
+호화로운 의복.','FALSE','몸',NULL,30,30,NULL,60,'[{"ref": 2319, "name": "직물 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'35,000',NULL,NULL,NULL,NULL),
+ (7590,'잉카 노블 망토','드랍','잉카의 귀족이 입는 망토.
+자수와 금으로 장식되어 있다.','FALSE','몸',NULL,25,35,NULL,40,'[{"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'남성',NULL,NULL),
+ (7591,'칩차민족의 황금의상','육상드랍','칩차 민족의 무희가
+의식 때에 입는 의상.','FALSE','몸',10,28,28,NULL,60,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'40,000',NULL,NULL,NULL,NULL),
+ (7592,'금세공 머리 장식','지도','금세공으로 장식된 머리 장식.
+대량의 금이 사용되어 있다.','FALSE','머리',NULL,5,15,NULL,40,'[{"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'남성',NULL,NULL),
+ (7593,'마법사의 옷','보석','마법사가 입고 있었다는
+의상을 바탕으로 만들어진 옷.
+특별한 능력을 지니고 있다.','FALSE','몸',5,25,20,NULL,60,'[{"ref": 2307, "name": "보석 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7594,'호박 머리 장식',NULL,'호박의 속을 도려내어 만든
+머리 장식.','FALSE','머리',NULL,10,10,NULL,40,'[{"ref": 2305, "name": "바디 랭귀지", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7595,'마법사의 모자',NULL,'마법사가 입었다고 하는
+의복을 기본으로 만든 모자.','FALSE','머리',NULL,10,10,NULL,30,'[{"ref": 2287, "name": "종교학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7596,'마법사의 신발',NULL,'마법사가 입었다고 하는
+의복을 기본으로 만든 신발.','FALSE','다리',NULL,8,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7597,'마법사의 장갑',NULL,'마법사가 입었다고 하는
+의복을 기본으로 만든 장갑.','FALSE','팔',NULL,5,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7598,'마법사의 빗자루',NULL,'마법사가 사용했던 것을 본 떠 만든 빗자루.','TRUE','무기 (검)',5,NULL,NULL,NULL,20,'[{"ref": 2348, "name": "회피", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7599,'마법사의 목걸이',NULL,'마법사가 사용했다는 목걸이를 본 떠 만든 목걸이.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2432, "name": "관리기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7600,'호랑가시나무의 브로치',NULL,'호랑가시나무의 잎을 본뜬 아름다운 브로치.
+
+피로도 모두 회복','TRUE','장신구',NULL,NULL,NULL,NULL,5,NULL,'[{"ref": 1448, "name": "피로도 회복(복수)"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7601,'역대 추장의 의복','수탈','역대 추장으로부터 물려받은
+호화로운 의복.','FALSE','몸',NULL,30,30,NULL,60,'[{"ref": 2298, "name": "공예품 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'35,000',NULL,NULL,NULL,NULL),
+ (7602,'칩차민족의 황금의상','해상드랍','칩차 민족의 무희가
+의식 때에 입는 의상.','FALSE','몸',10,28,28,NULL,60,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2336, "name": "외과의술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'40,000',NULL,NULL,NULL,NULL),
+ (7603,'관두의','해상 수탈','머리를 내는 구멍이 뚫린
+한 장의 천으로 만든 안데스의
+전통적인 의복.','FALSE','몸',NULL,25,20,NULL,60,'[{"ref": 2286, "name": "조달", "value": 2}, {"ref": 2275, "name": "낚시", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (7604,'잉카 노블 드레스','검은색','잉카의 귀족이 입는 드레스.
+아름다운 금으로 장식되어 있다.','FALSE','몸',NULL,25,35,NULL,40,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'여성',NULL,NULL),
+ (7605,'루미노소 코로나',NULL,'황금으로 만든 관. 그 이름은 「눈부시게 빛나는 관」이라는 뜻.
+섬세한 장식이 들어가 있다.
+
+할로윈 이벤트 [찰칵 찰칵 할로윈] `캘빈클라따` 상 선물','TRUE','머리',NULL,5,15,NULL,100,'[{"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (7606,'칩차 족장의 의복',NULL,'칩차의 족장이 입는 의복.
+역대 족장이 입어 왔다.
+
+할로윈 이벤트 [찰칵 찰칵 할로윈] `캘빈 클라따` 상 선물','TRUE','몸',NULL,30,30,NULL,100,'[{"ref": 2284, "name": "인식", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 1}, {"ref": 2298, "name": "공예품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (7607,'잉카 노블 드레스','2권생산','잉카의 귀족이 입는 드레스.
+아름다운 금으로 장식되어 있다.','FALSE','몸',NULL,25,35,NULL,40,'[{"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'여성',NULL,NULL),
+ (7608,'잉카 커치프','탐색','잉카의 여성이 착용하는
+전통적인 두건.','FALSE','머리',NULL,4,NULL,NULL,40,NULL,NULL,NULL,NULL,NULL,NULL,'4,000',NULL,'여성',NULL,NULL),
+ (7609,'수정 브로치','이벤트','표면에 얼음의 결정 같은 무늬가 장식되어 있는 브로치.
+기품과 아름다움을 느끼게 한다.','TRUE','장신구',10,10,40,NULL,50,'[{"ref": 2292, "name": "탐색", "value": 1}, {"ref": 2278, "name": "미술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7610,'활용 지침서 제 3권',NULL,'아이템 활용법 서적.
+육상전에서 아이템 테크닉의
+사용이 쉬워진다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7611,'서광의 브로치',NULL,'태양빛을 받은 듯이 눈부시게 빛나는 브로치.
+새로운 희망을 상징하고 있다.','TRUE','장신구',12,8,40,NULL,50,'[{"ref": 2347, "name": "포술", "value": 1}, {"ref": 2339, "name": "전술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7612,'유혹의 브로치',NULL,'신비로운 향기가 나는 브로치.
+가지고 있기만 해도 몸에서 향기를 자아낸다.','TRUE','장신구',8,12,40,NULL,50,'[{"ref": 2316, "name": "조리", "value": 1}, {"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7613,'자수정 브로치',NULL,'자수정이 곁들여진
+아름다운 브로치.','TRUE','장신구',NULL,NULL,40,NULL,30,'[{"ref": 2296, "name": "공업품 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7614,'캣아이 반지',NULL,'귀중한 묘안석을 곁들인 굉장히 훌륭한 반지.','TRUE','장신구',NULL,NULL,40,NULL,50,'[{"ref": 2369, "name": "조미료 거래", "value": 1}, {"ref": 2291, "name": "측량", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7615,'캣아이 브로치',NULL,'귀중한 묘안석을 곁들인 굉장히 훌륭한 브로치
+
+큐피트의 화살 이벤트로 입수','TRUE','장신구',NULL,NULL,40,NULL,30,'[{"ref": 2369, "name": "조미료 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7616,'가넷트 목걸이',NULL,'석류석이 곁들여진 세공이 훌륭한 목걸이
+
+큐피트의 화살 이벤트로 입수','TRUE','장신구',NULL,NULL,40,NULL,50,'[{"ref": 2311, "name": "식료품 거래", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7617,'자수정 목걸이',NULL,'자수정이 곁들여진 아름다운 목걸이
+
+큐피트의 화살 이벤트로 입수','TRUE','장신구',NULL,NULL,40,NULL,50,'[{"ref": 2296, "name": "공업품 거래", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7618,'복원 해적살인자',NULL,'해적살인자로 불리던 해적 레빈이 사용한 장검. 연금술 복원판','TRUE','무기 (검)',44,16,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7619,'복원 6월의 신부',NULL,'신참 상인 페드로의 아내 이자벨이 결혼 축하 선물로 아버지로부터 받은 총. 연금술 복원판','TRUE','무기 (총)',28,NULL,NULL,NULL,100,'[{"ref": 2294, "name": "가축 거래", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]','[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7620,'복원 금양모기사단 훈장',NULL,'에스파니아 왕가가 주재하는 세속기사단, 금양모기사단의 훈장','TRUE','장신구',NULL,NULL,20,NULL,50,'[{"ref": 2310, "name": "섬유 거래", "value": 2}, {"ref": 2339, "name": "전술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,'[{"ref": 2017, "name": "육등훈작사"}]',NULL),
+ (7621,'복원 부활절 달걀(홍)',NULL,'보석으로 장식한 특별한 부활절 달걀.
+연금술 복원판','TRUE','장신구',NULL,NULL,20,NULL,50,'[{"ref": 2278, "name": "미술", "value": 1}, {"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2276, "name": "대화술", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7622,'복원 부활절 달걀(녹)',NULL,'보석으로 장식한 특별한 부활절 달걀.
+연금술 복원판','TRUE','장신구',NULL,NULL,20,NULL,50,'[{"ref": 2348, "name": "회피", "value": 1}, {"ref": 2333, "name": "수리", "value": 1}, {"ref": 2324, "name": "감시", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7623,'복원 부활절 달걀(청)',NULL,'보석으로 장식한 특별한 부활절 달걀.
+연금술 복원판','TRUE','장신구',NULL,NULL,20,NULL,50,'[{"ref": 2307, "name": "보석 거래", "value": 1}, {"ref": 2304, "name": "미술품 거래", "value": 1}, {"ref": 2309, "name": "사교", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7624,'복원 오렌지 가면',NULL,'오렌지의 웃는 모습이 인상적이다.
+쓰면 기분이 밝아진다.','TRUE','머리',NULL,NULL,NULL,NULL,50,'[{"ref": 2305, "name": "바디 랭귀지", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7625,'복원판 사랑의 시집',NULL,'성 안토니오 축제에서 여성이 남성에게 전하는 사랑과 정열을 쓴 시집.','TRUE','장신구',NULL,NULL,NULL,NULL,25,'[{"ref": 2276, "name": "대화술", "value": 2}, {"ref": 2305, "name": "바디 랭귀지", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7626,'복원 만제리코의 작은 화분',NULL,'성안토니오 축제에서 남성이
+여성에게 애정을 담아 전하는 노란색의 작은 화분.
+기념일 복원판','TRUE','장신구',NULL,NULL,NULL,NULL,25,'[{"ref": 2306, "name": "보관", "value": 2}, {"ref": 2313, "name": "운용", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7627,'황금 코로나','하늘색','황금으로 만든 관.
+섬세한 장식이 들어가 있다.','FALSE','머리',NULL,5,15,NULL,40,'[{"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7628,'유리알 귀걸이',NULL,'아름다운 채색의 유리알이 곁들여진 아름다운 귀걸이.
+
+모 침몰선에서 나옴 (제보바람)','TRUE','장신구',NULL,NULL,20,NULL,20,'[{"ref": 2315, "name": "잡화 거래", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}]','[{"ref": 2272, "name": "구제"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7629,'꽃머리장식','생산','꽃 코사지를 곁들인
+귀여운 머리장식.','FALSE','머리',NULL,3,12,NULL,25,'[{"ref": 2298, "name": "공예품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,'여성',NULL,NULL),
+ (7630,'손찌','생산','손목부터 손가락까지 장식하는
+호화로운 장식품.','FALSE','팔',NULL,5,10,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'25,000',NULL,NULL,NULL,NULL),
+ (7631,'금자수 부츠','생산','금사로 호화로운 자수를 놓은
+귀족용 신발.','FALSE','다리',NULL,6,8,15,30,NULL,NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (7632,'석류나무색 차도르',NULL,'석류나무로 선명하게 염색한 아랍 여성이 즐겨 입는 장의.','TRUE','몸',NULL,5,18,40,35,'[{"ref": 2312, "name": "염료 거래", "value": 1}, {"ref": 2306, "name": "보관", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'1,300',NULL,'여성',NULL,NULL),
+ (7633,'아미르 코트','구입','오스만 투르크의 사령관이 입는 호화로운 옷.','TRUE','몸',15,5,5,25,50,'[{"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,'남성','[{"ref": 2013, "name": "칠등훈작사"}]',NULL),
+ (7634,'아미르 코트','생산','오스만 투르크의 사령관이
+입는 호화로운 옷.','FALSE','몸',20,10,10,30,50,'[{"ref": 2346, "name": "통솔", "value": 1}, {"ref": 2328, "name": "노 젓기", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'35,000',NULL,'남성','[{"ref": 2019, "name": "준오등훈작사"}]',NULL),
+ (7635,'샤리아 드레스','구입','터키 궁전에서 시중드는 여성들이 입는 우아한 드레스.','TRUE','몸',5,15,5,25,50,'[{"ref": 2280, "name": "보물 감정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,'여성','[{"ref": 2013, "name": "칠등훈작사"}]',NULL),
+ (7636,'샤리아 드레스','생산','터키 궁전에서
+시중드는 여성들이 입는
+우아한 드레스.','FALSE','몸',10,20,10,30,50,'[{"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'35,000',NULL,'여성','[{"ref": 2019, "name": "준오등훈작사"}]',NULL),
+ (7637,'예니체리 모자','구입','터키 황제의 친위 부대가 쓰는 모자. 길게 늘어진 천이 굉장하다.
+
+※ 실제 역사의 뵈르크(börk)와 동일한 모자.','TRUE','머리',NULL,5,8,15,50,'[{"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'남성',NULL,NULL),
+ (7638,'예니체리 모자','생산','터키 황제의 친위 부대가 쓰는
+모자. 길게 늘어진 천이 굉장하다.','FALSE','머리',NULL,5,8,20,50,'[{"ref": 2282, "name": "생존", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'25,000',NULL,'남성',NULL,NULL),
+ (7639,'샤리아 서클릿','구입','터키 궁전에서 일하는 여성들이
+머리에 착용하는
+아름다운 이마 장식.','TRUE','머리',NULL,5,8,15,50,'[{"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'여성',NULL,NULL),
+ (7640,'샤리아 서클릿','생산','터키 궁전에서 일하는 여성들이
+머리에 착용하는
+아름다운 이마 장식.','FALSE','머리',NULL,5,8,20,50,'[{"ref": 2276, "name": "대화술", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'25,000',NULL,'여성',NULL,NULL),
+ (7641,'꽃머리장식','구입','꽃 코사지를 곁들인
+귀여운 머리장식.','FALSE','머리',NULL,2,10,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7642,'금자수 부츠','구입','금사의 호화로운 자수가 장식되어 있는 귀족용 부츠.','TRUE','다리',NULL,4,5,10,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7643,'티조나',NULL,'영웅 엘 시드가 모로코 장군을 토벌하고 획득한 검.','TRUE','무기 (검)',83,NULL,10,NULL,100,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'35,000',NULL,NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]'),
+ (7644,'코라다',NULL,'영웅 엘 시드가 바르셀로나 백작과의 싸움에서 승리하고 획득한 검.','TRUE','무기 (검)',78,NULL,15,NULL,100,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2346, "name": "통솔", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'35,000',NULL,NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]'),
+ (7645,'정예용 캐러벨라',NULL,'우수한 재질로 강화된 캐러벨라','TRUE','무기 (검)',42,NULL,NULL,15,35,'[{"ref": 2325, "name": "검술", "value": 2}]',NULL,NULL,NULL,NULL,'전투','2,000',NULL,NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]'),
+ (7646,'석류나무색 아랍해적셔츠',NULL,'석류나무로 선명하게 염색한
+긴 가운과 셔츠의 옷.','TRUE','몸',NULL,10,15,40,35,'[{"ref": 2306, "name": "보관", "value": 2}, {"ref": 2312, "name": "염료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,400',NULL,'남성',NULL,NULL),
+ (7647,'자수정 귀걸이',NULL,'자수정이 곁들어진 아름다운 귀걸이.','TRUE','장신구',NULL,NULL,40,NULL,30,'[{"ref": 2296, "name": "공업품 거래", "value": 1}, {"ref": 2273, "name": "구조", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7648,'오팔 반지','조달','오팔이 곁들어진 세공이 훌륭한 반지.','TRUE','장신구',NULL,NULL,30,NULL,20,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2313, "name": "운용", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7649,'가넷트 헤어밴드',NULL,'석류석이 곁들여진 세공이 훌륭한 머리 장식.','TRUE','장신구',NULL,NULL,40,NULL,50,'[{"ref": 2311, "name": "식료품 거래", "value": 1}, {"ref": 2324, "name": "감시", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7650,'정예 예니체리 모자',NULL,'빛나는 공적을 올린 예니체리에게만 주어지는 모자.','TRUE','머리',NULL,13,10,25,100,'[{"ref": 2344, "name": "총격", "value": 1}, {"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (7651,'오달리스크 서클릿',NULL,'오스만 투르크 궁전에 거주하는
+여성들이 머리에 착용하는
+아름다운 이마 장식.','TRUE','머리',NULL,13,10,25,100,'[{"ref": 2276, "name": "대화술", "value": 1}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (7652,'오달리스크 드레스',NULL,'오스만 투르크 궁전에 사는
+아름다운 여성들이 입는 드레스.','TRUE','몸',15,30,15,60,100,'[{"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 2}, {"ref": 2310, "name": "섬유 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (7653,'레이스 코트',NULL,'오스만 투르크의 우수한 제독에게
+주어지는 호칭을 붙인 호화로운 옷.','TRUE','몸',30,15,15,60,100,'[{"ref": 2328, "name": "노 젓기", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (7654,'인디고 트가리누',NULL,'모피 코트와 남색의 셔츠를
+곁들인 여행자의 옷.','TRUE','몸',NULL,20,50,20,100,'[{"ref": 2282, "name": "생존", "value": 1}, {"ref": 2312, "name": "염료 거래", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7655,'스레티 쥐스토코르',NULL,'숙련된 제독만이 입을 수 있는 선원 코트.
+진한 청회색으로 염색한 특제.','TRUE','몸',NULL,25,25,NULL,100,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2317, "name": "주류 거래", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7657,'유령의 양다리',NULL,'수수께끼의 유령이 사용했던 방어구.
+수상한 분위기가 맴돈다.','TRUE','다리',6,18,NULL,NULL,50,'[{"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,'50,000',NULL,NULL,'[{"ref": 2017, "name": "육등훈작사"}]',NULL),
+ (7658,'부대장용 야타건',NULL,'예니체리 부대장이 소유하는
+매우 예리한 야타건.','TRUE','무기 (던지는 나이프)',38,NULL,NULL,10,60,'[{"ref": 2431, "name": "던지기 기술", "value": 2}]',NULL,NULL,NULL,NULL,'모험','8,000',NULL,NULL,NULL,'[{"ref": 2015, "name": "준육등훈작사"}]'),
+ (7659,'칠흑의 단검',NULL,'수수께끼의 유령이 사용했던
+칠흑의 도신으로 된 단검.','TRUE','무기 (던지는 나이프)',38,NULL,NULL,NULL,50,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2348, "name": "회피", "value": 2}, {"ref": 2431, "name": "던지기 기술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,'[{"ref": 2025, "name": "사등훈작사"}]'),
+ (7660,'복원 겨우살이나무　리스',NULL,'겨우살이 나무의 잎으로 만든
+크리스마스 리스.
+행복을 가져온다고 한다.
+연금술 복원판','TRUE','장신구',NULL,NULL,NULL,NULL,80,'[{"ref": 2277, "name": "돛 조종", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}, {"ref": 2331, "name": "소화", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7661,'제독 코트','구입','편안한 착용감의 제독을 위한 코트.','TRUE','몸',8,20,15,NULL,35,'[{"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7662,'청동제 글러브',NULL,'투구，갑옷과 같이 몸에 대는
+글러브형의 건틀릿.','TRUE','팔',3,12,7,NULL,75,'[{"ref": 2332, "name": "속사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,200',NULL,NULL,NULL,NULL),
+ (7663,'슈발리에 로브',NULL,'고위 작위를 가진 사람만이 입을 수 있는 드레스.','TRUE','몸',NULL,40,35,NULL,50,'[{"ref": 2277, "name": "돛 조종", "value": 1}, {"ref": 2309, "name": "사교", "value": 2}, {"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'150,000',NULL,'여성','[{"ref": 2043, "name": "최고기사작위"}]',NULL),
+ (7664,'슈발리에 망토',NULL,'고위 작위를 가진 사람만이 입을 수 있는 망토.','TRUE','몸',NULL,40,35,NULL,50,'[{"ref": 2277, "name": "돛 조종", "value": 1}, {"ref": 2309, "name": "사교", "value": 2}, {"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'150,000',NULL,'남성','[{"ref": 2043, "name": "최고기사작위"}]',NULL),
+ (7665,'제독 코트','생산','편안한 착용감의
+제독을 위한 코트.','FALSE','몸',10,20,20,NULL,50,'[{"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7666,'해적살인자',NULL,'해적을 살인하는 해적으로 불린 레빈이 사용하던 장검.','TRUE','무기 (검)',44,16,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7667,'숙련된 어부의 수기',NULL,'낚시에 대한 마음가짐이 자세하게 기록되어 있는 수기.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2275, "name": "낚시", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7668,'프라이티스','드랍','보닛 형의 여성용 모자.
+이마와 앞머리가 드러난다.','FALSE','머리',NULL,NULL,NULL,NULL,45,'[{"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,400',NULL,'여성',NULL,NULL),
+ (7669,'재규어 전사의 옷',NULL,'아스텍의 재규어 전사가
+전투 시에 입는 의상.','FALSE','몸',22,12,NULL,30,60,'[{"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[{"ref": 1971, "name": "오세로메"}]'),
+ (7670,'연금술사의 옷',NULL,'연금술사의 제자가
+스승으로부터 받은 옷.','TRUE','몸',NULL,10,5,NULL,50,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7671,'풀무 부는 사람의 로브',NULL,'금을 만들어왔던 사람이, 직접 염색하여 개량한 로브.','TRUE','몸',NULL,15,8,NULL,50,'[{"ref": 2296, "name": "공업품 거래", "value": 1}, {"ref": 2300, "name": "귀금속 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[{"ref": 1969, "name": "풀무 부는 사람"}]'),
+ (7672,'아데프트 로브',NULL,'연금술의 달인이라고 불리는 자가
+직접 제작한，
+특별한 힘을 가진 로브.','FALSE','몸',NULL,20,10,NULL,50,'[{"ref": 2306, "name": "보관", "value": 2}, {"ref": 2319, "name": "직물 거래", "value": 1}, {"ref": 2436, "name": "연금술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[{"ref": 1967, "name": "아데프트"}]'),
+ (7673,'재규어 전사의 투구',NULL,'아스텍의 재규어 전사가
+전투 시에 쓰는 투구.','FALSE','머리',18,12,NULL,NULL,60,'[{"ref": 2282, "name": "생존", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[{"ref": 1971, "name": "오세로메"}]'),
+ (7674,'연금술사의 모자',NULL,'연금술사의 제자가
+스승으로부터 받은 모자.','TRUE','머리',NULL,5,NULL,NULL,50,'[{"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7675,'풀무 부는 사람의 모자',NULL,'금을 만들어왔던 사람이 직접 염색하여 개량한 모자.','TRUE','머리',NULL,8,NULL,NULL,50,'[{"ref": 2299, "name": "광물 거래", "value": 1}, {"ref": 2312, "name": "염료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[{"ref": 1969, "name": "풀무 부는 사람"}]'),
+ (7676,'아데프트 비레타',NULL,'연금술의 달인이 직접 만든，
+특별한 힘을 가진 모자.','FALSE','머리',NULL,12,10,NULL,50,'[{"ref": 2314, "name": "의약품 거래", "value": 2}, {"ref": 2369, "name": "조미료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[{"ref": 1967, "name": "아데프트"}]'),
+ (7677,'황금 도검',NULL,'황금으로 빛나는 도검.
+금으로 만들어져 있어 매우 무겁고，실용성이 결여되어 있다.','TRUE','무기 (검)',18,NULL,10,NULL,25,'[{"ref": 2299, "name": "광물 거래", "value": 1}, {"ref": 2300, "name": "귀금속 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7678,'금박장식 투구',NULL,'금으로 호화롭게 장식한 투구. 특수한 제법으로 만들어져 있기 때문에, 강도가 높다.','TRUE','머리',NULL,38,15,NULL,70,'[{"ref": 2330, "name": "방어", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,500',NULL,NULL,NULL,NULL),
+ (7679,'청벽색 반지',NULL,'청벽색 보석이 박혀있는
+
+아름다운 반지.','TRUE','장신구',NULL,NULL,45,NULL,50,'[{"ref": 2303, "name": "무기류 거래", "value": 2}, {"ref": 2314, "name": "의약품 거래", "value": 1}, {"ref": 2369, "name": "조미료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7680,'불가사의한 나침반',NULL,'유럽에서는 볼 수 없는 특수한 장식이 들어간 나침반.','TRUE','장신구',NULL,NULL,NULL,NULL,50,'[{"ref": 2291, "name": "측량", "value": 2}, {"ref": 2289, "name": "지리학", "value": 2}, {"ref": 2284, "name": "인식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7681,'금이 벗겨진 나이프',NULL,'칼 몸집의 금이 벗겨진 나이프. 외양도 좋지 않고 잘 들지도 않는다.','TRUE','무기 (던지는 나이프)',10,NULL,NULL,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7682,'성탄절용 알바','이벤트','높은 승려가 강탄제에 입는
+호화스런 장의.','FALSE','몸',NULL,25,50,NULL,50,'[{"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7683,'성탄절용 미트라',NULL,'성탄절 때 쓰는
+호화로운 장식의 모자.','TRUE','머리',NULL,5,30,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7684,'황금 단검',NULL,'금을 아낌없이 사용해서 만든 황금 단검. 칼날이 무디고 무겁다.','TRUE','무기 (던지는 나이프)',12,NULL,10,NULL,25,'[{"ref": 2296, "name": "공업품 거래", "value": 1}, {"ref": 2300, "name": "귀금속 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7685,'심람색 반지',NULL,'심람색 보석이 박혀있는 아름다운 반지','TRUE','장신구',NULL,NULL,45,NULL,50,'[{"ref": 2319, "name": "직물 거래", "value": 2}, {"ref": 2314, "name": "의약품 거래", "value": 1}, {"ref": 2369, "name": "조미료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7686,'염홍색 반지',NULL,'염홍색 보석이 박혀있는 아름다운 반지','TRUE','장신구',NULL,NULL,45,NULL,50,'[{"ref": 2321, "name": "향료 거래", "value": 2}, {"ref": 2292, "name": "탐색", "value": 1}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7687,'연격 지침서 제 4권',NULL,'공격에 대하여 기록한 서적.
+육상전에서 퀵 테크닉의
+사용이 쉬워진다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7688,'맹공 지침서 제 2권',NULL,'공격에 대해 기록한 서적.
+육상전에서 파워 테크닉의
+사용이 쉬워진다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7689,'세일러 셔츠',NULL,'뱃사람이 입는 편한 차림의
+셔츠.','FALSE','몸',NULL,5,10,NULL,100,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7690,'계략 지침서 제 1권',NULL,'함정에 대해 기록한 서적.
+육상전에서 함정 테크닉의
+사용이 쉬워진다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7691,'계략 지침서 제 2권',NULL,'함정에 대해 기록한 서적.
+육상전에서 함정 테크닉의
+사용이 쉬워진다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7692,'계략 지침서 제 3권',NULL,'함정에 대해 기록한 서적.
+육상전에서 함정 테크닉의
+사용이 쉬워진다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7693,'계략 지침서 제 4권',NULL,'함정에 대해 기록한 서적.
+육상전에서 함정 테크닉의
+사용이 쉬워진다.
+
+(현재 풀리지 않았음)','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7694,'별갑 카메오',NULL,'별갑에 카메오를
+장식한 아름다운 브로치.','TRUE','장신구',NULL,NULL,40,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7695,'학문 신의 호부',NULL,'학문 신의 이름이 새겨진 부적.','TRUE','장신구',NULL,NULL,10,NULL,5,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1389, "name": "복장예절 강화"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7696,'백제왕의 호부',NULL,'백제왕이 몸에 지니고 있었다는
+불가사의한 힘을 가진 부적.','TRUE','장신구',NULL,5,20,NULL,30,'[{"ref": 2330, "name": "방어", "value": 1}, {"ref": 2339, "name": "전술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (7697,'무희의 부채',NULL,'무희가 사용하는 부채.','TRUE','장신구',NULL,NULL,10,NULL,30,'[{"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7698,'마조의 부적',NULL,'항해와 어업의 신의 수호가
+깃든 부적.','TRUE','장신구',NULL,NULL,5,NULL,5,'[{"ref": 2277, "name": "돛 조종", "value": 1}]','[{"ref": 1374, "name": "선원 상태 회복"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7699,'장식 라국',NULL,'독특한 향기를 내뿜는 향목.
+중후한 향기를 즐길 수 있다.','TRUE','장신구',NULL,NULL,30,NULL,60,'[{"ref": 2276, "name": "대화술", "value": 1}, {"ref": 2321, "name": "향료 거래", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7700,'장식용 향목',NULL,'독특한 향기를 내뿜는 향목.
+기품 있는 향을 즐길 수 있다.','TRUE','장신구',NULL,NULL,30,NULL,60,'[{"ref": 2286, "name": "조달", "value": 2}, {"ref": 2321, "name": "향료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7701,'모험용 부적',NULL,'재액 방지의 염원이 깃든
+부적.','TRUE','장신구',NULL,NULL,20,NULL,60,'[{"ref": 2292, "name": "탐색", "value": 2}, {"ref": 2284, "name": "인식", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7702,'상업용 부적',NULL,'장사의 번창을 기원하는
+부적.','TRUE','장신구',NULL,NULL,20,NULL,60,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2306, "name": "보관", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7703,'해상 전투용 부적',NULL,'전투에서의 활약을 염원하는
+부적.','TRUE','장신구',NULL,NULL,20,NULL,60,'[{"ref": 2342, "name": "조타", "value": 2}, {"ref": 2325, "name": "검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7704,'단주',NULL,'54개 이하의 구슬을 꿰어 만든
+짧은 염주','TRUE','장신구',NULL,NULL,30,NULL,60,'[{"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2284, "name": "인식", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7705,'청동 팔찌',NULL,'고대 이집트에서
+일반적인 재료였던
+청동을 사용해서 만든 팔찌.','TRUE','장신구',NULL,4,NULL,NULL,20,'[{"ref": 2338, "name": "응급처치", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7706,'천평의 향목',NULL,'나라시대의 향목을 잘라낸 것.
+많은 사람들을 매료하는
+풍부한 향기가 특징.','TRUE','장신구',NULL,NULL,30,NULL,30,'[{"ref": 2282, "name": "생존", "value": 2}, {"ref": 2322, "name": "향신료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,NULL,NULL),
+ (7707,'백제의 염주',NULL,'백제 시대에 만들어진, 이상 상태에서 회복시켜주는 고마운 염주.','TRUE','장신구',NULL,NULL,25,NULL,20,'[{"ref": 2282, "name": "생존", "value": 2}, {"ref": 2287, "name": "종교학", "value": 1}]','[{"ref": 1447, "name": "모든 상태 회복(복수)"}]',NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7708,'정성공의 수기',NULL,'정성공이 지휘한 싸움에 대해，
+본인이 직접 기록한 것으로
+전해지는 책.','TRUE','장신구',10,10,20,NULL,20,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 2}]','[{"ref": 2339, "name": "전술"}]',NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7709,'수정 스카라베',NULL,'수정이 박혀 있는 장신구.
+진귀한 곤충을 본떠 만들었다.','TRUE','장신구',NULL,NULL,NULL,NULL,15,'[{"ref": 2304, "name": "미술품 거래", "value": 1}, {"ref": 2298, "name": "공예품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7710,'사랑의 부적',NULL,'진지한 사랑을 상징하는 부적.','TRUE','장신구',NULL,NULL,30,NULL,10,'[{"ref": 2338, "name": "응급처치", "value": 2}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7711,'피라미드 부적',NULL,'이집트의 피라미드 내부에서
+발견된 부적.','TRUE','장신구',NULL,NULL,NULL,NULL,10,'[{"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7712,'신전 부적',NULL,'이집트에 있는 신전 내부에서
+발견된 부적.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2342, "name": "조타", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7713,'호루스 부적',NULL,'이집트 유적에서 발견된
+호루스의 이름이 새겨진 부적.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7714,'이시스 부적',NULL,'이집트 유적에서 발견된
+이시스의 이름이 새겨진 부적.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2334, "name": "수탈", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7715,'쿠슈 왕국의 호부',NULL,'누비아 지방이 쿠슈 왕국으로
+불리던 시대에 만들어져
+전해져 오는 호부.','TRUE','장신구',NULL,10,NULL,NULL,20,'[{"ref": 2338, "name": "응급처치", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7716,'가신의 주술서',NULL,'주군에게 원한을 품은 가신이
+기록한 것으로 전해오는 책.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2334, "name": "수탈", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]','[{"ref": 1403, "name": "주술"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7717,'헬리오폴리스신화에 대한 책',NULL,'많은 파라오에게 영향을 끼친
+헬리오폴리스 창세 신화를
+기술한 것.','TRUE','장신구',5,NULL,5,NULL,20,'[{"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2300, "name": "귀금속 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (7718,'누비아 역사서',NULL,'고대 누비아의 전쟁의 역사를
+기록한 서물.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2293, "name": "행군", "value": 2}]','[{"ref": 1389, "name": "복장예절 강화"}]',NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7719,'아홉 신의 서장',NULL,'이집트 신화에 나오는
+아홉 신과 관련된 이야기를
+엮은 책.
+
+※ 로마코인 15,000장 필요','TRUE','장신구',NULL,NULL,15,NULL,20,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7720,'피라미드 부조',NULL,'이집트의 피라미드 내부에서
+발견된 부조.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2282, "name": "생존", "value": 1}, {"ref": 2444, "name": "인양", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7721,'산 자의 도시 서장',NULL,'산 자의 도시라고 불렸던
+테베의 동쪽 해안에 대해
+서술한 책.','TRUE','장신구',NULL,NULL,10,NULL,20,'[{"ref": 2339, "name": "전술", "value": 1}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7722,'죽은 자의 도시 서장',NULL,'죽은 자의 도시라고 불렸던
+테베의 서쪽 해안에 대해
+서술한 책.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2282, "name": "생존", "value": 2}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (7723,'토토의 호부',NULL,'이집트 유적에서 발견된，
+토토의 이름이 새겨진 부적.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2282, "name": "생존", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7724,'나일강의 오브',NULL,'나일 강 상류에 살았던
+고대 누비아 인이 신봉했다고
+전해지는 옥주.','TRUE','장신구',NULL,10,10,NULL,20,'[{"ref": 2321, "name": "향료 거래", "value": 1}, {"ref": 2307, "name": "보석 거래", "value": 1}]','[{"ref": 1376, "name": "피로도 회복"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (7725,'네덜란드의 돛 조종 지침서',NULL,'동아시아에 도달한
+네덜란드인이 기록했다고
+전해지는 돛 조종 기술 서적.','TRUE','장신구',NULL,5,NULL,NULL,30,'[{"ref": 2277, "name": "돛 조종", "value": 2}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7726,'왕가의 계곡의 손거울',NULL,'왕가의 계곡에서 발견된 손거울.
+파라오의 왕비와 관련된 것일까?','TRUE','장신구',NULL,3,15,NULL,20,'[{"ref": 2301, "name": "기호품 거래", "value": 1}, {"ref": 2299, "name": "광물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'9,000',NULL,NULL,NULL,NULL),
+ (7727,'적색 옻을 칠한 빗',NULL,'신분 높은 무가의 딸이 사용한，
+광택이 몹시 아름다운
+적색 옻을 칠한 빗.','TRUE','장신구',NULL,5,20,NULL,20,'[{"ref": 2304, "name": "미술품 거래", "value": 1}, {"ref": 2298, "name": "공예품 거래", "value": 2}]','[{"ref": 1389, "name": "복장예절 강화"}]',NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7728,'백광색 반지',NULL,'하얀 보석이 박혀 있는
+아름다운 반지.','TRUE','장신구',NULL,NULL,80,NULL,50,'[{"ref": 2307, "name": "보석 거래", "value": 2}, {"ref": 2313, "name": "운용", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'800',NULL,NULL,NULL,NULL),
+ (7729,'바지 저고리','이벤트','조선의 옷.
+바지라고 부르는 하의와 저고리라고 부르는 상의를 합쳐 입는다.	
+
+2010년 룰렛이벤트, 캐시템 [프리미엄 행운권]을 사용시 확률로 획득가능','TRUE','몸',NULL,25,10,NULL,35,'[{"ref": 2292, "name": "탐색", "value": 3}, {"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2285, "name": "자물쇠 따기", "value": 1}]',NULL,NULL,NULL,'캐시 아이템, 이벤트 보상',NULL,NULL,NULL,NULL,NULL,NULL),
+ (7730,'치마 저고리','이벤트','조선의 의상.
+치마라고 부르는 스커트에, 저고리라고 부르는 상의를 입는다.','TRUE','몸',NULL,10,25,NULL,35,'[{"ref": 2323, "name": "회계", "value": 3}, {"ref": 2322, "name": "향신료 거래", "value": 2}, {"ref": 2316, "name": "조리", "value": 1}]',NULL,NULL,NULL,'캐시 아이템, 이벤트 보상',NULL,NULL,NULL,'여성',NULL,NULL),
+ (7731,'구군복','이벤트','조선의 무신이 전투 시에 입는 의상','TRUE','몸',10,40,20,NULL,100,'[{"ref": 2347, "name": "포술", "value": 1}, {"ref": 2335, "name": "수평사격", "value": 2}, {"ref": 2332, "name": "속사", "value": 2}]',NULL,NULL,NULL,'캐시 아이템, 이벤트 보상',NULL,NULL,NULL,'남성',NULL,NULL),
+ (7732,'조선기법의 비법서',NULL,'조선기법의 비법이 기록되어져 있는 서적','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2341, "name": "조선", "value": 1}]','[{"ref": 2288, "name": "주연"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7733,'아멘호테프 3세의 투구',NULL,'이집트의 파라오,
+아멘호테프 3세의 것으로
+전해지는 투구.','TRUE','머리',NULL,5,30,NULL,150,'[{"ref": 2338, "name": "응급처치", "value": 1}, {"ref": 2336, "name": "외과의술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7734,'고대 이집트 도끼',NULL,'고대 이집트 초기에 만들어진 돌로 만든 도끼.','TRUE','무기 (도끼)',40,NULL,NULL,NULL,30,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (7735,'힉소스의 소검',NULL,'힉소스의 지배를 받았던 시대에 만들어졌다고 하는 고대 이집트 단검.','TRUE','무기 (던지는 나이프)',30,NULL,10,NULL,25,'[{"ref": 2431, "name": "던지기 기술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7736,'시리아 전투의 창',NULL,'고대 이집트에서 시리아와의 전투에서 사용했다는 창.','TRUE','무기 (창)',50,NULL,NULL,NULL,20,'[{"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (7737,'안케세나멘의 가슴장식',NULL,'투탕카멘의 아내，
+안케세나멘이 입었다고
+전해지는 장식 드레스.','TRUE','몸',NULL,15,20,NULL,50,'[{"ref": 2300, "name": "귀금속 거래", "value": 1}, {"ref": 2307, "name": "보석 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'여성',NULL,NULL),
+ (7738,'장도',NULL,'조선의 귀족이 호신용으로 지니는 검.
+눈에 띄지 않도록 소형화 되어 있다.','TRUE','무기 (던지는 나이프)',20,20,30,NULL,60,'[{"ref": 2330, "name": "방어", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7739,'전립','탐색','조선의 무관이 쓰는 모자.
+깃털과 보석으로 장식한다.','TRUE','머리',NULL,7,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7740,'바지 저고리','구입','조선의 옷. 바지라고 부르는
+하의와 저고리라고 부르는
+상의를 합쳐 입는다.','FALSE','몸',NULL,4,NULL,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7741,'아얌','구입','나들이하는 여자들이
+추위를 막기 위해 머리에 쓰는
+조선의 모자.','FALSE','머리',NULL,5,5,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7742,'갖신','구입','가죽으로 만든 조선의 신발.
+융 같은 것을 대고 곱게 기워
+아름답게 꾸몄다.','TRUE','다리',NULL,3,NULL,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7743,'사모','구입','조선의 문무백관이
+관복을 입을 때
+갖추어 쓰는 모자.','TRUE','머리',NULL,5,5,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7744,'목화','구입,생산','조선의 고관이 관복과 함께 신는 신발. 비단과 가죽으로 만들었다.','TRUE','다리',NULL,3,NULL,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7745,'짚신',NULL,'조선 사람이 평소에 신는 신발.
+볏짚이나 삼으로 만든다.','TRUE','다리',NULL,2,NULL,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7746,'고초리','생산','짚으로 엮어 만든 신.
+일본에서 일반적으로 신는다.','FALSE','다리',NULL,4,NULL,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7747,'초리','신발,생산','인도의 유복한 여성의 의장.
+호화스런 장식으로 이루어져 있다.','FALSE','다리',NULL,5,NULL,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7748,'신발','생산','가죽으로 만들어진 아주 흔한
+단화.','FALSE','다리',NULL,5,NULL,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7749,'신','생산','한족이 신는 신발.
+발을 넣는 것이라는 뜻.','FALSE','다리',NULL,5,NULL,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7750,'일본식 비녀','생산','여성의 머리를 장식하는
+일본식 비녀.
+별갑 등으로 만든다.','FALSE','머리',NULL,10,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7751,'보요','생산','한족 여성의 머리장식품.
+걸을 때 장식이 흔들리기 때문에
+이런 이름이 붙여졌다.','FALSE','머리',NULL,10,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7752,'매화잠','생산','매화 꽃을 사용하여 만든
+머리 장식품. 금이나，
+다른 것으로 만들기도 한다.','FALSE','머리',NULL,10,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7753,'비수',NULL,'품속에 은밀히 품고 다니는 날이 날카롭고 칼집받이가 없는 단도.','TRUE','무기 (던지는 나이프)',25,15,NULL,NULL,60,'[{"ref": 2330, "name": "방어", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7754,'백목궁',NULL,'나무로 만든 활.
+유연하고 내구성도 좋다.','TRUE','무기 (활)',35,NULL,NULL,NULL,60,'[{"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7755,'일본검',NULL,'일본에서 일반적으로 사용하는 검.
+날카롭고 칼날도 아름답다.','TRUE','무기 (검)',35,NULL,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7756,'각궁',NULL,'물소뿔 등을 사용한 조선의 활.
+
+작지만 멀리 날아간다.','TRUE','무기 (활)',35,NULL,NULL,NULL,60,'[{"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7757,'검창',NULL,'선단에 초생달 모양의 검이 달린 자루가 긴 무기.
+서유기와 수호전에도 등장한다.','TRUE','무기 (창)',35,NULL,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7758,'갈래창',NULL,'선단 부분이 갈라진 창.
+찌르는 공격에 적합하다.','TRUE','무기 (창)',35,NULL,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7759,'전립','구입','조선의 무관이 쓰는 모자.
+깃털과 보석으로 장식한다.','FALSE','머리',NULL,5,5,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7760,'사모','생산','조선의 문무백관이
+관복을 입을 때
+갖추어 쓰는 모자.','FALSE','머리',NULL,10,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7761,'아얌','생산','나들이하는 여자들이
+추위를 막기 위해 머리에 쓰는
+조선의 모자.','FALSE','머리',NULL,10,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7762,'전립','생산','조선의 무관이 쓰는 모자.
+깃털과 보석으로 장식한다.','FALSE','머리',NULL,10,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7763,'통천관','생산','한족의 고관이 쓰는 모자.
+경사 때에 쓴다.','FALSE','머리',NULL,10,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7764,'두건','생산','머리에 두르는 천.
+선원들의 머리 장식으로서 널리 사용된다.','FALSE','머리',NULL,10,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7765,'사방평정건','해상수탈','요직에 종사하는 인물이 쓰는
+한족의 모자. 별칭은 방건','FALSE','머리',NULL,10,5,NULL,50,'[{"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7766,'구군복','탐색','나라의 중대한 의식이 있을 때,
+조선의 무신들이 갖춰 입는
+전투복 차림의 예복','TRUE','몸',NULL,10,15,NULL,30,'[{"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7767,'구군복','구입','나라의 중대한 의식이 있을 때，
+조선의 무신들이 갖춰 입는
+전투복 차림의 예복','FALSE','몸',NULL,7,15,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7768,'치마 저고리','구입','조선의 의상. 치마라고 부르는
+스커트에，저고리라고 부르는
+상의를 입는다.','FALSE','몸',NULL,7,15,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7769,'한족 관복','수탈','한족 관복.
+상의와 치마를 하나로 연결한 옷으로
+한족의 고위 관리가 입는다.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2314, "name": "의약품 거래", "value": 1}, {"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7770,'매화잠','해상수탈','매화 꽃을 사용하여 만든
+머리 장식품. 금이나，
+다른 것으로 만들기도 한다.','FALSE','머리',NULL,10,5,NULL,50,'[{"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7771,'치마 저고리','탐색','조선의 의상. 치마라고 부르는 스커트에, 저고리라고 부르는 상의를 입는다.','TRUE','몸',NULL,10,15,NULL,30,'[{"ref": 2319, "name": "직물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7772,'일본식 관모','구입,생산','일본의 무관이 쓰는 모자.
+원래는 더 높게 만들었다.','FALSE','머리',NULL,5,5,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7773,'바지 저고리','탐색','조선의 옷. 바지라고 부르는
+하의와 저고리라고 부르는
+상의를 합쳐 입는다.','FALSE','몸',NULL,4,NULL,NULL,20,'[{"ref": 2289, "name": "지리학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7774,'구군복','생산, 내구 25','나라의 중대한 의식이 있을 때，
+조선의 무신들이 갖춰 입는
+전투복 차림의 예복','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7775,'치마 저고리','생산','조선의 의상. 치마라고 부르는
+스커트에，저고리라고 부르는
+상의를 입는다.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2319, "name": "직물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7776,'바지 저고리','생산','조선의 옷. 바지라고 부르는
+하의와 저고리라고 부르는
+상의를 합쳐 입는다.','FALSE','몸',NULL,4,NULL,NULL,20,'[{"ref": 2289, "name": "지리학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7777,'사모','유적 던전','공주북쪽 (한양바로아래쪽 필드) 유적에서 3층에서 얻었습니다','TRUE','머리',12,17,5,NULL,60,'[{"ref": 2289, "name": "지리학", "value": 1}, {"ref": 2284, "name": "인식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7778,'짚신','유적 던전','조선 사람이 평소에 신는 신발.
+볏짚이나 삼으로 만든다.','TRUE','다리',5,5,NULL,NULL,60,'[{"ref": 2315, "name": "잡화 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7779,'환목궁',NULL,'단일의 나무를 사용해 만든 일반적인 활.','TRUE','무기 (활)',30,NULL,5,NULL,30,'[{"ref": 2435, "name": "저격술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7780,'바지 저고리','유적 던전(검술 / 응용검술)','조선의 옷. 바지라고 부르는 하의와 저고리라고 부르는 상의를 합쳐 입는다.','TRUE','몸',8,15,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7781,'옻칠한 각궁',NULL,'백제시대의 일품으로, 각궁에 옻을 칠한 외양이 고급스럽다. 실용성도 겸비한 최고급 활.','TRUE','무기 (활)',37,NULL,10,NULL,30,'[{"ref": 2335, "name": "수평사격", "value": 2}, {"ref": 2345, "name": "탄도학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'13,000',NULL,NULL,NULL,NULL),
+ (7782,'갖신','유적탐험','가죽으로 만든 조선의 신발.
+융 같은 것을 대고 곱게 기워
+아름답게 꾸몄다.','TRUE','다리',5,6,NULL,NULL,60,'[{"ref": 2312, "name": "염료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7783,'갖신','탐색','가죽으로 만든 조선의 신발.
+융 같은 것을 대고 곱게 기워
+아름답게 꾸몄다.','TRUE','다리',NULL,4,NULL,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7784,'갖신','생산','가죽으로 만든 조선의 신발.
+융 같은 것을 대고 곱게 기워
+아름답게 꾸몄다.','FALSE','다리',NULL,5,NULL,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7785,'조선 수군의 활',NULL,'조선의 수군에서 쓰던 활.
+
+위력이 강해지도록 고안돼 있다.','TRUE','무기 (활)',70,NULL,NULL,NULL,60,'[{"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2325, "name": "검술", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'45,000',NULL,NULL,NULL,NULL),
+ (7786,'가문 문장을 수놓은 일본 옷','드랍,수탈','일본의 귀족이 입는 전통 의복.
+집안의 문장을 수놓은
+상의와 바지를 입는다.','TRUE','몸',NULL,7,15,NULL,25,'[{"ref": 2320, "name": "총포류 거래", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7787,'착수삼유','수탈 & 드랍','착수삼유.
+소매통이 넓은 상의와
+기장이 긴 치마를 합쳐 입는
+한족의 옷.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2311, "name": "식료품 거래", "value": 1}, {"ref": 2369, "name": "조미료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7788,'백제 단검',NULL,'백제시대에 만들어진 단검.
+높은 공격력을 가지고 있어，그 당시
+기술의 뛰어남을 알 수 있다.','TRUE','무기 (던지는 나이프)',35,NULL,10,NULL,30,'[{"ref": 2339, "name": "전술", "value": 2}, {"ref": 2431, "name": "던지기 기술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (7789,'스핑크스의 검',NULL,'스핑크스를 본뜬 문양이 자루에 그려져 있는 긴 검.','TRUE','무기 (검)',45,NULL,10,NULL,20,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (7790,'네페르티티의 드레스',NULL,'투탕카멘의 의모,
+네페르티티가 입었다고
+전해지는 장식 드레스.','TRUE','몸',NULL,15,20,NULL,50,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'여성',NULL,NULL),
+ (7791,'소수배자','수탈','소수배자.
+앞으로 여미는 옷 위에
+낙낙한 두루마기를 걸쳐 입는 옷.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2328, "name": "노 젓기", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7792,'보요','수탈','한족 여성의 머리장식품.
+걸을 때 장식이 흔들리기 때문에
+이런 이름이 붙여졌다.','FALSE','머리',NULL,10,5,NULL,50,'[{"ref": 2327, "name": "기뢰 설치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7793,'치마 저고리','답례품','조선의 의상. 치마라고 부르는 스커트에 저고리라고 부르는 상의를 입는다.','TRUE','몸',NULL,20,15,NULL,50,'[{"ref": 2319, "name": "직물 거래", "value": 1}, {"ref": 2304, "name": "미술품 거래", "value": 1}, {"ref": 2301, "name": "기호품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7794,'전립','수탈','조선의 무관이 쓰는 모자.
+깃털과 보석으로 장식한다.','FALSE','머리',NULL,10,5,NULL,50,'[{"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7795,'아얌','수탈','나들이하는 여자들이
+추위를 막기 위해 머리에 쓰는
+조선의 모자.','FALSE','머리',NULL,10,5,NULL,50,'[{"ref": 2270, "name": "고고학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7796,'구군복','답례품','나라의 중대한 의식이 있을 때，
+조선의 무신들이 갖춰 입는
+전투복 차림의 예복
+
+부산 교역 중 이순신 장군 호출시 획득','TRUE','몸',NULL,20,15,NULL,50,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2347, "name": "포술", "value": 1}, {"ref": 2345, "name": "탄도학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7797,'치마 저고리','드랍','조선의 의상. 치마라고 부르는
+스커트에，저고리라고 부르는
+상의를 입는다.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2319, "name": "직물 거래", "value": 1}, {"ref": 2304, "name": "미술품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7798,'일본식 비녀','수탈','여성의 머리를 장식하는
+일본식 비녀.
+별갑 등으로 만든다.','FALSE','머리',NULL,10,5,NULL,50,'[{"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7799,'은 레이피어',NULL,'칼자루에 보석을 박아넣은 훌륭한 세공이 들어간 레이피어.
+외양도 좋고 칼날도 예리하다.','TRUE','무기 (검)',52,NULL,30,NULL,60,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,'[{"ref": 2021, "name": "오등훈작사"}]'),
+ (7800,'통천관','수탈','한족의 고관이 쓰는 모자.
+경사 때에 쓴다.','FALSE','머리',NULL,10,5,NULL,50,'[{"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7801,'탐험가의 총',NULL,'한 사람 몫을 하는
+탐험가를 뜻하는 증거이자
+모험가를 위한 총.','TRUE','무기 (총)',17,NULL,NULL,NULL,20,'[{"ref": 2435, "name": "저격술", "value": 1}]','[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7802,'탐험가의 도끼',NULL,'한 사람 몫을 하는
+탐험가를 뜻하는 증거이자
+모험가를 위한 도끼.','TRUE','무기 (도끼)',30,NULL,5,NULL,20,'[{"ref": 2325, "name": "검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (7804,'투트모세 3세의 단검',NULL,'이집트의 왕，투트모세 3세의
+것이라고 전해지는 단검.','TRUE','무기 (던지는 나이프)',25,NULL,15,NULL,20,'[{"ref": 2431, "name": "던지기 기술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7805,'사모','수탈','조선의 문무백관이
+관복을 입을 때
+갖추어 쓰는 모자.','FALSE','머리',NULL,10,5,NULL,50,'[{"ref": 2289, "name": "지리학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7806,'사방평정건','생산','요직에 종사하는 인물이 쓰는
+한족의 모자. 별칭은 방건','FALSE','머리',NULL,10,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7807,'특제 바타데코라',NULL,'감사를 표하는 축제를 위해만든 아름다운 드레스.','TRUE','몸',NULL,5,25,NULL,60,'[{"ref": 2304, "name": "미술품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7808,'특제 콜트',NULL,'감사를 표하는 축제를 위해
+만든 용장한 옷.','TRUE','몸',NULL,10,25,NULL,60,'[{"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7809,'두건','수탈','머리에 두르는 천.
+선원들의 머리 장식으로서 널리 사용된다.','FALSE','머리',NULL,10,5,NULL,50,'[{"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7810,'직거심의','드랍수탈','직거심의.
+기장이 길고 낙낙한
+한족의 옷.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2281, "name": "생물학", "value": 1}, {"ref": 2284, "name": "인식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7811,'히타이트 전투의 창',NULL,'람세스 2세가 히타이트 전투에서 사용했다는 창.','TRUE','무기 (창)',35,NULL,5,NULL,20,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (7812,'네프티스의 지팡이',NULL,'오시리스와 이시스의 여동생인
+네프티스 여신과 관련된 지팡이','TRUE','무기 (곤봉 지팡이)',20,10,10,NULL,20,'[{"ref": 2348, "name": "회피", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7813,'소맷부리가 좁은 일본 의복','생산','일본에서 입는 전통 의복.
+소매통은 넓고 소맷부리는 좁다.','FALSE','몸',NULL,4,NULL,NULL,20,'[{"ref": 2317, "name": "주류 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7814,'소맷부리가 좁은 일본 의복','생산','일본에서 입는 전통 의복.
+소매통은 넓고 소맷부리는 좁다.','FALSE','몸',NULL,4,NULL,NULL,20,'[{"ref": 2310, "name": "섬유 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7815,'가문 문장을 수놓은 일본 옷','생산','일본의 귀족이 입는 전통 의복.
+집안의 문장을 수놓은
+상의와 바지를 입는다','TRUE','몸',NULL,7,15,NULL,25,'[{"ref": 2320, "name": "총포류 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7816,'남만풍의 일본 전통 옷','생산','유럽 형식을 도입한 일본 의상.
+목둘레의 주름장식이 특징.','FALSE','몸',NULL,10,20,5,30,'[{"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7817,'타네가시마총',NULL,'독자적인 제조법으로 개량된
+일본식 화승총.','TRUE','무기 (총)',35,NULL,NULL,NULL,60,'[{"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7818,'고고학자의 로브',NULL,'고대 신앙에 대해 조사한
+항해자가 입을 수 있는 로브.','TRUE','몸',NULL,20,40,NULL,50,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2284, "name": "인식", "value": 1}]',NULL,NULL,NULL,NULL,'모험','60,000',NULL,NULL,'[{"ref": 2021, "name": "오등훈작사"}]',NULL),
+ (7819,'고고학자의 모자',NULL,'고대 신앙의 대상을 조사한
+항해자가 착용할 수 있는 모자.','TRUE','머리',NULL,12,10,NULL,200,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7820,'숙련된 어부의 조리 비법',NULL,'어부가 자랑하는 맛있는
+생선 조리법이 적힌 자료.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2275, "name": "낚시", "value": 1}, {"ref": 2316, "name": "조리", "value": 1}]','[{"ref": 1393, "name": "조리 스킬 강화"}]',NULL,NULL,NULL,NULL,'200',NULL,NULL,NULL,NULL),
+ (7821,'마레샬퀴래스','메모리얼 앨범','영웅의 갑옷을 모은 항해자가
+입을 수 있는 멋진 갑옷.','FALSE','몸',NULL,80,35,NULL,50,'[{"ref": 2342, "name": "조타", "value": 2}, {"ref": 2348, "name": "회피", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,'전투','70,000',NULL,NULL,'[{"ref": 2021, "name": "오등훈작사"}]',NULL),
+ (7822,'공작 드레스','메모리얼 앨범','상냥한 여인의 그림을 모은 항해자가 입을 수 있는 드레스','TRUE','몸',NULL,NULL,60,NULL,50,'[{"ref": 2276, "name": "대화술", "value": 2}, {"ref": 2309, "name": "사교", "value": 3}, {"ref": 2278, "name": "미술", "value": 2}]',NULL,NULL,NULL,NULL,'모험','40,000',NULL,'여성','[{"ref": 2013, "name": "칠등훈작사"}]',NULL),
+ (7823,'콘설코트','메모리얼','인기 여성의 마음을 사로잡은 항해자가 입을 수 있는 화려한 의상','TRUE','몸',NULL,20,60,NULL,50,'[{"ref": 2323, "name": "회계", "value": 2}, {"ref": 2276, "name": "대화술", "value": 2}, {"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,'[{"ref": 2013, "name": "칠등훈작사"}]',NULL),
+ (7824,'해양학자의 로브',NULL,'일류 해양학자가 입는
+푸른 바다색의 로브.','TRUE','몸',NULL,20,10,NULL,100,'[{"ref": 2283, "name": "생태 조사", "value": 1}, {"ref": 2284, "name": "인식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7825,'일본 전통 의상(검정)',NULL,'일본의 귀족이 입는 전통 의복.
+집안의 문장을 수놓은 상의와 바지를 입는다.','TRUE','몸',NULL,30,15,NULL,50,'[{"ref": 2323, "name": "회계", "value": 2}, {"ref": 2303, "name": "무기류 거래", "value": 1}, {"ref": 2319, "name": "직물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7826,'일본 전통 의상(자주)',NULL,'높은 신분의 일본 사람이 입는，
+자근으로 염색한
+일본의 전통 의복.','TRUE','몸',5,15,15,NULL,100,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7827,'견직물로 짠 센다이 전통 옷',NULL,'다테 가의 영지에서
+고급 견직물을 사용하여 만든
+일본의 전통 의복.','TRUE','몸',5,15,15,NULL,100,'[{"ref": 2320, "name": "총포류 거래", "value": 1}, {"ref": 2453, "name": "함정", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7828,'전국시대의 일본 옷',NULL,'일본 전국시대 무장이 입는
+일본 전통 의상.','TRUE','몸',5,15,15,NULL,100,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7829,'소맷부리가 좁은 일본 의복','캐시','일본에서 입는 전통 의복.
+소매통은 넓고 소맷부리는 좁다.','TRUE','몸',10,40,NULL,NULL,100,'[{"ref": 2453, "name": "함정", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 2}, {"ref": 2325, "name": "검술", "value": 2}]',NULL,NULL,'거래 불가','캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (7830,'남만풍의 일본 전통 옷','답례품','유럽 형식을 도입한 일본 의상.
+목둘레의 주름장식이 특징.','TRUE','몸',NULL,20,20,5,50,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}, {"ref": 2289, "name": "지리학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7831,'핫피',NULL,'일본에서 축제 때 입는
+특별한 의상.
+속옷이나 옷 위에 덧입는다.','FALSE','몸',NULL,4,NULL,15,60,'[{"ref": 2317, "name": "주류 거래", "value": 1}, {"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7832,'금색 핫피',NULL,'희귀한 염료로
+금색으로 물들인
+호화로운 핫피.','TRUE','몸',NULL,17,NULL,20,100,'[{"ref": 2317, "name": "주류 거래", "value": 2}, {"ref": 2312, "name": "염료 거래", "value": 2}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,'캐시 아이템, 이벤트 보상',NULL,NULL,NULL,NULL,NULL,NULL),
+ (7833,'하급 군인용 일본 갑옷','생산','일본 군인이 입는 갑옷.
+하급 병사용으로 화려하지 않다.','FALSE','몸',20,50,NULL,NULL,30,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7835,'경번갑',NULL,'조선의 무관이
+입는 갑옷
+무겁지만 튼튼하다.','FALSE','몸',20,50,NULL,NULL,30,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7836,'백은 장식 투구',NULL,'은으로 화려하게 장식한 투구.
+특수한 제조법을 사용함으로써
+강도를 높였다.','TRUE','머리',NULL,37,20,NULL,70,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,500',NULL,NULL,NULL,NULL),
+ (7837,'해양학자의 모자',NULL,'일류 해양학자가 쓰는 모자.','TRUE','머리',NULL,12,10,NULL,100,'[{"ref": 2281, "name": "생물학", "value": 1}, {"ref": 2289, "name": "지리학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7838,'일본식 관모','탐색','일본의 무관이 쓰는 모자.
+원래는 더 높게 만들었다.','TRUE','머리',NULL,5,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7839,'일본식 관모','유적 던전','일본의 무관이 쓰는 모자.
+원래는 더 높게 만들었다.','TRUE','머리',12,17,5,NULL,60,'[{"ref": 2303, "name": "무기류 거래", "value": 1}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7840,'일본식 무관용 관모',NULL,'일본의 고귀한 신분의 무관이
+쓰는 모자.','TRUE','머리',10,5,10,NULL,70,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7841,'소청 무늬 일본식 관모',NULL,'일본의 무관이 쓰는 모자.
+소청이란 무늬의 일종이다.','TRUE','머리',8,15,5,NULL,50,'[{"ref": 2432, "name": "관리기술", "value": 1}, {"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'남성',NULL,NULL),
+ (7842,'시게자네식 관모',NULL,'다테 시게자네가 사용하던
+관모를 모티브로 하여
+만든 모자.','TRUE','머리',5,5,5,NULL,100,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7843,'일본식 비녀','구입','여성의 머리를 장식하는
+일본식 비녀.
+별갑 등으로 만든다.','TRUE','머리',NULL,5,5,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7844,'일본식 비녀','유적 던전','여성의 머리를 장식하는 일본식 비녀.
+별갑 등으로 만든다.','TRUE','머리',12,17,5,NULL,60,'[{"ref": 2298, "name": "공예품 거래", "value": 1}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7845,'일본식 나전 비녀',NULL,'마사무네의 정실이자 애처인
+메고히메를 위해 제작된
+일본식 나전 비녀.','TRUE','머리',5,5,5,NULL,100,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7846,'마키에 비녀',NULL,'여성의 머리를 장식하는 
+일본식 비녀.
+금은 장식이 아름답다.','TRUE','머리',NULL,15,10,NULL,70,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7847,'일본식 백색 비취 비녀',NULL,'여성의 머리를 장식하는 일본식 비녀.
+백색 비취 장식이 아름답다.','TRUE','머리',8,15,5,NULL,50,'[{"ref": 2432, "name": "관리기술", "value": 1}, {"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'여성',NULL,NULL),
+ (7848,'고초리','구입','짚으로 엮어 만든 신.
+일본에서 일반적으로 신는다.','TRUE','다리',NULL,2,NULL,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7849,'고초리','탐색','짚으로 엮어 만든 신.
+일본에서 일반적으로 신는다.','TRUE','다리',NULL,3,NULL,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7850,'고초리','유적 던전','짚으로 엮어 만든 신.
+일본에서 일반적으로 신는다.','TRUE','다리',5,5,NULL,NULL,60,'[{"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7851,'초리','구입','평평한 나무판에 끈으로
+발을 고정하는 신발.
+이 끈은 콧실이라고 부른다.','TRUE','다리',NULL,3,NULL,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7852,'초리','탐색','평평한 나무판에 끈으로
+발을 고정하는 신발.
+이 끈은 콧실이라고 부른다.','TRUE','다리',NULL,4,NULL,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7853,'초리','유적 던전','평평한 나무판에 끈으로 발을 고정하는 신발.
+이 끈은 콧실이라고 부른다.','TRUE','다리',5,6,NULL,NULL,60,'[{"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7854,'마상통',NULL,'다테 마사무네가 기마 부대에
+도입한 일본식 화승총.
+말 위에서 사용 가능하도록
+개량했다.','TRUE','무기 (총)',70,NULL,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 1}, {"ref": 2435, "name": "저격술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'45,000',NULL,NULL,NULL,NULL),
+ (7855,'사카이 화승총',NULL,'사카이에서 만든 총.
+일본 전국 시대 때，일본의
+영주들에게 널리 퍼졌다고 한다.','TRUE','무기 (총)',33,NULL,5,NULL,30,'[{"ref": 2435, "name": "저격술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7856,'쿠니토모의 화승총',NULL,'오우미의 쿠니토모에서 만든 총.
+높은 기술을 소유한 쿠니토모의
+대장장이가 만든 명품.','TRUE','무기 (총)',40,NULL,5,NULL,30,'[{"ref": 2348, "name": "회피", "value": 2}, {"ref": 2435, "name": "저격술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7857,'남만통',NULL,'일본에 전래되는 타네가시마총.
+총포류 중에서도 높은 파괴력을
+갖추고 있다.','TRUE','무기 (총)',70,NULL,10,NULL,30,'[{"ref": 2326, "name": "관통", "value": 2}, {"ref": 2334, "name": "수탈", "value": 1}, {"ref": 2435, "name": "저격술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7858,'일본 환도',NULL,'비교적 긴 일본검.
+공격력이 우수하며
+사용하기 편하다.
+
+아즈치 중계에서나옵니다.','TRUE','무기 (검)',46,NULL,NULL,NULL,30,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7859,'왜도',NULL,'동아시아 각지에 전해진 도검을
+바탕으로，각 지역에서 독자적인 장식을
+붙인 장도.','TRUE','무기 (검)',39,NULL,NULL,NULL,30,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'9,000',NULL,NULL,NULL,NULL),
+ (7860,'쿠니시게',NULL,'무수한 명검을 만들었다고 하는
+쿠니시게가 만든 일본도.
+무척 잘 든다.','TRUE','무기 (검)',72,NULL,10,NULL,30,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7861,'명심보감',NULL,'고려시대부터 전해지는 유학서.
+조선 시대 아동과 부녀자들이
+흔히 읽던 교양서적이다.','TRUE','장신구',NULL,5,NULL,NULL,30,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2295, "name": "경계", "value": 1}, {"ref": 2453, "name": "함정", "value": 1}]','[{"ref": 1389, "name": "복장예절 강화"}]',NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (7862,'고구려 궁술서',NULL,'고구려시대에 편찬된，
+활에 관한 기술이 기록된 서적.','TRUE','장신구',10,10,NULL,NULL,30,'[{"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2431, "name": "던지기 기술", "value": 2}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'9,000',NULL,NULL,NULL,NULL),
+ (7863,'천목 밥공기',NULL,'천목유라 불리는 유약을 사용해
+구웠다는 고급 그릇.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2323, "name": "회계", "value": 2}, {"ref": 2452, "name": "상품지식", "value": 2}]','[{"ref": 1389, "name": "복장예절 강화"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7864,'청자 꽃병',NULL,'고려청자의 특징인
+기품 넘치는 청록색이
+아름다운 꽃병.','TRUE','장신구',NULL,15,NULL,NULL,30,'[{"ref": 2304, "name": "미술품 거래", "value": 2}, {"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7865,'비취 장식',NULL,'전설 속의 신수라 여겨지는
+용을 소재로 한 비취 장식.','TRUE','장신구',10,NULL,NULL,NULL,30,'[{"ref": 2444, "name": "인양", "value": 1}, {"ref": 2327, "name": "기뢰 설치", "value": 1}, {"ref": 2453, "name": "함정", "value": 1}]','[{"ref": 1405, "name": "주술(낙뢰)"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7866,'당삼채의 말',NULL,'당삼채의 특징인，또렷한
+색채가 두드러지는 말 장식.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2295, "name": "경계", "value": 1}, {"ref": 2452, "name": "상품지식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7867,'빨간 꽃 브로치',NULL,'빨간 꽃을 소재로 한
+예쁜 브로치.','TRUE','장신구',NULL,NULL,10,NULL,30,'[{"ref": 2276, "name": "대화술", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 2}, {"ref": 2336, "name": "외과의술", "value": 1}]','[{"ref": 1376, "name": "피로도 회복"}]',NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (7868,'소맷부리가 좁은 일본 의복','구입','일본에서 입는 전통 의복.
+소매통은 넓고 소맷부리는 좁다.','FALSE','몸',NULL,4,NULL,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7869,'비취 목걸이',NULL,'아름다운 비취를 박아 넣은
+목걸이. 공예적 가치가 높다.','TRUE','장신구',NULL,NULL,10,NULL,30,'[{"ref": 2276, "name": "대화술", "value": 2}, {"ref": 2319, "name": "직물 거래", "value": 2}, {"ref": 2308, "name": "봉제", "value": 1}]','[{"ref": 1376, "name": "피로도 회복"}]',NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (7870,'소맷부리가 좁은 일본 의복','구입','일본에서 입는 전통 의복.
+소매통은 넓고 소맷부리는 좁다.','FALSE','몸',NULL,4,NULL,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7871,'가문 문장을 수놓은 일본 옷','구입','일본의 귀족이 입는 전통 의복.
+집안의 문장을 수놓은
+상의와 바지를 입는다.
+
+※ ''하카마(袴)''로 잘 알려진 일본의 전통 정장.','TRUE','몸',NULL,7,15,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7872,'가문 문장을 수놓은 일본 옷','탐색','일본의 귀족이 입는 전통 의복.
+집안의 문장을 수놓은 상의와 바지를 입는다.','TRUE','몸',NULL,7,15,NULL,25,'[{"ref": 2320, "name": "총포류 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7873,'전립','유적 던전','조선의 무관이 쓰는 모자.
+깃털과 보석으로 장식한다.','TRUE','머리',12,17,5,NULL,60,'[{"ref": 2432, "name": "관리기술", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7874,'구군복','유적 던전','나라의 중대한 의식이 있을 때, 조선의 무신들이 갖춰 입는 전투복 차림의 예복','TRUE','몸',10,20,15,NULL,60,'[{"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7875,'치마 저고리','유적 던전','조선의 의상. 치마라고 부르는 스커트에, 저고리라고 부르는 상의를 입는다.','TRUE','몸',10,20,15,NULL,60,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7876,'아얌','유적 던전','나들이하는 여자들이 추위를 막기 위해 머리에 쓰는 조선의 모자.','TRUE','머리',12,17,5,NULL,60,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2284, "name": "인식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7877,'일본식 관모','드랍','일본의 무관이 쓰는 모자.
+원래는 더 높게 만들었다.','FALSE','머리',NULL,10,5,NULL,50,'[{"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7878,'가문 문장을 수놓은 일본 옷','답례품','일본의 귀족이 입는 전통 의복.
+집안의 문장을 수놓은 상의와 바지를 입는다.','TRUE','몸',NULL,20,15,NULL,50,'[{"ref": 2320, "name": "총포류 거래", "value": 1}, {"ref": 2303, "name": "무기류 거래", "value": 1}, {"ref": 2319, "name": "직물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7879,'가문 문장을 수놓은 일본 옷','메모리얼 앨범','일본의 명물 요리를 모두 맛본 식도락가가 입는 일본 전통 의복.
+
+chapter.3 메모리얼 앨범 `일본 명물 요리` 보상','TRUE','몸',NULL,7,15,NULL,40,'[{"ref": 2320, "name": "총포류 거래", "value": 1}, {"ref": 2305, "name": "바디 랭귀지", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7880,'바지 저고리','메모리얼 앨범','조선의 명물 요리를 모두 맛본 식도락가가 입는 옷.
+
+chapter.3 메모리얼 앨범 `조선 명물 요리` 보상
+한양 대장장이와 같은 색상','TRUE','몸',NULL,4,NULL,NULL,40,'[{"ref": 2289, "name": "지리학", "value": 1}, {"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7881,'욕군','메모리얼 앨범','대만의 명물 요리를 모두 맛본 식도락가가 입는 옷.
+
+chapter.3 메모리얼 앨범 보상','TRUE','몸',NULL,4,NULL,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7882,'일본식 비녀','드랍','여성의 머리를 장식하는
+일본식 비녀.
+별갑 등으로 만든다.','FALSE','머리',NULL,10,5,NULL,50,'[{"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7883,'소맷부리가 좁은 일본 의복','탐색','일본에서 입는 전통 의복.
+소매통은 넓고 소맷부리는 좁다.','FALSE','몸',NULL,4,NULL,NULL,20,'[{"ref": 2317, "name": "주류 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7884,'목화','유적 던전','조선의 고관이 관복과 함께 신는 신발. 비단과 가죽으로 만들었다.','TRUE','다리',5,6,NULL,NULL,60,'[{"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7885,'숙련된 어부의 채집술',NULL,'어부가 해양생물을 잡기 위한
+기법이 적힌 자료.
+
+Chapter 3. 메모리얼 앨범  「바다에 사는, 물고기가 아닌 생물」의 보상','TRUE','장신구',NULL,NULL,10,NULL,15,'[{"ref": 2275, "name": "낚시", "value": 1}, {"ref": 2290, "name": "채집", "value": 1}]','[{"ref": 2290, "name": "채집"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7886,'언어 해설서',NULL,'세계 각지의 언어 연구에 대해
+기술된 서적.
+
+메모리얼 앨범 - 지혜가 담긴 서적(No.1) 보수','TRUE','장신구',NULL,NULL,10,NULL,200,'[{"ref": 2441, "name": "언어학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7887,'비갑',NULL,'조선 군인이 갑옷과 함께
+착용하는 방어구.
+팔에서 손등까지를 보호한다.','FALSE','팔',7,10,NULL,NULL,30,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7888,'비단 각반',NULL,'조선 군인이 갑옷과 함께
+착용하는 정강이 보호대.
+두꺼운 비단으로 만든다.','FALSE','다리',NULL,15,NULL,NULL,30,'[{"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7889,'구군복','육상 드랍','나라의 중대한 의식이 있을 때，
+조선의 무신들이 갖춰 입는
+전투복 차림의 예복','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7890,'가문 문장을 수놓은 일본 옷','캐쉬','일본의 귀족이 입는 전통 의복.
+집안의 문장을 수놓은 상의와 바지를 입는다.','TRUE','몸',NULL,25,15,NULL,35,'[{"ref": 2296, "name": "공업품 거래", "value": 3}, {"ref": 2318, "name": "주조", "value": 1}, {"ref": 2320, "name": "총포류 거래", "value": 2}]',NULL,NULL,'거래 불가','캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (7891,'남만풍의 일본 전통 옷','이벤트','유럽 형식을 도입한 일본 의상.
+목둘레의 주름장식이 특징.','FALSE','몸',NULL,10,20,5,30,'[{"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2285, "name": "자물쇠 따기", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,NULL,NULL,NULL,NULL,NULL),
+ (7892,'대나무 완갑',NULL,'일본 군인이 착용하는 방어구.
+팔에서 손등까지를 보호한다.','FALSE','팔',7,10,NULL,NULL,30,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7893,'정강이 보호대','생산','일본 군인이 착용하는 방어구.
+무릎에서 발목까지를 보호한다.','FALSE','다리',NULL,15,NULL,NULL,30,'[{"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7894,'이나도메 포술서',NULL,'일본의 포술가가 쓴，
+총포류를 다루는 법을
+기록한 비전.
+
+입수법 - 아즈치 심계층 14층 보물상자','TRUE','장신구',5,15,NULL,NULL,30,'[{"ref": 2347, "name": "포술", "value": 2}, {"ref": 2435, "name": "저격술", "value": 2}]','[{"ref": 2348, "name": "회피"}]',NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7895,'가문 문장을 수놓은 일본 옷','유적 던전','일본의 귀족이 입는 전통 의복.
+집안의 문장을 수놓은 상의와 바지를 입는다.','TRUE','몸',NULL,20,15,NULL,50,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7896,'소맷부리가 좁은 일본 의복','유적 던전','일본에서 입는 전통 의복.
+소매통은 넓고 소맷부리는 좁다.','FALSE','몸',10,20,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7897,'신기한 투구 장식',NULL,'일본 군인이 쓰는 투구.
+투구 장식이 독특하다.','FALSE','머리',NULL,20,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7898,'장선',NULL,'비전의 도공이 만든 일본 검.
+예리한 검으로서 평판이 높다.','TRUE','무기 (검)',56,NULL,NULL,NULL,60,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7899,'바지 저고리','캐시','조선의 옷. 바지라고 부르는 하의와 저고리라고 부르는 상의를 합쳐 입는다.','TRUE','몸',NULL,25,25,NULL,10,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2285, "name": "자물쇠 따기", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (7900,'구군복','캐쉬 한정판','나라의 중대한 의식이 있을 때，
+조선의 무신들이 갖춰 입는
+전투복 차림의 예복','TRUE','몸',20,50,20,NULL,10,'[{"ref": 2326, "name": "관통", "value": 1}, {"ref": 2345, "name": "탄도학", "value": 2}, {"ref": 2347, "name": "포술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7901,'치마 저고리','캐시','조선의 의상. 치마라고 부르는 스커트에, 저고리라고 부르는 상의를 입는다.','TRUE','몸',5,15,25,NULL,10,'[{"ref": 2308, "name": "봉제", "value": 1}, {"ref": 2334, "name": "수탈", "value": 2}, {"ref": 2310, "name": "섬유 거래", "value": 2}]',NULL,NULL,'거래 불가','캐시 아이템, 이벤트 보상',NULL,NULL,NULL,'여성',NULL,NULL),
+ (7902,'해양박람기',NULL,'해양에 존재하는 여러 생물의
+생태를 기록한 귀중한 자료.','TRUE','장신구',NULL,NULL,NULL,NULL,50,'[{"ref": 2275, "name": "낚시", "value": 2}, {"ref": 2281, "name": "생물학", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7903,'희소생물도감',NULL,'다양한 희소 생물의 생태를
+기록한 서적.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2281, "name": "생물학", "value": 2}, {"ref": 2283, "name": "생태 조사", "value": 1}]','[{"ref": 2283, "name": "생태 조사"}]',NULL,NULL,NULL,NULL,'100,000',NULL,NULL,NULL,NULL),
+ (7904,'칠흑 팔찌',NULL,'침몰선에 잠든 보물을 모은
+항해자가 사용할 수 있는 팔찌.','TRUE','장신구',10,NULL,NULL,NULL,200,'[{"ref": 2334, "name": "수탈", "value": 2}, {"ref": 2434, "name": "병기기술", "value": 2}, {"ref": 2445, "name": "예항", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7905,'수정 장식 옥관',NULL,'아카데미 대회에서 우수한 성적을
+거두었다는 증서를 모은 항해자가
+착용할 수 있는 옥관.','TRUE','머리',NULL,10,30,NULL,30,'[{"ref": 2292, "name": "탐색", "value": 3}, {"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2278, "name": "미술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'48,000',NULL,NULL,'[{"ref": 2029, "name": "삼등훈작사"}]',NULL),
+ (7906,'부채','장신구','일본 군인이 사용하는 부채.','TRUE','장신구',NULL,NULL,30,NULL,40,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2339, "name": "전술", "value": 2}, {"ref": 2288, "name": "주연", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7907,'진남만 장식',NULL,'독특한 향을 가진 향나무.
+달콤한 향기가 난다.','TRUE','장신구',NULL,NULL,10,NULL,40,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7908,'남방어 사전',NULL,'말레이 타갈로그어 등의
+남쪽 지방의 언어를
+번역하기 위한 사전.','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1584, "name": "남방어 번역"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7909,'에스파니아 장군의 지팡이',NULL,'에스파니아의 장군이 군대를
+지휘하기 위해 만들었다고
+전해지는 지팡이.','TRUE','장신구',3,2,10,NULL,20,'[{"ref": 2339, "name": "전술", "value": 1}, {"ref": 2327, "name": "기뢰 설치", "value": 1}]','[{"ref": 2329, "name": "돌격"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (7910,'지하 무덤의 부적',NULL,'지하 무덤 곳곳에 놓인
+액막이 부적.','TRUE','장신구',NULL,5,NULL,NULL,30,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7911,'부장품 부적',NULL,'지하 무덤에서 발견된，
+부장품으로 추정되는 부적.','TRUE','장신구',NULL,5,NULL,NULL,30,'[{"ref": 2277, "name": "돛 조종", "value": 1}, {"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7912,'부장품 일기',NULL,'지하 무덤에 잠든 사람의 물건으로
+추정되는 부장품 일기.','TRUE','장신구',NULL,5,NULL,NULL,30,'[{"ref": 2270, "name": "고고학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7913,'단수이 해상전기',NULL,'단수이 앞바다에서 벌어진
+해상전에 대해
+기록한 역사서.','TRUE','장신구',NULL,10,NULL,NULL,30,'[{"ref": 2345, "name": "탄도학", "value": 2}, {"ref": 2335, "name": "수평사격", "value": 1}, {"ref": 2332, "name": "속사", "value": 1}]','[{"ref": 2339, "name": "전술"}]',NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (7914,'부장품 팔찌',NULL,'지하 묘지에 떨어져 있던 팔찌.
+발견된 장소로 보아 부장품인
+것으로 추정된다.','TRUE','장신구',NULL,5,NULL,NULL,30,'[{"ref": 2323, "name": "회계", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7915,'망자의 목걸이',NULL,'지하 무덤의 망자가 걸고 있던
+목걸이. 많은 보석들이 주인의
+신분을 나타내 준다.','TRUE','장신구',NULL,15,10,NULL,30,'[{"ref": 2300, "name": "귀금속 거래", "value": 1}, {"ref": 2307, "name": "보석 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7916,'부채','무기','동쪽 지방에서 더위를 잊기 위해
+사용하는 도구.
+(2013칠석이벤트- 사랑의 메신저가 되어주세요
+ 란스로와 제니퍼 미션 달성시 지급)','TRUE','도구',NULL,NULL,15,NULL,40,'[{"ref": 2282, "name": "생존", "value": 1}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,'500',NULL,NULL,NULL,NULL),
+ (7917,'정성공 군의 활',NULL,'정성공이 해상 전투에서
+사용했다고 전해지는，
+성능 좋은 활.','TRUE','무기 (활)',60,NULL,10,NULL,50,'[{"ref": 2326, "name": "관통", "value": 1}, {"ref": 2332, "name": "속사", "value": 1}, {"ref": 2345, "name": "탄도학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (7918,'철인왜도',NULL,'정성공이 조직한 철인부대가
+사용하던 칼.','TRUE','무기 (검)',70,NULL,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'45,000',NULL,NULL,NULL,NULL),
+ (7919,'대제독의 아스트롤라베',NULL,'침몰선에 잠든 도구를 모은 항해자가 사용할 수 있는 관측기.','TRUE','도구',NULL,NULL,NULL,NULL,200,'[{"ref": 2291, "name": "측량", "value": 2}, {"ref": 2430, "name": "항해기술", "value": 2}, {"ref": 2444, "name": "인양", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7920,'터키 부츠',NULL,'터키 귀족이 신는 부츠.
+호화로운 자수가 장식되어 있다.
+
+일본 서버 Cruz del Sur～Chapter5～Menace of Ottoman」특전 아이템.
+한국 서버에는 존재하지 않음.','TRUE','다리',NULL,11,10,20,100,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7921,'파이완 민족 의상','퀘스트','대만 파이완 민족의 의상.
+뱀을 본뜬 자수가 특징.','FALSE','몸',NULL,20,40,NULL,50,'[{"ref": 2441, "name": "언어학", "value": 1}, {"ref": 2281, "name": "생물학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7922,'학창의','퀘스트','조선의 고위 유생이
+착용하는 의상.','FALSE','몸',NULL,20,40,NULL,50,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2441, "name": "언어학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7923,'시라뵤시 의상','퀘스트','일본의 오래된 가무에 사용되는 의상.','FALSE','몸',NULL,20,40,NULL,50,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2441, "name": "언어학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7925,'공예 장인의 코트',NULL,'사람을 본뜬 가구를 수집한
+항해자가 입는 코트.','TRUE','몸',10,20,20,NULL,50,'[{"ref": 2297, "name": "공예", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7926,'제련강철 갑옷',NULL,'특별제 갑옷을 모은
+항해자가 착용할 수 있는 갑옷.','TRUE','몸',NULL,70,20,NULL,200,'[{"ref": 2330, "name": "방어", "value": 3}, {"ref": 2346, "name": "통솔", "value": 2}]',NULL,NULL,NULL,NULL,'전투','8,000',NULL,NULL,'[{"ref": 2017, "name": "육등훈작사"}]',NULL),
+ (7927,'복각 제련강철 갑옷',NULL,'연금술로 갑옷을 복구해낸
+항해자가 착용할 수 있는 갑옷.','TRUE','몸',NULL,85,20,NULL,200,'[{"ref": 2330, "name": "방어", "value": 3}, {"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 2}]',NULL,NULL,NULL,NULL,'전투','10,000',NULL,NULL,'[{"ref": 2021, "name": "오등훈작사"}]',NULL),
+ (7928,'레이븐 브레스트 플레이트',NULL,'두꺼운 철판으로 몸을
+지키면서 너무 무거워 지지 않도록 고안된 갑옷.
+칠흑색으로 염색한 특제.','TRUE','몸',NULL,30,15,NULL,100,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7929,'빛의 갑옷','푸른색','빛을 모티브로 만든 푸른빛으로 빛나는 갑옷.','TRUE','몸',20,70,40,NULL,200,'[{"ref": 2326, "name": "관통", "value": 2}, {"ref": 2330, "name": "방어", "value": 3}, {"ref": 2347, "name": "포술", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (7930,'빛의 갑옷','보라색','빛을 모티브로 만든
+보랏빛으로 빛나는 갑옷.','TRUE','몸',5,40,25,NULL,150,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2326, "name": "관통", "value": 1}, {"ref": 2347, "name": "포술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7931,'빛의 갑옷','칠흑','광택이 나는 칠흑 갑옷.','TRUE','몸',5,40,25,NULL,150,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2326, "name": "관통", "value": 1}, {"ref": 2347, "name": "포술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7932,'연철 완갑','생산 - 1권','한족 군인이 갑옷과 함께
+착용하는 완갑.
+연철로 만든다.','FALSE','팔',7,10,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7933,'정련 강철 손 보호대','생산-2권','한족 군인이 갑옷과 함께
+착용하는 손 보호대.
+정련된 강철로 만든다.','FALSE','팔',7,10,NULL,NULL,30,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7934,'연철 경갑',NULL,'한족 군인이 갑옷과 함께
+착용하는 정강이 보호대.
+연철로 만든다.','FALSE','다리',NULL,15,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7935,'정강 각반','생산-2권','한족 군인이 갑옷과 함께
+착용하는 정강이 보호대.
+연철로 만든다.','FALSE','다리',NULL,15,NULL,NULL,30,'[{"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7936,'융복개갑','생산 - 한족 1권','한족의 장군이 입는 갑옷.
+갑옷 위에 융복을 걸쳤다.','FALSE','몸',20,50,NULL,NULL,30,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2435, "name": "저격술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7937,'어린갑','생산','한족의 군인이 입는 갑옷.
+생선 비늘 같은 장식이
+독특하다.','FALSE','몸',20,50,NULL,NULL,30,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7938,'제너럴 망토',NULL,'신의 힘을 얻은 항해자가
+착용할 수 있는 특별한 코트.','TRUE','몸',20,80,35,NULL,250,'[{"ref": 2329, "name": "돌격", "value": 3}, {"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 3}]',NULL,NULL,NULL,NULL,'전투','100,000',NULL,'남성',NULL,NULL),
+ (7939,'통천관','유적 던전','한족의 고관이 쓰는 모자.
+경사 때에 쓴다.','TRUE','머리',12,17,5,NULL,60,'[{"ref": 2338, "name": "응급처치", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7940,'욕군','유적 던전','욕군.
+기장이 짧은 상의와 긴 치마를 합쳐 입는 한족의 옷.','TRUE','몸',10,20,15,NULL,60,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7941,'통천관','구입','한족의 고관이 쓰는 모자.
+경사 때에 쓴다.','FALSE','머리',NULL,5,5,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7942,'보요','유적 던전','한족 여성의 머리장식품.
+걸을 때 장식이 흔들리기 때문에 이런 이름이 붙여졌다.','TRUE','머리',12,17,5,NULL,60,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2327, "name": "기뢰 설치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7943,'보요','구입','한족 여성의 머리장식품.
+걸을 때 장식이 흔들리기 때문에
+이런 이름이 붙여졌다.','FALSE','머리',NULL,5,5,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7944,'신발','유적 던전','한족이 착용하는 발목 위까지 오는 긴 신발.','TRUE','다리',5,6,NULL,NULL,60,'[{"ref": 2319, "name": "직물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7945,'신발','구입','한족이 착용하는
+발목 위까지 오는 긴 신발.','TRUE','다리',NULL,3,NULL,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7946,'신발','탐색','한족이 착용하는
+발목 위까지 오는 긴 신발.','TRUE','다리',NULL,4,NULL,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7947,'제너럴 로브',NULL,'신의 힘을 얻은 항해자가
+착용할 수 있는 특별한 드레스.','TRUE','몸',20,80,35,NULL,250,'[{"ref": 2329, "name": "돌격", "value": 3}, {"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 3}]',NULL,NULL,NULL,NULL,'전투','100,000',NULL,'여성',NULL,NULL),
+ (7948,'콜트','침몰선','세비야의 봄축제에서 착용하는
+웅장한 복장.','TRUE','몸',10,30,25,NULL,100,'[{"ref": 2344, "name": "총격", "value": 2}, {"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'40,000',NULL,'남성',NULL,NULL),
+ (7949,'장극',NULL,'양손으로 다루도록 만들어진
+긴 극. 공격력이 뛰어나다.','TRUE','무기 (창)',60,3,5,NULL,30,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2325, "name": "검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'16,000',NULL,NULL,NULL,NULL),
+ (7950,'창',NULL,'홍마오청을 답파한 항해자가 장착할 수 있는 뛰어난 무기','TRUE','무기 (창)',85,NULL,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7951,'대장궁',NULL,'송산리 유적군을 답파한 항해자가 장착할 수 있는 뛰어난 무기','TRUE','무기 (활)',85,NULL,NULL,NULL,60,'[{"ref": 2435, "name": "저격술", "value": 3}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7952,'욕군','생산','욕군.
+기장이 짧은 상의와
+긴 치마를 합쳐 입는
+한족의 옷.','FALSE','몸',NULL,4,NULL,NULL,20,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7953,'직거심의','생산','직거심의.
+기장이 길고 낙낙한
+한족의 옷.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2281, "name": "생물학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7954,'착수삼유','생산','착수삼유.
+소매통이 넓은 상의와
+기장이 긴 치마를 합쳐 입는
+한족의 옷.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2369, "name": "조미료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7955,'착수삼유','답례품','착수삼유.
+소매통이 넓은 상의와
+기장이 긴 치마를 합쳐 입는
+한족의 옷','TRUE','몸',NULL,20,15,NULL,50,'[{"ref": 2307, "name": "보석 거래", "value": 1}, {"ref": 2369, "name": "조미료 거래", "value": 1}, {"ref": 2315, "name": "잡화 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7956,'착수삼유','구입','착수삼유.
+소매통이 넓은 상의와
+기장이 긴 치마를 합쳐 입는
+한족의 옷.','FALSE','몸',NULL,7,15,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7957,'극',NULL,'낫처럼 생긴, 대가 긴 무기.
+잡아당겨 꺽어 베는 용도로 쓴다.','TRUE','무기 (창)',35,NULL,NULL,NULL,60,'[{"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7958,'직거심의','답례품','직거심의.
+기장이 길고 낙낙한 
+한족의 옷.','TRUE','몸',NULL,20,15,NULL,50,'[{"ref": 2283, "name": "생태 조사", "value": 1}, {"ref": 2281, "name": "생물학", "value": 1}, {"ref": 2284, "name": "인식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7959,'욕군','구입','욕군.
+기장이 짧은 상의와
+긴 치마를 합쳐 입는
+한족의 옷.','FALSE','몸',NULL,4,NULL,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7960,'신','구입','한족이 신는 신발.
+발을 넣는 것이라는 뜻.','TRUE','다리',NULL,3,NULL,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7961,'신','탐색','한족이 신는 신발.
+발을 넣는 것이라는 뜻.','TRUE','다리',NULL,4,NULL,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7962,'신','방어6','한족이 신는 신발.
+발을 넣는 것이라는 뜻.','TRUE','다리',5,6,NULL,NULL,60,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7963,'직거심의','구입','직거심의.
+기장이 길고 낙낙한
+한족의 옷.','FALSE','몸',NULL,7,15,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7964,'숙련된 어부의 튼튼한 낚시도구',NULL,'실력있는 어부가 개발한，
+무척 튼튼한 낚시도구.
+
+바다에 사는 커다란 물고기의 메모리얼 보상','TRUE','장신구',NULL,NULL,10,NULL,200,'[{"ref": 2275, "name": "낚시", "value": 1}]','[{"ref": 2275, "name": "낚시"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (7965,'가네모토',NULL,'아즈치 성을 답파한 항해자가
+장착할 수 있는 뛰어난 무기.','TRUE','무기 (검)',85,NULL,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7966,'직거심의','유적 던전','직거심의.
+기장이 길고 낙낙한
+한족의 옷.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7967,'착수삼유','유적 던전','착수삼유.
+소매통이 넓은 상의와
+기장이 긴 치마를 합쳐 입는
+한족의 옷.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7968,'콜트','지도','세비야의 봄축제에서 착용하는 웅장한 복장.','TRUE','몸',5,20,25,NULL,60,'[{"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (7969,'바타데코라','지도','세비야의 봄축제에서 착용하는 아름다운 드레스.','TRUE','몸',10,15,25,NULL,60,'[{"ref": 2304, "name": "미술품 거래", "value": 1}, {"ref": 2300, "name": "귀금속 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (7970,'오션즈',NULL,'푸른 바다를 상징하는,
+알이 굵은 보석.','TRUE','장신구',NULL,NULL,NULL,NULL,50,'[{"ref": 2277, "name": "돛 조종", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}, {"ref": 2324, "name": "감시", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (7971,'보요','드랍','한족 여성의 머리장식품.
+걸을 때 장식이 흔들리기 때문에
+이런 이름이 붙여졌다.','FALSE','머리',NULL,10,5,NULL,50,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (7972,'지하 무덤의 단검',NULL,'지하 무덤 옆 구멍에 놓인
+단도. 부장품인지 위력은 높지 않다.','TRUE','무기 (던지는 나이프)',12,NULL,NULL,NULL,30,'[{"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7973,'망자의 부적',NULL,'지하 무덤에서 발견된 부적.
+수상한 분위기가 감돈다.','TRUE','장신구',10,10,NULL,NULL,30,'[{"ref": 2334, "name": "수탈", "value": 1}]','[{"ref": 1403, "name": "주술"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7974,'신기한 숏소드',NULL,'언뜻 보면 흔한 단검이지만，
+가진 자의 적성에 따라서는
+위력을 발휘하기도 한다.','TRUE','무기 (던지는 나이프)',17,NULL,NULL,NULL,30,'[{"ref": 2444, "name": "인양", "value": 1}, {"ref": 2445, "name": "예항", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7975,'망자의 지팡이',NULL,'금으로 장식된 호화로운 지팡이.
+보존 상태는 나쁘지만，소유자가
+높은 신분이었다는 것을 알 수 있다.','TRUE','무기 (곤봉 지팡이)',16,NULL,NULL,NULL,30,'[{"ref": 2287, "name": "종교학", "value": 2}]','[{"ref": 1403, "name": "주술"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7976,'예쁜 보석상자',NULL,'화려한 장식이 달린 보석상자.
+망자가 생전에 아끼던 것이라
+묘소에 놓인 듯하다.','TRUE','장신구',NULL,5,NULL,NULL,30,'[{"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2307, "name": "보석 거래", "value": 2}]','[{"ref": 1389, "name": "복장예절 강화"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7977,'지하 무덤의 문서',NULL,'지하 무덤에 대해 잘 아는 사람이
+남겼다고 전해지는 서적.','TRUE','장신구',NULL,1,NULL,NULL,30,'[{"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7978,'통천관','탐색','한족의 고관이 쓰는 모자.
+경사 때에 쓴다.','TRUE','머리',NULL,7,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7979,'소맷부리가 좁은 일본 의복','유적 던전','일본에서 입는 전통 의복.
+소매통은 넓고 소맷부리는 좁다.','FALSE','몸',10,20,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7980,'목화','탐색','조선의 고관이 관복과 함께
+신는 신발.
+비단과 가죽으로 만들었다.','TRUE','다리',NULL,4,NULL,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7981,'언월도',NULL,'창 같은 형태의 자루가 긴 무기.
+휘두르거나 내리찍는다.','TRUE','무기 (창)',35,NULL,NULL,NULL,60,'[{"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (7982,'방적사 조끼',NULL,'남만 풍을 좋아하는 일본 무장，다테 마사무네가
+즐겨 입은 옷','FALSE','몸',NULL,30,30,20,100,'[{"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2278, "name": "미술", "value": 2}, {"ref": 2453, "name": "함정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'80,000',NULL,'남성',NULL,NULL),
+ (7983,'처용의','메모리얼 앨범','처용무라는
+조선의 궁정 무용에
+사용되는 의상.','TRUE','몸',NULL,15,20,10,100,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2301, "name": "기호품 거래", "value": 2}, {"ref": 2295, "name": "경계", "value": 2}]',NULL,NULL,NULL,NULL,'교역','30,000',NULL,NULL,NULL,NULL),
+ (7984,'장궁',NULL,'잉글랜드에서 사용된，
+비거리와 위력을 강화시킨 활.','TRUE','무기 (활)',35,NULL,NULL,NULL,30,'[{"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (7985,'학창의','메모리얼 앨범','조선의 고위 유생이 착용하는 의상','TRUE','몸',NULL,20,40,NULL,100,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2303, "name": "무기류 거래", "value": 2}, {"ref": 2295, "name": "경계", "value": 2}]',NULL,NULL,NULL,NULL,'교역','30,000',NULL,NULL,NULL,NULL),
+ (7986,'단수이 여장','메모리얼 앨범','대만을 여행하는 모험가에게
+알맞은 가벼운 여행용 의복.
+
+메모리얼 앨범 - 동양에서 거래되는 물건No.5 보상','TRUE','몸',NULL,18,NULL,20,100,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2312, "name": "염료 거래", "value": 2}, {"ref": 2295, "name": "경계", "value": 2}]',NULL,NULL,NULL,NULL,'교역','30,000',NULL,NULL,NULL,NULL),
+ (7987,'파이완 민족 의상','메모리얼 앨범','대만 파이완 민족의 의상.
+뱀을 본뜬 자수가 특징.','TRUE','몸',NULL,20,40,NULL,100,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2315, "name": "잡화 거래", "value": 2}, {"ref": 2295, "name": "경계", "value": 2}]',NULL,NULL,NULL,NULL,'교역','30,000',NULL,NULL,NULL,NULL),
+ (7988,'호복','메모리얼 앨범','화남의 명물 요리를 모두 맛본
+식도락가가 입는 옷.','TRUE','몸',NULL,4,NULL,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2274, "name": "기뢰발견", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7989,'호복','구입','호복.
+소매통이 좁은 저고리에
+바지를 합쳐 입는
+승마에 적합한 옷.','FALSE','몸',NULL,4,NULL,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7990,'두건','구입','머리에 두르는 천.
+선원들의 머리 장식으로서 널리 사용된다.','FALSE','머리',NULL,5,NULL,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7991,'사방평정건','구입','요직에 종사하는 인물이 쓰는
+한족의 모자. 별칭은 방건','FALSE','머리',NULL,5,5,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (7992,'작업복','생산','야외에서 약초 등을 채집할때
+주로 착용하는 의복.','FALSE','몸',NULL,5,NULL,NULL,75,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (7993,'장인복','생산','대장장이 등，신체를 이용한 활동이 많은 사람이
+착용하는 의복.','FALSE','몸',NULL,10,NULL,NULL,75,'[{"ref": 2306, "name": "보관", "value": 1}, {"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7994,'시라뵤시 의상','메모리얼 앨범','일본의 오래된 가무에 사용되는 의상.','TRUE','몸',NULL,20,40,NULL,100,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2298, "name": "공예품 거래", "value": 2}, {"ref": 2295, "name": "경계", "value": 2}]',NULL,NULL,NULL,NULL,'교역','30,000',NULL,NULL,NULL,NULL),
+ (7995,'일본 겉옷','메모리얼 앨범','기모노 위에 걸쳐입는 겉옷으로 격식을 차리는 곳에 주로 착용한다.','TRUE','몸',NULL,7,20,NULL,100,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2317, "name": "주류 거래", "value": 2}, {"ref": 2295, "name": "경계", "value": 2}]',NULL,NULL,NULL,NULL,'교역','30,000',NULL,NULL,NULL,NULL),
+ (7996,'유럽풍 일본 옷','생산','유럽의 영향을 받아
+이동이 편하도록 만든 일본 바지.','FALSE','몸',NULL,7,5,NULL,50,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (7997,'일본 겉옷','생산','기모노 위에 걸쳐입는 겉옷으로
+격식을 차리는 곳에 주로 착용한다.','FALSE','몸',NULL,7,20,NULL,50,'[{"ref": 2323, "name": "회계", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'13,000',NULL,NULL,NULL,NULL),
+ (7998,'두석린갑',NULL,'조선 수군의 최고 사령관，이순신이
+군을 지휘할 때 착용한 갑옷.','FALSE','몸',25,55,20,NULL,100,'[{"ref": 2344, "name": "총격", "value": 2}, {"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'80,000',NULL,'남성',NULL,NULL),
+ (7999,'태공망의 낚싯대',NULL,'낚시를 좋아하는 군사가 사용했던
+낚시 도구.','TRUE','장신구',NULL,NULL,NULL,NULL,10,'[{"ref": 2275, "name": "낚시", "value": 1}, {"ref": 2444, "name": "인양", "value": 1}]','[{"ref": 2275, "name": "낚시"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8000,'손도끼',NULL,'벌채, 가공 등 용도가 다양한 도끼.
+무기로 쓰이기도 한다.','TRUE','무기 (도끼)',17,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8001,'한족 관복','구입','한족 관복.
+상의와 치마를 하나로 연결한 옷으로
+한족의 고위 관리가 입는다.','FALSE','몸',NULL,7,15,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (8002,'매화잠','구입','매화 꽃을 사용하여 만든
+머리 장식품. 금이나，
+다른 것으로 만들기도 한다.','FALSE','머리',NULL,5,5,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (8003,'소수배자','구입','소수배자.
+앞으로 여미는 옷 위에
+낙낙한 두루마기를 걸쳐 입는 옷.','FALSE','몸',NULL,7,15,NULL,25,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (8004,'청포 철갑',NULL,'대만에서 활동하는 정성공이
+약식으로 착용하는 갑옷.','FALSE','몸',NULL,30,40,NULL,100,'[{"ref": 2303, "name": "무기류 거래", "value": 2}, {"ref": 2320, "name": "총포류 거래", "value": 2}, {"ref": 2432, "name": "관리기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'80,000',NULL,'남성',NULL,NULL),
+ (8005,'장포','메모리얼 앨범','신분이 높은 한족 관리가 입는
+기장이 긴 겉옷.','TRUE','몸',NULL,20,10,NULL,100,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2314, "name": "의약품 거래", "value": 2}, {"ref": 2295, "name": "경계", "value": 2}]',NULL,NULL,NULL,NULL,'교역','30,000',NULL,NULL,NULL,NULL),
+ (8006,'경극 의상','메모리얼 앨범','중국 수도에서 유행하는 무곡에 사용되는 의상.','TRUE','몸',NULL,20,40,NULL,100,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2304, "name": "미술품 거래", "value": 2}, {"ref": 2295, "name": "경계", "value": 2}]',NULL,NULL,NULL,NULL,'교역','30,000',NULL,NULL,NULL,NULL),
+ (8007,'수렵궁',NULL,'수렵용으로 개량하여 위력을 강화시킨 활','TRUE','무기 (활)',23,NULL,NULL,NULL,40,NULL,NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (8008,'백간 어린갑',NULL,'명의 군인 진양옥이 백간병을
+이끌고 싸울 때 착용하는 갑옷.','FALSE','몸',20,70,10,NULL,100,'[{"ref": 2329, "name": "돌격", "value": 2}, {"ref": 2325, "name": "검술", "value": 2}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'80,000',NULL,'여성',NULL,NULL),
+ (8009,'소수배자','답례품','앞으로 여미는 옷 위에 낙낙한 두루마기를 걸쳐 입는 옷.
+(진양옥 하사품)','TRUE','몸',NULL,20,15,NULL,50,'[{"ref": 2328, "name": "노 젓기", "value": 2}, {"ref": 2325, "name": "검술", "value": 1}, {"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (8010,'백간',NULL,'진양옥이 조직한 백간병이 사용했던 무기','TRUE','무기 (창)',70,NULL,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'45,000',NULL,NULL,NULL,NULL),
+ (8011,'한족 관복','답례품','한족 관복.
+상의와 치마를 하나로 연결한 옷
+으로
+한족의 고위 관리가 입는다.','TRUE','몸',NULL,20,15,NULL,50,'[{"ref": 2314, "name": "의약품 거래", "value": 1}, {"ref": 2319, "name": "직물 거래", "value": 1}, {"ref": 2322, "name": "향신료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (8012,'단궁',NULL,'예로부터 사용해 온 활.
+수렵이나 사냥 등에 널리 사용되었다.','TRUE','무기 (활)',16,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'300',NULL,NULL,NULL,NULL),
+ (8013,'경극 의상','퀘스트','중국 수도에서 유행하는 무곡에
+사용되는 의상.','FALSE','몸',NULL,20,40,NULL,50,'[{"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2441, "name": "언어학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8014,'강철 도끼',NULL,'무기쪽 기능을 특화시킨
+금속 도끼.','TRUE','무기 (도끼)',26,NULL,NULL,NULL,40,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8015,'티어 드롭 목걸이',NULL,'눈물 방울 모양으로 가공한
+보석 목걸이.','TRUE','장신구',NULL,NULL,NULL,NULL,100,'[{"ref": 2286, "name": "조달", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}, {"ref": 2279, "name": "보급", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8016,'장포','생산','신분이 높은 한족 관리가 입는
+기장이 긴 겉옷.','FALSE','몸',NULL,20,10,NULL,50,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (8017,'한족의 치마저고리','생산','한족의 일반적인 의복.
+여성들이 주로 입는다.','FALSE','몸',NULL,6,5,NULL,50,'[{"ref": 2321, "name": "향료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (8018,'법의','생산','불교의 승려가 착용하는 의복.','FALSE','몸',NULL,8,30,NULL,50,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (8019,'퇴계 이황의 옷',NULL,'「퇴계」라는 호를 사용하는 
+조선의 유학자 이황의 옷.','TRUE','몸',NULL,20,40,NULL,100,'[{"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2441, "name": "언어학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8020,'파이완 민족의 제례복',NULL,'대만의 파이완 민족이
+제례 때 착용하는 의상.','TRUE','몸',NULL,20,40,NULL,100,'[{"ref": 2281, "name": "생물학", "value": 2}, {"ref": 2441, "name": "언어학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8021,'란링왕 의상','생산','고대 중국의 왕을 연기할 때
+착용하는 무대용 의상.','FALSE','몸',NULL,10,20,NULL,60,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'35,000',NULL,NULL,NULL,NULL),
+ (8022,'란링왕 의상','내구 250','고대 중국의 왕을 연기할 때
+착용하는 무대용 의상.','TRUE','몸',20,45,NULL,10,250,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8023,'무송 경극 의상',NULL,'수호전에 등장하는 영웅인 무송을
+연기할 때 착용하는 옷.','TRUE','몸',NULL,20,40,NULL,100,'[{"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2441, "name": "언어학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8024,'처용의','생산','처용무라는
+조선의 궁정 무용에
+사용되는 의상.','FALSE','몸',NULL,15,20,10,50,'[{"ref": 2348, "name": "회피", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8025,'단수이 여장','생산','대만을 여행하는 모험가에게
+알맞은 가벼운 여행용 의복.','FALSE','몸',NULL,18,NULL,20,50,'[{"ref": 2279, "name": "보급", "value": 1}, {"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8027,'금은의 광궁',NULL,'성스럽게 빛나는 활.','TRUE','무기 (활)',80,NULL,NULL,NULL,100,'[{"ref": 2435, "name": "저격술", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'56,000',NULL,NULL,NULL,NULL),
+ (8028,'묠니르',NULL,'북유럽 신화에서 뇌신 토르가
+사용했다고 하는 대형 철퇴.','TRUE','무기 (곤봉 지팡이)',100,10,NULL,NULL,100,'[{"ref": 2318, "name": "주조", "value": 1}, {"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'60,000',NULL,NULL,NULL,NULL),
+ (8029,'뇌절',NULL,'번개를 베었다고 전해지는
+일본의 명검.
+
+※ 3D 모델은 코에이의 게임 ''전국무쌍 시리즈''의 ''타치바나 긴치요''의 무기와 동일하다.','TRUE','무기 (검)',55,15,20,NULL,60,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8030,'백제 왕의 태도',NULL,'백제의 왕이 사용했다고 전해지는
+환두 태도.','TRUE','무기 (검)',55,15,20,NULL,60,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8031,'운남 참마도',NULL,'기병을 말과 함께 벨 수 있는
+긴 도검.','TRUE','무기 (검)',55,15,20,NULL,60,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8032,'청룡언월도',NULL,'중국의 신이 된 무장이
+사용했다고 전해지는
+길이가 긴 무기.','TRUE','무기 (창)',55,15,20,NULL,60,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8033,'후한서',NULL,'후한의 역사를 기술한 서적.
+24사 중의 하나라고 한다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2270, "name": "고고학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8034,'산해경',NULL,'「산해경」.
+지리에 관한 문서인 것 같으나，
+신화적인 내용도 보인다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2289, "name": "지리학", "value": 1}, {"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8035,'육도삼략',NULL,'원래는「육도」와「삼략」이라는
+별개의 병법서. 저자가 같아서
+병칭하게 되었다.','TRUE','장신구',10,10,NULL,NULL,15,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}]','[{"ref": 2330, "name": "방어"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8036,'음부경',NULL,'방위술의 하나인
+기문둔갑에 대해 기술된，
+가장 오래된 문서.','TRUE','장신구',NULL,NULL,5,NULL,15,'[{"ref": 2293, "name": "행군", "value": 1}, {"ref": 2453, "name": "함정", "value": 1}]','[{"ref": 1407, "name": "주술(선풍)"}]',NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (8037,'둔갑천서',NULL,'여러 역사서에 등장하는 방사，
+좌자가 손에 넣었다고 하는
+방술에 관한 서적.
+
+
+입수방법 : 중국던전 낙산대불 15층 상자','TRUE','장신구',NULL,15,NULL,5,15,'[{"ref": 2431, "name": "던지기 기술", "value": 2}, {"ref": 2453, "name": "함정", "value": 1}, {"ref": 2282, "name": "생존", "value": 1}]','[{"ref": 1406, "name": "주술(빙설)"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8038,'이름을 새긴 반지',NULL,'여성의 이름 같은 문자가 새겨진
+반지. 흠집이 있기 때문에 이름을
+정확하게 읽을 수 없다.','TRUE','장신구',NULL,NULL,NULL,NULL,35,'[{"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}, {"ref": 2273, "name": "구조", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8039,'호복','생산','호복.
+소매통이 좁은 저고리에
+바지를 합쳐 입는
+승마에 적합한 옷.','FALSE','몸',NULL,4,NULL,NULL,20,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8040,'한족 관복','생산','한족 관복.
+상의와 치마를 하나로 연결한 옷으로
+한족의 고위 관리가 입는다.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2314, "name": "의약품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (8041,'소수배자','생산','소수배자.
+앞으로 여미는 옷 위에
+낙낙한 두루마기를 걸쳐 입는 옷.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2328, "name": "노 젓기", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (8042,'융복개갑','생산 - 비법서','한족의 장군이 입는 갑옷.
+갑옷 위에 융복을 걸쳤다.','TRUE','몸',20,50,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2435, "name": "저격술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8043,'양귀비의 관',NULL,'큰 꽃을 본따 만든 관.
+당대의 미녀 양귀비도
+착용했다고 전해진다.','FALSE','머리',NULL,2,25,NULL,50,'[{"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,'여성',NULL,NULL),
+ (8044,'호복','탐색','호복.
+소매통이 좁은 저고리에
+바지를 합쳐 입는
+승마에 적합한 옷.','FALSE','몸',NULL,4,NULL,NULL,20,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8045,'한족 관복','탐색','한족 관복.
+상의와 치마를 하나로 연결한 옷으로
+한족의 고위 관리가 입는다.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (8046,'두건','탐색','머리카락을 하나로 묶은 다음, 천으로 머리를 감싸는 도구. 한족이 평상시에 사용한다.','TRUE','머리',NULL,7,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8047,'착수삼유','탐색','착수삼유.
+소매통이 넓은 상의와
+기장이 긴 치마를 합쳐 입는
+한족의 옷.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2311, "name": "식료품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (8048,'연철 완갑','생산 - 비법서','한족 군인이 갑옷과 함께 착용하는 완갑.
+연철로 만든다.','TRUE','팔',7,10,NULL,NULL,100,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8050,'고장신','생산','끝이 휘어져 올라간
+한족의 신발.','FALSE','다리',NULL,3,10,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8051,'윤건',NULL,'고대 중국의 교양을 갖춘 사람들이
+착용했던 두건.','FALSE','머리',NULL,3,10,NULL,50,'[{"ref": 2270, "name": "고고학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,800',NULL,'남성',NULL,NULL),
+ (8052,'지모신의 부적',NULL,'풍작을 주관하는 대지의 신인
+지모신의 이름이 새겨진 부적.','TRUE','장신구',NULL,NULL,10,NULL,30,'[{"ref": 2282, "name": "생존", "value": 2}, {"ref": 2311, "name": "식료품 거래", "value": 2}, {"ref": 2333, "name": "수리", "value": 2}]','[{"ref": 2290, "name": "채집"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8053,'금자수 부츠','침몰선','금사로 호화로운 자수를 놓은
+귀족용 신발.
+
+
+자바해 남쪽 앞바다에서 건진 신항로 개척선에서 나옴','TRUE','다리',NULL,7,5,10,100,'[{"ref": 2453, "name": "함정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'25,000',NULL,NULL,NULL,NULL),
+ (8054,'바타데코라','침몰선','세비야의 봄축제에서 착용하는 아름다운 드레스.','TRUE','몸',NULL,15,35,NULL,100,'[{"ref": 2304, "name": "미술품 거래", "value": 1}, {"ref": 2298, "name": "공예품 거래", "value": 2}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'40,000',NULL,'여성',NULL,NULL),
+ (8055,'이광의 활',NULL,'뛰어난 무용을 자랑하던
+이광 장군이 사용했다고 하는，
+높은 능력치를
+갖춘 활.','TRUE','무기 (활)',60,NULL,10,NULL,30,'[{"ref": 2306, "name": "보관", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}, {"ref": 2435, "name": "저격술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (8056,'소수배자','탐색','소수배자.
+앞으로 여미는 옷 위에
+낙낙한 두루마기를 걸쳐 입는 옷.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2328, "name": "노 젓기", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (8057,'코트햇','침몰선, 귀금속거래','모피로 장식된 세련된 모자.
+큰 행사 시에 사용된다.','TRUE','머리',NULL,6,30,NULL,100,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2309, "name": "사교", "value": 2}, {"ref": 2300, "name": "귀금속 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'32,000',NULL,NULL,NULL,NULL),
+ (8058,'단수이 장화','생산','대만을 여행하는 모험가에게
+알맞은 가벼운 여행용 부츠.','FALSE','다리',NULL,7,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8059,'단수이 장화','방어 30','대만을 여행하는 모험가에게
+알맞은 가벼운 여행용 부츠.','TRUE','다리',15,30,15,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8060,'매화잠','탐색','매화 꽃을 사용하여 만든 머리 장식품. 금이나, 다른 것으로 만들기도 한다.','TRUE','머리',NULL,7,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (8061,'처용무 가면','생산','처용무라는
+조선의 궁정 무용에
+사용된 가면.','FALSE','머리',NULL,5,NULL,40,50,'[{"ref": 2288, "name": "주연", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'25,000',NULL,NULL,NULL,NULL),
+ (8062,'융복개갑','트레져박스','한족의 장군이 입는 갑옷.
+갑옷 위에 융복을 걸쳤다.','TRUE','몸',40,80,50,NULL,100,'[{"ref": 2326, "name": "관통", "value": 2}, {"ref": 2335, "name": "수평사격", "value": 3}, {"ref": 2336, "name": "외과의술", "value": 3}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8063,'그리브','침몰선','투구，갑옷과 같이 몸에 대는
+무릎 밑을 덥는 철의 부츠.','TRUE','다리',NULL,16,8,NULL,100,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,NULL),
+ (8064,'수호의 장갑',NULL,'뱃사람이 가진 힘을 최대한 끌어올린다고 하는 강력한 글러브','TRUE','팔',NULL,10,NULL,NULL,100,'[{"ref": 2275, "name": "낚시", "value": 1}, {"ref": 2444, "name": "인양", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'18,000',NULL,NULL,NULL,NULL),
+ (8065,'아이언 미튼','침몰선','투구, 갑옷과 같이 몸에 대는 미튼형의 건틀릿.','TRUE','팔',5,20,4,NULL,100,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (8066,'아얌','탐색','나들이하는 여자들이
+추위를 막기 위해 머리에 쓰는
+조선의 모자.','TRUE','머리',NULL,7,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (8067,'직거심의','탐색','직거심의.
+기장이 길고 낙낙한
+한족의 옷.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2284, "name": "인식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (8068,'비갑','생산-비법서','조선 군인이 갑옷과 함께
+착용하는 방어구.
+팔에서 손등까지를 보호한다.','FALSE','팔',7,10,NULL,NULL,100,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8069,'보요','탐색','한족 여성의 머리장식품.
+걸을 때 장식이 흔들리기 때문에
+이런 이름이 붙여졌다.','TRUE','머리',NULL,7,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (8070,'매화잠','유적 던전','매화 꽃을 사용하여 만든 머리 장식품. 금이나, 다른 것으로 만들기도 한다.
+
+색상 - 보라색 꽃장식','TRUE','머리',12,17,5,NULL,60,'[{"ref": 2336, "name": "외과의술", "value": 1}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (8071,'신','유적 던전','한족이 신는 신발.
+발을 넣는 것이라는 뜻.','TRUE','다리',5,6,NULL,NULL,60,'[{"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8072,'사방평정건','유적 던전','요직에 종사하는 인물이 쓰는 한족의 모자.
+별칭은 방건','TRUE','머리',12,17,5,NULL,60,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (8073,'쌍수도',NULL,'언월도와 비슷한 모양의 무기.
+이름 그대로, 양손으로 다루게끔 만들어진 무기다.','TRUE','무기 (창)',50,5,NULL,NULL,30,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8074,'두건','유적 던전','머리카락을 하나로 묶은 다음, 천으로 머리를 감싸는 도구.
+한족이 평상 시에 사용한다.','TRUE','머리',12,17,NULL,NULL,60,'[{"ref": 2305, "name": "바디 랭귀지", "value": 1}, {"ref": 2311, "name": "식료품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8075,'대관식용 꽃 장식',NULL,'작은 꽃을 엮은 머리 장식.
+한 귀부인이 대관식에 참가할 때
+사용했다고 한다.','TRUE','머리',NULL,10,28,NULL,100,'[{"ref": 2321, "name": "향료 거래", "value": 1}, {"ref": 2315, "name": "잡화 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (8076,'대관식용 머리끈',NULL,'실내에서 남성이 머리를 묶는 천.
+한 귀족이 대관식에 참가할 때
+사용했다고 한다.','TRUE','머리',NULL,10,28,NULL,100,'[{"ref": 2306, "name": "보관", "value": 1}, {"ref": 2319, "name": "직물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (8077,'대관식용 장의',NULL,'큰 옷깃이 달린 남성용 장의.
+한 귀족이 대관식에 참가할 때
+입었다고 한다.','TRUE','몸',15,44,40,NULL,100,'[{"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2325, "name": "검술", "value": 2}, {"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (8078,'대관식용 예복',NULL,'종 모양의 특징적인 드레스.
+한 귀부인이 대관식에 참가할 때
+입었다고 한다.','TRUE','몸',NULL,44,60,NULL,100,'[{"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2278, "name": "미술", "value": 2}, {"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (8079,'소수배자','유적 던전','소수배자.
+앞으로 여미는 옷 위에
+낙낙한 두루마기를 걸쳐 입는 옷.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (8080,'무녀 의상',NULL,'일본의 제사를 주관하는 인물이
+신에게 춤을 봉납할 때 입는 의상.','TRUE','몸',NULL,20,40,NULL,100,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2441, "name": "언어학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8081,'한족 관복','유적 던전','한족 관복.
+상의와 치마를 하나로 연결한 옷으로
+한족의 고위 관리가 입는다.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (8082,'호복','유적 던전','호복.
+
+소매통이 좁은 저고리에
+
+바지를 합쳐 입는
+
+승마에 적합한 옷.','TRUE','몸',10,20,15,NULL,60,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8083,'선대 칩차 족장의 코로나',NULL,'황금으로 만들어진 왕관.
+선대 칩차 족장의 애용품.
+섬세한 장식으로 되어있다.','TRUE','머리',NULL,5,15,NULL,100,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2300, "name": "귀금속 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8084,'파샤 코트',NULL,'오스만투르크의 총독이 입는 화려한 옷.','TRUE','몸',20,10,10,30,100,'[{"ref": 2328, "name": "노 젓기", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (8085,'춘추 단도',NULL,'춘추 전국 시대에 만들어진, 무척 위력이 강한 단도.
+무기 계통 던지는 나이프','TRUE','무기 (던지는 나이프)',45,NULL,NULL,NULL,30,'[{"ref": 2334, "name": "수탈", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 2}, {"ref": 2453, "name": "함정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'17,000',NULL,NULL,NULL,NULL),
+ (8086,'구겸도',NULL,'대불 근처의 유적을 답파한
+항해자가 장착할 수 있는
+뛰어난 무기.
+
+낙산대불 메모리얼 보상.','TRUE','무기 (창)',85,NULL,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8087,'횻토코 가면','흰색','일본의 민요나 전통 예능에서
+광대 역할을 하는 사람이 쓰는
+독특한 표정의 가면.','TRUE','머리',NULL,3,NULL,15,60,'[{"ref": 2288, "name": "주연", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8088,'횻토코 가면','파랑','일본의 민요나 전통 예능에서
+광대 역할을 하는 사람이 쓰는
+독특한 표정의 가면.','FALSE','머리',NULL,3,NULL,20,60,'[{"ref": 2288, "name": "주연", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8089,'횻토코 가면','분홍색','일본의 민요나 전통 예능에서
+광대 역할을 하는 사람이 쓰는
+독특한 표정의 가면.','FALSE','머리',NULL,3,NULL,20,60,'[{"ref": 2288, "name": "주연", "value": 1}, {"ref": 2324, "name": "감시", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8090,'금색 횻토코 가면',NULL,'희귀한 염료로 금색을 물들인
+화려한 횻토코 가면.','TRUE','머리',NULL,15,NULL,25,100,'[{"ref": 2288, "name": "주연", "value": 2}, {"ref": 2276, "name": "대화술", "value": 1}, {"ref": 2305, "name": "바디 랭귀지", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8091,'일본관',NULL,'일본 군인이 착용하는 투구.','FALSE','머리',NULL,17,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8092,'이치노타니 투구',NULL,'일본 군인이 쓰는 투구.
+독특한 투구 장식이
+옛 전장을 나타내고 있다.','FALSE','머리',NULL,20,NULL,NULL,50,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8093,'마야 왕녀의 드레스',NULL,'마야의 여왕이 입었다고 전해지는 드레스.
+차분한 분위기를 풍긴다.
+
+팔렌케 던전 8층 상자에서 입수 가능','TRUE','몸',NULL,40,15,NULL,15,'[{"ref": 2295, "name": "경계", "value": 2}, {"ref": 2297, "name": "공예", "value": 1}, {"ref": 2452, "name": "상품지식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,500',NULL,'여성',NULL,NULL),
+ (8094,'마야 전사의 투구',NULL,'마야의 전사가 전투 시 쓴다고 전해지는 투구.
+
+
+팔렌케던전 상계층 3층 상자에서 나왔습니다.','TRUE','머리',20,20,NULL,NULL,20,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'25,000',NULL,NULL,NULL,NULL),
+ (8095,'마야 전사의 의복',NULL,'마야의 전사가 전투 시 입었다고 전해지는 의장.
+
+
+팔렌케 던전 3층 상자에서 입수 가능','TRUE','몸',30,30,NULL,30,20,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'25,000',NULL,NULL,NULL,NULL),
+ (8096,'난릉왕 가면',NULL,'고대의 중국 왕을 연기할 때 착용하는 무대용 가면.','TRUE','머리',10,10,NULL,30,60,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8097,'비취 헤어밴드',NULL,'팔렌케 던전 중층 상자에서 입수','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2303, "name": "무기류 거래", "value": 1}, {"ref": 2282, "name": "생존", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8098,'하나브 파칼 3세의 검',NULL,'팔렌케의 마지막 왕, 하나브 파칼 3세가 지녔다고 전해지는 흑요석으로 만든 검.
+
+
+팔렌케 던전 8층 보물상자 입수.','TRUE','무기 (검)',45,20,5,NULL,20,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2348, "name": "회피", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]','[{"ref": 2346, "name": "통솔"}]',NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8099,'대나무 완갑','내구 100','일본 군인이 착용하는 방어구.
+팔에서 손등까지를 보호한다.','TRUE','팔',7,10,NULL,NULL,100,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8100,'정련 강철 손 보호대','생산-비법서','한족 군인이 갑옷과 함께 착용하는 손 보호대.
+정련된 강철로 만든다.','TRUE','팔',7,10,NULL,NULL,100,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8101,'연철 경갑','내구 100','한족 군인이 갑옷과 함께 착용하는 정강이 보호대.
+연철로 만든다.','TRUE','다리',NULL,15,NULL,NULL,100,'[{"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8102,'정강 각반','생산-비법서','한족 군인이 갑옷과 함께 착용하는 정강이 보호대.
+연철로 만든다.','TRUE','다리',NULL,15,NULL,NULL,100,'[{"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8103,'하급 군인용 일본 갑옷','생산-비법서','일본 군인이 입는 갑옷.
+하급 병사용으로 화려하지 않다.','TRUE','몸',20,50,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8104,'어린갑','내구 100','한족의 군인이 입는 갑옷.
+생선 비늘 같은 장식이 독특하다.','TRUE','몸',20,50,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8105,'단수이 여장','트레져박스','대만을 여행하는 모험가에게 알맞은 가벼운 여행용 의복.','TRUE','몸',NULL,30,50,20,100,'[{"ref": 2322, "name": "향신료 거래", "value": 3}, {"ref": 2432, "name": "관리기술", "value": 2}, {"ref": 2434, "name": "병기기술", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8106,'욕군','이벤트','기장이 짧은 상의와 긴 치마를 합쳐 입는 한족의 옷.
+
+2011년 6월 13일 ~ 22일까지 진행된 `젊음의 샘을 찾아라!` 이벤트 1등 랜덤보상입니다.','TRUE','몸',NULL,15,NULL,NULL,100,'[{"ref": 2434, "name": "병기기술", "value": 1}, {"ref": 2341, "name": "조선", "value": 1}, {"ref": 2313, "name": "운용", "value": 3}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8107,'흑진주 헤어밴드',NULL,'아주 희귀한 흑진주가 박혀있는 머리 장식.','TRUE','장신구',NULL,NULL,40,NULL,50,'[{"ref": 2304, "name": "미술품 거래", "value": 1}, {"ref": 2331, "name": "소화", "value": 1}, {"ref": 2324, "name": "감시", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8108,'잉카 호족의 드레스',NULL,'잉카의 호족이 입는 드레스.
+보기와는 달리 실용적이다.','TRUE','몸',NULL,40,40,NULL,20,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2299, "name": "광물 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,'여성',NULL,NULL),
+ (8109,'잉카 호족의 의복',NULL,'잉카의 호족이 입는 옷.
+화려하지만 실용성도 갖췄다.','TRUE','몸',NULL,45,10,NULL,20,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2319, "name": "직물 거래", "value": 2}, {"ref": 2294, "name": "가축 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (8110,'잉카 호족의 모자',NULL,'잉카의 호족이 애용하는
+실용적이고 특별한 모자.','TRUE','머리',NULL,17,NULL,NULL,20,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8111,'명품 잉카 튜닉',NULL,'모양은 잉카 튜닉과 별 차이가
+없어 보이지만，실용성이 뛰어나다.','TRUE','몸',5,35,NULL,NULL,20,'[{"ref": 2286, "name": "조달", "value": 2}, {"ref": 2431, "name": "던지기 기술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (8112,'단수이 장화','트레져박스','대만을 여행하는 모험가에게 알맞은 가벼운 여행용 부츠.','TRUE','다리',15,30,15,NULL,50,'[{"ref": 2285, "name": "자물쇠 따기", "value": 1}, {"ref": 2452, "name": "상품지식", "value": 2}, {"ref": 2453, "name": "함정", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8113,'호복','트레져박스','호복.
+
+소매통이 좁은 저고리에
+
+바지를 합쳐 입는
+
+승마에 적합한 옷.','TRUE','몸',10,40,NULL,NULL,100,'[{"ref": 2329, "name": "돌격", "value": 2}, {"ref": 2334, "name": "수탈", "value": 2}, {"ref": 2342, "name": "조타", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8114,'연철 완갑','트레져박스','한족 군인이 갑옷과 함께 착용하는 완갑.
+연철로 만든다.','TRUE','팔',15,25,15,NULL,50,'[{"ref": 2328, "name": "노 젓기", "value": 2}, {"ref": 2342, "name": "조타", "value": 2}, {"ref": 2345, "name": "탄도학", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8115,'사모의 팬던트',NULL,'가족을 생각하면서 목숨을 다한
+선원의 유품.','TRUE','장신구',NULL,NULL,10,NULL,15,'[{"ref": 2348, "name": "회피", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}, {"ref": 2333, "name": "수리", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8116,'오지브웨 족장의 부적',NULL,'미시시피에 전해지는 부적.
+족장이 아이들을 악몽으로부터
+지키기 위해 만든 것이라 전해진다.','TRUE','장신구',NULL,NULL,NULL,NULL,100,'[{"ref": 2286, "name": "조달", "value": 2}, {"ref": 2290, "name": "채집", "value": 2}, {"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,'500',NULL,NULL,NULL,NULL),
+ (8117,'한족 관복','트레져박스','상의와 치마를 하나로 연결한 옷으로 한족의 고위 관리가 입는다','TRUE','몸',NULL,25,15,NULL,35,'[{"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2314, "name": "의약품 거래", "value": 3}, {"ref": 2436, "name": "연금술", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'남성',NULL,NULL),
+ (8118,'두석린갑','트레져박스','조선 수군의 최고 사령관, 이순신이 군을 지휘할 때 착용한 갑옷.','TRUE','몸',30,70,20,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2336, "name": "외과의술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'남성',NULL,NULL),
+ (8119,'백간 어린갑','트레져박스','명의 군인 진양옥이 백간병을 이끌고 싸울 때 착용하는 갑옷.','TRUE','몸',30,70,20,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2336, "name": "외과의술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (8120,'직거심의','트레져박스','직거심의.
+기장이 길고 낙낙한 한족의 옷.','TRUE','몸',NULL,25,15,NULL,35,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2278, "name": "미술", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'남성',NULL,NULL),
+ (8121,'포카모건',NULL,'북미 원주민이 사용하는 무기.
+끝 부분에 돌이 달려 있다.','TRUE','무기 (곤봉 지팡이)',33,NULL,NULL,NULL,50,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,800',NULL,NULL,NULL,NULL),
+ (8122,'전투용 망치',NULL,'북미 원주민이 사용하는 무기.
+타원형으로 가공된 돌을 나무에
+동여맸다.','TRUE','무기 (곤봉 지팡이)',47,NULL,NULL,NULL,50,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,400',NULL,NULL,NULL,NULL),
+ (8123,'한손도끼',NULL,'북미 원주민이 사용하는 무기.
+경량화되어 있어 한 손으로
+다룰 수 있다.','TRUE','무기 (도끼)',41,NULL,NULL,NULL,50,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,600',NULL,NULL,NULL,NULL),
+ (8125,'수렵용 창',NULL,'북미 원주민이 사용하는 무기.
+물소나 곰 등을 사냥할 때 쓴다.','TRUE','무기 (창)',31,NULL,NULL,NULL,50,'[{"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8126,'드레스 소드',NULL,'귀족이나 기사，장군 등이
+의례용으로 소지하는 가는 검.
+아름답지만，성능은 떨어진다.
+
+왕실함대 공헌도 1만이상 , 주조13랭 공헌도 800소모','TRUE','무기 (검)',22,NULL,18,NULL,50,'[{"ref": 2298, "name": "공예품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'65,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8127,'대관식용 의례검',NULL,'아름답지만 실용적이지는 못한 검.
+한 귀족이 대관식에 참가할 때
+장착했다고 한다.','TRUE','무기 (검)',30,NULL,28,NULL,200,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8128,'이젤과 캔버스',NULL,'그림을 그리기 위한 도구.
+가지고 다니기에 편리하다.','TRUE','도구',NULL,NULL,NULL,NULL,50,'[{"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,300',NULL,NULL,NULL,NULL),
+ (8129,'친퀘디아',NULL,'폭이 넓은 양날검.
+칼날에 새겨진 홈이 아름답다.','TRUE','무기 (검)',33,NULL,NULL,NULL,50,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8130,'마법의 지팡이',NULL,'마법사의 물건이라고 전해지는 신비한 힘이 담긴 지팡이.','TRUE','무기 (곤봉 지팡이)',10,NULL,NULL,NULL,100,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2436, "name": "연금술", "value": 1}]',NULL,NULL,NULL,'캐시 아이템, 이벤트 보상',NULL,'500',NULL,NULL,NULL,NULL),
+ (8132,'모카신','공격 3 방어 5','북미 원주민이 신는 신발.','FALSE','다리',3,5,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8133,'모카신','탐색','북미 원주민이 신는 신발.','TRUE','다리',5,5,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8134,'프린지 부츠','공격 3 방어 7','북미 원주민이 신는 부츠.','FALSE','다리',3,7,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8135,'프린지 부츠','생산','북미 원주민이 신는 부츠.','TRUE','다리',3,9,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'3,800',NULL,NULL,NULL,NULL),
+ (8136,'프린지 부츠','탐색','북미 원주민이 신는 부츠.','FALSE','다리',5,7,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8137,'모카신','생산','북미 원주민이 신는 신발.','TRUE','다리',3,7,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8138,'에스파니아 해군관모',NULL,'에스파니아 해군에 소속된
+사람이 착용하는 모자.','TRUE','머리',NULL,8,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'80,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8139,'포르투갈 해군관모',NULL,'포르투갈 해군에 소속된
+사람이 착용하는 모자.','TRUE','머리',NULL,8,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'80,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8140,'베네치아 해군관모',NULL,'베네치아 해군에 소속된
+사람이 착용하는 모자.','TRUE','머리',NULL,8,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'80,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8141,'프랑스 해군관모',NULL,'프랑스 해군에 소속된
+사람이 착용하는 모자.','TRUE','머리',NULL,8,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'80,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8142,'네덜란드 해군관모',NULL,'네덜란드 해군에 소속된
+사람이 착용하는 모자.','TRUE','머리',NULL,8,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'80,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8143,'잉글랜드 해군관모',NULL,'잉글랜드 해군에 소속된
+사람이 착용하는 모자.','TRUE','머리',NULL,8,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'80,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8144,'오스만 투르크 해군관모',NULL,'오스만 투르크 해군에 소속된
+사람이 착용하는 모자.','TRUE','머리',NULL,8,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'80,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8146,'트렌더 모자',NULL,'유행을 선도하는, 최첨단 감성을 지닌 사람만이 착용할 수 있는 모자','TRUE','머리',NULL,7,77,NULL,77,NULL,NULL,NULL,NULL,NULL,NULL,'7,500',NULL,NULL,NULL,'[{"ref": 1978, "name": "트렌드 메이커"}]'),
+ (8147,'트렌더 모자','피렌체생산','유행을 선도하는，최첨단
+감성을 지닌 사람만이
+착용할 수 있는 모자.','FALSE','머리',NULL,6,30,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'7,500',NULL,NULL,NULL,'[{"ref": 1978, "name": "트렌드 메이커"}]'),
+ (8148,'실크 모자','피렌체생산,트박','피렌체 대장간에 모인
+기술력을 종합하여 만든
+귀족들의 예복 모자.','FALSE','머리',NULL,6,30,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8149,'페뤼크와 리본','피렌체생산','급사나 집사 등，실내에서
+일하는 남성이 머리를 묶는
+리본. 부분 가발이 달려 있다.','FALSE','머리',NULL,4,20,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (8150,'페뤼크와 리본','지도','급사나 집사 등，실내에서
+일하는 남성이 머리를 묶는
+리본. 부분 가발이 달려 있다.','TRUE','머리',NULL,5,22,NULL,30,'[{"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,'남성',NULL,NULL),
+ (8151,'플라워 악세사리','내구 50','장식용 작은 꽃을
+함께 엮어 만든 여성용 헤어 스타일.','FALSE','머리',NULL,4,20,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (8152,'플라워 악세사리','지도','장식용 작은 꽃을
+함께 엮어 만든 여성용 헤어 스타일.','TRUE','머리',NULL,5,22,NULL,30,'[{"ref": 2315, "name": "잡화 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,500',NULL,'여성',NULL,NULL),
+ (8153,'깃털장식 헤드밴드','공격 8','북미의 남성 원주민이
+착용하는 머리 장식.
+독수리 깃털을 달려 있다.','TRUE','머리',8,15,NULL,NULL,50,'[{"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,600',NULL,'남성',NULL,NULL),
+ (8154,'깃털장식 헤드밴드','생산','북미의 남성 원주민이
+착용하는 머리 장식.
+독수리 깃털을 달려 있다.','TRUE','머리',9,15,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'5,600',NULL,'남성',NULL,NULL),
+ (8155,'깃털장식 보닛','탐색','북미의 여성 원주민이
+착용하는 머리 장식.
+독수리 깃털이 달려 있다.','FALSE','머리',8,13,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (8156,'깃털장식 보닛','생산','북미의 여성 원주민이
+착용하는 머리 장식.
+독수리 깃털이 달려 있다.','TRUE','머리',9,15,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'5,600',NULL,'여성',NULL,NULL),
+ (8157,'프록 코트','피렌체생산,트레져박스','피렌체 대장간에 모인
+기술력을 종합하여 만든
+귀족들의 예복.','FALSE','몸',NULL,8,50,NULL,50,'[{"ref": 2309, "name": "사교", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (8159,'트렌더 드레스',NULL,'최신 유행을 선도하는 감성을 지닌 사람만이 입을 수 있는 옷','TRUE','몸',NULL,7,77,NULL,77,'[{"ref": 2305, "name": "바디 랭귀지", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,'[{"ref": 1978, "name": "트렌드 메이커"}]'),
+ (8160,'에스파니아 공용 선원복',NULL,'에스파니아의 선원이 입는
+제복.','TRUE','몸',NULL,14,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8161,'포르투갈 공용 선원복',NULL,'포르투갈의 선원이 입는
+제복.','TRUE','몸',NULL,14,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8162,'베네치아 공용 선원복',NULL,'베네치아의 선원이 입는
+제복.','TRUE','몸',NULL,14,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8163,'프랑스 공용 선원복',NULL,'프랑스의 선원이 입는
+제복.','TRUE','몸',NULL,14,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8164,'네덜란드 공용 선원복',NULL,'네덜란드의 선원이 입는
+제복.','TRUE','몸',NULL,14,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8165,'잉글랜드 공용 선원복',NULL,'잉글랜드의 선원이 입는
+제복.','TRUE','몸',NULL,14,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8166,'오스만 투르크 공용 선원복',NULL,'오스만 투르크의 선원이 입는
+제복.','TRUE','몸',NULL,14,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8167,'공로자 기사 의복',NULL,'개척자의 공로를 치하하기 위해
+제작된 특별한 기사 의복.','TRUE','몸',NULL,20,20,NULL,100,'[{"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'남성',NULL,NULL),
+ (8168,'공로자 드레스',NULL,'개척자의 공로를 치하하기 위해
+제작된 특별한 드레스.','TRUE','몸',NULL,20,20,NULL,100,'[{"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'여성',NULL,NULL),
+ (8169,'에스파니아 해군 위관복',NULL,'에스파니아의 해군 위관이 입는
+제복.','TRUE','몸',5,20,15,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'150,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8170,'포르투갈 해군 위관복',NULL,'포르투갈의 해군 위관이 입는
+제복.','TRUE','몸',5,20,15,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'150,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8171,'베네치아 해군 위관복',NULL,'베네치아의 해군 위관이 입는
+제복.','TRUE','몸',5,20,15,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'150,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8172,'프랑스 해군 위관복',NULL,'프랑스의 해군 위관이 입는
+제복.','TRUE','몸',5,20,15,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'150,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8173,'네덜란드 해군 위관복',NULL,'네덜란드의 해군 위관이 입는
+제복.','TRUE','몸',5,20,15,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'150,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8174,'잉글랜드 해군 위관복',NULL,'잉글랜드의 해군 위관이 입는
+제복.','TRUE','몸',5,20,15,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'150,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8175,'오스만 투르크 해군 위관복',NULL,'오스만 투르크의 해군 위관이 입는
+제복.','TRUE','몸',5,20,15,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'150,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8176,'판초 드레스','탐색','북미의 여성 원주민이 입는 옷.
+선명하게 염색한 가죽에
+장식을 많이 달았다.','FALSE','몸',NULL,15,NULL,NULL,50,'[{"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,'여성',NULL,NULL),
+ (8177,'침상궁','지도','북미 원주민이 사용하는 무기.
+침상이라는 튼튼한 나무로 만든다.','FALSE','무기 (활)',37,NULL,NULL,NULL,50,'[{"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,400',NULL,NULL,NULL,NULL),
+ (8178,'워리어 페더','탐색','북미의 원주민 전사가 입는 옷.
+독수리 깃털 수가 
+입은 사람의 용맹함을 나타낸다.','TRUE','몸',NULL,28,NULL,NULL,50,'[{"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,'전투','10,000',NULL,NULL,NULL,NULL),
+ (8179,'욕군','트레져박스','기장이 짧은 상의와 긴 치마를 합쳐 입는 한족의 옷.','TRUE','몸',NULL,15,NULL,NULL,100,'[{"ref": 2313, "name": "운용", "value": 3}, {"ref": 2341, "name": "조선", "value": 1}, {"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8180,'착수삼유','트레져박스','소매통이 넓은 상의와 긴 치마를 합쳐 입는 한족의 옷','TRUE','몸',NULL,25,15,NULL,35,'[{"ref": 2319, "name": "직물 거래", "value": 2}, {"ref": 2308, "name": "봉제", "value": 1}, {"ref": 2310, "name": "섬유 거래", "value": 3}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (8181,'르베 로브','청색','큰 옷깃이 달린 남성용 장의.
+값비싼 옷감을 넉넉히 사용하여
+만들었다.','TRUE','몸',NULL,20,35,NULL,30,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2301, "name": "기호품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'60,000',NULL,'남성','[{"ref": 2033, "name": "이등훈작사"}]',NULL),
+ (8182,'드레이프 드레스','지도','주름이 많이 잡힌 스커트를 겹쳐 종 모양 실루엣으로 만든 것이 특징인 드레스','TRUE','몸',NULL,20,35,NULL,30,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2296, "name": "공업품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'60,000',NULL,'여성','[{"ref": 2033, "name": "이등훈작사"}]',NULL),
+ (8183,'메일과 서코트','지도','촘촘히 짠 사슬 옷 위에
+서코트를 두른 기사용 의복.
+(공로자 기사 의복과 같은 디자인에 청색)','TRUE','몸',NULL,45,25,NULL,30,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,'전투','35,000',NULL,'남성',NULL,NULL),
+ (8184,'가죽 튜닉','탐색','북미의 남성 원주민이 입는 옷.
+동물 가죽으로 만들었다.','FALSE','몸',NULL,15,NULL,NULL,50,'[{"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,'남성',NULL,NULL),
+ (8186,'카테리나 드레스','지도','메디치 가문의 여성이
+혼례를 치를 때 입는
+개성적인 드레스','TRUE','몸',NULL,15,50,NULL,30,'[{"ref": 2278, "name": "미술", "value": 1}, {"ref": 2280, "name": "보물 감정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'35,000',NULL,'여성',NULL,NULL),
+ (8187,'가죽 튜닉','생산','북미의 남성 원주민이 입는 옷.
+동물 가죽으로 만들었다.','TRUE','몸',NULL,18,NULL,NULL,50,'[{"ref": 2431, "name": "던지기 기술", "value": 1}, {"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (8188,'판초 드레스','생산','북미의 여성 원주민이 입는 옷.
+선명하게 염색한 가죽에
+장식을 많이 달았다.','FALSE','몸',NULL,15,NULL,NULL,50,'[{"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,'여성',NULL,NULL),
+ (8189,'판초 드레스','방어18','북미의 여성 원주민이 입는 옷.
+선명하게 염색한 가죽에
+장식을 많이 달았다.','TRUE','몸',NULL,18,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (8190,'워리어 페더','생산','북미의 원주민 전사가 입는 옷.
+독수리 깃털 수가
+입은 사람의 용맹함을 나타낸다.','TRUE','몸',16,30,NULL,NULL,50,'[{"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,'전투','10,000',NULL,NULL,NULL,NULL),
+ (8192,'기오 의상',NULL,'일본의 고전가무에 사용되는 의상.
+기오라는 시라뵤시 무희가 입었다고
+전해진다.','TRUE','몸',NULL,20,40,NULL,100,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2441, "name": "언어학", "value": 1}, {"ref": 2288, "name": "주연", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8193,'선대 칩차 족장의 의복',NULL,'칩차 족장이 입는 의상.
+특히 유능했던 선대 족장이
+애용하던 물건이다.','TRUE','몸',NULL,30,30,NULL,100,'[{"ref": 2284, "name": "인식", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 1}, {"ref": 2298, "name": "공예품 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8194,'하세키 드레스',NULL,'터키의 술탄이 총애한
+여성이 입는 우아한 드레스.','TRUE','몸',10,20,10,30,100,'[{"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 2}, {"ref": 2299, "name": "광물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (8195,'파랗게 물들인 캐리비안 헌터',NULL,'카리브 사냥꾼이 제례 때 입는 의상. 인디고로 염색했다.','TRUE','몸',2,5,10,10,100,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2301, "name": "기호품 거래", "value": 1}, {"ref": 2295, "name": "경계", "value": 2}]',NULL,NULL,NULL,NULL,'교역','10,000',NULL,'남성',NULL,NULL),
+ (8196,'실크 소매달린 망토',NULL,'오스만 투르크 시민이 잘 입는 조끼와 바지. 고급 비단 옷감을 사용했다.','TRUE','몸',NULL,5,10,35,100,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,'전투','5,000',NULL,'남성',NULL,NULL),
+ (8197,'파랗게 물들인 캐리비안 드레스',NULL,'카리브의 여성이 제례 때 입는 무용을 위한 의상.
+인디고로 염색했다.','TRUE','몸',NULL,2,8,10,100,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2312, "name": "염료 거래", "value": 1}, {"ref": 2295, "name": "경계", "value": 2}]',NULL,NULL,NULL,NULL,'교역','10,000',NULL,'여성',NULL,NULL),
+ (8198,'동양 댄서','메모리얼','아랍의 댄서가 입는 노출이 많은 전통적인 무도 의상.','TRUE','몸',NULL,NULL,5,30,100,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,'모험','30,000',NULL,'여성',NULL,NULL),
+ (8199,'붉게 물들인 차도르','메모리얼','잇꽃으로 선명하게 물들인 아랍 여성이 즐겨 입는 장의','TRUE','몸',NULL,5,18,40,100,'[{"ref": 2270, "name": "고고학", "value": 1}]',NULL,NULL,NULL,NULL,'모험','5,000',NULL,'여성',NULL,NULL),
+ (8200,'실크 옐렉',NULL,'비단 옷감으로 만든 고급 아랍 여행복.','TRUE','몸',NULL,11,NULL,30,100,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2307, "name": "보석 거래", "value": 1}, {"ref": 2295, "name": "경계", "value": 2}]',NULL,NULL,NULL,NULL,'교역','10,000',NULL,NULL,NULL,NULL),
+ (8201,'금실 자수 파자마',NULL,'인도의 전통적인 귀족 의상. 호화로운 금 장식이 특징이다.
+세밀한 자수가 놓여져 있다.','TRUE','몸',NULL,15,35,20,100,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2322, "name": "향신료 거래", "value": 1}, {"ref": 2295, "name": "경계", "value": 2}]',NULL,NULL,NULL,NULL,'교역','10,000',NULL,'남성',NULL,NULL),
+ (8202,'편사 사르와르',NULL,'인도 여성이 입는 전통적인 장의. 예장으로 쓰인다.
+고급 편사를 사용했다.','TRUE','몸',NULL,8,10,NULL,100,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2322, "name": "향신료 거래", "value": 1}, {"ref": 2295, "name": "경계", "value": 2}]',NULL,NULL,NULL,NULL,'교역','10,000',NULL,'여성',NULL,NULL),
+ (8203,'붉게 물들인 아랍해적셔츠',NULL,'잇꽃으로 선명하게 물들인 긴 가운과 셔츠','TRUE','몸',NULL,10,15,40,100,'[{"ref": 2270, "name": "고고학", "value": 1}]',NULL,NULL,NULL,NULL,'모험','5,000',NULL,'남성',NULL,NULL),
+ (8204,'오스만 부대장용 군복',NULL,'오스만 투르크 병사가 입는 활동하기 편한 옷. 부대장 직책을 맡은 사람이 입는다.','TRUE','몸',NULL,15,15,30,100,'[{"ref": 2348, "name": "회피", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,'전투','5,000',NULL,'남성',NULL,NULL),
+ (8205,'실크 이슬람 장의',NULL,'아랍 해적이 즐겨 입는 옷. 좋은 비단을 사용했다.','TRUE','몸',5,10,NULL,30,100,'[{"ref": 2342, "name": "조타", "value": 1}, {"ref": 2328, "name": "노 젓기", "value": 1}]',NULL,NULL,NULL,NULL,'전투','5,000',NULL,'남성',NULL,NULL),
+ (8206,'산양모 아라비아 망토',NULL,'산양모로 짠 여행복.
+혹독한 밤의 추위를 피할 수 있다.','TRUE','몸',NULL,14,15,45,100,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,'모험','15,000',NULL,'남성',NULL,NULL),
+ (8207,'구슬 장식 간드라','메모리얼 앨범','북아프리카의 전통적인 여성복.
+구슬을 장식한 특주품.','TRUE','몸',NULL,8,10,25,100,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,'모험','15,000',NULL,'여성',NULL,NULL),
+ (8208,'실크 미트라프',NULL,'호화로운 이중 셔츠와 입는 아랍 귀족 의상.
+고급 비단 옷감을 사용했다.','TRUE','몸',NULL,15,35,40,100,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,'모험','30,000',NULL,'남성',NULL,NULL),
+ (8209,'파랗게 물들인 캐리비안 셔츠',NULL,'카리브 해의 남성 옷.
+인디고로 염색했다.','TRUE','몸',NULL,6,NULL,10,100,'[{"ref": 2275, "name": "낚시", "value": 1}, {"ref": 2286, "name": "조달", "value": 1}, {"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (8210,'도우구소쿠',NULL,'몸통 부분을 가리는, 한 장으로 만든 일본 갑옷','TRUE','몸',20,42,30,20,150,'[{"ref": 2339, "name": "전술", "value": 2}, {"ref": 2330, "name": "방어", "value": 2}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8211,'연철 경갑','트레져박스','한족 군인이 갑옷과 함께 착용하는 정강이 보호대.
+연철로 만든다.','TRUE','다리',15,25,15,NULL,50,'[{"ref": 2329, "name": "돌격", "value": 2}, {"ref": 2334, "name": "수탈", "value": 2}, {"ref": 2339, "name": "전술", "value": 3}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8213,'파랗게 물들인 카리브 민족의상',NULL,'인디고로 염색한 조끼와 바지 세트의 카리브 의상.','TRUE','몸',NULL,5,NULL,10,100,'[{"ref": 2273, "name": "구조", "value": 1}, {"ref": 2333, "name": "수리", "value": 1}, {"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (8214,'두사크',NULL,'보헤미아 지방에서 일반적인 군도.
+발렌슈타인이 개인용으로 개량하여 애용하는 물건이다.','TRUE','무기 (검)',83,15,15,NULL,30,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2334, "name": "수탈", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,NULL,'[{"ref": 1983, "name": "검투사"}]'),
+ (8215,'제너럴 코트','트레져박스','고급 원단으로 만든 제독을 위한 코트.','TRUE','몸',12,50,28,NULL,100,'[{"ref": 2431, "name": "던지기 기술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2435, "name": "저격술", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,'80,000',NULL,NULL,NULL,NULL),
+ (8216,'장미의 지팡이',NULL,'머리 부분에 장미꽃을 장식한 지팡이.
+(공예 공헌도 300, 피렌체 로렌조 메디치 매월 1일 변경되는 레시피에서 생산 가능)','TRUE','무기 (곤봉 지팡이)',3,NULL,20,NULL,60,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2321, "name": "향료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (8217,'미니 실크 햇','생산','여성용 헤어 스타일에
+작은 실크 햇을 장식한
+참신한 가발.','FALSE','머리',NULL,5,NULL,NULL,80,NULL,NULL,NULL,NULL,NULL,NULL,'7,500',NULL,'여성',NULL,NULL),
+ (8218,'천체 망원경',NULL,'갈릴레오 갈릴레이가 고안한 고성능 망원경.
+천체를 관측할 수 있다.','TRUE','도구',NULL,NULL,NULL,NULL,20,'[{"ref": 2284, "name": "인식", "value": 2}, {"ref": 2289, "name": "지리학", "value": 1}, {"ref": 137755, "name": "천문학", "value": 1}]','[{"ref": 2291, "name": "측량"}]',NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (8219,'드레이프 드레스','피렌체생산','주름이 많이 잡힌 스커트를
+겹쳐 종 모양 실루엣으로 만든 것이
+특징인 드레스','FALSE','몸',NULL,16,30,NULL,50,'[{"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'60,000',NULL,NULL,'[{"ref": 2033, "name": "이등훈작사"}]',NULL),
+ (8220,'레가투스 그리브',NULL,'고대 로마에서 사령관 등이
+착용하던 철로 된 긴 신발.','TRUE','다리',5,20,NULL,NULL,30,'[{"ref": 2333, "name": "수리", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,800',NULL,NULL,NULL,NULL),
+ (8221,'가운과 쉬르꼬','지도','문화 공헌 공로를 인정받은 사람만이 입을 수 있는 격조 높은 의상,','TRUE','몸',NULL,15,35,NULL,10,'[{"ref": 2278, "name": "미술", "value": 1}, {"ref": 2280, "name": "보물 감정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,'[{"ref": 1980, "name": "문화 공로자"}]'),
+ (8222,'오스만 투르크 해군 사관복',NULL,'오스만 투르크 해군 사관이 입는 제복.','TRUE','몸',5,20,20,NULL,50,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2344, "name": "총격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'175,000',NULL,NULL,'[{"ref": 2047, "name": "준남작"}]',NULL),
+ (8223,'코사지 신발','지도','발끝 부분에 꽃 코사지가 장식된 참신한 구두.','TRUE','다리',NULL,5,NULL,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,'1,200',NULL,NULL,NULL,NULL),
+ (8224,'메르클리우스 부츠','지도','복사뼈 부분에 날개를 장식한 신발. 로마신화에 등장하는 신이 신는 신발을 모티브로 만들었다.','TRUE','다리',NULL,5,NULL,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,'1,600',NULL,NULL,NULL,NULL),
+ (8225,'체인 글러브','지도','가는 사슬로 짜 만든 장갑.','TRUE','팔',NULL,15,NULL,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,'3,200',NULL,NULL,NULL,NULL),
+ (8226,'챙 넓은 펠트 모자','지도','챙이 넓은 모자. 화려하고 아름다워 귀족이 애용한다.','TRUE','머리',NULL,NULL,15,NULL,10,'[{"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,500',NULL,NULL,NULL,NULL),
+ (8227,'둥근 베레모',NULL,'문화 공헌 공로를 인정받은 사람만이 쓸 수 있는 격조높은 모자','TRUE','머리',NULL,5,15,NULL,10,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,'[{"ref": 1980, "name": "문화 공로자"}]'),
+ (8228,'레시 글러브','지도','레이스로 만든 얇은 장갑.','TRUE','팔',NULL,3,NULL,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8229,'미니 실크 햇','지도','여성용 헤어 스타일에 작은 실크 햇을 장식한 참신한 가발.','TRUE','머리',NULL,5,NULL,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,'7,500',NULL,'여성',NULL,NULL),
+ (8230,'실크 장갑','지도','실크로 만든 우아한
+디자인의 장갑.','FALSE','팔',NULL,3,NULL,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8231,'헤어밴드','탐색','북미 원주민이 일상적으로 착용했던 머리끈','TRUE','머리',5,15,NULL,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,'7,000',NULL,NULL,NULL,NULL),
+ (8232,'모피 튜닉','탐색','옷깃과 목 부분의 깃털 장식이 특징적인, 북미 원주민들의 옷.','TRUE','몸',NULL,15,NULL,NULL,10,'[{"ref": 2344, "name": "총격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8233,'레가투스 글러브',NULL,'고대 로마에서 사령관 등이
+착용하던 철로 된 글러브.','TRUE','팔',5,15,NULL,NULL,30,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,600',NULL,NULL,NULL,NULL),
+ (8234,'그라디우스',NULL,'고대 로마에서 검투사가
+애용했던 짧은 검. 명칭은
+바로 그 검 자체를 가리킨다.','TRUE','무기 (검)',44,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8235,'묵주',NULL,'고대 로마 귀족이 착용하던
+머리 장식. 풀꽃으로 만들었다.','TRUE','머리',NULL,5,NULL,NULL,10,'[{"ref": 2301, "name": "기호품 거래", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (8236,'코류스','로마코인포상','고대 로마 군인이 착용하던
+투구. 부채꼴로 펼쳐진 장식이 용감해 보인다.','TRUE','머리',NULL,25,NULL,NULL,30,'[{"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,600',NULL,NULL,NULL,NULL),
+ (8237,'박물전서',NULL,'무수한 박물학 지식이 담긴,
+
+학자라면 필수인 책.','TRUE','도구',NULL,NULL,NULL,NULL,20,'[{"ref": 2289, "name": "지리학", "value": 1}, {"ref": 2281, "name": "생물학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (8238,'클라비 토가','로마코인포상','고대 로마 귀족이 착용하던 장의. 긴 띠를 몸에 감는다.','TRUE','몸',NULL,10,30,NULL,30,'[{"ref": 2323, "name": "회계", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'18,000',NULL,NULL,NULL,NULL),
+ (8239,'로리카 하마타',NULL,'고대 로마 군인이 착용하던 갑옷. 체인 메일과 비슷한 형태로, 가벼우며 움직이기 편하다.','TRUE','몸',15,75,NULL,25,30,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'35,000',NULL,NULL,NULL,NULL),
+ (8240,'아메리칸 비즈','♀','비즈로 만든 목 장식이 특징적인 북미 원주민들의 옷.
+여성용이며, 화려한 분위기다.','TRUE','몸',NULL,15,NULL,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'여성',NULL,NULL),
+ (8241,'아메리칸 비즈','♂','비즈로 만든 목 장식이 특징적인 북미 원주민들의 옷.
+남성용이며, 점잖은 분위기다.','TRUE','몸',NULL,15,NULL,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'남성',NULL,NULL),
+ (8242,'에스파니아 해군 흰 장갑',NULL,'에스파니아 해군에 소속된
+사람이 착용하는 흰 장갑.','TRUE','팔',NULL,5,NULL,NULL,80,'[{"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8243,'잉글랜드 해군 흰 장갑',NULL,'잉글랜드 해군에 소속된
+사람이 착용하는 흰 장갑.','TRUE','팔',NULL,5,NULL,NULL,80,'[{"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8244,'잉글랜드 해군 공용화',NULL,'잉글랜드 해군에 소속된
+사람이 착용하는 가죽신발.','TRUE','다리',NULL,4,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8245,'라니스타 그라디우스',NULL,'고대 로마 시대의 짧은 칼.
+라니스타란 검투사를 단련시키는 교관을 말한다.','TRUE','무기 (검)',78,NULL,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2452, "name": "상품지식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,'[{"ref": 1983, "name": "검투사"}]'),
+ (8246,'르베 로브','갈색','큰 옷깃이 달린 남성용 장의.
+값비싼 옷감을 넉넉히 사용하여
+만들었다.','FALSE','몸',NULL,16,30,NULL,50,'[{"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'60,000',NULL,'남성','[{"ref": 2033, "name": "이등훈작사"}]',NULL),
+ (8247,'처용의','이벤트','처용무라는
+조선의 궁정 무용에
+사용되는 의상.','FALSE','몸',NULL,15,20,10,50,'[{"ref": 2348, "name": "회피", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'25,000',NULL,NULL,NULL,NULL),
+ (8248,'처용무 가면','이벤트','처용무라는
+조선의 궁정 무용에
+사용된 가면.','FALSE','머리',NULL,5,NULL,40,NULL,'[{"ref": 2288, "name": "주연", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'25,000',NULL,NULL,NULL,NULL),
+ (8249,'백은 투구',NULL,'백은으로 장식한
+바이킹 투구.','TRUE','머리',18,45,NULL,NULL,100,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2282, "name": "생존", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8250,'백은 갑옷',NULL,'백은으로 장식한 바이킹의 독자적인 갑옷.','TRUE','몸',30,70,10,5,100,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2334, "name": "수탈", "value": 2}, {"ref": 2306, "name": "보관", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,NULL),
+ (8251,'벨티드 플래드',NULL,'타탄으로 짠 옷감으로
+만든 의상.','FALSE','몸',NULL,30,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8252,'소수배자','트레져박스','소수배자. 앞으로 여미는 옷 위에 낙낙한 두루마기를 걸쳐 입는 옷.','TRUE','몸',NULL,15,15,NULL,35,'[{"ref": 2297, "name": "공예", "value": 1}, {"ref": 2298, "name": "공예품 거래", "value": 2}, {"ref": 2307, "name": "보석 거래", "value": 3}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (8253,'명장 코류스',NULL,'고대 로마 군인이 착용하던 투구. 부채꼴로 펼쳐진 장식이 용감해 보인다.','TRUE','머리',10,50,20,NULL,100,'[{"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2452, "name": "상품지식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'80,000',NULL,NULL,NULL,NULL),
+ (8254,'새시 튜닉','탐색','화려한 자수가 놓여진 북미 원주민들의 옷
+어깨띠가 특징이다','TRUE','몸',5,25,NULL,NULL,10,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8255,'워보넷','탐색','북미 원주민이 전투 시 착용했던 머리 장식
+깃털을 넉넉히 사용했다','TRUE','머리',10,10,NULL,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,'7,000',NULL,NULL,NULL,NULL),
+ (8256,'워보넷','피렌체 생산','북미 원주민이 전투 시
+착용했던 머리 장식.
+깃털을 넉넉히 사용했다.','FALSE','머리',10,10,NULL,NULL,80,NULL,NULL,NULL,NULL,NULL,NULL,'7,000',NULL,NULL,NULL,NULL),
+ (8257,'산타 클로스 의상','이벤트','산타 클로스가 입는 옷.','FALSE','몸',NULL,10,NULL,10,60,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8258,'산타 클로스 모자','이벤트','산타 클로스가 머리에 쓰는 모자.','TRUE','머리',NULL,5,NULL,5,40,'[{"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8259,'파랗게 물들인 몰라퀼트',NULL,'카리브 해의 전통적인 여성복.
+인디고로 염색했다.','TRUE','몸',NULL,6,NULL,10,100,'[{"ref": 2275, "name": "낚시", "value": 1}, {"ref": 2286, "name": "조달", "value": 1}, {"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (8260,'초목 페르시안 드레스',NULL,'조끼의 위에서부터 상의를 여미는 페르시아의 전통적인 예장. 초목으로 선명하게 염색했다.','TRUE','몸',NULL,2,28,35,100,'[{"ref": 2348, "name": "회피", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,'전투','5,000',NULL,'여성',NULL,NULL),
+ (8261,'로리카 세그멘타타',NULL,'고대 로마 군인이 착용하던 갑옷. 
+체인 메일과 비슷한 형태로，
+가벼우며 움직이기 편하다.','TRUE','몸',10,70,25,NULL,100,'[{"ref": 2334, "name": "수탈", "value": 2}, {"ref": 2325, "name": "검술", "value": 2}, {"ref": 2282, "name": "생존", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'80,000',NULL,NULL,NULL,NULL),
+ (8262,'포르투갈 해군 흰 장갑',NULL,'포르투갈 해군에 소속된 사람이 착용하는 흰 장갑.','TRUE','팔',NULL,5,NULL,NULL,80,'[{"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8263,'포르투갈 해군 사관복',NULL,'포르투갈 해군 사관이 입는 제복.','TRUE','몸',5,20,20,NULL,50,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2344, "name": "총격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'175,000',NULL,NULL,'[{"ref": 2047, "name": "준남작"}]',NULL),
+ (8264,'에스파니아 해군 사관복',NULL,'에스파니아 해군 사관이 입는 제복.','TRUE','몸',5,20,20,NULL,50,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2344, "name": "총격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'175,000',NULL,NULL,'[{"ref": 2047, "name": "준남작"}]',NULL),
+ (8265,'잉글랜드 해군 사관복',NULL,'잉글랜드 해군 사관이 입는 제복.','TRUE','몸',5,20,20,NULL,50,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2344, "name": "총격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'175,000',NULL,NULL,'[{"ref": 2047, "name": "준남작"}]',NULL),
+ (8266,'네덜란드 해군 사관복',NULL,'네덜란드 해군 사관이 입는 제복.','TRUE','몸',5,20,20,NULL,50,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2344, "name": "총격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'175,000',NULL,NULL,'[{"ref": 2047, "name": "준남작"}]',NULL),
+ (8267,'베네치아 해군 사관복',NULL,'베네치아 해군 사관이 입는 제복.','TRUE','몸',5,20,20,NULL,50,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2344, "name": "총격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'175,000',NULL,NULL,'[{"ref": 2047, "name": "준남작"}]',NULL),
+ (8268,'프랑스 해군 사관복',NULL,'프랑스 해군 사관이 입는 제복.','TRUE','몸',5,20,20,NULL,50,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2344, "name": "총격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'175,000',NULL,NULL,'[{"ref": 2047, "name": "준남작"}]',NULL),
+ (8269,'에스파니아 해군 공용화',NULL,'에스파니아 해군에 소속된 사람이 착용하는 가죽신발.','TRUE','다리',NULL,4,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8270,'포르투갈 해군 공용화',NULL,'포르투갈 해군에 소속된 사람이 착용하는 가죽신발.','TRUE','다리',NULL,4,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8271,'베네치아 해군 공용화',NULL,'베네치아 해군에 소속된 사람이 착용하는 가죽신발.','TRUE','다리',NULL,4,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8272,'프랑스 해군 공용화',NULL,'프랑스 해군에 소속된 사람이 착용하는 가죽신발.','TRUE','다리',NULL,4,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8273,'네덜란드 해군 공용화',NULL,'네덜란드 해군에 소속된 사람이 착용하는 가죽신발.','TRUE','다리',NULL,4,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8274,'오스만 투르크 해군 공용화',NULL,'오스만 투르크 해군에 소속된 사람이 착용하는 가죽신발.','TRUE','다리',NULL,4,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8275,'네덜란드 해군 흰 장갑',NULL,'네덜란드 해군에 소속된 사람이 착용하는 장갑.','TRUE','팔',NULL,5,NULL,NULL,80,'[{"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8276,'베네치아 해군 흰 장갑',NULL,'베네치아 해군에 소속된 사람이 착용하는 장갑.','TRUE','팔',NULL,5,NULL,NULL,80,'[{"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8277,'프랑스 해군 흰 장갑',NULL,'프랑스 해군에 소속된 사람이 착용하는 장갑.','TRUE','팔',NULL,5,NULL,NULL,80,'[{"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8278,'오스만 투르크 해군 흰 장갑',NULL,'오스만 투르크 해군에 소속된 사람이 착용하는 장갑.','TRUE','팔',NULL,5,NULL,NULL,80,'[{"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,'[{"ref": 2039, "name": "기사작"}]',NULL),
+ (8279,'제드버그 액스',NULL,'스코틀랜드가 발상지인
+큰 날을 가진 도끼.
+
+---------------------
+
+피렌체 레시피중 엔피시 `제타`의 주조 레시피에서 나옵니다.
+
+왕립함대 공헌도 13,000 이상, 주조 13랭, 피렌체 납입 공헌도중 주조 800을 요구 하고 
+재료는 석탄 20, 강철 50, 강철 도끼 1개(코펜하겐 도구점) 입니다.
+
+이름 처럼 도끼 무기 입니다. 착용 부위는 등에 착용합니다.','TRUE','무기 (도끼)',72,NULL,NULL,NULL,150,NULL,NULL,NULL,NULL,NULL,NULL,'16,000',NULL,NULL,NULL,NULL),
+ (8280,'바데렐',NULL,'선상에서 사용할 목적으로 짧게 만든 샤벨.
+날밑이 특징적이다.','TRUE','무기 (검)',66,NULL,NULL,NULL,150,NULL,NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,NULL),
+ (8281,'통천관','드랍','한족의 고관이 쓰는 모자.
+경사 때에 쓴다.','FALSE','머리',NULL,10,5,NULL,50,'[{"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (8282,'검은 가죽신발',NULL,'고급 소가죽을 꼼꼼히 가공해서
+검게 광택을 낸 가죽신발.','TRUE','다리',NULL,3,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8283,'둥근 베레모','생산','문화 공헌 공로를 인정받은
+사람만이 쓸 수 있는
+격조 높은 모자.','FALSE','머리',NULL,5,15,NULL,80,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,'[{"ref": 1980, "name": "문화 공로자"}]'),
+ (8284,'덕스 글러브',NULL,'고대 로마에서 사령관 등이 착용하던 철로 된 글러브.','TRUE','팔',5,25,15,NULL,100,'[{"ref": 2431, "name": "던지기 기술", "value": 2}, {"ref": 2453, "name": "함정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'80,000',NULL,NULL,NULL,NULL),
+ (8285,'덕스 그리브',NULL,'고대 로마에서 사령관 등이 착용하던 철로 된 긴 신발','TRUE','다리',5,30,15,NULL,100,'[{"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'80,000',NULL,NULL,NULL,NULL),
+ (8286,'챙 넓은 펠트 모자','피렌체생산','챙이 넓은 모자.
+화려하고 아름다워 귀족이 애용한다.','FALSE','머리',NULL,NULL,15,NULL,80,'[{"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'7,500',NULL,NULL,NULL,NULL),
+ (8287,'소드 브레이커',NULL,'상대방의 무기를 파괴하는 기능을 갖춘 소형 나이프','TRUE','무기 (던지는 나이프)',51,10,NULL,NULL,150,'[{"ref": 2330, "name": "방어", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (8288,'실크 장갑','피렌체생산','실크로 만든 우아한
+디자인의 장갑.','FALSE','팔',NULL,3,NULL,NULL,80,NULL,NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8289,'오스만 투르크 해군 장관복',NULL,'오스만 투르크의 해군 장관이 입는 제복.','TRUE','몸',5,20,25,NULL,50,'[{"ref": 2346, "name": "통솔", "value": 3}, {"ref": 2344, "name": "총격", "value": 2}, {"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200,000',NULL,NULL,'[{"ref": 2053, "name": "백작"}]',NULL),
+ (8290,'베네치아 해군 장관복',NULL,'베네치아의 해군 장관이 입는 제복.','TRUE','몸',5,25,25,NULL,50,'[{"ref": 2346, "name": "통솔", "value": 3}, {"ref": 2344, "name": "총격", "value": 2}, {"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200,000',NULL,NULL,'[{"ref": 2053, "name": "백작"}]',NULL),
+ (8291,'프랑스 해군 장관복',NULL,'프랑스의 해군 장관이 입는 제복.','TRUE','몸',5,20,25,NULL,50,'[{"ref": 2346, "name": "통솔", "value": 3}, {"ref": 2344, "name": "총격", "value": 2}, {"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200,000',NULL,NULL,'[{"ref": 2053, "name": "백작"}]',NULL),
+ (8292,'네덜란드 해군 장관복',NULL,'네덜란드의 해군 장관이 입는 제복.','TRUE','몸',5,20,25,NULL,50,'[{"ref": 2346, "name": "통솔", "value": 3}, {"ref": 2344, "name": "총격", "value": 2}, {"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200,000',NULL,NULL,'[{"ref": 2053, "name": "백작"}]',NULL),
+ (8293,'잉글랜드 해군 장관복',NULL,'잉글랜드의 해군 장관이 입는 제복.','TRUE','몸',5,20,25,NULL,50,'[{"ref": 2346, "name": "통솔", "value": 3}, {"ref": 2344, "name": "총격", "value": 2}, {"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200,000',NULL,NULL,'[{"ref": 2053, "name": "백작"}]',NULL),
+ (8294,'포르투갈 해군 장관복',NULL,'포르투갈의 해군 장관이 입는 제복.','TRUE','몸',5,20,25,NULL,50,'[{"ref": 2346, "name": "통솔", "value": 3}, {"ref": 2344, "name": "총격", "value": 2}, {"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200,000',NULL,NULL,'[{"ref": 2053, "name": "백작"}]',NULL),
+ (8295,'에스파니아 해군 장관복',NULL,'에스파니아의 해군 장관이 입는 제복.','TRUE','몸',5,20,25,NULL,50,'[{"ref": 2346, "name": "통솔", "value": 3}, {"ref": 2344, "name": "총격", "value": 2}, {"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200,000',NULL,NULL,'[{"ref": 2053, "name": "백작"}]',NULL),
+ (8296,'함대 지휘관의 검',NULL,'고대의 함대 지휘관이 지녔던 짧은 검.','TRUE','무기 (검)',78,NULL,NULL,NULL,100,'[{"ref": 2334, "name": "수탈", "value": 1}, {"ref": 2339, "name": "전술", "value": 2}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,NULL),
+ (8297,'정련 강철 손 보호대','침몰선','한족 군인이 갑옷과 함께 착용하는 손 보호대.
+정련된 강철로 만든다.','TRUE','팔',7,10,NULL,NULL,50,'[{"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8298,'어린갑','침몰선','한족의 군인이 입는 갑옷.
+생선 비늘 같은 장식이
+독특하다.','TRUE','몸',5,50,NULL,NULL,50,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2296, "name": "공업품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8299,'하급 군인용 일본 갑옷','침몰선','일본 군인이 입는 갑옷.
+하급 병사용으로 화려하지 않다.','TRUE','몸',5,50,NULL,NULL,50,'[{"ref": 2339, "name": "전술", "value": 2}, {"ref": 2299, "name": "광물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8300,'대나무 완갑','침몰선','일본 군인이 착용하는 방어구.
+팔에서 손등까지를 보호한다.','TRUE','팔',7,10,NULL,NULL,50,'[{"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8301,'헌터 튜닉','구입','북미의 뛰어난 사냥꾼이 입는 옷. 보석과 장신구를 사용하여 그 힘을 과시하고 있다.','TRUE','몸',NULL,25,5,NULL,20,'[{"ref": 2293, "name": "행군", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (8302,'깃털 악세사리','구입','북미 원주민들의 머리 장식. 다양한 동물의 털과 깃털을 사용했다.
+
+그레이트플레인스의 도구점에서 구입할 수 있습니다.','TRUE','머리',NULL,10,NULL,NULL,20,'[{"ref": 2310, "name": "섬유 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,500',NULL,NULL,NULL,NULL),
+ (8303,'정강이 보호대','침몰선','일본 군인이 착용하는 방어구. 무릎에서 발목까지를 보호한다.','TRUE','다리',NULL,15,NULL,NULL,50,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8304,'가문 문장을 수놓은 일본 옷','침몰선','일본의 귀족이 입는 전통 의복.
+집안의 문장을 수놓은 상의와 바지를 입는다.','TRUE','몸',NULL,20,15,NULL,30,'[{"ref": 2313, "name": "운용", "value": 2}, {"ref": 2312, "name": "염료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8305,'파이완 민족 의상','침몰선','대만 파이완 민족의 의상.
+뱀을 본뜬 자수가 특징.','TRUE','몸',NULL,20,40,10,30,'[{"ref": 2283, "name": "생태 조사", "value": 2}, {"ref": 2319, "name": "직물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8306,'연철 완갑','침몰선','한족 군인이 갑옷과 함께 착용하는 완갑.
+연철로 만든다.','TRUE','팔',7,10,NULL,NULL,50,'[{"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8307,'연철 경갑','침몰선','한족 군인이 갑옷과 함께 착용하는 정강이 보호대.
+연철로 만든다.','TRUE','다리',NULL,15,NULL,NULL,50,'[{"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8308,'아카데믹 가운',NULL,'대학교수가 입는 옷. (대학 졸업시 획득 가능)','TRUE','몸',NULL,10,20,NULL,30,'[{"ref": 2430, "name": "항해기술", "value": 1}, {"ref": 2432, "name": "관리기술", "value": 1}, {"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'60,000',NULL,NULL,NULL,'[{"ref": 1985, "name": "항해 박사"}]'),
+ (8309,'아카데믹 탐',NULL,'대학교수가 쓰는 모자.','TRUE','머리',NULL,5,NULL,NULL,10,'[{"ref": 2436, "name": "연금술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,'[{"ref": 1985, "name": "항해 박사"}]'),
+ (8310,'비단 각반','침몰선','조선 군인이 갑옷과 함께
+착용하는 정강이 보호대.
+두꺼운 비단으로 만든다.','FALSE','다리',NULL,15,NULL,NULL,50,'[{"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8311,'정강 각반','침몰선','한족 군인이 갑옷과 함께
+착용하는 정강이 보호대.
+연철로 만든다.','TRUE','다리',NULL,15,NULL,NULL,50,'[{"ref": 2328, "name": "노 젓기", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8312,'처용의','침몰선','처용무라는
+조선의 궁정 무용에
+사용되는 의상.','TRUE','몸',NULL,20,20,10,30,'[{"ref": 2291, "name": "측량", "value": 2}, {"ref": 2301, "name": "기호품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'25,000',NULL,NULL,NULL,NULL),
+ (8313,'장포','침몰선','신분이 높은 한족 관리가 입는
+기장이 긴 겉옷.','FALSE','몸',NULL,20,10,NULL,30,'[{"ref": 2279, "name": "보급", "value": 2}, {"ref": 2369, "name": "조미료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (8314,'욕군','침몰선','욕군.
+기장이 짧은 상의와 긴 치마를 합쳐 입는 한족의 옷','TRUE','몸',NULL,20,NULL,NULL,30,'[{"ref": 2290, "name": "채집", "value": 2}, {"ref": 2321, "name": "향료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8315,'리본＆깃털','탐색','북미 원주민들의 일반적인 머리모양. 
+양쪽 귀 옆으로 묶은 머리칼에 가죽 끈을 감아 깃털로 장식한다.','TRUE','머리',NULL,5,NULL,NULL,10,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,200',NULL,NULL,NULL,NULL),
+ (8316,'가죽 망토',NULL,'북미 원주민들의 옷.
+물소 등의 가죽을 무두질하여 만들었다.
+두껍고 질기다.','TRUE','몸',NULL,10,10,NULL,10,'[{"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'13,500',NULL,NULL,NULL,NULL),
+ (8317,'핸디드 액스',NULL,'산적들이 즐겨쓰는 도끼.','TRUE','무기 (도끼)',54,NULL,NULL,NULL,40,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,'2700',NULL,NULL,NULL),
+ (8318,'브리건드 샷',NULL,'악당들이 애용하는 총.','TRUE','무기 (총)',50,NULL,NULL,NULL,40,'[{"ref": 2332, "name": "속사", "value": 1}, {"ref": 2344, "name": "총격", "value": 2}]','[{"ref": 2344, "name": "총격"}]',NULL,NULL,NULL,NULL,NULL,'3000',NULL,NULL,NULL),
+ (8319,'로그 클럽',NULL,'불한당이 자주 사용하는 곤봉.','TRUE','무기 (곤봉 지팡이)',52,NULL,NULL,NULL,40,'[{"ref": 2326, "name": "관통", "value": 2}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,'2800',NULL,NULL,NULL),
+ (8320,'작업복','침몰선','야외에서 약초 등을 채집할때
+주로 착용하는 의복.','TRUE','몸',NULL,20,NULL,NULL,30,'[{"ref": 2277, "name": "돛 조종", "value": 2}, {"ref": 2298, "name": "공예품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8321,'경극 의상','침몰선','중국 수도에서 유행하는 무곡에 
+사용되는 의상.','TRUE','몸',NULL,20,40,10,30,'[{"ref": 2276, "name": "대화술", "value": 2}, {"ref": 2317, "name": "주류 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8322,'비갑','침몰선','조선 군인이 갑옷과 함께
+착용하는 방어구.
+팔에서 손등까지를 보호한다.','FALSE','팔',7,10,NULL,NULL,50,'[{"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8323,'경번갑','침몰선','조선의 무관이
+입는 갑옷
+무겁지만 튼튼하다.','TRUE','몸',5,50,NULL,NULL,50,'[{"ref": 2329, "name": "돌격", "value": 2}, {"ref": 2303, "name": "무기류 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8324,'호복','침몰선','호복.
+
+소매통이 좁은 저고리에
+
+바지를 합쳐 입는
+
+승마에 적합한 옷.','TRUE','몸',NULL,20,NULL,NULL,30,'[{"ref": 2295, "name": "경계", "value": 2}, {"ref": 2307, "name": "보석 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8325,'장인복','침몰선','대장장이 등, 신체를 이용한 활동이 많은 사람이
+착용하는 의복.','TRUE','몸',NULL,20,NULL,NULL,30,'[{"ref": 2275, "name": "낚시", "value": 2}, {"ref": 2311, "name": "식료품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8326,'단수이 여장','침몰선','대만을 여행하는 모험가에게
+알맞은 가벼운 여행용 의복.','TRUE','몸',NULL,20,NULL,20,30,'[{"ref": 2293, "name": "행군", "value": 2}, {"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8327,'융복개갑','침몰선','한족의 장군이 입는 갑옷.
+갑옷 위에 융복을 걸쳤다.','TRUE','몸',5,50,NULL,NULL,50,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2320, "name": "총포류 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8328,'건스톡 워클럽',NULL,'북미 원주민이 사용하는 타격 무기
+날카롭게 간 돌이 달려있다','TRUE','무기 (곤봉 지팡이)',47,NULL,NULL,NULL,50,'[{"ref": 2453, "name": "함정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,600',NULL,NULL,NULL,NULL),
+ (8329,'바지 저고리','침몰선','조선의 옷. 바지라고 부르는
+하의와 저고리라고 부르는
+상의를 합쳐 입는다.','TRUE','몸',NULL,20,NULL,NULL,30,'[{"ref": 2286, "name": "조달", "value": 2}, {"ref": 2314, "name": "의약품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8330,'학창의','분홍색,침몰선','조선의 고위 유생이 착용하는 의상.','TRUE','몸',NULL,20,40,NULL,30,'[{"ref": 2273, "name": "구조", "value": 2}, {"ref": 2310, "name": "섬유 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8332,'아카데믹 드레스',NULL,'대학생이 입는 옷.','TRUE','몸',NULL,10,20,NULL,30,'[{"ref": 2305, "name": "바디 랭귀지", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8333,'학사모','구입','대학생이 쓰는 모자.','TRUE','머리',NULL,5,15,NULL,30,'[{"ref": 2441, "name": "언어학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,500',NULL,NULL,NULL,NULL),
+ (8334,'크림슨 퀴래스',NULL,'피를 연상시키는 선명한 붉은색 갑옷','TRUE','몸',20,90,40,NULL,150,'[{"ref": 2342, "name": "조타", "value": 3}, {"ref": 2326, "name": "관통", "value": 2}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8335,'아카데믹 드레스','피렌체생산','대학생이 입는 옷.','FALSE','몸',NULL,10,20,NULL,80,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (8336,'모피 튜닉','2권 생산','옷깃과 목 부분의 깃털 장식이
+특징적인，북미 원주민들의 옷.','FALSE','몸',NULL,15,NULL,NULL,80,'[{"ref": 2344, "name": "총격", "value": 1}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8337,'헌터 튜닉','2권 생산','북미의 뛰어난 사냥꾼이 입는 옷.
+보석과 장신구를 사용하여
+그 힘을 과시하고 있다.','FALSE','몸',NULL,25,5,NULL,80,'[{"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2293, "name": "행군", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (8338,'가죽 망토','2권 생산','북미 원주민들의 옷.
+물소 등의 가죽을 무두질하여
+만들었다. 두껍고 질기다.','FALSE','몸',NULL,10,10,NULL,80,'[{"ref": 2301, "name": "기호품 거래", "value": 1}, {"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'13,500',NULL,NULL,NULL,NULL),
+ (8339,'가죽 튜닉','2권 생산','북미의 남성 원주민이 입는 옷.
+동물 가죽으로 만들었다.','FALSE','몸',NULL,15,NULL,NULL,50,'[{"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,'남성',NULL,NULL),
+ (8340,'판초 드레스','2권 생산','북미의 여성 원주민이 입는 옷.
+선명하게 염색한 가죽에
+장식을 많이 달았다.','FALSE','몸',NULL,15,NULL,NULL,50,'[{"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,'여성',NULL,NULL),
+ (8341,'새시 튜닉','2권 생산','화려한 자수가 놓여진
+북미 원주민들의 옷.
+어깨띠가 특징이다.','FALSE','몸',5,25,NULL,NULL,80,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8342,'아메리칸 비즈','2권 생산','비즈로 만든 목 장식이 특징적인
+북미 원주민들의 옷.
+남성용이며，점잖은 분위기다.','FALSE','몸',NULL,15,NULL,NULL,80,'[{"ref": 2315, "name": "잡화 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'남성',NULL,NULL),
+ (8343,'아메리칸 비즈','2권 생산','비즈로 만든 목 장식이 특징적인
+북미 원주민들의 옷.
+남성용이며，점잖은 분위기다.','FALSE','몸',NULL,15,NULL,NULL,80,'[{"ref": 2315, "name": "잡화 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'여성',NULL,NULL),
+ (8344,'워리어 페더','2권 생산','북미의 원주민 전사가 입는 옷.
+독수리 깃털 수가
+입은 사람의 용맹함을 나타낸다.','FALSE','몸',15,28,NULL,NULL,50,'[{"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,'전투','10,000',NULL,NULL,NULL,NULL),
+ (8345,'해적 퀴래스',NULL,'악명 높은 해적만이 입을 수 있는 갑옷.','TRUE','몸',NULL,80,NULL,NULL,50,'[{"ref": 2342, "name": "조타", "value": 1}, {"ref": 2345, "name": "탄도학", "value": 2}, {"ref": 2326, "name": "관통", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,'9000',NULL,NULL,NULL),
+ (8346,'스칼렛퀴래스',NULL,'피를 연상시키는 선명한 붉은색 갑옷.','TRUE','몸',NULL,90,NULL,NULL,50,'[{"ref": 2342, "name": "조타", "value": 2}, {"ref": 2334, "name": "수탈", "value": 2}, {"ref": 2329, "name": "돌격", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,'15000',NULL,NULL,'[{"ref": 1987, "name": "크라니오 에스파다"}]'),
+ (8347,'크림슨 부츠',NULL,'북미 원주민이 신는 부츠','TRUE','다리',10,25,NULL,NULL,80,'[{"ref": 2335, "name": "수평사격", "value": 2}, {"ref": 2342, "name": "조타", "value": 2}, {"ref": 2345, "name": "탄도학", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8348,'강화 엑스캘리버',NULL,'왕과 함께 존재하며，호수로
+돌아갔다고 전해지는 전설의 명검.','TRUE','무기 (검)',100,10,20,NULL,100,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 3}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8349,'개량 마상통',NULL,'다테 마사무네가 기마 부대에 
+도입한 일본식 화승총.
+말 위에서 사용 가능하도록 
+개량했다','TRUE','무기 (총)',95,NULL,20,NULL,100,'[{"ref": 2336, "name": "외과의술", "value": 2}, {"ref": 2344, "name": "총격", "value": 3}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8350,'메일과 서코트','생산','촘촘히 짠 사슬 옷 위에
+서코트를 두른 기사용 의복.','FALSE','몸',NULL,40,20,NULL,50,'[{"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,'전투','35,000',NULL,'남성',NULL,NULL),
+ (8351,'카테리나 드레스','피렌체생산','메디치 가문의 여성이
+혼례를 치를 때 입는
+개성적인 드레스.','FALSE','몸',NULL,10,45,NULL,50,'[{"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'35,000',NULL,'여성',NULL,NULL),
+ (8352,'플라워 악세사리','피렌체생산','장식용 작은 꽃을
+함께 엮어 만든 여성용 헤어 스타일.','FALSE','머리',NULL,4,20,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'3,500',NULL,'여성',NULL,NULL),
+ (8353,'스칼렛 햇',NULL,'피를 연상시키는 선명한 붉은색 모자','TRUE','머리',8,16,NULL,NULL,40,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 2}, {"ref": 2336, "name": "외과의술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,'12000',NULL,NULL,'[{"ref": 1987, "name": "크라니오 에스파다"}]'),
+ (8354,'흑빛의 가죽신발',NULL,'고급 소가죽을 꼼꼼히 가공해서 검게 광택을 낸 가죽신발','TRUE','다리',20,10,NULL,NULL,80,'[{"ref": 2328, "name": "노 젓기", "value": 2}, {"ref": 2334, "name": "수탈", "value": 1}, {"ref": 2330, "name": "방어", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8355,'레이스 글러브',NULL,'레이스로 만든 얇은 장갑','TRUE','팔',5,10,10,NULL,80,'[{"ref": 2298, "name": "공예품 거래", "value": 1}, {"ref": 2317, "name": "주류 거래", "value": 1}, {"ref": 2322, "name": "향신료 거래", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8356,'텐갤런 해트',NULL,'양쪽 귀 위로 차양이 접힌 모자','TRUE','머리',NULL,30,10,NULL,100,'[{"ref": 2294, "name": "가축 거래", "value": 2}, {"ref": 2344, "name": "총격", "value": 2}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (8357,'산양모 아라비아 망토','퀘스트','산양모로 짠 여행복.
+혹독한 밤의 추위를 피할 수 있다.','TRUE','몸',5,35,10,40,100,'[{"ref": 2431, "name": "던지기 기술", "value": 2}, {"ref": 2453, "name": "함정", "value": 1}, {"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,'모험','15,000',NULL,'남성',NULL,NULL),
+ (8358,'대상인의 총',NULL,'대상인이 호신용으로 지녔다고 전해지는 총.
+사용한 흔적이 거의 없다','TRUE','무기 (총)',40,NULL,NULL,NULL,70,'[{"ref": 2306, "name": "보관", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}, {"ref": 2344, "name": "총격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8359,'대상인의 축재술',NULL,'대상인이 기록했다는 서적.
+남들보다 더 많은 부를 쌓기 위한 비결이 적혀있다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2313, "name": "운용", "value": 2}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8360,'챙 넓은 펠트 모자','침몰선','챙이 넓은 모자.
+화려하고 아름다원 귀족이 애용한다.','TRUE','머리',NULL,NULL,15,NULL,30,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2305, "name": "바디 랭귀지", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,500',NULL,NULL,NULL,NULL),
+ (8361,'유적 조사단의 의상','침몰선','먼 지역을 조사하러 간 학자가 입던
+격조 높은 의상. 오랜 항해로 인해 바다 냄새가 배어 있다.','TRUE','몸',NULL,15,35,NULL,50,'[{"ref": 2278, "name": "미술", "value": 1}, {"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,NULL),
+ (8362,'부와야쥬르망토','침몰선','일찍이 이름을 날린 항해자가
+착용했던 코트.','TRUE','몸',NULL,38,50,NULL,60,'[{"ref": 2342, "name": "조타", "value": 2}, {"ref": 2277, "name": "돛 조종", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,'남성',NULL,NULL),
+ (8363,'부와야쥬르로브','침몰선','일찍이 이름을 날린 항해자가
+착용했던 드레스.','TRUE','몸',NULL,38,50,NULL,60,'[{"ref": 2342, "name": "조타", "value": 2}, {"ref": 2277, "name": "돛 조종", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,'여성',NULL,NULL),
+ (8364,'코트햇','침몰선, 기호품거래','일찍이 큰 부를 이룬 대상인이
+착용했던 모자.
+모피로 장식되어 있다.','TRUE','머리',NULL,6,30,NULL,50,'[{"ref": 2301, "name": "기호품 거래", "value": 1}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'25,000',NULL,NULL,NULL,NULL),
+ (8365,'콘설코트','침몰선','일찍이 큰 부를 이룬 대상인이
+착용했던 의상.
+화려한 장신구가 달려 있다.','FALSE','몸',NULL,20,55,NULL,50,'[{"ref": 2317, "name": "주류 거래", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}, {"ref": 2305, "name": "바디 랭귀지", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,NULL,NULL),
+ (8366,'아이언 글러브','침몰선','투구，갑옷과 같이 몸에 대는
+글러브형의 건틀릿.','FALSE','팔',NULL,12,4,NULL,70,'[{"ref": 2333, "name": "수리", "value": 1}, {"ref": 2327, "name": "기뢰 설치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8367,'우두머리의 카트라스','침몰선','한 해적단의 우두머리가 사용한 카트라스.
+칼날에 무수한 생채기가 남아 있다.','TRUE','무기 (검)',70,NULL,NULL,NULL,70,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (8368,'금세공 지팡이',NULL,'정교한 금세공으로 장식한 지팡이.
+갈고 닦을수록 사람을 매료시킨다.','TRUE','무기 (곤봉 지팡이)',28,NULL,10,NULL,50,'[{"ref": 2300, "name": "귀금속 거래", "value": 1}, {"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8369,'보석 박힌 단검','침몰선','작은 보석이 무수히 박힌 단검.
+예술적 가치도 높으면서 잘 든다.','TRUE','무기 (던지는 나이프)',38,NULL,10,NULL,50,'[{"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2307, "name": "보석 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8370,'손찌','침몰선','손목부터 손가락까지 장식하는
+호화로운 장식품.','FALSE','팔',NULL,5,10,NULL,30,'[{"ref": 2322, "name": "향신료 거래", "value": 1}, {"ref": 2315, "name": "잡화 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'25,000',NULL,NULL,NULL,NULL),
+ (8371,'호위대의 활','침몰선','유적 조사단을 호위하기 위해
+고용된 용병이 쓰는 활.
+시위를 당기기 쉽도록 개량했다.','TRUE','무기 (활)',50,NULL,NULL,NULL,70,'[{"ref": 2293, "name": "행군", "value": 1}, {"ref": 2338, "name": "응급처치", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (8372,'자수정 반지','침몰선','자수정이 곁들여진 아름다운 반지.','TRUE','장신구',NULL,NULL,40,NULL,40,'[{"ref": 2296, "name": "공업품 거래", "value": 1}, {"ref": 2274, "name": "기뢰발견", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8373,'학술 조사 지침서',NULL,'학술 조사에 임하는 자세가 빽빽하게 적혀 있는 서적.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2293, "name": "행군", "value": 1}, {"ref": 2284, "name": "인식", "value": 1}, {"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8374,'체인 글러브','침몰선','가는 사슬로 짜 만든 장갑.','TRUE','팔',NULL,15,NULL,NULL,70,'[{"ref": 2347, "name": "포술", "value": 1}, {"ref": 2332, "name": "속사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,200',NULL,NULL,NULL,NULL),
+ (8375,'곰인형',NULL,'아기곰을 모티브로 만든 봉제인형.
+(2012년 `season2 출첵하고, 아이템 `바다`가세요` 이벤트 보상품)','TRUE','도구',NULL,NULL,NULL,NULL,100,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8376,'대상인의 호신술',NULL,'대상인이 기록했다는 서적.
+해적으로부터 몸을 지키기 위한 비결이 적혀 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2295, "name": "경계", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8377,'전투용 도끼',NULL,'해적이 백병전에서 사용했다고 전해지는 도끼.
+배 위에서도 사용하기 쉽도록 가볍게 만들었다.','TRUE','무기 (도끼)',55,NULL,NULL,NULL,70,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (8378,'유적 조사단의 모자','침몰선','먼 지역을 조사하러 간 학자가 쓰던
+격조 높은 모자. 오랜 항해로 인해 바다 냄새가 배어 있다.','TRUE','머리',NULL,5,15,NULL,50,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2289, "name": "지리학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8379,'해적의 도의서',NULL,'한 해적단의 도의가 적힌 서적.
+선박 내에서의 규칙과 약탈법등이 적혀있다.','TRUE','장신구',NULL,NULL,NULL,NULL,40,'[{"ref": 2334, "name": "수탈", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}, {"ref": 2324, "name": "감시", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8380,'낡은 강철 창',NULL,'강철로 만든 창.
+낡았지만 다루기 쉽게 개량되어 있다.','TRUE','무기 (창)',53,NULL,NULL,NULL,70,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2338, "name": "응급처치", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (8381,'흑진주 반지',NULL,'아주 희귀한 흑진주가 
+박혀 있는 반지.','TRUE','장신구',NULL,NULL,NULL,NULL,40,'[{"ref": 2304, "name": "미술품 거래", "value": 1}, {"ref": 2312, "name": "염료 거래", "value": 1}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8382,'구슬 장식 간드라','퀘스트','북아프리카의 전통적인 여성복. 구슬을 장식한 특주품.','TRUE','몸',5,35,10,40,100,'[{"ref": 2431, "name": "던지기 기술", "value": 2}, {"ref": 2453, "name": "함정", "value": 1}, {"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,'모험','15,000',NULL,'여성',NULL,NULL),
+ (8383,'흑진주 브로치',NULL,'아주 희귀한 흑진주가 박혀 있는 브로치.','TRUE','장신구',NULL,NULL,40,NULL,40,'[{"ref": 2304, "name": "미술품 거래", "value": 1}, {"ref": 2320, "name": "총포류 거래", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8384,'비취 귀걸이',NULL,'아름다운 비취를 박아 넣은 귀걸이. 공예적 가치가 높다.','TRUE','장신구',NULL,NULL,40,NULL,40,'[{"ref": 2303, "name": "무기류 거래", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}, {"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8385,'붉게 물들인 아랍해적셔츠','퀘스트','잇꽃으로 선명하게 물들인 긴 가운과 셔츠','TRUE','몸',NULL,20,15,40,100,'[{"ref": 2312, "name": "염료 거래", "value": 2}, {"ref": 2290, "name": "채집", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,'교역','15,000',NULL,'남성',NULL,NULL),
+ (8386,'붉게 물들인 차도르','퀘스트','잇꽃으로 선명하게 물들인 아랍 여성이 즐겨 입는 장의','TRUE','몸',NULL,20,15,40,100,'[{"ref": 2312, "name": "염료 거래", "value": 2}, {"ref": 2290, "name": "채집", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,'교역','15,000',NULL,'여성',NULL,NULL),
+ (8387,'강화 게이볼그',NULL,'켈트신화의 영웅이 애용했다고 하는 창.
+주인에게 재앙을 가져 온다.','TRUE','무기 (창)',100,10,20,NULL,100,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 3}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8388,'이순신 장군의 두석린갑',NULL,'조선 수군의 최고 사령관. 이순신이 군을 지휘할 때 착용한 갑옷.','TRUE','몸',40,65,20,NULL,150,'[{"ref": 2328, "name": "노 젓기", "value": 2}, {"ref": 2344, "name": "총격", "value": 3}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'남성',NULL,NULL),
+ (8389,'머천트 부츠',NULL,'터키 귀족이 신는 부츠.
+호화로운 자수가 장식되어 있다.','TRUE','다리',NULL,20,20,30,80,'[{"ref": 2296, "name": "공업품 거래", "value": 2}, {"ref": 2310, "name": "섬유 거래", "value": 2}, {"ref": 2299, "name": "광물 거래", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8390,'여장 진양옥의 백간 어린갑',NULL,'명의 군인 진양옥이 백간병을 이끌고 싸울 때 착용하는 갑옷','TRUE','몸',40,80,10,NULL,150,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (8391,'강화 대장궁',NULL,'송산리 유적군을 답파한 항해자가
+
+장착할 수 있는 뛰어난 무기.','TRUE','무기 (활)',90,NULL,20,NULL,100,'[{"ref": 2344, "name": "총격", "value": 3}, {"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2336, "name": "외과의술", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8392,'헤르메스의 부츠',NULL,'복사뼈 부분에 날개를 장식한 신발.
+로마신화에 등장하는 신이 신는 신발을 모티브로 만들었다.','TRUE','다리',NULL,20,10,10,80,'[{"ref": 2292, "name": "탐색", "value": 1}, {"ref": 2284, "name": "인식", "value": 2}, {"ref": 2283, "name": "생태 조사", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8393,'아메리칸 비즈','1권 생산','비즈로 만든 목 장식이 특징적인
+북미 원주민들의 옷.
+남성용이며，점잖은 분위기다.','FALSE','몸',NULL,15,NULL,NULL,30,'[{"ref": 2315, "name": "잡화 거래", "value": 1}, {"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'여성',NULL,NULL),
+ (8394,'아메리칸 비즈','1권 생산','비즈로 만든 목 장식이 특징적인
+북미 원주민들의 옷.
+남성용이며，점잖은 분위기다.','FALSE','몸',NULL,15,NULL,NULL,30,'[{"ref": 2315, "name": "잡화 거래", "value": 1}, {"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'남성',NULL,NULL),
+ (8396,'강화 라비리스',NULL,'크레타 문명의 상징인 훌륭한 양날 도끼.','TRUE','무기 (도끼)',100,10,20,NULL,100,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 3}, {"ref": 2329, "name": "돌격", "value": 3}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8397,'가운과 쉬르꼬','생산','문화 공헌 공로를 인정받은
+사람만이 입을 수 있는
+격조 높은 의상.','FALSE','몸',NULL,15,35,NULL,50,'[{"ref": 2278, "name": "미술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,'[{"ref": 1980, "name": "문화 공로자"}]'),
+ (8398,'깃털 악세사리','1권 생산','북미 원주민의 머리 장식.
+다양한 동물의 털과 깃털을 사용했다.
+
+길드 개척도시 대장간 레시피 생산품.','TRUE','머리',NULL,10,NULL,NULL,30,'[{"ref": 2310, "name": "섬유 거래", "value": 1}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8399,'코사지 신발','피렌체생산','발끝 부분에 꽃 코사지가
+장식된 참신한 구두.','FALSE','다리',NULL,5,NULL,NULL,80,NULL,NULL,NULL,NULL,NULL,NULL,'1,200',NULL,NULL,NULL,NULL),
+ (8400,'산타 클로스 의상','검정','산타 클로스가 입는 옷','TRUE','몸',NULL,15,NULL,10,70,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}, {"ref": 2300, "name": "귀금속 거래", "value": 2}]',NULL,NULL,NULL,'이벤트 보상',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8401,'산타 클로스 모자','검정','산타 클로스가
+머리에 쓰는 모자.','FALSE','머리',NULL,5,NULL,5,50,'[{"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8402,'개량 묠니르',NULL,'북유럽신화에서 뇌신 토르가
+사용했다고 하는 대형 철퇴.
+
+2013년도 1월 8일~29일자 트레져박스 &quot;변화하는 시대&quot;에서 얻을 수 있습니다.','TRUE','무기 (곤봉 지팡이)',100,10,20,NULL,100,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2344, "name": "총격", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 3}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8403,'명장의 체인 글러브',NULL,'가는 사슬로 짜 만든 장갑','TRUE','팔',5,30,10,NULL,100,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2332, "name": "속사", "value": 1}, {"ref": 2347, "name": "포술", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8404,'클라비 토가','역사적 사건','고대 로마 귀족이 착용하던
+장의.
+긴 띠를 몸에 감는다.','FALSE','몸',NULL,5,20,NULL,80,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8405,'에메랄드 타블렛',NULL,'작은 에메랄드 판.
+전설 속의 헤르메스가 직접 새겼다는 문장이 적혀 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,35,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2436, "name": "연금술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8406,'황금 장신구',NULL,'황금으로 만든 장신구.
+정교하게 세공되어 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,40,'[{"ref": 2312, "name": "염료 거래", "value": 2}, {"ref": 2285, "name": "자물쇠 따기", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8407,'스페이드 잭',NULL,'트럼프 카드 중 한 장.
+한 영웅을 나타내는 그림이
+그려져 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,40,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8408,'낡은 유리 조각',NULL,'상당히 오래된 유리 조각.
+잘 붙여보면 잔 또는 그릇의 형태로 보인다.
+(트레져헌터-성지와 기사단과 보물 보상)','TRUE','장신구',NULL,NULL,NULL,NULL,40,'[{"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2315, "name": "잡화 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8409,'피카트릭스',NULL,'점성술의 밀의를 기록한 서적.
+아라비아어로 적혀 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,35,'[{"ref": 2291, "name": "측량", "value": 2}, {"ref": 2275, "name": "낚시", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8410,'지조의 모자',NULL,'신성 로마 제국의 선거를 지원한 사람에게 주는 모자.','TRUE','머리',NULL,6,10,NULL,50,'[{"ref": 2323, "name": "회계", "value": 2}, {"ref": 2296, "name": "공업품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (8411,'헌팅 호른',NULL,'수렵용 호른. 음정을 조절하는
+밸브가 없고 심플한 모양이다.','TRUE','도구',NULL,NULL,NULL,NULL,50,'[{"ref": 2281, "name": "생물학", "value": 1}]','[{"ref": 1615, "name": "호른연주"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8412,'백 파이프',NULL,'가죽 주머니에 불어넣은 공기를
+눌러 빼면서 음을 연주하는
+목관 리드 악기.','TRUE','도구',NULL,NULL,NULL,NULL,50,'[{"ref": 2311, "name": "식료품 거래", "value": 1}]','[{"ref": 1616, "name": "백 파이프 연주"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8413,'허디거디',NULL,'송진을 바른 목제 원통을 회전시켜 
+현을 마찰시키는 방식으로
+연주하는 현악기의 일종.','TRUE','도구',NULL,NULL,NULL,NULL,50,'[{"ref": 2298, "name": "공예품 거래", "value": 1}]','[{"ref": 1617, "name": "허디거디 연주"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8414,'테오르보',NULL,'반주용으로 자주 쓰이는 악기.
+류트와 비슷하게 생긴 바디와
+긴 목이 특징적이다.','TRUE','도구',NULL,NULL,NULL,NULL,50,'[{"ref": 2315, "name": "잡화 거래", "value": 1}]','[{"ref": 1618, "name": "테오르보 연주"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8415,'레메게톤',NULL,'별칭은 솔로몬의 작은 열쇠.
+마도서라고 불리우는 책들 중에서도 특히 유명하다.','TRUE','장신구',NULL,NULL,NULL,NULL,35,'[{"ref": 2276, "name": "대화술", "value": 2}, {"ref": 2284, "name": "인식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8416,'헌신의 후드',NULL,'황제 선거때 3콤보 달성 후 보상','TRUE','머리',NULL,3,10,NULL,50,'[{"ref": 2306, "name": "보관", "value": 2}, {"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,'여성',NULL,NULL),
+ (8417,'명예로운 그라디우스',NULL,'무기 계통: 검','TRUE','무기 (검)',68,NULL,NULL,NULL,80,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2335, "name": "수평사격", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8418,'바우던 랑세',NULL,'중기병이 돌격할 때 쓰는 창.
+원추형인 모양이 특징이다.','TRUE','무기 (창)',55,NULL,NULL,NULL,55,'[{"ref": 2293, "name": "행군", "value": 2}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8419,'숭고한 자를 위한 가운',NULL,'황제 선거 3콤보 보상품 중 하나입니다. (콤보 : 독불장군)','TRUE','몸',NULL,12,NULL,3,50,'[{"ref": 2301, "name": "기호품 거래", "value": 2}, {"ref": 2317, "name": "주류 거래", "value": 1}, {"ref": 2322, "name": "향신료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,'남성',NULL,NULL),
+ (8420,'엠파이어 로브',NULL,'신성 로마 제국의
+유력 제후가 입는 로브.','FALSE','몸',NULL,4,30,NULL,60,'[{"ref": 2441, "name": "언어학", "value": 1}, {"ref": 2445, "name": "예항", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8421,'엠파이어 햇',NULL,'신성 로마 제국의
+유력 제후가 착용하는 모자.','FALSE','머리',NULL,2,15,NULL,50,'[{"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8422,'로리카 하마타','역사적 사건','고대 로마 군인이 착용하던
+갑옷. 체인 메일과 비슷한 형태로，
+가벼우며 움직이기 편하다.','FALSE','몸',15,60,NULL,25,80,'[{"ref": 2330, "name": "방어", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8423,'묵주','역사적 사건','고대 로마 귀족이 착용하던
+머리 장식. 풀꽃으로 만들었다.','FALSE','머리',NULL,5,NULL,NULL,80,'[{"ref": 2301, "name": "기호품 거래", "value": 1}, {"ref": 2369, "name": "조미료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (8424,'영방 통치자의 지팡이',NULL,'어느 영방을 다스리는 영주가 의식때 사용했다고 하는 지팡이','TRUE','무기 (곤봉 지팡이)',25,NULL,20,NULL,80,'[{"ref": 2306, "name": "보관", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}, {"ref": 2313, "name": "운용", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8425,'고결한 자의 가운',NULL,'신성 로마 제국의 선거를 지원한 사람에게 주는 가운.','TRUE','몸',NULL,10,35,NULL,50,'[{"ref": 2299, "name": "광물 거래", "value": 2}, {"ref": 2300, "name": "귀금속 거래", "value": 1}, {"ref": 2307, "name": "보석 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,'남성',NULL,NULL),
+ (8426,'충절의 부츠',NULL,'신성 로마 제국의 선거를 지원한 사람에게 주는 부츠.','TRUE','다리',5,15,NULL,NULL,50,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2320, "name": "총포류 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (8428,'잉글리쉬 후드',NULL,'잉글랜드의 여성이 착용하는
+헤드드레스.
+이마가 보이도록 덮어쓴다.','FALSE','머리',NULL,2,10,NULL,50,'[{"ref": 2298, "name": "공예품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (8429,'프렌치 후드',NULL,'보닛 형의 여성용 모자
+이마와 앞머리가 드러난다','FALSE','머리',NULL,2,10,NULL,50,'[{"ref": 2319, "name": "직물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (8430,'오스만 투르크 제독 군복',NULL,'오스만 투르크의 제독이 입는
+군복.','TRUE','몸',5,35,25,NULL,50,'[{"ref": 2329, "name": "돌격", "value": 2}, {"ref": 2330, "name": "방어", "value": 2}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,NULL,NULL),
+ (8431,'스캘리웨그 햇','보라색','챙일 접어올려 삼각 형태로 만든 특징적인 모자.
+깃털 장식이 달려 있다.','TRUE','머리',5,15,NULL,8,60,'[{"ref": 2326, "name": "관통", "value": 1}, {"ref": 2342, "name": "조타", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (8432,'콜롬 제독의 의상',NULL,'신대륙을 발견한 사람이
+애용했다고 전해지는 옷.','FALSE','몸',NULL,12,NULL,3,80,'[{"ref": 2291, "name": "측량", "value": 1}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,'남성',NULL,NULL),
+ (8433,'코류스','역사적 사건','고대 로마 군인이 착용하던
+투구. 부채꼴로 펼쳐진 장식이 용감해 보인다.','FALSE','머리',NULL,20,NULL,NULL,80,'[{"ref": 2348, "name": "회피", "value": 1}, {"ref": 2336, "name": "외과의술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,600',NULL,NULL,NULL,NULL),
+ (8434,'튜더 가운','시대 한정 생산','소매의 모양이 특징적인
+튜더 왕조 스타일의 드레스.','FALSE','몸',NULL,4,25,NULL,50,'[{"ref": 2441, "name": "언어학", "value": 1}, {"ref": 2299, "name": "광물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (8435,'스타 사파이어 브로치',NULL,'별처럼 빛나는 사파이어를 본따 만든, 무척 귀한 브로치.
+
+황제 선거 지원 3콤보 후 얻는 아이템인 황제 선거 지원의 증표를 사용하면 나옵니다.','TRUE','장신구',NULL,NULL,50,NULL,20,'[{"ref": 2319, "name": "직물 거래", "value": 2}, {"ref": 2278, "name": "미술", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8436,'강화 칠흑의 단검',NULL,'수수께끼의 유령이 사용했던 칠흑의 도신으로 된 단검.','TRUE','무기 (던지는 나이프)',70,20,20,NULL,100,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2348, "name": "회피", "value": 3}, {"ref": 2431, "name": "던지기 기술", "value": 3}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8437,'대관 기념 코인',NULL,'황제 선거 지원의 증표에서 나옵니다.','TRUE','장신구',NULL,NULL,50,NULL,60,'[{"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (8438,'대리 탈러',NULL,'`황제 선거 지원의 증표` 사용 시 랜덤으로 획득합니다','TRUE','장신구',NULL,NULL,30,NULL,60,'[{"ref": 2323, "name": "회계", "value": 2}, {"ref": 2300, "name": "귀금속 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8439,'레가투스 글러브','역사적 사건','고대 로마에서 사령관 등이
+착용하던 철로 된 글러브.','FALSE','팔',5,15,NULL,NULL,80,'[{"ref": 2339, "name": "전술", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,600',NULL,NULL,NULL,NULL),
+ (8440,'컨설턴트 로브',NULL,'궁정고문을 위한 로브.
+신성 로마 제국을 향한 헌신을
+증명하는 명예로운 의상이다.','TRUE','몸',NULL,7,50,NULL,20,'[{"ref": 2313, "name": "운용", "value": 3}, {"ref": 2306, "name": "보관", "value": 3}, {"ref": 2432, "name": "관리기술", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'100,000',NULL,NULL,NULL,NULL),
+ (8441,'컨설턴트 햇',NULL,'궁정고문을 위한 모자.
+신성 로마 제국을 향한 헌신을
+증명하는 명예로운 의상이다.','TRUE','머리',NULL,5,40,NULL,20,'[{"ref": 2323, "name": "회계", "value": 3}, {"ref": 2305, "name": "바디 랭귀지", "value": 3}, {"ref": 2309, "name": "사교", "value": 3}]',NULL,NULL,NULL,NULL,NULL,'100,000',NULL,NULL,NULL,NULL),
+ (8442,'베네치아 제독 군복',NULL,'베네치아의 제독이 입는 군복','TRUE','몸',5,35,25,NULL,50,'[{"ref": 2339, "name": "전술", "value": 2}, {"ref": 2344, "name": "총격", "value": 2}, {"ref": 2328, "name": "노 젓기", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,NULL,NULL),
+ (8443,'실크 미트라프',NULL,'호화로운 이중 셔츠와 입는 아랍 귀족 의상. 고급 비단 옷감을 사용했다.','TRUE','몸',NULL,20,20,40,100,'[{"ref": 2345, "name": "탄도학", "value": 2}, {"ref": 2327, "name": "기뢰 설치", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,'전투','15,000',NULL,'남성',NULL,NULL),
+ (8444,'동양 댄서',NULL,'아랍의 댄서가 입는 노출이 많은 전통적인 무도 의상.','TRUE','몸',NULL,20,20,40,100,'[{"ref": 2345, "name": "탄도학", "value": 2}, {"ref": 2327, "name": "기뢰 설치", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,'전투','15,000',NULL,'여성',NULL,NULL),
+ (8445,'정강 각반 스페셜',NULL,'한족 군인이 갑옷과 함께 착용하는 정강이 보호대. 연철로 만든다.
+
+트레져박스 - 계사년의 선택 A (2013.02.08~2013.02.26)
+
+※ 거래 불가.','TRUE','다리',15,25,15,NULL,50,'[{"ref": 2282, "name": "생존", "value": 2}, {"ref": 2328, "name": "노 젓기", "value": 2}, {"ref": 2313, "name": "운용", "value": 3}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8446,'개량 육도삼략',NULL,'원래는「육도」와「삼략」이라는 별개의 병법서.
+저자가 같아서 병칭하게 되었다.','TRUE','장신구',20,10,10,NULL,30,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2453, "name": "함정", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8447,'레가투스 그리브','역사적 사건','고대 로마에서 사령관 등이
+착용하던 철로 된 긴 신발.','FALSE','다리',5,20,NULL,NULL,80,'[{"ref": 2338, "name": "응급처치", "value": 1}, {"ref": 2333, "name": "수리", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,800',NULL,NULL,NULL,NULL),
+ (8448,'헌신의 드레스',NULL,'신성 로마 제국의 선거를 지원한 사람에게 주는 드레스.','TRUE','몸',NULL,7,30,NULL,50,'[{"ref": 2319, "name": "직물 거래", "value": 2}, {"ref": 2310, "name": "섬유 거래", "value": 1}, {"ref": 2312, "name": "염료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,'여성',NULL,NULL),
+ (8449,'트리코른',NULL,'차양을 위로 접어，
+3개의 각을 가진 모자. 삼각모','FALSE','머리',NULL,2,13,NULL,30,NULL,NULL,NULL,NULL,NULL,'모험','300',NULL,NULL,NULL,NULL),
+ (8450,'피스코드 벨리드','시대 한정 생산','잉글랜드의 대해적，
+프란시스 드레이크 경이
+애용했다고 전해지는 옷.','FALSE','몸',6,18,5,10,70,'[{"ref": 2332, "name": "속사", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8451,'스캘리웨그 햇','시대 한정 생산','챙을 접어올려 삼각 형태로 만든
+특징적인 모자.
+깃털 장식이 달려 있다.','FALSE','머리',NULL,8,NULL,8,60,'[{"ref": 2282, "name": "생존", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8452,'배틀 액스',NULL,'전투용 도끼. 중량감 때문에 갑옷을 입은 적에게도 대미지를 주기 쉽다.','TRUE','무기 (도끼)',45,NULL,NULL,NULL,50,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2333, "name": "수리", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8453,'미트라프',NULL,'이중의 호화스런 장의를
+셔츠에 조합한 아랍 귀족의 옷.','FALSE','몸',NULL,15,35,40,35,'[{"ref": 2321, "name": "향료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,400',NULL,'남성','[{"ref": 2011, "name": "준칠등훈작사"}]',NULL),
+ (8454,'플래티넘 그리브',NULL,'투구, 갑옷과 같이 몸에 대는 
+무릎 밑을 덮는 백은 부츠','TRUE','다리',5,30,9,NULL,100,'[{"ref": 2328, "name": "노 젓기", "value": 2}, {"ref": 2334, "name": "수탈", "value": 2}, {"ref": 2329, "name": "돌격", "value": 3}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8455,'친위군의 기병창',NULL,'통치자의 신변을 지키는 기병대가 장비하는 창.','TRUE','무기 (창)',65,10,NULL,NULL,200,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,500',NULL,NULL,NULL,NULL),
+ (8456,'로얄 드레스',NULL,'고귀한 여성이 즐겨 입는 긴 소매 드레스.
+기품과 위엄이 느껴진다.','TRUE','몸',NULL,9,50,NULL,100,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2320, "name": "총포류 거래", "value": 2}, {"ref": 2288, "name": "주연", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'여성',NULL,NULL),
+ (8457,'로얄 가운',NULL,'고귀한 남성이 즐겨 입는 호화로운 가운.
+보는 사람을 압도하는 당당한 매력이 있다.','TRUE','몸',NULL,13,50,NULL,100,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2288, "name": "주연", "value": 2}, {"ref": 2300, "name": "귀금속 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'남성',NULL,NULL),
+ (8458,'무관의 경번갑',NULL,'조선의 무관이 입는 갑옷
+무겁지만 튼튼하다.','TRUE','몸',30,80,40,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8459,'트렌더 드레스','피렌체생산','최신 유행을 선도하는
+감성을 지닌 사람만이
+입을 수 있는 옷.','FALSE','몸',NULL,12,50,NULL,50,'[{"ref": 2305, "name": "바디 랭귀지", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,'[{"ref": 1978, "name": "트렌드 메이커"}]'),
+ (8460,'나스레딘 호자 이야기',NULL,'터키에 구전되는 이야기를 엮은 책. 실재하는 이야기인지에 관한 연구도 기술되어 있다.
+
+※ 메모리얼 앨범, 소문의 진상(NO.1)','TRUE','장신구',NULL,NULL,NULL,NULL,35,'[{"ref": 2276, "name": "대화술", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8461,'낡은 피리',NULL,'하멜른의 피리부는 사나이가 사용했다고 전해지는 피리.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2346, "name": "통솔", "value": 1}, {"ref": 2324, "name": "감시", "value": 1}]','[{"ref": 2272, "name": "구제"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8462,'매스커레이드',NULL,'모험 공적에 따라 하사된 단검.
+화려하게 장식되어 있으며
+실용성도 뛰어나다.
+
+메모리얼 앨범, 소문의 진상(NO.1) 보상','TRUE','무기 (던지는 나이프)',85,NULL,40,NULL,100,'[{"ref": 2278, "name": "미술", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2287, "name": "종교학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,NULL,NULL),
+ (8463,'가운 & 저킨',NULL,'어깨와 가슴 부분의 볼륨감이
+특징인，털이 달린 가운 저킨.','FALSE','몸',NULL,8,35,NULL,70,'[{"ref": 2326, "name": "관통", "value": 1}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,'남성',NULL,NULL),
+ (8464,'시대의 통치자를 위한 모자',NULL,'역사에 남을 사건에서 활약한 항해자가 착용하는 모자
+
+역사적 사건 기간 중 발생한 대투자전 투자 4억 보상','TRUE','머리',NULL,5,15,NULL,100,'[{"ref": 2432, "name": "관리기술", "value": 1}, {"ref": 2323, "name": "회계", "value": 1}, {"ref": 2300, "name": "귀금속 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,'[{"ref": 28687, "name": "역사를 다스리는 자"}]'),
+ (8465,'뾰족한 사바톤',NULL,'발을 지키는 금속 신발.
+코가 뾰족하게 나와 있다.','FALSE','다리',5,15,NULL,NULL,80,'[{"ref": 2274, "name": "기뢰발견", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (8466,'시대의 패자를 위한 모자',NULL,'역사에 남을 사건에서 활약한 항해자가 착용하는 모자.','TRUE','머리',NULL,8,NULL,8,100,'[{"ref": 2282, "name": "생존", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}, {"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,'[{"ref": 29116, "name": "역사를 파괴하는 자"}]'),
+ (8467,'시대의 통치자를 위한 로브',NULL,'역사에 남을 사건에서 활약한 항해자가 입는 로브','TRUE','몸',NULL,7,30,NULL,100,'[{"ref": 2304, "name": "미술품 거래", "value": 2}, {"ref": 2307, "name": "보석 거래", "value": 2}, {"ref": 2436, "name": "연금술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,'[{"ref": 28687, "name": "역사를 다스리는 자"}]'),
+ (8468,'시대를 이끄는 자의 부츠',NULL,'역사에 남을 사건에서 활약한 항해자가 착용하는 부츠.','TRUE','다리',5,15,NULL,NULL,100,'[{"ref": 2277, "name": "돛 조종", "value": 1}, {"ref": 2342, "name": "조타", "value": 1}, {"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,NULL),
+ (8469,'피스코드 벨리드','녹색','잉글랜드의 대해적, 프란시스 드레이크 경이 애용했다고 전해지는 옷.','TRUE','몸',12,40,5,10,70,'[{"ref": 2335, "name": "수평사격", "value": 2}, {"ref": 2347, "name": "포술", "value": 3}, {"ref": 2348, "name": "회피", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,NULL),
+ (8470,'스캘리웨그 햇','녹색','챙일 접어올려 삼각 형태로 만든 특징적인 모자.
+깃털 장식이 달려 있다.','TRUE','머리',15,20,NULL,8,60,'[{"ref": 2342, "name": "조타", "value": 1}, {"ref": 2345, "name": "탄도학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (8471,'시대의 여행자를 위한 모자',NULL,'역사에 남을 사건에서 활약한 항해자가 착용하는 모자.
+
+16c 3/5 포토시 은광 개발 (모험기 갱신 40회)
+16c 4/5 드레이크의 세계일주 (런던-&gt;리우데자네이루) 대형선.
+16c 5/5 잉글랜드 동인도회사 설립 (런던 -&gt; 케이프타운) 레이스 18회
+15c 2/5 아조레스 제도 발견 (리스본-&gt;아조레스) 소형선.
+15c 5/5 서회항로 개척 (세비야-&gt;산후안) 중형선.
+
+특수레이스 40회 달성시 획득 가능.','TRUE','머리',NULL,6,10,NULL,100,'[{"ref": 2430, "name": "항해기술", "value": 1}, {"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2292, "name": "탐색", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,'[{"ref": 29119, "name": "역사를 인도하는 자"}]'),
+ (8472,'피스코드 벨리드','검정','잉글랜드의 대해적, 프란시스 드레이크 경이 애용했다고 전해지는 옷.','TRUE','몸',12,25,5,10,70,'[{"ref": 2332, "name": "속사", "value": 2}, {"ref": 2335, "name": "수평사격", "value": 2}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (8473,'시대의 여행자를 위한 드레스',NULL,'역사에 남을 사건에서 활약한 항해자가 입는 드레스.','TRUE','몸',NULL,6,25,NULL,100,'[{"ref": 2284, "name": "인식", "value": 2}, {"ref": 2289, "name": "지리학", "value": 2}, {"ref": 2444, "name": "인양", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,'여성',NULL,'[{"ref": 29119, "name": "역사를 인도하는 자"}]'),
+ (8474,'매혹의 브로치',NULL,'신비로운 향기가 나는 브로치. 가지고 있기만 해도 몸에서 향기를 자아낸다.','TRUE','장신구',5,5,40,NULL,100,'[{"ref": 2321, "name": "향료 거래", "value": 3}, {"ref": 2322, "name": "향신료 거래", "value": 2}, {"ref": 2307, "name": "보석 거래", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8475,'개량 쌍수도',NULL,'언월도와 비슷한 모양의 무기. 이름 그대로, 양손으로 다루게끔 만들어진 무기다.
+
+트레져박스 꽃의 선물S 에서 나옵니다. 
+창계열입니다.','TRUE','무기 (창)',95,20,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2330, "name": "방어", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8476,'해적여왕의 목걸이',NULL,'해적여왕의 목걸이','TRUE','장신구',NULL,NULL,45,NULL,30,'[{"ref": 2334, "name": "수탈", "value": 1}, {"ref": 2309, "name": "사교", "value": 2}]','[{"ref": 2272, "name": "구제"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8477,'초대 집정관의 창',NULL,'초대 집정관이 되어 왕과 대립한 루키우스 브루투스의 창.
+
+- 모범이 되는 위정자 렐릭 피스 보상품','TRUE','무기 (창)',64,NULL,NULL,NULL,70,'[{"ref": 2453, "name": "함정", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8478,'우쁠랑드',NULL,'신분이 높은 인물이 입는 로브.
+소맷부리가 길고 넓은 것이
+특징이다.','FALSE','몸',NULL,5,15,NULL,60,'[{"ref": 2313, "name": "운용", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8479,'호수의 기사의 검',NULL,'랜슬롯이 애용했다고 전해지는 검. 검신이 호수의 물결을 연상케 한다.','TRUE','무기 (검)',70,NULL,10,NULL,60,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8480,'퓌로스의 군학서',NULL,'전술의 천재라 불린 에피로스의 왕 퓌로스가 남긴 전술서.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2339, "name": "전술", "value": 2}]','[{"ref": 2339, "name": "전술"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8481,'황금 사과',NULL,'전설의 땅 아발론에서 손에 넣은 아름다운 사과.','TRUE','장신구',NULL,NULL,NULL,NULL,10,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}]','[{"ref": 1447, "name": "모든 상태 회복(복수)"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8482,'스파르타쿠스의 투구',NULL,'고대 로마를 뒤흔든 반란의 지도자였던 검투사.
+스파르타쿠스의 투구.','TRUE','머리',NULL,25,NULL,NULL,50,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2339, "name": "전술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8483,'누마의 각서',NULL,'고대 로마의 현명한 왕, 누마가 남긴 각서. 번개를 부르는 신비로운 힘이 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,10,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}]','[{"ref": 1405, "name": "주술(낙뢰)"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8484,'호수의 기사의 도끼',NULL,'가웨인이 녹색 기사로부터 받았다고 하는 도끼.','TRUE','무기 (도끼)',75,NULL,5,NULL,60,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8485,'벚꽃 머리장식',NULL,'벚나무 가지와 꽃으로 만든 머리장식.','FALSE','머리',NULL,5,15,NULL,100,'[{"ref": 2281, "name": "생물학", "value": 1}, {"ref": 2283, "name": "생태 조사", "value": 1}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'여성',NULL,NULL),
+ (8486,'란츠크네히트 의상','생산','용병들이 즐겨 입는 화려한
+색채의 전투복. 좌우가
+비대칭인 디자인이 특징적이다.','FALSE','몸',25,10,NULL,NULL,57,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8487,'주름 장식 푸르푸앵',NULL,'주름 장식이 달린 짧은 상의가
+특징인 푸르푸앵. 허리 라인을
+아름답게 강조한다.','FALSE','몸',NULL,NULL,12,7,50,'[{"ref": 2323, "name": "회계", "value": 2}, {"ref": 2312, "name": "염료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,'남성',NULL,NULL),
+ (8488,'뾰족한 쁠렌느',NULL,'뾰족하게 튀어나온 앞코가
+위로 말려 올라간 형태의 쁠렌느.','FALSE','다리',NULL,6,NULL,2,40,NULL,NULL,NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (8489,'케틀 햇','갈색','방어력을 높이기 위해 철제 챙을 단 투구. 위로부터의 공격에도 머리를 보호할 수 있다.','TRUE','머리',5,10,NULL,3,55,'[{"ref": 2342, "name": "조타", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (8490,'어린갑','가나돌','한족의 군인이 입는 갑옷.
+생선 비늘 같은 장식이
+독특하다.
+
+가나돌 정화(빨강) 드랍','TRUE','몸',20,50,NULL,NULL,50,'[{"ref": 2333, "name": "수리", "value": 2}, {"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2336, "name": "외과의술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (8491,'란츠크네히트 의상','갈색','용병들이 즐겨 입는 화려한 색채의 전투복. 좌우가 비대칭인 디자인이 특징적이다.','TRUE','몸',9,24,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'16,000',NULL,NULL,NULL,NULL),
+ (8492,'원로원 예복',NULL,'베네치아 원로원 의원이 입는
+매우 호화로운 의상.','TRUE','몸',NULL,20,40,NULL,100,'[{"ref": 2323, "name": "회계", "value": 3}, {"ref": 2300, "name": "귀금속 거래", "value": 1}, {"ref": 2322, "name": "향신료 거래", "value": 1}]',NULL,NULL,NULL,NULL,'교역','800',NULL,NULL,NULL,NULL),
+ (8493,'웨스턴 걸 의상','이벤트','스웨드 베스트와 숏 팬츠로
+구성된 의상.
+활동하기 편하고 튼튼하다.','FALSE','몸',NULL,12,10,NULL,100,'[{"ref": 2453, "name": "함정", "value": 1}, {"ref": 2320, "name": "총포류 거래", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,'500',NULL,'여성',NULL,NULL),
+ (8494,'웨스턴 햇',NULL,'카우보이들이 애용하는
+스웨드 모자.','FALSE','머리',NULL,10,NULL,NULL,100,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2344, "name": "총격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8495,'웨스턴 부츠','행군','카우보이들이 애용하는
+스웨드 부츠.
+박차가 달려 있다.','FALSE','다리',NULL,7,NULL,2,40,'[{"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8496,'웨스턴 글러브',NULL,'카우보이들이 애용하는
+스웨드 글러브.','FALSE','팔',5,4,NULL,2,35,'[{"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8497,'웨스턴 재킷','이벤트','스웨드 재킷과 데님 팬츠로
+구성된 의상.
+활동하기 편하고 튼튼하다.','FALSE','몸',NULL,12,10,NULL,100,'[{"ref": 2453, "name": "함정", "value": 1}, {"ref": 2320, "name": "총포류 거래", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,'500',NULL,'남성',NULL,NULL),
+ (8498,'특제 란링왕 의상',NULL,'고대 중국의 왕을 연기할 때
+착용하는 무대용 의상.','TRUE','몸',30,80,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2339, "name": "전술", "value": 3}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8499,'다테 마사무네의 방적사 조끼',NULL,'남만 풍을 좋아하는 일본 무장,
+다테 마사무네가
+즐겨 입은 옷','TRUE','몸',NULL,50,50,50,50,'[{"ref": 2281, "name": "생물학", "value": 2}, {"ref": 2289, "name": "지리학", "value": 2}, {"ref": 2287, "name": "종교학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (8500,'장포','가나돌','신분이 높은 한족 관리가 입는
+기장이 긴 겉옷.','FALSE','몸',NULL,20,10,NULL,50,'[{"ref": 2306, "name": "보관", "value": 1}, {"ref": 2430, "name": "항해기술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (8501,'디도의 목걸이',NULL,'카르타고 전설의 건국자, 디도가 사용했다고 하는 목걸이.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2276, "name": "대화술", "value": 2}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8502,'케틀 햇','메모리얼 앨범','모험가로서의 공적이 인정되어 받은 투구. 탐험용으로 실용성을 높인 물건이다.','TRUE','머리',NULL,7,NULL,3,70,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2342, "name": "조타", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8503,'델핀 특별 교복',NULL,'새 시대를 열어갈 항해자를 위해
+만든 특별한 교복','TRUE','몸',NULL,12,20,10,100,'[{"ref": 2342, "name": "조타", "value": 1}, {"ref": 2323, "name": "회계", "value": 1}, {"ref": 2277, "name": "돛 조종", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8504,'포츈 테라',NULL,'역사의 주역들에게 대대로 전해지는 검.
+가진 자를 인도한다고 해서 붙은 이름이다.','TRUE','무기 (검)',62,NULL,30,NULL,50,'[{"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2348, "name": "회피", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,NULL),
+ (8505,'로즈 블랑쉬 가운',NULL,'「백장미」를 의미하는 호화로운 가운. 
+쥴리앙이 애용하는 것과 같은 물건이다.
+
+트레져박스 ''시간여행 S'' 프로모션 이벤트 보상','TRUE','몸',NULL,20,30,NULL,100,'[{"ref": 2278, "name": "미술", "value": 3}, {"ref": 2309, "name": "사교", "value": 1}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,'500',NULL,'남성',NULL,NULL),
+ (8506,'개척자 작업복',NULL,'북미 개척자가 일할 때 입는 옷.
+활동성과 정교한 장식이 눈에 띈다.
+
+트레져박스 ''시간여행 S'' 프로모션 이벤트 보상','TRUE','몸',15,35,10,NULL,100,'[{"ref": 2286, "name": "조달", "value": 3}, {"ref": 2293, "name": "행군", "value": 1}, {"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,'500',NULL,'여성',NULL,NULL),
+ (8507,'임페리얼 로브',NULL,'신의 힘을 얻은 항해자가
+착용할 수 있는 특별한 드레스.','TRUE','몸',40,80,35,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 3}, {"ref": 2330, "name": "방어", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (8508,'임페리얼 망토',NULL,'신의 힘을 얻은 항해자가
+착용할 수 있는 특별한 코트.','TRUE','몸',40,80,35,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 3}, {"ref": 2330, "name": "방어", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (8509,'옹 칸의 갑옷',NULL,'케레이트 부족장 옹 칸의 갑옷. 크리스트교를 통해 얻은 서유럽 기술로 제작되었다.','TRUE','몸',NULL,50,30,NULL,100,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2347, "name": "포술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8510,'사냥꾼의 옷',NULL,'전설에 등장하는 의적이 즐겨
+입었다고 하는 사냥꾼복.
+튼튼하고 움직이기 편하다.','FALSE','몸',NULL,8,NULL,10,65,'[{"ref": 2281, "name": "생물학", "value": 1}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (8511,'꽃 중의 꽃',NULL,'마르세이유의 일레느도 즐겨 입는 화려한 드레스','TRUE','몸',NULL,20,35,30,50,'[{"ref": 2307, "name": "보석 거래", "value": 3}, {"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2432, "name": "관리기술", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (8512,'별 모양 팬던트',NULL,'별을 본따서 만든, 아름답게 반짝이는 목걸이.
+2013년 6월 25일 ~ 7월 16일 까지의 칠석 이벤트 중 란스로 임무 완수시 입수 가능','TRUE','장신구',NULL,NULL,20,NULL,40,'[{"ref": 2319, "name": "직물 거래", "value": 1}, {"ref": 2294, "name": "가축 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8513,'모피 튜닉','1권 생산','옷깃과 목 부분의 깃털 장식이
+특징적인，북미 원주민들의 옷.','FALSE','몸',NULL,15,NULL,NULL,30,'[{"ref": 2344, "name": "총격", "value": 1}, {"ref": 2338, "name": "응급처치", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8514,'새시 튜닉','1권 생산','화려한 자수가 놓여진
+북미 원주민들의 옷.
+어깨띠가 특징이다.','FALSE','몸',5,25,NULL,NULL,30,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2306, "name": "보관", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (8515,'헌터 튜닉','1권 생산','북미의 뛰어난 사냥꾼이 입는 옷.
+보석과 장신구를 사용하여 그 힘을 과시하고 있다.','TRUE','몸',NULL,25,5,NULL,30,'[{"ref": 2344, "name": "총격", "value": 1}, {"ref": 2293, "name": "행군", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (8516,'가죽 망토','1권 생산','북미 원주민들의 옷.
+물소 등의 가죽을 무두질하여 만들었다. 두껍고 질기다.','TRUE','몸',NULL,10,10,NULL,30,'[{"ref": 2314, "name": "의약품 거래", "value": 1}, {"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'13,500',NULL,NULL,NULL,NULL),
+ (8517,'워보넷','1권 생산','북미 원주민이 전투 시 착용했던 머리 장식.
+깃털을 넉넉히 사용했다.','TRUE','머리',10,10,NULL,NULL,30,'[{"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,NULL,NULL,NULL),
+ (8518,'리본＆깃털','1권 생산','북미 원주민들의 일반적인 머리 모양.
+양쪽 귀 옆으로 묶은 머리칼에 가죽 끈을 감아 깃털로 장식한다.','TRUE','머리',NULL,5,NULL,NULL,30,'[{"ref": 2311, "name": "식료품 거래", "value": 1}, {"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,200',NULL,NULL,NULL,NULL),
+ (8519,'헤어밴드','1권 생산','북미 원주민이 일상적으로 착용했던 머리끈','TRUE','머리',5,15,NULL,NULL,30,'[{"ref": 2299, "name": "광물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,NULL,NULL,NULL),
+ (8520,'보네 드 마리안느',NULL,'끝이 휘어진 형태가 특징적인 모자. 프랑스 국민이 애용한다.','TRUE','머리',NULL,5,5,NULL,50,'[{"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8521,'알리바바의 터번',NULL,'트레져헌터 퀘스트 `알리바바의 터번` 보상품입니다.','TRUE','머리',NULL,15,20,30,30,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (8522,'스틸리코의 칼리가',NULL,'비극적인 죽음을 맞이한 스틸리코 장군이 전선에서 사용했다고 하는 칼리가.','TRUE','다리',NULL,25,NULL,NULL,30,'[{"ref": 2339, "name": "전술", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,800',NULL,NULL,NULL,NULL),
+ (8523,'베르킨게토릭스의 투구',NULL,'갈리아의 영웅, 베르킨게토릭스가 애용했다고 전해지는 투구.','TRUE','머리',NULL,25,5,NULL,30,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (8524,'카를 마르텔의 전투용 망치',NULL,'투르와 푸아티에의 전투에서 승리한 궁재 카를 마르텔이 지녔다고 전해지는 전투용 망치.','TRUE','무기 (곤봉 지팡이)',65,NULL,10,NULL,50,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,500',NULL,NULL,NULL,NULL),
+ (8525,'발레 무용수의 머리 장식',NULL,'서유럽에서 발생한 무용，
+발레를 추는 사람이 착용하는
+머리장식. 화려한 장식이 돋보인다.','FALSE','머리',NULL,2,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'25,000',NULL,NULL,NULL,NULL),
+ (8526,'발레 무용수 의상',NULL,'서유럽에서 발생한 무용, 발레를 추는 사람이 입는 옷. 화려한 장식이 특징적이다.','TRUE','몸',NULL,3,5,NULL,40,'[{"ref": 2288, "name": "주연", "value": 1}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'35,000',NULL,NULL,NULL,NULL),
+ (8527,'발레 무용수의 부츠',NULL,'서유럽에서 발생한 무용，
+발레를 추는 사람이 착용하는
+부츠. 화려한 장식이 돋보인다.','FALSE','다리',NULL,3,NULL,NULL,35,NULL,NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (8528,'프리지아 모자',NULL,'꼭대기 부분이 휘어진 모자.
+프랑스에서는 자유의 상징이다.','FALSE','머리',NULL,5,NULL,NULL,35,'[{"ref": 2304, "name": "미술품 거래", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (8529,'알라딘의 램프',NULL,'트레져헌터 퀘스트 `알라딘의 램프` 보상품입니다.','TRUE','장신구',NULL,NULL,NULL,NULL,10,'[{"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2278, "name": "미술", "value": 1}]','[{"ref": 1405, "name": "주술(낙뢰)"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8530,'스타 사파이어 헤어밴드',NULL,'아주 귀중한 반짝이는 별과 같은 사파이어를 곁을인 머리장식.','TRUE','장신구',NULL,NULL,50,NULL,20,'[{"ref": 2319, "name": "직물 거래", "value": 2}, {"ref": 2315, "name": "잡화 거래", "value": 2}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (8531,'삼시르',NULL,'아라비아, 페르시아 지방에서 일반적으로 사용하는 곡도','TRUE','무기 (검)',45,NULL,NULL,20,100,'[{"ref": 2346, "name": "통솔", "value": 1}, {"ref": 2453, "name": "함정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'28,000',NULL,NULL,NULL,NULL),
+ (8532,'의적의 모자',NULL,'꼿꼿하게 선 깃털 장식이 특징인 모자. 백성을 사랑하는 의적이 착용한다.','TRUE','머리',NULL,5,NULL,5,60,'[{"ref": 2281, "name": "생물학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8533,'의적의 장갑',NULL,'작업하기 쉽도록 가공한 장갑.
+백성을 사랑하는 의적이 착용한다.','TRUE','팔',8,6,NULL,3,50,'[{"ref": 2453, "name": "함정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8534,'리리피프',NULL,'꼬리 같은 장식이 뒷부분에 달린
+후드.','FALSE','머리',NULL,6,NULL,NULL,40,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (8535,'아텐 신의 목걸이',NULL,'아텐 신을 본따 만든 목걸이.
+신비로운 힘이 깃들어 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,10,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2270, "name": "고고학", "value": 1}]','[{"ref": 1404, "name": "주술(화염)"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (8536,'멘토의 장갑',NULL,'초심자의 성장을 도운 멘토에게
+수여되는 장갑.','TRUE','팔',NULL,10,10,NULL,80,'[{"ref": 2276, "name": "대화술", "value": 1}, {"ref": 2321, "name": "향료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (8537,'무희의 신발',NULL,'비잔틴 제국의 황후 테오도라가 가난한 무희 시절에 신었다고 전해지는 신발.','TRUE','다리',NULL,10,NULL,NULL,30,'[{"ref": 2276, "name": "대화술", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (8538,'경건의 갑옷',NULL,'고대의 명기사가 착용했던 갑옷.
+낡았지만 방어력이 높다.','TRUE','몸',NULL,58,30,NULL,80,'[{"ref": 2339, "name": "전술", "value": 2}, {"ref": 2330, "name": "방어", "value": 1}, {"ref": 2336, "name": "외과의술", "value": 1}]',NULL,NULL,NULL,NULL,'전투','10,000',NULL,NULL,NULL,NULL),
+ (8539,'경건의 투구',NULL,'고대의 명기사가 착용했던 투구.
+낡았지만 방어력이 높다.','TRUE','머리',NULL,25,30,NULL,70,'[{"ref": 2348, "name": "회피", "value": 2}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,'전투','10,000',NULL,NULL,NULL,NULL),
+ (8540,'졸파카르',NULL,'날 끝이 둘로 갈라진 검.
+전설의 명검을 본떠 만들었다.','TRUE','무기 (검)',58,NULL,NULL,20,100,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2329, "name": "돌격", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (8541,'레콘키스타의 갑옷',NULL,'레콘키스타 전투에 참여한 
+십자군이 착용한 갑옷.','TRUE','몸',NULL,35,20,NULL,70,'[{"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (8542,'멘토의 신발',NULL,'초심자의 성장을 도운 멘토에게
+수여되는 신발.','TRUE','다리',NULL,6,10,NULL,80,'[{"ref": 2346, "name": "통솔", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (19019,'스쿨더블릿',NULL,'항해자 양성학교의 졸업생에게 주어지는 특별하게 제작된 의복.','TRUE','몸',NULL,16,40,NULL,100,'[{"ref": 2347, "name": "포술", "value": 1}]',NULL,NULL,NULL,NULL,'전투','500',NULL,NULL,NULL,'[{"ref": 1957, "name": "해군과정졸업생"}]'),
+ (23480,'프록 코트','이벤트,분홍색','피렌체 대장간에 모인
+기술력을 종합하여 만든
+귀족들의 예복.','FALSE','몸',NULL,8,50,NULL,50,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2301, "name": "기호품 거래", "value": 1}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,'500',NULL,NULL,NULL,NULL),
+ (27657,'강화 가네모토',NULL,'아즈치 성을 답파한 항해자가 장착할 수 있는 뛰어난 무기','TRUE','무기 (검)',100,10,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (27658,'에스파니아 제독 군복',NULL,'에스파니아의 제독이 입는 군복.','TRUE','몸',5,35,25,NULL,50,'[{"ref": 2335, "name": "수평사격", "value": 2}, {"ref": 2347, "name": "포술", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,NULL,NULL),
+ (27659,'프랑스 제독 군복',NULL,'프랑스의  제독이 입는 군복.','TRUE','몸',5,35,25,NULL,50,'[{"ref": 2332, "name": "속사", "value": 2}, {"ref": 2335, "name": "수평사격", "value": 2}, {"ref": 2327, "name": "기뢰 설치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,NULL,NULL),
+ (27660,'네덜란드 제독 군복',NULL,'네덜란드의  제독이 입는 군복.','TRUE','몸',5,35,25,NULL,50,'[{"ref": 2345, "name": "탄도학", "value": 2}, {"ref": 2332, "name": "속사", "value": 2}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,NULL,NULL),
+ (27661,'잉글랜드 제독 군복',NULL,'잉글랜드의  제독이 입는 군복.','TRUE','몸',5,35,25,NULL,50,'[{"ref": 2347, "name": "포술", "value": 2}, {"ref": 2348, "name": "회피", "value": 2}, {"ref": 2332, "name": "속사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,NULL,NULL),
+ (28132,'멘토의 로브',NULL,'초심자의 성장을 도운 멘토에게 수여되는 로브','TRUE','몸',NULL,20,20,NULL,80,'[{"ref": 2320, "name": "총포류 거래", "value": 2}, {"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2348, "name": "회피", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (28663,'모험가 글러브','메모리얼 앨범','모험 공적을 인정받아 선물로
+받은 장갑. 탐색 시 진가를
+발휘하는 물건이다.','TRUE','팔',NULL,25,NULL,NULL,70,'[{"ref": 2283, "name": "생태 조사", "value": 1}, {"ref": 2289, "name": "지리학", "value": 1}, {"ref": 2281, "name": "생물학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (29164,'포르투갈 제독 군복',NULL,'포르투갈의 제독이 입는 군복.
+
+특정 가나돌 승리시 입수 가능.','TRUE','몸',5,35,25,NULL,50,'[{"ref": 2348, "name": "회피", "value": 2}, {"ref": 2345, "name": "탄도학", "value": 2}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,NULL,NULL),
+ (32020,'진품 백제 왕의 태도',NULL,'백제의 왕이 사용했다고 전해지는 환두 태도','TRUE','무기 (검)',95,20,NULL,NULL,100,'[{"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2325, "name": "검술", "value": 3}, {"ref": 2328, "name": "노 젓기", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (32022,'강화 레가투스 글러브',NULL,'고대 로마에서 사령관 등이 착용하던 철로 된 글러브','TRUE','팔',22,13,NULL,NULL,100,'[{"ref": 2339, "name": "전술", "value": 2}, {"ref": 2342, "name": "조타", "value": 2}, {"ref": 2328, "name": "노 젓기", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (32090,'십자군 기사의 갑옷',NULL,'십자군 기사가 착용하는
+소매 없는 로브와 망토가 달린
+아머. 높은 방어력을 자랑한다.','FALSE','몸',NULL,35,NULL,NULL,70,'[{"ref": 2330, "name": "방어", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (32099,'길리 슈즈',NULL,'과거 민속 무용에 쓰였던
+가죽 신발. 끈을 통과시키는
+구멍이 특이하다.','FALSE','다리',NULL,5,NULL,NULL,45,'[{"ref": 2315, "name": "잡화 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (32115,'모험가 글러브','생산','모험 공적을 인정받아 선물로
+받은 장갑. 탐색 시 진가를
+발휘하는 물건이다.','FALSE','팔',NULL,6,NULL,5,55,'[{"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,'모험','3,000',NULL,NULL,NULL,NULL),
+ (32126,'펠트 해트',NULL,'깃털 장식이 달린 펠트 모자.
+전설의 의적이 애용했다고 한다.','FALSE','머리',NULL,5,NULL,5,45,'[{"ref": 2281, "name": "생물학", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (32272,'리시몽 원사의 전투용 망치',NULL,'백년전쟁에서 활약한 리시몽 원사가 애용했다고 전해지는 전투용 망치.','TRUE','무기 (곤봉 지팡이)',60,NULL,10,NULL,30,'[{"ref": 2293, "name": "행군", "value": 2}, {"ref": 2347, "name": "포술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,500',NULL,NULL,NULL,NULL),
+ (32275,'잔 아셰트의 도끼',NULL,'잔 아셰트가 성벽에서 적의 군기를 빼앗았을때 착용했다고 하는 도끼.','TRUE','무기 (도끼)',50,NULL,NULL,NULL,30,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2282, "name": "생존", "value": 1}, {"ref": 2331, "name": "소화", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (32773,'쯔바이핸더',NULL,'찌르기 공격에 특화된 장겁.
+물결 모양의 칼날에 찔리면
+낫기 힘든 상처를 입는다.','TRUE','무기 (검)',45,NULL,NULL,NULL,70,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (32776,'모르겐스테른',NULL,'가나돌 병사들에게 인기가 높은 둔기.
+그립 끝에 가시 박힌 철구가 달려있다.','TRUE','무기 (곤봉 지팡이)',43,NULL,NULL,NULL,70,'[{"ref": 2347, "name": "포술", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (32827,'강화 기사의 도끼',NULL,'성능을 강화시킨 전투용 도끼','TRUE','무기 (도끼)',100,10,20,NULL,100,'[{"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2329, "name": "돌격", "value": 2}, {"ref": 2325, "name": "검술", "value": 3}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (33204,'케틀 햇','비취색','방어력을 높이기 위해 철제 챙을 단 투구. 위로부터의 공격에도 머리를 보호할 수 있다.','TRUE','머리',5,13,NULL,3,55,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (33222,'란츠크네히트 의상','검정색','용병들이 즐겨 입는 화려한 색채의 전투복. 좌우가 비대칭인 디자인이 특징적이다.','TRUE','몸',15,30,NULL,NULL,68,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2329, "name": "돌격", "value": 2}, {"ref": 2344, "name": "총격", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (33752,'윙 후사르 갑옷','시대 한정 구입','깃털 장식이 달린 화려한 갑옷.
+돌격 시의 풍압으로 요란한 소리를
+내서 적군을 동요시킨다고 한다.','FALSE','몸',3,30,NULL,10,70,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (34578,'치마 저고리','8주년 한정판매','조선의 의상. 
+치마라고 부르는 스커트에, 저고리라고 부르는 상의를 입는다.','TRUE','몸',25,50,35,NULL,60,'[{"ref": 2322, "name": "향신료 거래", "value": 3}, {"ref": 2323, "name": "회계", "value": 2}, {"ref": 2317, "name": "주류 거래", "value": 3}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (34580,'바지 저고리','8주년 한정판매','조선의 옷.
+바지라고 부르는, 하의와 저고리라고 부르는 상의를 합쳐 입는다.','TRUE','몸',20,55,35,NULL,60,'[{"ref": 2289, "name": "지리학", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 3}, {"ref": 2285, "name": "자물쇠 따기", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (34582,'강화 운남 참마도',NULL,'기병을 말과 함께 벨 수 있는 긴 도검.','TRUE','무기 (검)',100,10,20,NULL,100,'[{"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2325, "name": "검술", "value": 3}, {"ref": 2336, "name": "외과의술", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (34584,'★보안관의 모자',NULL,'보안관이 애용하는 스웨드 모자.','TRUE','머리',12,45,20,15,100,'[{"ref": 2344, "name": "총격", "value": 2}, {"ref": 2330, "name": "방어", "value": 2}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (35374,'케이크 모자',NULL,'딸기 케이크를 본떠 만든
+파티용 모자.','FALSE','머리',NULL,10,NULL,20,100,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}, {"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,'500',NULL,NULL,NULL,NULL),
+ (37408,'아카데믹 가운','피렌체생산','대학교수가 입는 옷.','FALSE','몸',NULL,10,20,NULL,80,'[{"ref": 2430, "name": "항해기술", "value": 1}, {"ref": 2432, "name": "관리기술", "value": 1}, {"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'60,000',NULL,NULL,NULL,'[{"ref": 1985, "name": "항해 박사"}]'),
+ (37493,'아카데믹 탐','피렌체생산','대학교수가 쓰는 모자.','FALSE','머리',NULL,5,NULL,NULL,80,'[{"ref": 2436, "name": "연금술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,'[{"ref": 1985, "name": "항해 박사"}]'),
+ (37495,'학사모','피렌체생산','대학생이 쓰는 모자.','FALSE','머리',NULL,5,15,NULL,50,'[{"ref": 2441, "name": "언어학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,500',NULL,NULL,NULL,NULL),
+ (37521,'헤어밴드','피렌체 생산','북미 원주민이 일상적으로
+착용했던 머리끈','FALSE','머리',5,15,NULL,NULL,80,NULL,NULL,NULL,NULL,NULL,NULL,'7,000',NULL,NULL,NULL,NULL),
+ (37533,'리본 & 깃털','피렌체 생산','북미 원주민들의 일반적인 머리 모양.
+양쪽 귀 옆으로 묶은 머리칼에 가죽 끈을
+감아 깃털로 장식한다.','FALSE','머리',NULL,5,NULL,NULL,80,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,200',NULL,NULL,NULL,NULL),
+ (37794,'진 뇌절',NULL,'번개를 베었다고 전해지는 일본의 명검','TRUE','무기 (검)',100,15,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 3}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (38889,'그레이트 헬름',NULL,'십자군에서 사용하는 투구.
+징 박힌 원통형 모양이
+특징이다.','FALSE','머리',NULL,15,NULL,NULL,55,'[{"ref": 2330, "name": "방어", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (38891,'기사의 스틸레트',NULL,'십자가 모양의 검.
+갑옷 틈으로 적을 찌르는 용도로 제작되었다.','TRUE','무기 (던지는 나이프)',50,NULL,NULL,NULL,65,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2318, "name": "주조", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (38966,'후사르 투구','시대 한정 구입','경기병이 착용하는 코류스식 투구.
+코 부분을 T자형으로 방어하는 것이
+특징이다.','FALSE','머리',NULL,12,NULL,NULL,50,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (39502,'천도',NULL,'도원향 주민에게서 받은 신비한 힘이 깃든 복숭아','TRUE','장신구',NULL,NULL,NULL,NULL,10,'[{"ref": 2284, "name": "인식", "value": 1}, {"ref": 2288, "name": "주연", "value": 2}]','[{"ref": 1447, "name": "모든 상태 회복(복수)"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (43118,'잉글리쉬 드레스',NULL,'어깨의 볼륨감이 특징인
+호화로운 드레스.
+보석과 자수로 장식되어 있다.','FALSE','몸',NULL,5,30,NULL,55,'[{"ref": 2452, "name": "상품지식", "value": 1}, {"ref": 2300, "name": "귀금속 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,'여성',NULL,NULL),
+ (43153,'카포틴 모자',NULL,'특징적인 하이크라운에
+좁은 챙을 단 모자.','FALSE','머리',NULL,4,10,NULL,55,'[{"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (44565,'장식 퀴래스','시대 한정 생산','총포류로 무장한 기병이 입는
+장식 달린 갑옷.
+승마 이동에 적합하다.','FALSE','몸',5,22,NULL,NULL,65,'[{"ref": 2344, "name": "총격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (46491,'나막신','생산','심플한 형태의 나막신.
+꽃 모양이 조각돼 있다.','FALSE','다리',NULL,5,NULL,NULL,45,'[{"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (46580,'베오울프의 투구',NULL,'전설의 영웅 베오울프가 착용했다고 전해지는 투구.
+늑대 모양 장식이 용맹을 상징한다.','TRUE','머리',NULL,25,NULL,NULL,30,'[{"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (46617,'알비다의 투구',NULL,'스웨덴의 여왕이자 여해적이던 알비다가 애용했던 투구','TRUE','머리',NULL,20,5,NULL,30,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2338, "name": "응급처치", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (46639,'스웨덴 민족 의상','생산','스웨덴 중남부의 남성용 민족 의상.
+활동하기 편하다.','FALSE','몸',NULL,7,NULL,NULL,40,'[{"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200',NULL,'남성',NULL,NULL),
+ (46642,'스웨덴 민족 의상','생산','스웨덴 중남부의 남성용 민족 의상.
+활동하기 편하다.','FALSE','몸',NULL,7,NULL,NULL,40,'[{"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200',NULL,'여성',NULL,NULL),
+ (46660,'장식 퀴래스','시대 한정 구입','총포류로 무장한 기병이 입는
+장식 달린 갑옷.
+승마 이동에 적합하다.','FALSE','몸',5,22,NULL,NULL,65,'[{"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (46661,'스웨덴 민족 의상','구입','스웨덴 중남부의 남성용 민족 의상.
+활동하기 편하다.','FALSE','몸',NULL,7,NULL,NULL,40,'[{"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200',NULL,'남성',NULL,NULL),
+ (46662,'스웨덴 민족 의상','구입','스웨덴 중남부의 남성용 민족 의상.
+활동하기 편하다.','FALSE','몸',NULL,7,NULL,NULL,40,'[{"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'200',NULL,'여성',NULL,NULL),
+ (46673,'나막신','구입','심플한 형태의 나막신.
+꽃 모양이 조각돼 있다.','FALSE','다리',NULL,5,NULL,NULL,45,NULL,NULL,NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (46677,'후사르 투구','시대 한정 생산','경기병이 착용하는 코류스식 투구.
+코 부분을 T자형으로 방어하는 것이
+특징이다.','FALSE','머리',NULL,12,NULL,NULL,50,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (46678,'윙 후사르 갑옷','시대 한정 생산','깃털 장식이 달린 화려한 갑옷.
+돌격 시의 풍압으로 요란한 소리를
+내서 적군을 동요시킨다고 한다.','FALSE','몸',3,30,NULL,10,70,'[{"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (46819,'베르메르의 터번','시대 한정 구입','산뜻한 색상의 터번.
+유명한 미술 작품을 모티브로
+만들었다.','FALSE','머리',NULL,3,NULL,NULL,40,NULL,NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (46820,'포렌담 모자','시대 한정 구입','레이스 장식이 달린 뾰족한 모자.
+네덜란드의 항구 도시에 사는
+여성들이 즐겨 쓴다.','FALSE','머리',NULL,3,NULL,NULL,55,NULL,NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (46891,'구군복','생산, 내구 50','나라의 중대한 의식이 있을 때，
+조선의 무신들이 갖춰 입는
+전투복 차림의 예복','TRUE','몸',NULL,50,NULL,NULL,50,'[{"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (46910,'베르메르의 터번','피렌체 생산','산뜻한 색상의 터번.
+유명한 미술 작품을 모티브로
+만들었다.','FALSE','머리',NULL,3,NULL,NULL,40,NULL,NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (46912,'알비다의 투구','피렌체생산','스웨덴의 여왕이자 여해적이던
+알비다가 애용했던 투구.','FALSE','머리',NULL,15,NULL,5,60,'[{"ref": 2346, "name": "통솔", "value": 1}, {"ref": 2332, "name": "속사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (46916,'후사르 투구','피렌체 생산','경기병이 착용하는 코류스식 투구.
+코 부분을 T자형으로 방어하는 것이
+특징이다.','FALSE','머리',NULL,12,NULL,NULL,50,'[{"ref": 2330, "name": "방어", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (46922,'윙 후사르 갑옷','피렌체 생산','깃털 장식이 달린 화려한 갑옷.
+돌격 시의 풍압으로 요란한 소리를
+내서 적군을 동요시킨다고 한다.','FALSE','몸',3,30,NULL,10,70,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (46973,'가문 문장을 수놓은 일본 옷','시대 한정 생산','일본의 귀족이 입는 전통 의복.
+
+집안의 문장을 수놓은
+
+상의와 바지를 입는다
+
+(의상 색상 변경 불가)','TRUE','몸',NULL,7,15,NULL,25,'[{"ref": 2320, "name": "총포류 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (46978,'치마 저고리','시대 한정 생산','조선의 의상. 치마라고 부르는
+스커트에，저고리라고 부르는
+상의를 입는다.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2319, "name": "직물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (46985,'소수배자','시대 한정 생산','소수배자.
+앞으로 여미는 옷 위에
+낙낙한 두루마기를 걸쳐 입는 옷.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2328, "name": "노 젓기", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (46990,'소맷부리가 좁은 일본 의복','시대 한정 생산','일본에서 입는 전통 의복.
+소매통은 넓고 소맷부리는 좁다.','FALSE','몸',NULL,4,NULL,NULL,20,'[{"ref": 2317, "name": "주류 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (46992,'소맷부리가 좁은 일본 의복','시대 한정 생산','일본에서 입는 전통 의복.
+소매통은 넓고 소맷부리는 좁다.','FALSE','몸',NULL,4,NULL,NULL,20,'[{"ref": 2310, "name": "섬유 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (47033,'베르메르의 터번','생산','산뜻한 색상의 터번.
+유명한 미술 작품을 모티브로
+만들었다.','FALSE','머리',NULL,3,NULL,NULL,40,'[{"ref": 2312, "name": "염료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (47035,'포렌담 모자','시대 한정 생산','레이스 장식이 달린 뾰족한 모자.
+네덜란드의 항구 도시에 사는
+여성들이 즐겨 쓴다.','FALSE','머리',NULL,3,NULL,NULL,55,'[{"ref": 2319, "name": "직물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'여성',NULL,NULL),
+ (47075,'바지 저고리','시대 한정 생산','조선의 옷. 바지라고 부르는
+하의와 저고리라고 부르는
+상의를 합쳐 입는다.','FALSE','몸',NULL,4,NULL,NULL,20,'[{"ref": 2289, "name": "지리학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (47087,'직거심의','시대 한정 생산','직거심의.
+기장이 길고 낙낙한
+한족의 옷.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2281, "name": "생물학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (47092,'착수삼유','시대 한정 생산','착수삼유.
+소매통이 넓은 상의와
+기장이 긴 치마를 합쳐 입는
+한족의 옷.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2369, "name": "조미료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (47097,'한족 관복','시대 한정 생산','한족 관복.
+상의와 치마를 하나로 연결한 옷으로
+한족의 고위 관리가 입는다.','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2314, "name": "의약품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (47102,'호복','시대 한정 생산','호복.
+소매통이 좁은 저고리에
+바지를 합쳐 입는
+승마에 적합한 옷.','FALSE','몸',NULL,4,NULL,NULL,20,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (47110,'한족의 치마저고리','시대 한정 생산','한족의 일반적인 의복.
+여성들이 주로 입는다.','FALSE','몸',NULL,6,5,NULL,50,'[{"ref": 2321, "name": "향료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (47118,'작업복','시대 한정 생산','야외에서 약초 등을 채집할때
+주로 착용하는 의복.','FALSE','몸',NULL,5,NULL,NULL,75,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (47126,'장인복','시대 한정 생산','대장장이 등，신체를 이용한 활동이 많은 사람이
+착용하는 의복.','FALSE','몸',NULL,10,NULL,NULL,75,'[{"ref": 2313, "name": "운용", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (47133,'일본 겉옷','시대 한정 생산','기모노 위에 걸쳐입는 겉옷으로
+격식을 차리는 곳에 주로 착용한다.','FALSE','몸',NULL,7,20,NULL,50,'[{"ref": 2323, "name": "회계", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'13,000',NULL,NULL,NULL,NULL),
+ (47138,'유럽풍 일본 옷','시대 한정 생산','유럽의 영향을 받아
+이동이 편하도록 만든 일본 바지.','FALSE','몸',NULL,7,5,NULL,50,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (47146,'욕군','시대 한정 생산','욕군.
+기장이 짧은 상의와
+긴 치마를 합쳐 입는
+한족의 옷.','FALSE','몸',NULL,4,NULL,NULL,20,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (47151,'욕군','탐색','욕군.
+기장이 짧은 상의와
+긴 치마를 합쳐 입는
+한족의 옷.','FALSE','몸',NULL,4,NULL,NULL,20,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (47159,'법의','시대 한정 생산','불교의 승려가 착용하는 의복.','FALSE','몸',NULL,8,30,NULL,50,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (47168,'사룽','시대 한정 생산','원통형의 의상
+허리부분을 접어 입는다．','FALSE','몸',NULL,8,NULL,NULL,35,'[{"ref": 2312, "name": "염료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,'남성',NULL,NULL),
+ (47179,'모로','시대 한정 생산','모로 민족의 남성 의상
+자수가 아름답다．','FALSE','몸',NULL,8,NULL,NULL,35,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,500',NULL,'남성',NULL,NULL),
+ (47187,'바틱','시대 한정 생산','납결염색한 천으로 만들어진 의상
+몸에 둘러서 입는다．','FALSE','몸',NULL,8,20,NULL,35,'[{"ref": 2312, "name": "염료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (47196,'룽구스드레스','시대 한정 생산','룽구스 민족의 의상
+ 손과 발에 금속 링을 착용한다.
+
+남색(기본 생산템의 남색과 동일). -색상 변경 불가능.','TRUE','몸',NULL,10,NULL,NULL,50,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,'여성',NULL,NULL),
+ (47206,'와스트라','시대 한정 생산','의식에 사용하는 의상. 섬세한 자수와 무늬가 아름답다.
+
+보라색(기본 생산템의 보라색과 동일). -색상 변경 불가능.','TRUE','몸',NULL,14,NULL,NULL,50,'[{"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,'여성',NULL,NULL),
+ (47217,'다야쿠전사의 테라','시대 한정 생산','다야쿠 민족의 전사가 입는 의상
+전사의 몸에는 문신이 그려져 있다．','FALSE','몸',8,4,NULL,NULL,25,'[{"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (47222,'쟈오차이스아','시대 한정 생산','아시아의 왕족이 입는 의상
+금으로 장식되어 있다．','FALSE','몸',NULL,12,25,NULL,50,'[{"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (47227,'나쿠스인','시대 한정 생산','용맹한 여전사의 의복.
+아름다운 금세공 장식이 달려 있다.','FALSE','몸',16,36,NULL,NULL,55,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,'여성',NULL,NULL),
+ (47708,'롤로노아 셔츠＆망토','빨강','대해적이 입었다고 전해지는 셔츠와 망토.
+고급 소재로 제작되었다.','TRUE','몸',12,20,NULL,NULL,70,'[{"ref": 2334, "name": "수탈", "value": 3}, {"ref": 2325, "name": "검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,NULL,NULL),
+ (47959,'시대의 패자를 위한 저킨',NULL,'역사에 남을 사건에서 활약한 항해자가 입는 저킨.','TRUE','몸',12,18,5,10,100,'[{"ref": 2344, "name": "총격", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 2}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,'[{"ref": 29116, "name": "역사를 파괴하는 자"}]'),
+ (48605,'푸푼데타','초록','푸푼데타민족의 의상.
+앞쪽에 커다란 목걸이가 장식되어진다.','FALSE','몸',NULL,12,NULL,15,45,'[{"ref": 2283, "name": "생태 조사", "value": 1}, {"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,500',NULL,'여성',NULL,NULL),
+ (48824,'매화잠','육상드랍','매화 꽃을 사용하여 만든
+머리 장식품. 금이나，
+다른 것으로 만들기도 한다.','FALSE','머리',NULL,10,5,NULL,50,'[{"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (49087,'사방평정건','육상드랍','요직에 종사하는 인물이 쓰는
+한족의 모자. 별칭은 방건','FALSE','머리',NULL,10,5,NULL,50,'[{"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (49380,'쿵크타토르의 병법서',NULL,'한니발에게 전략으로 맞선 로마의 지장, 파비우스 막시무스가 남긴 병법서.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (49630,'맹장의 인장',NULL,'한니발을 상대로 물러서지 않고 싸운로마의 맹장, 마르켈루스의 인장이 박힌 반지.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2329, "name": "돌격", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (49696,'모험가의 부츠',NULL,'모험가용 가죽 부츠.
+버클로 폭을 조절할 수 있어서
+신고 벗기 편하다.','TRUE','다리',NULL,28,NULL,NULL,70,'[{"ref": 2293, "name": "행군", "value": 2}, {"ref": 2313, "name": "운용", "value": 2}, {"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (50047,'강화 레가투스 그리브',NULL,'고대 로마에서 사령관 등이 착용하던 철로 된 긴 신발.','TRUE','다리',17,25,NULL,NULL,100,'[{"ref": 2338, "name": "응급처치", "value": 2}, {"ref": 2328, "name": "노 젓기", "value": 2}, {"ref": 2333, "name": "수리", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (50821,'대자산가의 코트',NULL,'진홍색으로 물들여진 맞춤 코트. 유통되는 제품에 비해 고급 소재를 사용하고 있다.','TRUE','몸',NULL,12,50,NULL,100,'[{"ref": 2303, "name": "무기류 거래", "value": 2}, {"ref": 2301, "name": "기호품 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,'이벤트 보상',NULL,'500',NULL,NULL,NULL,NULL),
+ (51850,'토시',NULL,'일본 군인이 착용하는 방어구.
+팔에서 손등까지를 보호한다.','TRUE','팔',10,14,10,10,100,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (51852,'바죠우 신발',NULL,'일본 군인이 착용하는 방어구.
+무릎에서 발목까지를 보호한다.','TRUE','다리',5,14,10,5,100,'[{"ref": 2293, "name": "행군", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (51855,'자작나무로 만든 활',NULL,'자작나무로 만든 활.
+의식에도 사용하는 고급품.','TRUE','무기 (활)',50,NULL,NULL,NULL,60,'[{"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2325, "name": "검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (51856,'호신용 검',NULL,'품속에 지니기 위해, 소형화한 검.
+호신용으로 사용한다.','TRUE','무기 (던지는 나이프)',44,15,NULL,NULL,60,'[{"ref": 2431, "name": "던지기 기술", "value": 2}, {"ref": 2325, "name": "검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (51869,'남만풍의 일본 전통 옷',NULL,'유럽 형식을 도입한 일본 의상.
+목둘레의 주름장식이 특징.','FALSE','몸',NULL,10,20,5,30,'[{"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (52295,'은 편자',NULL,'은으로 된 편자.
+편자는 예로부터 행운의
+부적으로 쓰여져왔다.','TRUE','장신구',NULL,NULL,NULL,NULL,40,'[{"ref": 2283, "name": "생태 조사", "value": 2}, {"ref": 2298, "name": "공예품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (52344,'황금 심장',NULL,'황금향에서 발견한
+
+금으로 된 심장 모형.
+
+조금 징그럽지만 아름답다.','TRUE','장신구',NULL,NULL,NULL,NULL,40,'[{"ref": 2338, "name": "응급처치", "value": 2}, {"ref": 2273, "name": "구조", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (52881,'롤로노아 셔츠＆망토','녹색','대해적이 입었다고 전해지는 셔츠와 망토.
+고급 소재로 제작되었다.','TRUE','몸',9,20,NULL,NULL,75,'[{"ref": 2334, "name": "수탈", "value": 2}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (60363,'시대의 여행자를 위한 가운',NULL,'역사에 남을 사건에서 활약한 항해자가 입는 가운.','TRUE','몸',NULL,12,NULL,3,100,'[{"ref": 2289, "name": "지리학", "value": 2}, {"ref": 2284, "name": "인식", "value": 2}, {"ref": 2444, "name": "인양", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,'남성',NULL,'[{"ref": 29119, "name": "역사를 인도하는 자"}]'),
+ (60984,'토르투가 파이렛','시대 한정 구입','토르투가 섬을 거점으로 하는 해적들이 즐겨입는 옷.','TRUE','몸',5,25,NULL,15,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'10000',NULL,NULL,NULL),
+ (60986,'버커니어 드레스','구입','여성 해적들이 즐겨입는 드레스.
+여성스러움을 강조하는 디자인이다.','TRUE','몸',5,25,NULL,15,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'15000','여성',NULL,NULL),
+ (60988,'토르투가 햇','시대 한정 구입','토르투가 섬을 거점으로 하는 해적들이 즐겨 착용하는 옷.','TRUE','머리',5,15,NULL,5,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'7000',NULL,NULL,NULL),
+ (60990,'파이렛 바이코르느','시대 한정 구입','깃털 장식이 달린 해적 모자.
+이각모를 앞뒤로 쓴다.','TRUE','머리',5,15,NULL,5,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'7000',NULL,NULL,NULL),
+ (60992,'파이렛 부츠','시대 한정 구입','여러 개의 벨트가 달린 부츠.
+격한 움직임에도 잘 벗겨지지 않는다.','TRUE','다리',3,15,15,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'5000',NULL,NULL,NULL),
+ (61803,'사냥꾼의 모피 모자',NULL,'시베리아의 사냥꾼이 쓰는 모피 모자. 큰 수술 장식이 특징적이다.','TRUE','머리',NULL,8,NULL,NULL,50,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (61925,'카프탄','시대 한정 구입','앞 여밈 형태의 장의.
+터키와 동유럽에서 주로 입는다.','TRUE','몸',NULL,7,15,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'3,500',NULL,NULL,NULL,NULL),
+ (61927,'페레즈&반 카프탄','시대 한정 구입','긴 상의 위에 앞 여밈 형태의 반팔 옷을 겹쳐 입는 의상','TRUE','몸',NULL,7,30,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'남성',NULL,NULL),
+ (61929,'사라판','시대 한정 구입','여성용 원피스 드레스.
+러시아에서 즐겨 입는다.','TRUE','몸',NULL,7,30,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'여성',NULL,NULL),
+ (61930,'코사크 카프탄','시대 한정 구입','코사크 기병대장이 입는 옷.
+가볍지만 뛰어난 기능성을 자랑한다.
+(푸른속옷,흰색겉옷)','TRUE','몸',5,20,NULL,5,30,NULL,NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (61933,'비늘 갑옷','시대 한정 구입','작은 금속판을 덧댄 투구.
+가죽제로 된 것도 있다.','TRUE','몸',NULL,45,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'3,500',NULL,NULL,NULL,NULL),
+ (61934,'샤프카','시대 한정 구입','해달이나 담비의 모피로 만든 러시아 모자','TRUE','머리',NULL,5,20,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (61937,'코코쉬닉','시대 한정 구입','러시아의 여성이 착용하는 산 모양 머리 장식','TRUE','머리',NULL,5,20,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'2,500',NULL,'여성',NULL,NULL),
+ (61938,'키치카','시대 한정 구입','금실 등으로 수를 놓은 러시아의 여성용 두건','TRUE','머리',NULL,5,12,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'2,000',NULL,'여성',NULL,NULL),
+ (61939,'보야르','구입','모피로 만든 원통형 모자','TRUE','머리',NULL,5,12,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'2,500',NULL,NULL,NULL,NULL),
+ (61940,'해달 우샨카','시대 한정 구입','해달의 털과 꼬리로 만든 귀마개 모자','TRUE','머리',NULL,10,25,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (61941,'코사크 캡','시대 한정 구입','코사크 기병대장이 쓰는 모자.
+가볍지만 뛰어난 기능성을 자랑한다.','TRUE','머리',5,15,NULL,5,30,NULL,NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (61942,'시크렛','시대 한정 구입','투구와 모자 아래로 다는 얼굴 보호대','TRUE','머리',NULL,20,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'3,500',NULL,NULL,NULL,NULL),
+ (61943,'러시안 부츠','구입','러시아에서 주로 신는 긴 부츠. 끝이 휘어져 있다.','TRUE','다리',NULL,10,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'1,800',NULL,NULL,NULL,NULL),
+ (61950,'쥬얼리 글러브','시대 한정 구입','펠트 장갑을 보석과 자수로 장식해 만든 호화로운 장갑','TRUE','팔',NULL,3,40,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (62102,'계략 지침서 제 5권',NULL,'함정에 대하여 기록한 서적.
+육상전에서 함정 테크닉의 사용이 쉬워진다.
+
+
+함정 특화 +10','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (62178,'기수 지침서 제 5권',NULL,'공격에 대하여 기록한 서적.
+육상전에서 페인트 테크닉의 사용이 쉬워진다.
+
+페인트 특화 +10','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (62339,'샤프카','시대 한정 생산','해달이나 담비의 모피로 만든 러시아 모자.','TRUE','머리',NULL,6,24,NULL,50,'[{"ref": 2310, "name": "섬유 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,800',NULL,NULL,NULL,NULL),
+ (62341,'코사크 캡','시대 한정 생산','코사크 기병대장이 쓰는 모자. 가볍지만 뛰어난 기능성을 자랑한다.','TRUE','머리',6,18,NULL,6,50,NULL,NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (62344,'키치카','시대 한정 생산','금실 등으로 수를 놓은 러시아의 여성용 두건.
+
+(색상 : 노란색)','TRUE','머리',NULL,6,14,NULL,50,'[{"ref": 2315, "name": "잡화 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,400',NULL,'여성',NULL,NULL),
+ (62346,'카프탄','시대 한정 생산','앞 여밈 형태의 장의.
+터키와 동유럽에서 주로 입는다.
+
+(색상 : 노란색)','TRUE','몸',NULL,8,18,NULL,50,'[{"ref": 2289, "name": "지리학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,200',NULL,NULL,NULL,NULL),
+ (62349,'보야르','생산','모피로 만든 원통형 모자.
+
+(색상 : 검은색)','TRUE','머리',NULL,6,14,NULL,50,'[{"ref": 2310, "name": "섬유 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (62353,'코사크 카프탄','시대 한정 생산','코사크 기병대장이 입는 옷.
+가볍지만 뛰어난 기능성을 자랑한다.
+(갈색속옷, 진갈색겉옷)','TRUE','몸',6,24,NULL,6,50,'[{"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'9,600',NULL,NULL,NULL,NULL),
+ (62355,'해달 우샨카','시대 한정 생산','해달의 털과 꼬리로 만든 귀마개 모자.
+
+(색상 : 검은색)','TRUE','머리',NULL,12,30,NULL,50,'[{"ref": 2310, "name": "섬유 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,400',NULL,NULL,NULL,NULL),
+ (62357,'페레즈&반 카프탄','시대 한정 생산','긴 상의 위에 앞 여밈 형태의 반팔 옷을 겹쳐 있는 의상.','TRUE','몸',NULL,8,36,NULL,50,'[{"ref": 2301, "name": "기호품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,'남성',NULL,NULL),
+ (62363,'사라판','시대 한정 생산','여성용 원피스 드레스.
+러시아에서 즐겨 입는다.
+
+(색상 : 상의-빨간색, 하의-파란색)','TRUE','몸',NULL,8,36,NULL,50,'[{"ref": 2301, "name": "기호품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,'여성',NULL,NULL),
+ (62373,'시크렛','시대 한정 생산','투구와 모자 아래로 다는 얼굴 보호대.','TRUE','머리',NULL,24,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'4,200',NULL,NULL,NULL,NULL),
+ (62377,'비늘 갑옷','시대 한정 생산','작은 금속판을 덧댄 투구.
+가죽제로 된 것도 있다.','TRUE','몸',NULL,54,NULL,NULL,50,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,200',NULL,NULL,NULL,NULL),
+ (62392,'쥬얼리 글러브','시대 한정 생산','펠트 장갑을 보석과 자수로 장식해 만든 호화로운 장갑.','TRUE','팔',NULL,3,48,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (62396,'코코쉬닉','시대 한정 생산','러시아의 여성이 착용하는 산 모양 머리 장식.','TRUE','머리',NULL,6,24,NULL,50,'[{"ref": 2319, "name": "직물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,'여성',NULL,NULL),
+ (62400,'러시안 부츠','생산','러시아에서 주로 신는 긴 부츠. 끝이 휘어져 있다.','TRUE','다리',NULL,12,NULL,NULL,100,NULL,NULL,NULL,NULL,NULL,NULL,'1,800',NULL,NULL,NULL,NULL),
+ (62606,'모피 러시안 가운',NULL,'북동 항로 개척자에게 바쳐지는
+모피코트. 화려한 디자인에서
+위엄이 느껴진다.','TRUE','몸',NULL,20,15,NULL,50,'[{"ref": 2321, "name": "향료 거래", "value": 2}, {"ref": 2301, "name": "기호품 거래", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,'남성',NULL,NULL),
+ (62608,'모피 오버 코트',NULL,'북동 항로 개척자에게 바쳐지는 모피코트. 화려한 디자인에서 기품이 느껴진다.','TRUE','몸',NULL,20,15,NULL,50,'[{"ref": 2321, "name": "향료 거래", "value": 2}, {"ref": 2301, "name": "기호품 거래", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,'여성',NULL,NULL),
+ (63475,'몽골 갑옷','구입','기마 전투용으로 제작된 몽골 민족의 갑옷','TRUE','몸',NULL,40,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'3,500',NULL,NULL,NULL,NULL),
+ (63478,'부스테 델','구입','몽골 민족의 일반적인 장의.
+겨울용으로 모피를 사용했다.','FALSE','몸',NULL,7,15,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'4,500',NULL,'남성',NULL,NULL),
+ (63479,'부스테 델','구입','몽골 민족의 일반적인 장의.
+겨울용으로 모피를 사용했다.','FALSE','몸',NULL,7,15,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'4,500',NULL,'여성',NULL,NULL),
+ (63482,'몽골 투구','구입','기마 전투용으로 제작된 몽골 민족의 투구','TRUE','머리',NULL,20,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (63483,'잔진 말가이','구입','구슬과 수술 장식이 달린 몽골 민족의 모자','TRUE','머리',NULL,5,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (63486,'운겐 말가이','구입','몽골 민족이 혹한기에 쓰는 모피로 만든 모자','TRUE','머리',NULL,5,7,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'2,500',NULL,NULL,NULL,NULL),
+ (63487,'고탈','구입','몽골 민족의 부츠.
+길이 험해도 넘어지지 않게끔 끝부분이 휘어져 있다.','TRUE','다리',NULL,10,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (64366,'유목민의 활',NULL,'짐승의 뿔이나 힘줄을 이용해 만든 단궁. 살상능력이 뛰어나 유목민들이 애용했다.','TRUE','무기 (활)',80,10,10,10,100,'[{"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2290, "name": "채집", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (65128,'연격 지침서 제 5권',NULL,'공격에 대하여 기록한 서적.
+육상전에서 퀵 테크닉의
+사용이 쉬워진다.
+
+퀵특화 + 10','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1445, "name": "퀵특화"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (65317,'날붙이 토시',NULL,'미튼 건틀릿.
+정교하고 견고하게 만들어져 사용하기 편하다.','TRUE','팔',NULL,20,4,NULL,100,'[{"ref": 2431, "name": "던지기 기술", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (65384,'맹공 지침서 제 5권',NULL,'공격에 대해 기록한 서적.
+육상전에서 파워 테크닉의
+사용이 쉬워진다.
+
+파워 특화 +10','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1443, "name": "파워 특화"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (66375,'모험가 글러브','유적 던전','모험가용 가죽 글러브.
+징 박힌 가죽이 여러가지
+위험으로부터 손을 보호한다.','TRUE','팔',NULL,6,NULL,5,70,'[{"ref": 2431, "name": "던지기 기술", "value": 1}, {"ref": 2285, "name": "자물쇠 따기", "value": 1}]',NULL,NULL,NULL,NULL,'모험','3,000',NULL,NULL,NULL,NULL),
+ (68165,'모험가의 신발','유적 던전','모험가용 가죽 부츠.
+버클로 폭을 조절할 수 있어서 신고 벗기 편하다.','TRUE','다리',NULL,8,NULL,NULL,50,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,'모험','3,000',NULL,NULL,NULL,NULL),
+ (69325,'활용 지침서 제 5권',NULL,'아이템 활용법 서적.
+육상전에서 아이템 테크닉의 사용이 쉬워진다.
+
+아이템 특화 +10','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1446, "name": "아이템 특화"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (69889,'트라키안 헬름',NULL,'트라키안 스타일의 검투사가 사용했다고 전해지는 투구.
+
+*스파르타쿠스의 투구와 같은 디자인에 갈색.','TRUE','머리',NULL,25,NULL,3,40,'[{"ref": 2325, "name": "검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (71537,'클라비 토가','유적 던전','고대 로마 귀족이 착용하던
+장의.
+긴 띠를 몸에 감는다.','FALSE','몸',NULL,5,20,NULL,80,'[{"ref": 2278, "name": "미술", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}, {"ref": 2288, "name": "주연", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'18,000',NULL,NULL,NULL,NULL),
+ (76016,'구군복','해상 수탈','나라의 중대한 의식이 있을 때，
+조선의 무신들이 갖춰 입는
+전투복 차림의 예복','FALSE','몸',NULL,7,15,NULL,25,'[{"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2345, "name": "탄도학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (81585,'버커니어 드레스','생산','여성 해적들이 즐겨입는 드레스.
+여성스러움을 강조하는 디자인이다.
+
+색상 - 하늘색+파란색(변경 안 됨.)','TRUE','몸',6,30,NULL,18,50,'[{"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,'18000','여성',NULL,NULL),
+ (81587,'토르투가 햇','시대 한정 생산','토르투가 섬을 거점으로 하는 해적들이 즐겨 착용하는 옷.
+(설명 자체에 \''옷\''이라고 되어있습니다.;;)
+
+색상-초록색(변경 안 됨)','TRUE','머리',6,18,NULL,6,50,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'8400',NULL,NULL,NULL),
+ (81593,'파이렛 바이코르느','시대 한정 생산','깃털 장식이 달린 해적 모자.
+이각모를 앞뒤로 쓴다.
+
+색상 - 파란색 깃털(변경 안 됨.)','TRUE','머리',6,18,NULL,6,50,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'8400',NULL,NULL,NULL),
+ (81599,'토르투가 파이렛','시대 한정 생산','토르투가 섬을 거점으로 하는 해적들이 즐겨입는 옷.
+
+색상 - 노란색셔츠+붉은색하의(변경 안 됨)','TRUE','몸',6,30,NULL,18,50,'[{"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,'12000',NULL,NULL,NULL),
+ (86902,'파이렛 부츠','시대 한정 생산','여러 개의 벨트가 달린 부츠.
+격한 움직임에도 잘 벗겨지지 않는다.','TRUE','다리',3,18,18,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'6000',NULL,NULL,NULL),
+ (87230,'운겐 말가이','자택생산','몽골 민족이 혹한기에 쓰는 모피로 만든 모자','TRUE','머리',NULL,8,6,NULL,50,'[{"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (87234,'잔진 말가이','자택생산','구슬과 수술 장식이 달린 몽골 민족의 모자','TRUE','머리',NULL,6,6,NULL,50,'[{"ref": 2298, "name": "공예품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,400',NULL,NULL,NULL,NULL),
+ (87235,'부스테 델','자택생산','몽골 민족의 일반적인 장의.
+겨울용으로 모피를 사용했다.','FALSE','몸',NULL,8,18,NULL,50,'[{"ref": 2311, "name": "식료품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,400',NULL,'남성',NULL,NULL),
+ (87236,'부스테 델','자택생산','몽골 민족의 일반적인 장의.
+겨울용으로 모피를 사용했다.','FALSE','몸',NULL,8,18,NULL,50,'[{"ref": 2311, "name": "식료품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,400',NULL,'여성',NULL,NULL),
+ (87241,'몽골 투구','생산','기마 전투용으로 제작된 몽골 민족의 투구
+
+색상-은색계열. (변경 안 됨.)','TRUE','머리',NULL,24,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'2,400',NULL,NULL,NULL,NULL),
+ (87242,'몽골 갑옷','생산','기마 전투용으로 제작된 몽골 민족의 갑옷.
+
+색상-밝은 회색+붉은색(변경 안됩니다.)','TRUE','몸',NULL,48,NULL,NULL,50,'[{"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,200',NULL,NULL,NULL,NULL),
+ (87243,'고탈','생산','몽골 민족의 부츠.
+길이 험해도 넘어지지 않게끔 끝부분이 휘어져 있다.','TRUE','다리',NULL,12,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'1,800',NULL,NULL,NULL,NULL),
+ (96029,'의적의 장궁',NULL,'전설의 의적이 애용했다고 하는 뛰어난 성능의 장궁.','TRUE','무기 (활)',65,NULL,NULL,NULL,40,'[{"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (96049,'브르타뉴 암사자의 검',NULL,'브르타뉴의 암사자라 불리며 공포의 대상이 되었던 여해적이 애용했다고 전해지는 검.','TRUE','무기 (검)',65,NULL,NULL,NULL,50,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (96162,'항로 개척단의 우샨카',NULL,'북동 항로 개척단이 착용하는 방한용 모자.','TRUE','머리',NULL,15,5,NULL,60,'[{"ref": 2292, "name": "탐색", "value": 2}, {"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (96291,'러시아 고관의 장의',NULL,'러시아 고관이 착용한 고급 장의','TRUE','몸',NULL,12,30,NULL,80,'[{"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2432, "name": "관리기술", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (96745,'항로 개척단의 신발',NULL,'북동 항로 개척단이 착용하는 부츠. 버클로 폭을 조절해 신을수 있도록 만들었다.','TRUE','다리',NULL,15,NULL,NULL,60,'[{"ref": 2289, "name": "지리학", "value": 1}, {"ref": 2281, "name": "생물학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (96989,'항로 개척자의 부츠',NULL,'한 북동 항로 개척단원이
+신었던 러시아 부츠.
+길이 잘 들어 있다.','TRUE','다리',NULL,15,5,NULL,60,'[{"ref": 2430, "name": "항해기술", "value": 1}, {"ref": 2284, "name": "인식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (97017,'부자의 샤프카',NULL,'큰 부를 쌓은 상인이
+즐겨 착용하던 러시아 모자.','TRUE','머리',NULL,10,15,NULL,60,'[{"ref": 2369, "name": "조미료 거래", "value": 2}, {"ref": 2314, "name": "의약품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (97160,'모피 상인의 보야르',NULL,'고급 모피로 만든 원통형 모자.
+모피 상인이 직접 고른
+모피를 사용했다.','TRUE','머리',NULL,7,5,NULL,60,'[{"ref": 2319, "name": "직물 거래", "value": 1}, {"ref": 2310, "name": "섬유 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (97182,'보석 상인의 글러브',NULL,'호화로운 장식이 달린 장갑.
+보석 상인이 직접 고른 보석을 사용했다.','TRUE','팔',NULL,5,25,NULL,60,'[{"ref": 2307, "name": "보석 거래", "value": 1}, {"ref": 2321, "name": "향료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (97476,'항로 개척자의 부적',NULL,'한 북동 항로 개척단원이
+지니고 있던 부적. 무사 항해를 기원하는 마음이 담겨 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2293, "name": "행군", "value": 2}, {"ref": 2444, "name": "인양", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (97509,'스타 사파이어 반지',NULL,'별처럼 빛나는 사파이어를 본따 만든, 무척 귀한 반지.','TRUE','장신구',NULL,NULL,50,NULL,20,'[{"ref": 2304, "name": "미술품 거래", "value": 1}, {"ref": 2298, "name": "공예품 거래", "value": 1}, {"ref": 2323, "name": "회계", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (97623,'강철 시크렛',NULL,'강철로 만든, 얼굴 보호대가
+달린 투구. 잘 손질되어
+희게 빛난다.','TRUE','머리',NULL,25,NULL,NULL,70,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (97832,'총포류 상인의 장부',NULL,'총포류 상인이 쓴 장부.
+상품을 보다 많이 매입하기
+위한 지혜가 담겨 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,10,'[{"ref": 2320, "name": "총포류 거래", "value": 2}, {"ref": 2299, "name": "광물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (98432,'강철 비늘 갑옷',NULL,'북극해 조사단 호위선 (8성, 동카라해)에서 득','TRUE','몸',NULL,55,10,NULL,70,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2333, "name": "수리", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (98440,'선의의 일지',NULL,'조사단과 동행한 선의가 남긴 일지. 단원의 건강관리에 관해 자세히 기술되어 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2336, "name": "외과의술", "value": 2}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (99352,'바르디슈',NULL,'러시아 발생의 자루가 긴 무기.
+극단적으로 큰 날이 특징이다.','TRUE','무기 (도끼)',68,NULL,NULL,NULL,70,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (100284,'토르투가 파이렛','가나돌','토르투가 섬을 거점으로 하는 해적들이 즐겨입는 옷.','TRUE','몸',10,45,NULL,20,50,'[{"ref": 2328, "name": "노 젓기", "value": 2}, {"ref": 2324, "name": "감시", "value": 2}, {"ref": 2331, "name": "소화", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (100297,'파이렛 소드',NULL,'해적들이 애용하는 곡도.','FALSE','무기 (검)',50,NULL,NULL,5,50,'[{"ref": 2334, "name": "수탈", "value": 2}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (101381,'명품 코사크 카프탄',NULL,'코사크 기병대장의 의상을 본따 만든 옷. 항해자가 입기 편하도록 가공했다.
+(적색속옷, 적색겉옷)','TRUE','몸',NULL,20,NULL,NULL,70,'[{"ref": 2289, "name": "지리학", "value": 2}, {"ref": 2430, "name": "항해기술", "value": 2}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (101671,'캡틴 코트','보라','대해적이 착용했다고 전해지는 두터운 코트. 멋진 장식이 달려 있다.','TRUE','몸',5,15,NULL,NULL,80,'[{"ref": 2347, "name": "포술", "value": 2}, {"ref": 2332, "name": "속사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (102633,'파이렛 바이코르느','가나돌','깃털 장식이 달린 해적 모자.
+이각모를 앞뒤로 쓴다.','TRUE','머리',10,12,NULL,8,50,'[{"ref": 2344, "name": "총격", "value": 2}, {"ref": 2336, "name": "외과의술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (104231,'캡틴 코트','빨강','대해적이 착용했다고 전해지는 두터운 코트. 멋진 장식이 달려 있다.','TRUE','몸',12,15,NULL,NULL,80,'[{"ref": 2347, "name": "포술", "value": 3}, {"ref": 2332, "name": "속사", "value": 1}, {"ref": 2345, "name": "탄도학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,NULL,NULL),
+ (105731,'개량 연철 완갑',NULL,'한족 군인이 갑옷과 함께 착용하는 완갑. 
+연철로 만든다.','TRUE','팔',20,15,20,NULL,100,'[{"ref": 2347, "name": "포술", "value": 2}, {"ref": 2345, "name": "탄도학", "value": 2}, {"ref": 2434, "name": "병기기술", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (115921,'레시 글러브','피렌체 생산','레이스로 만든 얇은 장갑.','FALSE','팔',NULL,3,NULL,NULL,80,NULL,NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (123633,'실크 모자','이벤트','피렌체 대장간에 모인
+기술력을 종합하여 만든
+귀족들의 예복 모자.','FALSE','머리',NULL,6,30,NULL,50,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,'500',NULL,NULL,NULL,NULL),
+ (137933,'특주 사분의',NULL,'천체의 위치에서 위도를 더욱 정확하게 재기 위해서 특주한 사분의','TRUE','도구',NULL,NULL,NULL,NULL,30,'[{"ref": 137755, "name": "천문학", "value": 1}, {"ref": 2289, "name": "지리학", "value": 1}]','[{"ref": 2291, "name": "측량"}]',NULL,NULL,'이벤트 보상',NULL,'5,000',NULL,NULL,NULL,NULL),
+ (138561,'데스페라도 재킷',NULL,'해적이 즐겨 입는 튼튼한 옷.
+데스페라도는 「무법자」라는 뜻이다.','TRUE','몸',5,30,NULL,20,20,'[{"ref": 2334, "name": "수탈", "value": 2}, {"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,NULL),
+ (138640,'히에로글리프 해독 기록',NULL,'히에로글리프의 해독을 시도했다고
+여겨지는 기록','TRUE','장신구',NULL,NULL,10,NULL,20,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (138716,'유적 탐험가의 가운',NULL,'어떤 학자가 애용하고 있던 특수 가운. 튼튼한 소재로 조사 활동에 적합하다.','TRUE','몸',NULL,25,25,NULL,50,'[{"ref": 2278, "name": "미술", "value": 1}, {"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (138755,'쥬얼리 글러브','메모리얼','펠트 장갑을 보석과 자수로
+장식해 만든 호화로운 장갑.','TRUE','팔',NULL,3,40,NULL,50,'[{"ref": 2307, "name": "보석 거래", "value": 1}, {"ref": 2299, "name": "광물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (138885,'후르츠 나이프',NULL,'요리용 나이프.
+과일이나 채소에 섬세한 조각을 할 때도 사용할 수 있다.','TRUE','무기 (던지는 나이프)',2,NULL,NULL,NULL,10,'[{"ref": 2316, "name": "조리", "value": 1}, {"ref": 2297, "name": "공예", "value": 1}]',NULL,NULL,NULL,NULL,'교역','10,000',NULL,NULL,NULL,NULL),
+ (138906,'황소자리 펜던트',NULL,'황소자리를 나타내는 모티브가 장식된 펜던트.','TRUE','장신구',NULL,NULL,10,NULL,30,'[{"ref": 137755, "name": "천문학", "value": 1}, {"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (138920,'처녀자리 펜던트',NULL,'처녀자리를 나타내는 모티브가 장식된 펜던트','TRUE','장신구',NULL,NULL,10,NULL,30,'[{"ref": 137755, "name": "천문학", "value": 1}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (139287,'아멘호테프4세의 머리 장식',NULL,'이집트의 왕, 아멘호테프4세의 것이라고 알려진 머리 장식.','TRUE','머리',NULL,5,30,NULL,30,'[{"ref": 137755, "name": "천문학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (139327,'전갈자리 펜던트',NULL,'전갈자리를 나타내는 모티브가 장식된 펜던트','TRUE','장신구',NULL,NULL,10,NULL,30,'[{"ref": 137755, "name": "천문학", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (139329,'산양자리 펜던트',NULL,'산양자리를 나타내는 모티브가
+장식된 펜던트.','FALSE','장신구',NULL,NULL,10,NULL,30,'[{"ref": 137755, "name": "천문학", "value": 1}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (139342,'궁수자리 펜던트',NULL,'궁수자리를 나타내는 모티브가 장식된 펜던트','TRUE','장신구',NULL,NULL,10,NULL,30,'[{"ref": 137755, "name": "천문학", "value": 1}, {"ref": 2453, "name": "함정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (139427,'천칭자리 펜던트',NULL,'천칭자리를 나타내는 모티브가 장식된 펜던트','TRUE','장신구',NULL,NULL,10,NULL,30,'[{"ref": 137755, "name": "천문학", "value": 1}, {"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (139436,'유적 탐험가의 모자',NULL,'세계를 무대로 활약하는 탐험가가 사용하던 모자.
+낡았지만 꽤 튼튼하다.','TRUE','머리',NULL,8,20,NULL,70,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (139539,'산양자리 펜던트','염소자리','산양자리를 나타내는 모티브가
+장식된 펜던트.','FALSE','장신구',NULL,NULL,10,NULL,30,'[{"ref": 137755, "name": "천문학", "value": 1}, {"ref": 2324, "name": "감시", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (139568,'사자자리 펜던트',NULL,'사자자리를 나타내는 모티브가 장식된 펜던트','TRUE','장신구',NULL,NULL,10,NULL,30,'[{"ref": 137755, "name": "천문학", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (139616,'쌍둥이자리 펜던트',NULL,'쌍둥이자리를 나타내는 모티브가 장식된 펜던트','TRUE','장신구',NULL,NULL,10,NULL,30,'[{"ref": 137755, "name": "천문학", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (139769,'베스 신의 나이프',NULL,'마귀 쫓는 나이프.
+춤과 전투의 신 베스의 힘이 깃들여 있다고 한다.','TRUE','무기 (던지는 나이프)',40,NULL,NULL,NULL,50,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (140276,'게자리 펜던트',NULL,'게자리를 나타내는 모티브가 장식된 펜던트','TRUE','장신구',NULL,NULL,10,NULL,30,'[{"ref": 137755, "name": "천문학", "value": 1}, {"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (140403,'아포피스의 부적',NULL,'이집트의 재앙신 아포피스의 힘이 깃들어 있는 부적.','TRUE','장신구',NULL,10,NULL,NULL,30,'[{"ref": 2287, "name": "종교학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (140444,'물병자리 펜던트',NULL,'물병자리를 나타내는 모티브가 장식된 펜던트','TRUE','장신구',NULL,NULL,10,NULL,30,'[{"ref": 137755, "name": "천문학", "value": 1}, {"ref": 2288, "name": "주연", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (140638,'물고기자리 펜던트',NULL,'물고기자리를 나타내는 모티브가 장식된 펜던트','TRUE','장신구',NULL,NULL,10,NULL,30,'[{"ref": 137755, "name": "천문학", "value": 1}, {"ref": 2275, "name": "낚시", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (140731,'천문학자의 망토',NULL,'별 하늘의 이야기 (NO.2) 메모리얼 보상','TRUE','몸',NULL,8,16,NULL,20,'[{"ref": 137755, "name": "천문학", "value": 1}, {"ref": 2284, "name": "인식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,'[{"ref": 140710, "name": "성독인"}]'),
+ (140848,'방호형 글러브',NULL,'위험한 작업을 할 때 끼는 쇠사슬 글러브.','TRUE','팔',NULL,10,NULL,NULL,70,'[{"ref": 2453, "name": "함정", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (141193,'맹수 발톱 부적',NULL,'중앙 아시아의 유목민에게 전해지는
+부적. 신앙의 대상이 되는
+맹수의 발톱이 사용되고 있다.','TRUE','장신구',5,10,NULL,NULL,20,'[{"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2294, "name": "가축 거래", "value": 2}, {"ref": 2453, "name": "함정", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (142467,'데스페라도 바이코르느해트',NULL,'해적들이 자주 세로로 썻다고 하는 이각모.
+데스페라도는 「무법자」라는 뜻이다.','TRUE','머리',7,25,NULL,5,20,'[{"ref": 2348, "name": "회피", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,NULL),
+ (149899,'보석 세공의 스카라베',NULL,'보석으로 장식된 장신구.
+희귀한 벌레 모양이다.','TRUE','장신구',NULL,NULL,NULL,NULL,10,'[{"ref": 2297, "name": "공예", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (151587,'네페르타리의 가슴 장식',NULL,'람세스2세의 왕비인 네페르타리가
+입었다는 장식 드레스.','TRUE','몸',NULL,20,30,NULL,30,'[{"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2278, "name": "미술", "value": 1}, {"ref": 2276, "name": "대화술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (173638,'레더호제',NULL,'바이에른 축제에서 착용하는
+의상.','FALSE','몸',NULL,10,10,NULL,100,'[{"ref": 2288, "name": "주연", "value": 2}, {"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,'이벤트 보상',NULL,'500',NULL,NULL,NULL,NULL),
+ (173640,'바이에른의 의상',NULL,'바이에른 축제에서 착용하는
+의상.','FALSE','몸',NULL,10,10,NULL,100,'[{"ref": 2288, "name": "주연", "value": 2}, {"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,'이벤트 보상',NULL,'500',NULL,NULL,NULL,NULL),
+ (204449,'사탕 지팡이',NULL,'사탕 공예를 모티브로 한 지팡이. 먹을 수 없다.','TRUE','무기 (곤봉 지팡이)',2,NULL,NULL,NULL,100,NULL,NULL,NULL,NULL,'이벤트 보상',NULL,'500',NULL,NULL,NULL,NULL),
+ (204467,'산타 클로스 모자','보라','산타 클로스가
+머리에 쓰는 모자.','FALSE','머리',NULL,5,NULL,5,40,'[{"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,'500',NULL,NULL,NULL,NULL),
+ (217247,'군의의 융복개갑',NULL,'한족의 군의가 입는 갑옷.
+갑옷 위에 융복을 걸쳤다.','TRUE','몸',35,90,NULL,NULL,150,'[{"ref": 2336, "name": "외과의술", "value": 3}, {"ref": 2325, "name": "검술", "value": 3}, {"ref": 2338, "name": "응급처치", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (224119,'스케터 건',NULL,'총구가 넓어서
+산탄 상태로 발사 가능한 총.','TRUE','무기 (총)',70,NULL,NULL,NULL,40,'[{"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (227799,'체인 글러브','피렌체생산','가는 사슬로 짜 만든 장갑.','FALSE','팔',NULL,15,NULL,NULL,80,NULL,NULL,NULL,NULL,NULL,NULL,'3,200',NULL,NULL,NULL,NULL),
+ (227858,'메르클리우스 부츠','피렌체생산','매화 꽃을 사용하여 만든
+머리 장식품. 금이나，
+다른 것으로 만들기도 한다.','FALSE','다리',NULL,5,NULL,NULL,80,NULL,NULL,NULL,NULL,NULL,NULL,'1,600',NULL,NULL,NULL,NULL),
+ (240889,'★보안관 자켓',NULL,'스웨드 재킷과 데님 팬츠로
+구성된 의상.
+활동하기 편하고 튼튼하다.','TRUE','몸',25,85,50,30,100,'[{"ref": 2435, "name": "저격술", "value": 3}, {"ref": 2344, "name": "총격", "value": 2}, {"ref": 2453, "name": "함정", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'남성',NULL,NULL),
+ (240893,'★보안관 소녀 의상',NULL,'스웨드 베스트와 숏 팬츠로
+구성된 의상.
+활동하기 편하고 튼튼하다.','TRUE','몸',25,85,50,30,100,'[{"ref": 2435, "name": "저격술", "value": 3}, {"ref": 2453, "name": "함정", "value": 2}, {"ref": 2344, "name": "총격", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (240897,'★보안관의 부츠',NULL,'보안관이 애용하는
+스웨드 부츠.
+박차가 달려 있다.','TRUE','다리',17,25,15,15,100,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2339, "name": "전술", "value": 2}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (240901,'★보안관의 글러브',NULL,'보안관이 애용하는
+스웨드 글러브.','TRUE','팔',20,20,10,10,100,'[{"ref": 2338, "name": "응급처치", "value": 2}, {"ref": 2336, "name": "외과의술", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (240968,'웨스턴 부츠','검정','카우보이들이 애용하는 스웨드 부츠. 박차가 달려 있다.','TRUE','다리',NULL,20,NULL,2,40,'[{"ref": 2282, "name": "생존", "value": 1}, {"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (240993,'셔츠 & 청바지','시대 한정 구입','면 셔츠에 튼튼한 천으로
+만든 바지를 맞춘 복장','FALSE','몸',NULL,10,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (241163,'웨스턴 글러브','검정','카우보이들이 애용하는 스웨드 글러브.','TRUE','팔',10,4,NULL,2,40,'[{"ref": 2292, "name": "탐색", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (241224,'웨스턴 햇','검정','카우보이들이 애용하는 스웨드 모자.','TRUE','머리',NULL,12,NULL,NULL,40,'[{"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,500',NULL,NULL,NULL,NULL),
+ (241273,'셔츠 & 청바지','금괴교환','면 셔츠에 튼튼한 천으로 만든 바지를 맞춘 복장','TRUE','몸',NULL,15,NULL,NULL,30,'[{"ref": 2292, "name": "탐색", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (241389,'웨스턴 걸 의상','지도','스웨드 베스트와 숏 팬츠로 구성된 의상.
+활동하기 편하고 튼튼하다.','TRUE','몸',NULL,15,10,NULL,40,'[{"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,'여성',NULL,NULL),
+ (241488,'웨스턴 재킷','지도','스웨드 재킷과 데님 팬츠로 구성된 의상.
+활동하기 편하고 튼튼하다.','TRUE','몸',NULL,15,10,NULL,40,'[{"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,'남성',NULL,NULL),
+ (241564,'트라헤 드 바케로','시대 한정 구입','북미 서부에서 멕시코계의
+카우보이가 입는 옷','FALSE','몸',NULL,12,NULL,NULL,30,'[{"ref": 2301, "name": "기호품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (241568,'멕시칸 솜브레로','시대 한정 구입','멕시코 지역에서 쓰는
+모자. 햇빛을 가리기 위해 챙이
+넓고，정수리가 높은 것이 특징.','FALSE','머리',NULL,5,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (241572,'멕시칸 부츠','시대 한정 구입','멕시코 카우보이가
+애용하는 부츠. 끝이 뾰촉하게
+말려 올라간 것이 특징.','FALSE','다리',NULL,7,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (241647,'휘광석의 반지',NULL,'황금색으로 빛나는 휘광석을 박아 특별 제작한 반지. 그 광채는 보는 사람을 모두 매료시킨다.','TRUE','장신구',NULL,NULL,40,NULL,40,'[{"ref": 2299, "name": "광물 거래", "value": 2}, {"ref": 2307, "name": "보석 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (242440,'오팔 글러브',NULL,'색이 다른 오팔을 사치스럽게 사용한 호화스러운 장갑. 소재도 고급이고 매우 튼튼하다.','TRUE','팔',NULL,3,40,NULL,40,'[{"ref": 2307, "name": "보석 거래", "value": 1}, {"ref": 2319, "name": "직물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (242444,'프리쳐 가운',NULL,'온갖 지식을 익힌 항해자에게 주어지는 고급 가운','TRUE','몸',NULL,8,20,NULL,50,'[{"ref": 2289, "name": "지리학", "value": 1}, {"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2281, "name": "생물학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,NULL),
+ (242448,'레지스트 코트',NULL,'어떤 모략이나 힘에도 굴복하지 않는 용기있는 사람에게 주어지는 특제 코트.','TRUE','몸',NULL,15,10,NULL,40,'[{"ref": 2332, "name": "속사", "value": 2}, {"ref": 2344, "name": "총격", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,NULL),
+ (242450,'허풍쟁이 남작의 모험',NULL,'허풍쟁이 남작으로 알려진 뮌히하우젠 남작의 모험담을 모은 책','TRUE','장신구',NULL,NULL,NULL,NULL,35,'[{"ref": 2301, "name": "기호품 거래", "value": 2}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (242760,'생 제르맹의 비전서',NULL,'각지에 이상한 일화가 남아 있는 생 제르망 백작이 기록했다고 하는 연금술의 비전서','TRUE','장신구',NULL,NULL,NULL,NULL,35,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2436, "name": "연금술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (242852,'카우보이 의상','시대 한정 생산','북미에 온 유럽인이 그 지역의 재료를 사용해 만든 독특한 의상.','TRUE','몸',NULL,15,10,NULL,30,'[{"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (242954,'워크 부츠','금괴교환','북미 서부의 개척자가 신는 발목이 짧은 작업용 부츠','TRUE','다리',NULL,10,NULL,NULL,40,'[{"ref": 2293, "name": "행군", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (242956,'웨스턴 드레스','생산','북미 서부의 여성이 입는
+질 좋은 드레스','FALSE','몸',NULL,8,10,NULL,40,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2321, "name": "향료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,'여성',NULL,NULL),
+ (242958,'웨스턴 보닛','생산','북미 서부의 여성이 쓰는
+앞부분의 챙이 넓은 모자.
+기품 있는 장식이 달려 있다.','FALSE','머리',NULL,5,10,NULL,30,'[{"ref": 2315, "name": "잡화 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,'여성',NULL,NULL),
+ (242960,'보안관 코트','생산','북미 서부 도시의 보안관이
+입는 코트. 가슴에는 보안관임을
+나타내는 뱃지가 있다.','FALSE','몸',NULL,12,NULL,NULL,40,'[{"ref": 2295, "name": "경계", "value": 1}, {"ref": 2344, "name": "총격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (242962,'중절모','생산','정수리를 세로로 접은
+펠트제 모자.','FALSE','머리',NULL,8,NULL,NULL,30,'[{"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (243010,'북미 조사단의 항해 기록',NULL,'북미 조사단의 단원이 쓴 항해기록. 북미의 바다에 상세히 기록되어 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2430, "name": "항해기술", "value": 1}, {"ref": 2279, "name": "보급", "value": 1}]','[{"ref": 2292, "name": "탐색"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (243333,'건 슬링거의 옷','구입','총기 사용에 통달한 남성이
+입는 북미 서부의 의상. 여러개의
+탄약띠를 몸에 두르고 있다 .','FALSE','몸',5,15,NULL,NULL,30,'[{"ref": 2344, "name": "총격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'18,000',NULL,'남성',NULL,NULL),
+ (243358,'건 슬링거의 조끼','구입','총기의 사용에 통달한 여성이
+입는 북미 서부의 의상. 허리에
+이중으로 두르고 있는 탄약띠가 특징.','FALSE','몸',5,15,NULL,NULL,30,'[{"ref": 2344, "name": "총격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'18,000',NULL,'여성',NULL,NULL),
+ (243363,'워크 부츠','시대 한정 구입','북미 서부의 개척자가 신는
+발목이 짧은 작업용 부츠.','FALSE','다리',NULL,10,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (244281,'카우보이 부츠','(19세기 칭호제작)','북미 서부의 카우보이가
+즐겨 신는 실용적인 부츠.','FALSE','다리',NULL,8,NULL,NULL,30,'[{"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'11,000',NULL,NULL,NULL,NULL),
+ (244324,'건 슬링거의 조끼','생산','총기의 사용에 통달한 여성이
+입는 북미 서부의 의상. 허리에
+이중으로 두르고 있는 탄약띠가 특징.','FALSE','몸',5,15,NULL,NULL,30,'[{"ref": 2344, "name": "총격", "value": 1}, {"ref": 2320, "name": "총포류 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'18,000',NULL,'여성',NULL,NULL),
+ (244332,'트라헤 드 바케로','자택생산','북미 서부에서 멕시코계의
+카우보이가 입는 옷','FALSE','몸',NULL,12,NULL,NULL,30,'[{"ref": 2301, "name": "기호품 거래", "value": 1}, {"ref": 2303, "name": "무기류 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (244541,'아메리칸 비즈','3권 생산','비즈로 만든 목 장식이 특징적인
+북미 원주민들의 옷.
+남성용이며，점잖은 분위기다.','FALSE','몸',NULL,15,NULL,NULL,30,'[{"ref": 2315, "name": "잡화 거래", "value": 1}, {"ref": 2298, "name": "공예품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'여성',NULL,NULL),
+ (244546,'아메리칸 비즈','3권 생산','비즈로 만든 목 장식이 특징적인
+북미 원주민들의 옷.
+남성용이며，점잖은 분위기다.','FALSE','몸',NULL,15,NULL,NULL,30,'[{"ref": 2315, "name": "잡화 거래", "value": 1}, {"ref": 2298, "name": "공예품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'남성',NULL,NULL),
+ (244548,'워리어 페더','3권 생산','북미의 원주민 전사가 입는 옷.
+독수리 깃털 수가 입은 사람의 용맹함을 나타낸다.','TRUE','몸',NULL,15,NULL,NULL,30,'[{"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (244550,'새시 튜닉','3권 생산','화려한 자수가 놓여진 북미 원주민들의 옷.
+어깨띠가 특징이다','TRUE','몸',NULL,15,NULL,NULL,30,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (244554,'모피 튜닉','3권 생산','옷깃과 목 부분의 깃털 장식이
+특징적인，북미 원주민들의 옷.','FALSE','몸',NULL,15,NULL,NULL,30,'[{"ref": 2344, "name": "총격", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (244556,'판초 드레스','3권 생산','북미의 여성 원주민이 입는 옷.
+선명하게 염색한 가죽에 장식을 많이 달았다','TRUE','몸',NULL,15,NULL,NULL,30,'[{"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,'여성',NULL,NULL),
+ (244560,'가죽 튜닉','3권 생산','북미의 남성 원주민이 입는 옷.
+동물 가죽으로 만들었다.','TRUE','몸',NULL,15,NULL,NULL,30,'[{"ref": 2431, "name": "던지기 기술", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,'남성',NULL,NULL),
+ (244564,'가죽 망토','3권 생산','북미 원주민들의 옷.
+물소 등의 가죽을 무두질하여 만들었다. 두껍고 질기다.','TRUE','몸',NULL,15,NULL,NULL,30,'[{"ref": 2301, "name": "기호품 거래", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'13,500',NULL,NULL,NULL,NULL),
+ (244566,'헌터 튜닉','3권 생산','북미의 뛰어난 사냥꾼이 입는 옷.
+보석과 장신구를 사용하여 그 힘을 과시하고 있다.','TRUE','몸',NULL,15,NULL,NULL,30,'[{"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2344, "name": "총격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (245245,'백랍 반지',NULL,'백랍으로 만든 훌륭한 반지','TRUE','장신구',NULL,NULL,25,NULL,50,'[{"ref": 2299, "name": "광물 거래", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (245296,'워크 부츠','자택생산','북미 서부의 개척자가 신는
+발목이 짧은 작업용 부츠.','FALSE','다리',NULL,10,NULL,NULL,30,'[{"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (245721,'건 슬링거의 옷','생산','총기 사용에 통달한 남성이
+입는 북미 서부의 의상. 여러개의
+탄약띠를 몸에 두르고 있다 .','FALSE','몸',5,15,NULL,NULL,30,'[{"ref": 2344, "name": "총격", "value": 1}, {"ref": 2320, "name": "총포류 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'18,000',NULL,'남성',NULL,NULL),
+ (245850,'건 슬링거의 조끼','침몰선','총기의 사용에 통달한 여성이 입는 북미 서부의 의상. 허리에 이중으로 두르고 있는 탄약띠가 특징.','TRUE','몸',5,20,NULL,NULL,70,'[{"ref": 2344, "name": "총격", "value": 2}, {"ref": 2347, "name": "포술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'9,000',NULL,'여성',NULL,NULL),
+ (245852,'숙련된 용병의 부적',NULL,'금 수송선의 호위로 고용되었던 숙련된 용병이 예전에 몸에 지니던 부적.','TRUE','장신구',NULL,NULL,20,NULL,50,'[{"ref": 2348, "name": "회피", "value": 2}, {"ref": 2336, "name": "외과의술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (246288,'개척자의 엽총',NULL,'북미 서부의 개척자가 호신을 위해 가지고 다니는 총. 개척자에게는 부적과도 같은 존재.','TRUE','무기 (총)',35,NULL,NULL,NULL,100,'[{"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2299, "name": "광물 거래", "value": 2}, {"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (246295,'웨스턴 라이플',NULL,'북미 서부의 개척자가 애용하는 라이플 총.','TRUE','무기 (총)',45,10,NULL,NULL,100,'[{"ref": 2435, "name": "저격술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (246417,'멕시칸 솜브레로','침몰선','멕시코 지역에서 쓰는 모자. 햇빛을 가리기 위해 챙이 넓고, 정수리가 높은 것이 특징.','TRUE','머리',NULL,12,NULL,NULL,60,'[{"ref": 2301, "name": "기호품 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'9,000',NULL,NULL,NULL,NULL),
+ (246421,'성공한 사람의 부적',NULL,'금맥을 찾아내서 억만장자가 된 사람이 예전에 소중하게 여겼던 부적.','TRUE','장신구',NULL,NULL,20,NULL,50,'[{"ref": 2299, "name": "광물 거래", "value": 2}, {"ref": 2300, "name": "귀금속 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (246450,'금괴 관리인의 장부',NULL,'어떤 상인이 운송하는 금괴를 관리하기 위해 기록하던 장부.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2432, "name": "관리기술", "value": 1}, {"ref": 2313, "name": "운용", "value": 1}]','[{"ref": 1389, "name": "복장예절 강화"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (246495,'카우보이 부츠','침몰선','북미 서부의 카우보이가
+즐겨 신는 실용적인 부츠.','FALSE','다리',NULL,8,NULL,NULL,60,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,NULL,NULL,NULL),
+ (246530,'멕시칸 부츠','침몰선','멕시코 카우보이가 애용하는 부츠. 끝이 뾰촉하게 말려 올라간 것이 특징.','TRUE','다리',NULL,7,NULL,NULL,60,'[{"ref": 2294, "name": "가축 거래", "value": 1}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (246581,'숙련된 용병의 일지',NULL,'금 수송선을 호위로 고용된 숙련된 용병이 매일 적던 일지.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2434, "name": "병기기술", "value": 1}, {"ref": 2342, "name": "조타", "value": 1}]','[{"ref": 1376, "name": "피로도 회복"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (246959,'셔츠 & 청바지','침몰선','면 셔츠에 튼튼한 천으로 만든 바지를 맞춘 복장','TRUE','몸',NULL,10,NULL,NULL,60,'[{"ref": 2284, "name": "인식", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'9,000',NULL,NULL,NULL,NULL),
+ (247289,'중절모','침몰선','허드슨만 8성 북미조사단 입수','TRUE','머리',NULL,8,NULL,NULL,60,'[{"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2291, "name": "측량", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'9,000',NULL,NULL,NULL,NULL),
+ (247392,'건 슬링거의 옷','침몰선','총기 사용에 통달한 남성이 입는 북미 서부의 의상. 여러개의 탄약띠를 몸에 두르고 있다.','TRUE','몸',5,20,NULL,NULL,70,'[{"ref": 2344, "name": "총격", "value": 2}, {"ref": 2347, "name": "포술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'9,000',NULL,'남성',NULL,NULL),
+ (247415,'트라헤 드 바케로','침몰선','북미 서부에서 멕시코계의
+카우보이가 입는 옷','FALSE','몸',NULL,12,NULL,NULL,60,'[{"ref": 2317, "name": "주류 거래", "value": 2}, {"ref": 2288, "name": "주연", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'9,000',NULL,NULL,NULL,NULL),
+ (247892,'레이스 장갑',NULL,'최고급 레이스로 만든 아름다운 장갑','TRUE','팔',NULL,3,10,NULL,55,'[{"ref": 2301, "name": "기호품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (248159,'리걸 부츠',NULL,'두꺼운 가죽과 벨트로 만든 중후한 부츠.
+운동성이 뛰어나며 튼튼하기도 하다','TRUE','다리',NULL,15,5,NULL,40,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (248391,'스타 사파이어 귀걸이',NULL,'아주 귀중한 반짝이는 별과 같은 사파이어를 곁들인 귀걸이.','TRUE','장신구',NULL,NULL,50,NULL,20,'[{"ref": 2319, "name": "직물 거래", "value": 2}, {"ref": 2312, "name": "염료 거래", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (248645,'워크 부츠','침몰선','북미 서부의 개척자가 신는 발목이 짧은 작업용 부츠.','TRUE','다리',NULL,10,NULL,NULL,60,'[{"ref": 2289, "name": "지리학", "value": 1}, {"ref": 2291, "name": "측량", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,NULL,NULL,NULL),
+ (248726,'특제 보안관 코트',NULL,'북미 서부 보안관의 의상을 본떠서 만든 옷. 고급인데다 품질 좋은 소재를 사용했다.','TRUE','몸',NULL,15,10,NULL,70,'[{"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2278, "name": "미술", "value": 2}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,NULL),
+ (249656,'웨스턴 드레스','금괴교환','북미 서부의 여성이 입는 질 좋은 드레스','TRUE','몸',NULL,8,15,NULL,40,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2280, "name": "보물 감정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,'여성',NULL,NULL),
+ (249664,'웨스턴 보닛','금괴교환','북미 서부의 여성이 쓰는 앞부분의 챙이 넓은 모자. 기품 있는 장식이 달려 있다.','TRUE','머리',NULL,5,10,NULL,40,'[{"ref": 2315, "name": "잡화 거래", "value": 1}, {"ref": 2300, "name": "귀금속 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,'여성',NULL,NULL),
+ (249984,'보안관 코트','금괴교환','북미 서부의 보안관이 입는 코트.
+가슴에는 보안관임을 나타내는 뱃지가 있다.','TRUE','몸',NULL,20,NULL,NULL,40,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (250194,'중절모','금괴교환','정수리를 세로로 접은
+펠트제 모자.','FALSE','머리',NULL,8,NULL,NULL,30,'[{"ref": 2306, "name": "보관", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (251275,'약초꾼의 바지저고리',NULL,'조선의 옷.
+바지라고 부르는, 하의와 저고리라고 부르는 상의를 합쳐 입는다.','TRUE','몸',NULL,30,NULL,NULL,100,'[{"ref": 2290, "name": "채집", "value": 2}, {"ref": 2283, "name": "생태 조사", "value": 2}, {"ref": 2281, "name": "생물학", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (253154,'가죽 팔찌',NULL,'저스틴이 준 그녀의 팔찌와 똑같은 팔찌.','TRUE','장신구',NULL,NULL,NULL,NULL,100,'[{"ref": 2299, "name": "광물 거래", "value": 2}, {"ref": 2296, "name": "공업품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (259763,'꿈을 쫓는 사람의 부적',NULL,'일확천금을 꿈꾸는 사람의 마음이 담긴 부적.','TRUE','장신구',NULL,NULL,20,NULL,50,'[{"ref": 2292, "name": "탐색", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (263299,'리볼버 라이플',NULL,'회전식 탄창을 갖춘
+사냥용 라이플 총','TRUE','무기 (총)',68,NULL,NULL,NULL,30,'[{"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2332, "name": "속사", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (266890,'카우보이 부츠','금괴교환','북미 서부의 카우보이가
+즐겨 신는 실용적인 부츠.','FALSE','다리',NULL,8,NULL,NULL,40,'[{"ref": 2294, "name": "가축 거래", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'11,000',NULL,NULL,NULL,NULL),
+ (283308,'바냐도르',NULL,'물가에서 활동하기 편하도록
+제작된 남성용 의상.','FALSE','몸',NULL,2,NULL,NULL,100,NULL,NULL,NULL,NULL,'이벤트 보상',NULL,'500',NULL,'여성',NULL,NULL),
+ (286355,'셔츠 & 청바지','수탈','면 셔츠에 튼튼한 천으로 만든 바지를 맞춘 복장','TRUE','몸',NULL,10,NULL,NULL,50,'[{"ref": 2299, "name": "광물 거래", "value": 1}, {"ref": 2280, "name": "보물 감정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (291737,'흰 털 보야르',NULL,'희귀한 흰색 모피로 만든
+
+길다란 모자. 방한용으로
+
+인기가 많다.','TRUE','머리',NULL,6,15,NULL,50,'[{"ref": 2310, "name": "섬유 거래", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (291824,'파르티잔',NULL,'삼각형의 날을 붙인 장창.
+파르티잔(게릴라전투)에 잘 사용되었기 때문에 이런 이름이 붙었다.','TRUE','무기 (창)',80,15,NULL,NULL,100,'[{"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2334, "name": "수탈", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'25,000',NULL,NULL,NULL,NULL),
+ (307291,'인도자의 법의',NULL,'승려 중에서도 위치가 높은 승려만 입는 것이 허락된 법의.','TRUE','몸',NULL,10,30,NULL,50,'[{"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (307977,'남만품 목록서',NULL,'일본에서 거래되는 남만품의 목록서.
+작성자의 이름은 보이지 않는다.','TRUE','장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2298, "name": "공예품 거래", "value": 1}, {"ref": 2304, "name": "미술품 거래", "value": 1}, {"ref": 2296, "name": "공업품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (308197,'문장을 수놓은 일본옷(남색)',NULL,'일본의 대상인이 입는 가문 문장을 수놓은 호화스러운 일본 옷.','TRUE','몸',NULL,7,15,NULL,40,'[{"ref": 2323, "name": "회계", "value": 2}, {"ref": 2298, "name": "공예품 거래", "value": 1}, {"ref": 2320, "name": "총포류 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (308537,'남국 상인의 반지',NULL,'오세아니아에서 활발한 상업활동을 기리기 위해 수여된 산호 반지.','TRUE','장신구',NULL,NULL,20,NULL,50,'[{"ref": 2301, "name": "기호품 거래", "value": 1}, {"ref": 2314, "name": "의약품 거래", "value": 1}, {"ref": 2323, "name": "회계", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (308796,'삼십육계 병법서',NULL,'중세에 쓰여진 중국의 병법서.
+상황에 대처하는 36가지 병법이 적혀있다.','TRUE','장신구',5,NULL,NULL,NULL,20,'[{"ref": 2348, "name": "회피", "value": 1}, {"ref": 2329, "name": "돌격", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (309231,'묘지기의 돌도끼',NULL,'조선의 오래된 묘지에서 발견된 돌도끼. 돌로 만들어져서 무겁고 사용하기가 어렵지만 위력이 세다.','TRUE','무기 (도끼)',60,NULL,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (310031,'실크 세르뷔에트',NULL,'최상의 요리사에게만 주어진 고급 냅킨.
+섬세한 자수가 놓여있다.','TRUE','장신구',NULL,NULL,30,NULL,50,'[{"ref": 2311, "name": "식료품 거래", "value": 2}, {"ref": 2369, "name": "조미료 거래", "value": 1}, {"ref": 2301, "name": "기호품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (310115,'융복개갑','유적 던전','한족의 장군이 입는 갑옷.
+갑옷 위에 융복을 걸쳤다.','TRUE','몸',15,55,NULL,NULL,30,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (310964,'대궁',NULL,'일본활의 한 종류.
+일본활 중에서도 특히 크고
+위력이 센 활.','TRUE','무기 (활)',60,NULL,NULL,NULL,40,'[{"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}, {"ref": 2326, "name": "관통", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (311568,'비단 각반','유적 던전','조선 군인이 갑옷과 함께 착용하는 정강이 보호대.
+두꺼운 비단으로 만든다.','TRUE','다리',NULL,18,NULL,NULL,20,'[{"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (314140,'바지 저고리','유적 던전 (채집 / 탐색)','조선의 옷. 바지라고 부르는
+하의와 저고리라고 부르는
+상의를 합쳐 입는다.','TRUE','몸',NULL,5,NULL,NULL,30,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2292, "name": "탐색", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (315222,'정성공의 병법서',NULL,'어떠한 전황에도 대응해서 승리를 이끌어 낸 정성공이 기록한 병법서.','TRUE','장신구',5,NULL,NULL,NULL,20,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (315246,'징비록',NULL,'류성룡이 기록한 사서.
+과거의 전투나 설화가 다수 기록되어 있다.','TRUE','장신구',10,NULL,10,NULL,40,'[{"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2270, "name": "고고학", "value": 2}]','[{"ref": 2292, "name": "탐색"}]',NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (315248,'비갑','유적 던전','조선 군인이 갑옷과 함께 착용하는 방어구.
+팔에서 손등까지를 보호한다.','TRUE','팔',10,7,NULL,NULL,30,'[{"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (318229,'선장',NULL,'초승달 모양의 날을 끝에 붙인 막대 모양의 무기.
+승려가 애용했다고 한다.','TRUE','무기 (창)',60,NULL,NULL,NULL,60,'[{"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (320462,'스타 사파이어 목걸이',NULL,'매우 진귀한, 별의 광채를 발하는
+사파이어가 달린 목걸이','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2319, "name": "직물 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}, {"ref": 2315, "name": "잡화 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (324660,'건 슬링거의 조끼','금괴교환','총기 사용에 통달한 여성이 입는 북미 서부의 의상. 허리에 이중으로 두르고 있는 탄약띠가 특징.','TRUE','몸',10,15,NULL,NULL,40,'[{"ref": 2344, "name": "총격", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'18,000',NULL,'여성',NULL,NULL),
+ (324662,'건 슬링거의 옷','금괴교환','총기 사용에 통달한 남성이 입는 북미 서부의 의상. 여러개의 탄약띠를 몸에 두르고 있다.','TRUE','몸',10,15,NULL,NULL,40,'[{"ref": 2344, "name": "총격", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'18,000',NULL,'남성',NULL,NULL),
+ (325866,'고장신','유적 던전','끝이 휘어져 올라간
+한족의 신발.','FALSE','다리',NULL,3,10,NULL,30,'[{"ref": 2452, "name": "상품지식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (338706,'두발 창',NULL,'농기구에서 유래된，적을 찌르는
+것에 특화된 중국의 무기.
+끝이 물러서 다루기 어렵다.','TRUE','무기 (창)',60,NULL,NULL,NULL,60,'[{"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (356662,'국성야 정성공의 청포 철갑',NULL,'대만에서 활동하는 정성공이 약식으로 착용하는 갑옷','TRUE','몸',20,60,40,NULL,150,'[{"ref": 2431, "name": "던지기 기술", "value": 3}, {"ref": 2453, "name": "함정", "value": 1}, {"ref": 2293, "name": "행군", "value": 3}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (374458,'바빌로니안 튜닉','구입','바빌로니아 사람들이 입는
+반팔 옷.간소한
+옷이지만 옷감은 튼튼하다.','FALSE','몸',NULL,4,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (374460,'바빌로니안 드레스','구입','바빌로니안 상류계급의
+여성이 입는 옷. 프릴있는
+천이 겹겹이 덧대어져 있다.','FALSE','몸',NULL,5,20,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'8,000',NULL,'여성',NULL,NULL),
+ (374462,'바빌로니안 헤드밴드','구입','바빌로니아 상류 계급의 사람들이 착용하는 금속 재질의 머리 장식,','TRUE','머리',NULL,5,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (374464,'바빌로니안 샌들','구입','바빌로니아 사람들이 신는 샌들. 발꿈치가 덮어져 있다.','TRUE','다리',NULL,3,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (374570,'바빌로니안 튜닉','생산','바빌로니아 사람들이 입는
+반팔 옷.간소한
+옷이지만 옷감은 튼튼하다.','FALSE','몸',NULL,4,NULL,NULL,30,'[{"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (374575,'바빌로니안 드레스','생산','바빌로니안 상류계급의
+여성이 입는 옷. 프릴있는
+천이 겹겹이 덧대어져 있다.','FALSE','몸',NULL,5,20,NULL,30,'[{"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,'여성',NULL,NULL),
+ (374583,'바빌로니안 헤드밴드','생산','바빌로니아 상류 계급의 사람들이
+착용하는 금속 재질의 머리 장식.','FALSE','머리',NULL,5,NULL,NULL,40,'[{"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (374585,'바빌로니안 샌들','생산','바빌로니아 사람들이 신는
+샌들. 발꿈치가 덮여져있다.','FALSE','다리',NULL,3,NULL,NULL,40,'[{"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (374614,'바빌로니안 하프',NULL,'한때 바빌로니아 근처에서 연주되었다고 하는 하프의 한 종류.
+몸으로 하프를 안듯이 잡고 연주한다.','TRUE','도구',NULL,NULL,10,10,100,'[{"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2278, "name": "미술", "value": 2}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (374705,'바빌로니아 병사의 부츠','탐색','바빌로니아 병사가 신는 부츠. 목이 길고, 끈을 꼬아 올려 무릎 아래에서 묶게 되어있다.','TRUE','다리',NULL,7,NULL,NULL,30,'[{"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (374716,'바빌로니아 병사의 투구','탐색','바빌로니아 병사가 쓰는 투구. 뾰족한 모양이 특징이다.','TRUE','머리',NULL,15,NULL,NULL,30,'[{"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,NULL,NULL,NULL),
+ (374783,'황금으로 된 왕의 지팡이','수탈','금으로 된 예식용 지팡이
+
+어떤 고대 국가의 왕의 물품이었다고 한다.','TRUE','무기 (곤봉 지팡이)',20,10,30,NULL,70,'[{"ref": 2299, "name": "광물 거래", "value": 2}, {"ref": 2303, "name": "무기류 거래", "value": 1}, {"ref": 2320, "name": "총포류 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (374856,'느부갓네살의 원통인장',NULL,'바빌론의 공중정원을 만들었다고 하는 느부갓네살 2세의 원통인장.','TRUE','장신구',NULL,NULL,NULL,NULL,35,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2281, "name": "생물학", "value": 1}, {"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (374908,'바빌로니아 군복','탐색','바빌로니아 병사가 입는 의상.
+움직이기 편한 튜닉 위에
+갑옷과 허리띠가 걸쳐져 있다.','FALSE','몸',NULL,20,NULL,NULL,30,'[{"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,500',NULL,NULL,NULL,NULL),
+ (375622,'물 아핀 점토판',NULL,'바빌론의 천체 관측 기록이 설형문자로 기록되어 있는 작은 점토판','TRUE','장신구',NULL,NULL,NULL,NULL,35,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 137755, "name": "천문학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (375705,'바빌로니아 군복','생산','바빌로니아 병사가 입는 의상.
+움직이기 편한 튜닉 위에
+갑옷과 허리띠가 걸쳐져 있다.','FALSE','몸',NULL,20,NULL,NULL,30,'[{"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,500',NULL,NULL,NULL,NULL),
+ (375722,'노블 튜닉','생산','바빌로니아의 신관이나 왕족이
+입는 호화로운 옷. 반팔 튜닉
+위에 고급 천이 감겨져 있다.','FALSE','몸',NULL,8,30,NULL,30,'[{"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (375731,'바빌로니아 병사의 부츠','생산','바빌로니아 병사가 신는
+부츠. 목이 길고，끈을 꼬아 올려
+무릎 아래에서 묶게 되어있다.','FALSE','다리',NULL,7,NULL,NULL,40,'[{"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (375743,'바빌로니아 병사의 투구','생산','바빌로니아 병사가 쓰는 투구.
+뾰족한 모양이 특징이다.','FALSE','머리',NULL,15,NULL,NULL,40,'[{"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,NULL,NULL,NULL),
+ (375779,'다이아뎀','생산','바빌로니아 왕족이나 귀족이
+쓰는 원뿔형 모자.','FALSE','머리',NULL,7,25,NULL,40,'[{"ref": 2314, "name": "의약품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (376354,'천고의 왕관',NULL,'태고에 만들어진 것으로 보이는 왕관. 정교한 장식이 당시 문화의 우아함을 보여주고 있다.','TRUE','머리',NULL,10,40,NULL,80,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,'20,000',NULL,NULL,NULL,NULL),
+ (377249,'바빌로니아의 왕관','생산','바빌로니아 왕이 쓰는 왕관.
+정밀한 조각이 새겨져 있다.','FALSE','머리',NULL,7,30,NULL,40,'[{"ref": 2321, "name": "향료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (377260,'바빌로니아 보병의 창','생산','바빌로니아 보병이 사용하는 창. 손잡이 끝이 둥근 이유는 발등위에 올려놓기 위해서다.','TRUE','무기 (창)',38,NULL,NULL,10,30,'[{"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (377262,'멕시칸 솜브레로','생산','멕시코 지역에서 쓰는
+모자. 햇빛을 가리기 위해 챙이
+넓고，정수리가 높은 것이 특징.','FALSE','머리',NULL,5,NULL,NULL,30,'[{"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (377276,'멕시칸 부츠','생산','멕시코 카우보이가
+애용하는 부츠. 끝이 뾰촉하게
+말려 올라간 것이 특징.','FALSE','다리',NULL,7,NULL,NULL,30,'[{"ref": 2288, "name": "주연", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (390570,'잉카 의복','주황','잉카의 여성이 평상복으로
+착용하는 의복.','FALSE','몸',NULL,18,NULL,NULL,50,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (411683,'유럽 실록서',NULL,'마테오 리치가 기록한 유럽의 무기와 종교에 대한 보고서.','TRUE','장신구',10,NULL,10,NULL,40,'[{"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2287, "name": "종교학", "value": 2}]','[{"ref": 2292, "name": "탐색"}]',NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (458957,'무예가의 철모',NULL,'무사라고 불리는 무예가 뛰어난 사람이 쓰는 철제 투구','TRUE','머리',2,20,NULL,NULL,60,'[{"ref": 2330, "name": "방어", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (460374,'극동항해기록',NULL,'윌리엄 아담스가 기록한 항해 기록.
+유럽부터 시작된 긴 항해의 전부가 기록되어 있다.','TRUE','장신구',10,NULL,10,NULL,40,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2289, "name": "지리학", "value": 2}]','[{"ref": 2284, "name": "인식"}]',NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (499655,'대남어보지도',NULL,'하빈이 정성공에게 대남 남부의 지도와 함께 헌상한, 
+대만의 공략법과 보물의 소재를 표시한 책','TRUE','장신구',10,NULL,10,NULL,40,'[{"ref": 2431, "name": "던지기 기술", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 2}]','[{"ref": 2284, "name": "인식"}]',NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (504583,'류튼',NULL,'짐승 이빨로 만든 잔.
+신성한 힘이 깃들어 있다고 한다.','TRUE','도구',5,5,20,20,100,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2317, "name": "주류 거래", "value": 2}, {"ref": 2305, "name": "바디 랭귀지", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (504774,'미노스 왕 전설집',NULL,'크레타섬의 왕의 전설에 대해 기록한 책. 스페인어 낙서가 되어 있다
+ * 육상조사 보상 아이템','TRUE','장신구',NULL,NULL,NULL,NULL,100,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (504891,'마도사의 옷',NULL,'일찍이 마도사가 입었다는 특수 의복. 어딘가 신비한 힘이 느껴진다.','TRUE','몸',NULL,30,NULL,35,100,'[{"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2270, "name": "고고학", "value": 2}, {"ref": 137755, "name": "천문학", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (505036,'고양이 머리 장식',NULL,'사람들에게 친숙한 동물의
+귀를 모티브로 한 머리 장식.','FALSE','머리',NULL,5,NULL,15,100,'[{"ref": 2334, "name": "수탈", "value": 1}, {"ref": 2275, "name": "낚시", "value": 1}, {"ref": 2453, "name": "함정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (505345,'코르슬렛 드레스','시대 한정 구입','고대 크레타 여성이 착용한 드레스. 몸통을 단단히 조일 수 있다.','TRUE','몸',NULL,6,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'8,000',NULL,'여성',NULL,NULL),
+ (505349,'크레타의 머리 장식','시대 한정 구입','고대 크레타섬에서 여성의
+머리에 장식된 장신구.','FALSE','머리',NULL,5,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (505351,'크레타의 헤드드레스','시대 한정 구입','고대 크레타섬 사람들이 쓴 모자.','TRUE','머리',NULL,6,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (505353,'크레타의 로인크로스','시대 한정 구입','고대 크레타 남성이
+착용한 화려한 허리띠.','FALSE','몸',NULL,4,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'6,500',NULL,'남성',NULL,NULL),
+ (505702,'미케네 병사의 방호복',NULL,'고대 미케네 병사가 착용한 의상.
+움직이기 쉬운 구조로 되어있다.','TRUE','몸',NULL,40,NULL,NULL,30,'[{"ref": 2330, "name": "방어", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,500',NULL,NULL,NULL,NULL),
+ (506054,'코르슬렛 드레스','유적던전','고대 크레타 여성이 착용한 드레스.
+몸통을 단단히 조일 수 있다.','TRUE','몸',NULL,6,NULL,NULL,50,'[{"ref": 2310, "name": "섬유 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,'여성',NULL,NULL),
+ (506100,'크레타의 로인크로스','유적 던전','고대 크레타 남성이
+착용한 화려한 허리띠.','FALSE','몸',NULL,4,NULL,NULL,50,'[{"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,500',NULL,'남성',NULL,NULL),
+ (506109,'크레타의 헤드드레스','유적 던전','고대 크레타섬 사람들이 쓴 모자.','TRUE','머리',NULL,6,NULL,NULL,50,'[{"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (506254,'청동 톱니바퀴',NULL,'고대 그리스에서 제작된 천체의 움직임을 계산하는 기계의 일부라 생각되는 청동 톱니바퀴.','TRUE','장신구',NULL,NULL,NULL,NULL,35,'[{"ref": 137755, "name": "천문학", "value": 1}, {"ref": 2318, "name": "주조", "value": 1}, {"ref": 2297, "name": "공예", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (506388,'크레타 성각문자 인장',NULL,'고대 크레타섬 문자가
+한 글자씩 새겨진 인장.','TRUE','장신구',NULL,NULL,NULL,NULL,35,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2297, "name": "공예", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (506692,'특별조사원의 로브',NULL,'대학 공인 조사원에게 수여되는
+특별한 로브. 대학에서 존경어린
+시선을 받을 수 있다.','TRUE','몸',NULL,8,15,1,50,'[{"ref": 2289, "name": "지리학", "value": 2}, {"ref": 2283, "name": "생태 조사", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,'30,000',NULL,NULL,NULL,NULL),
+ (506701,'워리어 크레스트',NULL,'고대 크레타섬 부근에서
+착용된 투구. 원형
+장식이 특징.','TRUE','머리',NULL,18,NULL,NULL,30,'[{"ref": 2334, "name": "수탈", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (506929,'미케네 병사의 다리 보호대',NULL,'고대 미케네 병사가 착용했던 정강이 보호대의 일종.','TRUE','다리',NULL,8,NULL,NULL,30,'[{"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (506997,'상아 해양 시계',NULL,'공로를 인정받아 하사받은 상아로 만든 시계.
+정밀하게 제작되어 해상에서도 정확한 시간을 알 수 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,100,'[{"ref": 137755, "name": "천문학", "value": 1}, {"ref": 2284, "name": "인식", "value": 2}, {"ref": 2278, "name": "미술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'35,000',NULL,NULL,NULL,NULL),
+ (509352,'금장식 귀걸이',NULL,'금장식이 된 화려한 귀걸이. 시장에는 거의 없는 것으로 유명하다.','TRUE','장신구',NULL,NULL,NULL,NULL,100,'[{"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2300, "name": "귀금속 거래", "value": 2}]',NULL,NULL,NULL,'이벤트 보상',NULL,'15,000',NULL,NULL,NULL,NULL),
+ (509841,'황녀의 머리 장식',NULL,'고대 크레타섬에서 여성의 머리에 장식된 장신구.','TRUE','머리',NULL,5,NULL,NULL,50,'[{"ref": 2300, "name": "귀금속 거래", "value": 1}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (510202,'군왕의 깃털관',NULL,'고대 크레타섬의 왕족이 쓴 관.
+공작의 깃털이 장식돼 있다.','TRUE','머리',NULL,10,30,NULL,30,'[{"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2278, "name": "미술", "value": 1}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,'15,000',NULL,NULL,NULL,NULL),
+ (511542,'축제의 류튼',NULL,'모험의 공적을 인정해 하사된 잔.
+고대 축제에 사용되었다고 알려져 있다.','TRUE','도구',NULL,NULL,20,20,30,'[{"ref": 2286, "name": "조달", "value": 2}, {"ref": 2288, "name": "주연", "value": 2}, {"ref": 2290, "name": "채집", "value": 2}]','[{"ref": 1376, "name": "피로도 회복"}]',NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (511552,'크레타 왕족의 팔장식',NULL,'고대 크레타섬을 다스린 왕족이 지니고 있던 팔장식.','TRUE','장신구',NULL,NULL,30,NULL,100,'[{"ref": 2323, "name": "회계", "value": 2}, {"ref": 2304, "name": "미술품 거래", "value": 2}, {"ref": 2300, "name": "귀금속 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (511669,'미노타우로스의 도끼',NULL,'라비린토스 내에 존재했던 괴물이 가지고 있던 도끼와 같은 모양 도끼.','TRUE','무기 (도끼)',80,NULL,NULL,NULL,75,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (512666,'크레타의 판탈로니아','유적 던전','고대 크레타 여성이 착용한 의상.
+하반신은 여유로운 바지 모양이다.','TRUE','몸',NULL,6,NULL,NULL,30,'[{"ref": 2321, "name": "향료 거래", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,'여성',NULL,NULL),
+ (519108,'오래된 팔찌',NULL,'라비린토스의 괴물이 소지하고 있던 팔찌. 괴물에게 도전하였다 패배한 자의 소지품이었던 것 같다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,NULL,NULL,NULL),
+ (529707,'동풍의 검',NULL,'동풍의 신, 에우로스의 힘이 깃든 검','TRUE','무기 (검)',27,NULL,5,NULL,60,'[{"ref": 2277, "name": "돛 조종", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,NULL,NULL,NULL,NULL,NULL),
+ (529720,'서풍의 검',NULL,'서풍의 신, 제피로스의 힘이 깃든 검','TRUE','무기 (검)',27,NULL,5,NULL,60,'[{"ref": 2277, "name": "돛 조종", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,NULL,NULL,NULL,NULL,NULL),
+ (529726,'남풍의 검',NULL,'남풍의 신, 노토스의 힘이 깃든 검','TRUE','무기 (검)',27,NULL,5,NULL,60,'[{"ref": 2277, "name": "돛 조종", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,NULL,NULL,NULL,NULL,NULL),
+ (529730,'북풍의 검',NULL,'북풍의 신, 보레아스의 힘이 깃든 검','TRUE','무기 (검)',27,NULL,5,NULL,60,'[{"ref": 2277, "name": "돛 조종", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,NULL,NULL,NULL,NULL,NULL),
+ (533172,'라운드 크레스트',NULL,'고대 크레타섬 부근에서
+착용된 투구. 원형
+장식이 특징.','FALSE','머리',NULL,15,NULL,NULL,40,'[{"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (533175,'하르파',NULL,'낫과 같은 모양을 한
+그리스 고대의 칼. 적에게 걸어
+안쪽 칼날로 벤다.','TRUE','무기 (검)',40,NULL,NULL,NULL,40,'[{"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (533185,'미케네 병사의 정강이 보호대',NULL,'고대 미케네 병사가
+착용했던 정강이 보호대의 일종.','FALSE','다리',NULL,7,NULL,NULL,40,'[{"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (533186,'공작의 깃털관',NULL,'고대 크레타섬의 왕족이
+쓴 관. 공작의 깃털이
+장식돼 있다.','FALSE','머리',NULL,7,NULL,NULL,40,'[{"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (534328,'마도사의 모자',NULL,'일찍이 마도사가 썼다는 특수 모자. 어딘가 신비한 힘이 느껴진다.','TRUE','머리',NULL,15,NULL,15,100,'[{"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2285, "name": "자물쇠 따기", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (537790,'미노스 왕의 귀걸이',NULL,'크레타의 전설의 왕 미노스 왕이 착용하고 있었다고 전해지는 귀걸이.','TRUE','장신구',NULL,NULL,20,NULL,100,'[{"ref": 2334, "name": "수탈", "value": 2}, {"ref": 2329, "name": "돌격", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (542278,'크레타의 판탈로니아','시대 한정 생산','고대 크레타 여성이 착용한
+의상. 하반신은 여유로운
+바지 모양이다.','FALSE','몸',NULL,6,NULL,NULL,40,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,'여성',NULL,NULL),
+ (544002,'미케네 병사의 의상',NULL,'고대 미케네 병사가
+착용한 의상. 움직이기 쉬운 구조로
+되어 있다.','FALSE','몸',NULL,30,NULL,NULL,40,'[{"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,500',NULL,NULL,NULL,NULL),
+ (554645,'회중시계',NULL,'뚜껑 겉면에 사자 문장이 장식된 회중시계','TRUE','장신구',NULL,NULL,NULL,NULL,100,'[{"ref": 137755, "name": "천문학", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,'500',NULL,NULL,NULL,NULL),
+ (554647,'갈색 토끼인형',NULL,'시골 토끼를 모티브로 한 갈색 토끼 봉제인형','TRUE','도구',NULL,NULL,NULL,NULL,100,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,'이벤트 보상',NULL,'500',NULL,NULL,NULL,NULL),
+ (554651,'토끼 머리 장식',NULL,'시골 토끼를 본떠 만든
+머리 장식.','FALSE','머리',NULL,2,NULL,10,100,NULL,NULL,NULL,NULL,'이벤트 보상',NULL,'500',NULL,NULL,NULL,NULL),
+ (574363,'호박 가면',NULL,'호박의 속을 도려내어 만든 머리 장식.','TRUE','머리',NULL,12,12,NULL,40,'[{"ref": 2305, "name": "바디 랭귀지", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (595864,'엑스 로퍼',NULL,'10주년을 기념해 만들어진
+남성 항해자용 예복. 벨트에
+「X」자가 새겨져 있다.','FALSE','몸',NULL,10,25,NULL,100,'[{"ref": 2284, "name": "인식", "value": 2}, {"ref": 2292, "name": "탐색", "value": 2}, {"ref": 2430, "name": "항해기술", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'남성',NULL,NULL),
+ (595869,'엑스 팔다',NULL,'10주년을 기념해 만들어진
+여성 항해자용 예복. 벨트에
+「X」자가 새겨져 있다.','FALSE','몸',NULL,10,25,NULL,100,'[{"ref": 2284, "name": "인식", "value": 2}, {"ref": 2292, "name": "탐색", "value": 2}, {"ref": 2430, "name": "항해기술", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'여성',NULL,NULL),
+ (595870,'엑스 밴더',NULL,'10주년을 기념해 만들어진
+남성 항해자용 머리띠.
+「X」자가 새겨져 있다.','FALSE','머리',NULL,8,20,NULL,100,'[{"ref": 2322, "name": "향신료 거래", "value": 2}, {"ref": 2317, "name": "주류 거래", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,'5,000',NULL,'남성',NULL,NULL),
+ (595873,'엑스 트리코니오',NULL,'10주년을 기념해 만들어진
+여성항해자용 소형 삼각모.
+「X」자가 새겨져 있다.','FALSE','머리',NULL,8,20,NULL,100,'[{"ref": 2322, "name": "향신료 거래", "value": 2}, {"ref": 2317, "name": "주류 거래", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,'5,000',NULL,'여성',NULL,NULL),
+ (595880,'10주년 기념 트리코른',NULL,'10주년을 기념해 만들어진
+고급 소재 트리코른.','TRUE','머리',10,10,10,10,100,'[{"ref": 2430, "name": "항해기술", "value": 1}, {"ref": 2432, "name": "관리기술", "value": 1}, {"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (595886,'엑스 앵커',NULL,'10주년을 기념해 만들어진 닻 모양 무기. 「X」자를 모티브로 하고 있다.','TRUE','무기 (곤봉 지팡이)',58,NULL,NULL,NULL,200,'[{"ref": 2342, "name": "조타", "value": 2}, {"ref": 2325, "name": "검술", "value": 2}, {"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (633744,'코르슬렛 드레스','시대 한정 생산','고대 크레타 여성이 착용한
+드레스. 몸통을 단단히
+조일 수 있다.','FALSE','몸',NULL,6,NULL,NULL,40,'[{"ref": 2312, "name": "염료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,'여성',NULL,NULL),
+ (633832,'크레타의 로인크로스','시대 한정 생산','고대 크레타 남성이
+착용한 화려한 허리띠.','FALSE','몸',NULL,4,NULL,NULL,40,'[{"ref": 2311, "name": "식료품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,500',NULL,'남성',NULL,NULL),
+ (686198,'컴포짓 보우',NULL,'다양한 재료를 조합하여 위력을 높인 활.','TRUE','무기 (활)',55,NULL,NULL,NULL,80,'[{"ref": 2435, "name": "저격술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (691559,'황제군 총사령관 군복',NULL,'황제군 총사령관용 군복.
+발렌슈타인이 입고 나서부터는
+장교들의 동경의 대상이 되었다.','FALSE','몸',5,40,20,NULL,50,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'남성',NULL,NULL),
+ (691591,'영국 해군 하사관 군복',NULL,'잉글랜드 해군 하사관복.
+라이자도 군무를 수행할 때
+이 옷을 입는다.','FALSE','몸',5,25,15,NULL,50,'[{"ref": 2347, "name": "포술", "value": 2}, {"ref": 2335, "name": "수평사격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'여성',NULL,NULL),
+ (691604,'개척자 셔츠',NULL,'북미 개척자들 사이에서 유행하는 옷.
+저스틴이 개조한 흔적이 보인다.','FALSE','몸',10,28,10,NULL,50,'[{"ref": 2344, "name": "총격", "value": 2}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'여성',NULL,NULL),
+ (691612,'아비토 다 비라고',NULL,'빅토리아의 오빠가 골라준 의상.
+「말괄량이」여동생을 향한
+오빠의 마음이 담겨 있다.','FALSE','몸',NULL,10,30,NULL,50,'[{"ref": 2278, "name": "미술", "value": 2}, {"ref": 2270, "name": "고고학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'여성',NULL,NULL),
+ (691620,'밀수꾼의 재킷',NULL,'운반업자인 프레드릭이 애용하는
+재킷.','FALSE','몸',NULL,25,15,NULL,50,'[{"ref": 2306, "name": "보관", "value": 2}, {"ref": 2303, "name": "무기류 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'남성',NULL,NULL),
+ (691655,'로즈 블루 가운',NULL,'「푸른 장미」를 의미하는
+호화로운 가운. 쥴리앙이
+애용하는 것과 같은 물건이다.','FALSE','몸',NULL,15,30,NULL,50,'[{"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'남성',NULL,NULL),
+ (691705,'살미엔트 길드복',NULL,'살미엔트 길드원의 제복.
+알베로 같은 젊은 상인들이
+루즈하게 착용한다.','FALSE','몸',NULL,10,10,NULL,50,'[{"ref": 2323, "name": "회계", "value": 2}, {"ref": 2322, "name": "향신료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'남성',NULL,NULL),
+ (691756,'일 마니피코',NULL,'메디치 가 당주용 약식 정장.
+옷 이름의 의미는
+로렌조의 또 다른 이름이다.','FALSE','몸',NULL,12,40,NULL,50,'[{"ref": 2314, "name": "의약품 거래", "value": 2}, {"ref": 2304, "name": "미술품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'남성',NULL,NULL),
+ (691808,'흑고래 함대 대장복',NULL,'해적 전문 사냥꾼，흑고래 함대의
+대장복. 발타자르의 옷을 바탕으로
+만들었다.','FALSE','몸',15,35,10,NULL,50,'[{"ref": 2332, "name": "속사", "value": 2}, {"ref": 2326, "name": "관통", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'남성',NULL,NULL),
+ (691902,'플뢰르 드 플뢰르',NULL,'마르세이유의 일레느도
+즐겨 입는 화려한 드레스.
+「꽃 중의 꽃」이라는 뜻이다.','FALSE','몸',NULL,10,25,NULL,50,'[{"ref": 2276, "name": "대화술", "value": 2}, {"ref": 2288, "name": "주연", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (702975,'고대 그리스의 부적',NULL,'승리를 의미하는 보석인 가넷을 사용한 고대 그리스의 부적.','TRUE','장신구',NULL,NULL,40,NULL,100,'[{"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2453, "name": "함정", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (704916,'알케미스트 팔트',NULL,'연금술의 달인이라 불리는 자가 변성 연금으로 만들어 낸 로브.','TRUE','몸',NULL,25,15,NULL,50,'[{"ref": 2436, "name": "연금술", "value": 1}, {"ref": 2300, "name": "귀금속 거래", "value": 1}, {"ref": 2314, "name": "의약품 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,NULL,NULL),
+ (704919,'알케미스트 쿠클라',NULL,'연금술의 달인이라 불리는 자가 변성연금으로 만들어 낸 투구.','TRUE','머리',NULL,15,15,NULL,50,'[{"ref": 2436, "name": "연금술", "value": 1}, {"ref": 2296, "name": "공업품 거래", "value": 1}, {"ref": 2299, "name": "광물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (705429,'하세키 서클릿',NULL,'오스만 투르크 궁전에 사는
+귀인에게서 하사받은
+아름다운 이마 장식.','TRUE','머리',NULL,5,15,20,70,'[{"ref": 2276, "name": "대화술", "value": 2}, {"ref": 2295, "name": "경계", "value": 1}, {"ref": 2304, "name": "미술품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'여성',NULL,NULL),
+ (705524,'연금술의 금서',NULL,'세상의 섭리를 뛰어넘는 지식이 기록된 연금술 서적','TRUE','도구',NULL,NULL,NULL,NULL,100,'[{"ref": 2436, "name": "연금술", "value": 1}]',NULL,'[{"ref": 707667, "name": "남만 무역 교환률 증가", "value": 15}]',NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (705764,'플루크번',NULL,'「궤적」이라 이름 붙여진 활.
+환상의 금속인 오레이칼코스로 만든 지고의 일품.','TRUE','무기 (활)',68,NULL,10,NULL,40,'[{"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (705778,'상크투스',NULL,'「신성」이라 이름 붙여진 창.
+환상의 금속인 오레이칼코스로 만든 지고의 일품.','TRUE','무기 (창)',68,NULL,10,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (705793,'아트로미토스',NULL,'「두려움」이라 이름 붙여진 검.
+환상의 금속인 오레이칼코스로 만든 지고의 일품.','TRUE','무기 (검)',72,NULL,10,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (705800,'페네트랄',NULL,'「관통」이라 이름 붙여진 총.
+환상의 금속인 오레이칼코스로 만든 지고의 일품.','TRUE','무기 (총)',68,NULL,10,NULL,40,'[{"ref": 2344, "name": "총격", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (705895,'블리츠',NULL,'「번개」라 이름 붙여진 단검.
+환상의 금속인 오레이칼코스로 만든 지고의 일품.','TRUE','무기 (던지는 나이프)',55,NULL,10,NULL,40,'[{"ref": 2431, "name": "던지기 기술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (705903,'바롤로소',NULL,'「용감」이라 이름 붙여진 거대도끼.
+환상의 금속인 오레이칼코스로 만든 지고의 일품.','TRUE','무기 (도끼)',75,NULL,10,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (705909,'에그자곤',NULL,'「육각」이라 이름 붙여진 메이스.
+환상의 금속인 오레이칼코스로 만든 지고의 일품.','TRUE','무기 (곤봉 지팡이)',68,NULL,10,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (706005,'니그레드 부츠',NULL,'연금술을 행하는 과정에서 까맣게 변화된 부츠','TRUE','다리',NULL,5,8,NULL,100,'[{"ref": 2300, "name": "귀금속 거래", "value": 1}]',NULL,'[{"ref": 707656, "name": "재해 발생률 감소", "value": 10}]',NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (706018,'니그레드 글러브',NULL,'연금술을 행하는 과정에서 까맣게 변화된 글러브.','TRUE','팔',NULL,5,5,NULL,100,'[{"ref": 2436, "name": "연금술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (706989,'블리츠 EX',NULL,'「번개」라 이름 붙여진 단검.
+환상의 금속인 오레이칼코스의 진가가 발휘된 궁국의 일품.
+함대 적용 가능.','TRUE','무기 (던지는 나이프)',55,NULL,10,NULL,40,'[{"ref": 2431, "name": "던지기 기술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,'[{"ref": 707579, "name": "육지 이동속도 상승", "value": 3}]',NULL,NULL,NULL,'40,000',NULL,NULL,NULL,NULL),
+ (707048,'플루크번 EX',NULL,'「궤적」이라 이름 붙여진 활.
+환상의 금속인 오레이칼코스의 진가가 발휘된 궁극의 일품.','TRUE','무기 (활)',68,NULL,10,NULL,40,'[{"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,'[{"ref": 707586, "name": "특수탄 효과 발생률 상승", "value": 10}]',NULL,NULL,NULL,'40,000',NULL,NULL,NULL,NULL),
+ (707050,'페네트랄 EX',NULL,'「관통」이라 이름 붙여진 총.
+환상의 금속인 오레이칼코스의 진가가 발휘된 궁극의 총.','TRUE','무기 (총)',68,NULL,10,NULL,40,'[{"ref": 2344, "name": "총격", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,'[{"ref": 707586, "name": "특수탄 효과 발생률 상승", "value": 10}]',NULL,NULL,NULL,'40,000',NULL,NULL,NULL,NULL),
+ (707054,'알케미스트 쿠클라 EX',NULL,'연금술의 달인이라 불리는 자가 변성 연금으로 만들어 낸 특별한 힘을 지닌 음식','TRUE','머리',NULL,15,15,NULL,50,'[{"ref": 2436, "name": "연금술", "value": 1}, {"ref": 2296, "name": "공업품 거래", "value": 1}, {"ref": 2299, "name": "광물 거래", "value": 1}]',NULL,'[{"ref": 707601, "name": "행동력 감소 억제", "value": 5}]',NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (707075,'알케미스트 팔트 EX',NULL,'연금술의 달인이라 불리는 자가 변성연금으로 만들어 낸 특별한 힘을 지닌 로브','TRUE','몸',NULL,25,15,NULL,50,'[{"ref": 2436, "name": "연금술", "value": 1}, {"ref": 2300, "name": "귀금속 거래", "value": 1}, {"ref": 2314, "name": "의약품 거래", "value": 2}]',NULL,'[{"ref": 707608, "name": "교역 구입량 증가", "value": 8}]',NULL,NULL,NULL,'50,000',NULL,NULL,NULL,NULL),
+ (707091,'아트로미토스 EX',NULL,'「두려움」이라 이름 붙여진 검.
+환상의 금속인 오레이칼코스의 진가가 발휘한 궁극의 일품.','TRUE','무기 (검)',72,NULL,10,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,'[{"ref": 707618, "name": "수탈확률 상승", "value": 10}]',NULL,NULL,NULL,'40,000',NULL,NULL,NULL,NULL),
+ (707098,'상크투스 EX',NULL,'「신성」이라 이름 붙여진 창.
+환상의 금속인 오레이칼코스의 진가가 발휘된 궁극의 일품.','TRUE','무기 (창)',68,NULL,10,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,'[{"ref": 707618, "name": "수탈확률 상승", "value": 10}]',NULL,NULL,NULL,'40,000',NULL,NULL,NULL,NULL),
+ (707104,'에그자곤 EX',NULL,'「육각」이라 이름 붙여진 메이스.
+환상의 금속인 오레이칼코스의 진가가 발휘된 궁극의 일품.','TRUE','무기 (곤봉 지팡이)',68,NULL,10,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,'[{"ref": 707633, "name": "던전 체력 감소 억제", "value": 12}]',NULL,NULL,NULL,'40,000',NULL,NULL,NULL,NULL),
+ (707110,'바롤로소 EX',NULL,'「용감」이라 이름 붙여진 거대 도끼.
+환상의 금속인 오레이칼코스의 진가가 발휘된 궁극의 일품.','TRUE','무기 (도끼)',75,NULL,10,NULL,40,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,'[{"ref": 707633, "name": "던전 체력 감소 억제", "value": 12}]',NULL,NULL,NULL,'40,000',NULL,NULL,NULL,NULL),
+ (707124,'딕타토르',NULL,'독재관의 이름을 가진 긴 옷.','TRUE','몸',NULL,18,NULL,NULL,50,'[{"ref": 2345, "name": "탄도학", "value": 3}, {"ref": 2348, "name": "회피", "value": 2}, {"ref": 2328, "name": "노 젓기", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'18,000',NULL,NULL,NULL,NULL),
+ (707137,'영웅의 목걸이',NULL,'강대한 적을 무찌른 자에게
+주어지며，역사상 유례없는
+강자라는 것을 증명한다.','TRUE','장신구',NULL,NULL,50,NULL,200,'[{"ref": 2430, "name": "항해기술", "value": 1}, {"ref": 2432, "name": "관리기술", "value": 1}, {"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (707144,'마이어스 솜브레로',NULL,'신대륙의 시장들이 애용하는 챙이 넓은 모자. 정수리 부분이 높은 것이 특징.','TRUE','머리',NULL,13,NULL,NULL,70,'[{"ref": 2275, "name": "낚시", "value": 2}, {"ref": 2311, "name": "식료품 거래", "value": 1}, {"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (707306,'둘 까르나인',NULL,'두 뿔을 가진 대왕의 이름을 딴 갑옷.','TRUE','몸',NULL,23,20,10,100,'[{"ref": 2335, "name": "수평사격", "value": 3}, {"ref": 2347, "name": "포술", "value": 2}, {"ref": 2326, "name": "관통", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (708529,'알키아 솔라카스',NULL,'고대 그리스의 용맹한 전사가 착용했다고 하는 갑옷.
+가볍지만 방어 효과는 높다.','TRUE','몸',NULL,58,NULL,NULL,60,'[{"ref": 2348, "name": "회피", "value": 2}, {"ref": 2325, "name": "검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,NULL,NULL),
+ (708552,'바실리우스 스파다',NULL,'매우 당당한 기개를 가진 도검.
+군주를 의미하는 그리스 문자가 새겨져 있다.','TRUE','무기 (검)',62,NULL,20,5,100,'[{"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (709246,'시저스 그라디우스',NULL,'간소하지만 확고한 기개를 가진 도검. 황제를 의미하는 그리스 문자가 새겨져 있다.','TRUE','무기 (검)',60,NULL,NULL,NULL,100,'[{"ref": 2339, "name": "전술", "value": 1}, {"ref": 2346, "name": "통솔", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (709560,'지니어스 로브',NULL,'연금술의 천재라고 불리는 자가 스스로 만들어 낸, 한층 더 특별한 힘을 가지는 로브.','TRUE','몸',NULL,20,10,NULL,50,'[{"ref": 2436, "name": "연금술", "value": 1}, {"ref": 2306, "name": "보관", "value": 2}, {"ref": 2319, "name": "직물 거래", "value": 1}]',NULL,'[{"ref": 707601, "name": "행동력 감소 억제", "value": 5}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[{"ref": 586974, "name": "연금술 마이스터"}]'),
+ (709600,'웨스턴 라이플 EX',NULL,'북미 서부의 개척자가 애용하는 소총.
+트굿한 힘을 지니고있다.','TRUE','무기 (총)',45,10,NULL,NULL,100,'[{"ref": 2435, "name": "저격술", "value": 2}]',NULL,'[{"ref": 709602, "name": "시대효과(19세기)", "value": 1}]',NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (711048,'서베이어즈 글러브',NULL,'많은 지질 조사원이 애용하는 특별제작 장갑. 손에 착 붙는 착용감이 일품.','TRUE','팔',NULL,12,NULL,NULL,100,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2281, "name": "생물학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (711446,'알키아 크라노스',NULL,'고대 그리스 용맹한 전사가 착용했다고 하는 투구.
+코를 덧댄 부분과 깃털 장식이 특징.
+
+-빨간 종신 독재관 드랍.','TRUE','머리',NULL,35,NULL,NULL,60,'[{"ref": 2330, "name": "방어", "value": 1}, {"ref": 2342, "name": "조타", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (713167,'라이자 전용 군복',NULL,'잉글랜드 해군 사관인 라이자가 군무를 수행할 때 입는 옷.','TRUE','몸',5,35,15,NULL,50,'[{"ref": 2347, "name": "포술", "value": 3}, {"ref": 2335, "name": "수평사격", "value": 2}, {"ref": 2325, "name": "검술", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'여성',NULL,NULL),
+ (715040,'빅토리아의 드레스',NULL,'빅토리아가 오빠에게 선물받아 아끼는 드레스.','TRUE','몸',NULL,15,30,NULL,50,'[{"ref": 2278, "name": "미술", "value": 3}, {"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'여성',NULL,NULL),
+ (716440,'저스틴의 개척복',NULL,'북미 개척자들 사이에서 유행하는 옷.
+활동하기 편한 디자인으로, 저스틴이 즐겨 입는다.','TRUE','몸',15,35,10,NULL,50,'[{"ref": 2344, "name": "총격", "value": 3}, {"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'여성',NULL,NULL),
+ (716452,'일레느의 드레스',NULL,'마르세이유의 일레느가 즐겨입는 화려한 드레스.','TRUE','몸',NULL,15,25,NULL,50,'[{"ref": 2276, "name": "대화술", "value": 3}, {"ref": 2288, "name": "주연", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'여성',NULL,NULL),
+ (716454,'발렌슈타인의 군복',NULL,'발렌슈타인이 황제군 총사령관이던 시절부터 착용해온 군복.','TRUE','몸',5,60,20,NULL,50,'[{"ref": 2346, "name": "통솔", "value": 3}, {"ref": 2339, "name": "전술", "value": 2}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'남성',NULL,NULL),
+ (716460,'로렌조의 약식 정장',NULL,'로렌조 메디치의 약식 정장.
+로렌조의 센스가 곳곳에서 엿보인다.','TRUE','몸',NULL,17,40,NULL,50,'[{"ref": 2314, "name": "의약품 거래", "value": 3}, {"ref": 2304, "name": "미술품 거래", "value": 2}, {"ref": 2298, "name": "공예품 거래", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'남성',NULL,NULL),
+ (716462,'발타자르 전용 군복',NULL,'해전 전문 사냥꾼, 흑고래 함대의 대장 발타자르가 즐겨 입는 옷.
+실전에 맞게 개량되어 있다.','TRUE','몸',15,48,10,NULL,50,'[{"ref": 2332, "name": "속사", "value": 3}, {"ref": 2326, "name": "관통", "value": 2}, {"ref": 2274, "name": "기뢰발견", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'남성',NULL,NULL),
+ (716464,'알베로의 경장',NULL,'알베로가 즐겨 입는 옷.
+살미엔트 길드원의 제복을 개량한 것이다.','TRUE','몸',NULL,15,10,NULL,50,'[{"ref": 2323, "name": "회계", "value": 3}, {"ref": 2322, "name": "향신료 거래", "value": 2}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'남성',NULL,NULL),
+ (716466,'쥴리앙의 가운',NULL,'궁정의 총아, 쥴리앙이 애용하는 호화로운 가운.','TRUE','몸',NULL,20,30,NULL,50,'[{"ref": 2280, "name": "보물 감정", "value": 3}, {"ref": 2309, "name": "사교", "value": 2}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'남성',NULL,NULL),
+ (716468,'프레드릭의 재킷',NULL,'운반업자인 프레드릭이 애용하는 재킷.
+그의 자유분방한 정신이 잘 나타나 있다.','TRUE','몸',NULL,30,15,NULL,50,'[{"ref": 2306, "name": "보관", "value": 3}, {"ref": 2303, "name": "무기류 거래", "value": 2}, {"ref": 2452, "name": "상품지식", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'남성',NULL,NULL),
+ (719275,'지니어스 비레타',NULL,'연금술의 천재로 불리는 자가
+스스로 만들어 낸，한층 더
+특별한 힘을 지닌 모자.','TRUE','머리',NULL,12,10,NULL,50,'[{"ref": 2314, "name": "의약품 거래", "value": 2}, {"ref": 2369, "name": "조미료 거래", "value": 1}]',NULL,'[{"ref": 707608, "name": "교역 구입량 증가", "value": 8}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[{"ref": 586974, "name": "연금술 마이스터"}]'),
+ (721984,'알키아 솔라카스 EX',NULL,'고대 그리스의 용맹한 전사가
+착용했다고 하는 갑옷.
+특수한 힘을 지니고 있다.','TRUE','몸',NULL,58,NULL,NULL,60,'[{"ref": 2348, "name": "회피", "value": 2}, {"ref": 2325, "name": "검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,'[{"ref": 721981, "name": "백병전 전투력 상승", "value": 3}]',NULL,NULL,NULL,'50,000',NULL,NULL,NULL,NULL),
+ (724060,'알키아 크라노스 EX',NULL,'고대 그리스의 용맹한 전사가 착용했다고 하는 투구.
+특수한 힘을 지니고 있다.','TRUE','머리',NULL,35,NULL,NULL,60,'[{"ref": 2330, "name": "방어", "value": 1}, {"ref": 2342, "name": "조타", "value": 2}]',NULL,'[{"ref": 707586, "name": "특수탄 효과 발생률 상승", "value": 10}]',NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (724068,'고탈 EX',NULL,'몽골 민족의 부츠.
+특수한 힘을 지니고 있다.','TRUE','다리',NULL,12,NULL,NULL,50,NULL,NULL,'[{"ref": 724066, "name": "시대효과(14세기)", "value": 1}]',NULL,NULL,NULL,'1,800',NULL,NULL,NULL,NULL),
+ (725183,'베르메르의 터번 EX',NULL,'선명한 색이 화려한 터번. 유명한 회화를 모티브로 해서 만들었다.
+특수한 힘을 지니고 있다.','TRUE','머리',NULL,3,NULL,NULL,40,'[{"ref": 2312, "name": "염료 거래", "value": 1}]',NULL,'[{"ref": 725176, "name": "시대효과(17세기)", "value": 1}]',NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (725197,'나막신 EX',NULL,'단순한 형태의 나막신.
+꽃무늬 조각이 되어 있다.
+특수한 힘을 지니고 있다.','TRUE','다리',NULL,5,NULL,NULL,45,'[{"ref": 2293, "name": "행군", "value": 1}]',NULL,'[{"ref": 725176, "name": "시대효과(17세기)", "value": 1}]',NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (727073,'천고의 왕관 EX',NULL,'태고에 만들어진 것으로 보이는 왕관.
+특수한 힘을 지니고 있다.','TRUE','머리',NULL,10,40,NULL,80,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,'[{"ref": 727064, "name": "시대효과(기원전)", "value": 1}]',NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (727081,'쥬얼리 글러브 EX',NULL,'펠트 장갑에 보석과 자수를 장식한 화려한 장갑.
+특수한 힘을 지니고 있다.','TRUE','팔',NULL,3,48,NULL,50,NULL,NULL,'[{"ref": 727066, "name": "시대효과(18세기)", "value": 1}]',NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (727091,'잔진 말가이 EX',NULL,'구슬과 술 장식이 달린 몽골 민족의 모자.
+특수한 힘을 지니고 있다.','TRUE','머리',NULL,6,6,NULL,50,'[{"ref": 2298, "name": "공예품 거래", "value": 1}]',NULL,'[{"ref": 724066, "name": "시대효과(14세기)", "value": 1}]',NULL,NULL,NULL,'2,400',NULL,NULL,NULL,NULL),
+ (727114,'풍요의 토시 EX',NULL,'태양과 풍요의 신 데메테르의 힘이 들어가 있다는 토시.
+특수한 힘을 지니고 있다.','TRUE','팔',NULL,13,10,NULL,50,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,'[{"ref": 727106, "name": "물자 감소 억제", "value": 4}]',NULL,NULL,NULL,'30,000',NULL,NULL,NULL,NULL),
+ (730418,'보네 드 마리안느 EX',NULL,'구불구불한 끝부분이 특징인 모자. 특수한 힘을 지니고 있다.','TRUE','머리',NULL,5,5,NULL,50,'[{"ref": 2286, "name": "조달", "value": 1}]',NULL,'[{"ref": 730412, "name": "시대효과(15세기)", "value": 1}]',NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (730422,'기사의 스틸레토 EX',NULL,'십자가와 같은 모양의 검. 특수한 힘을 지니고 있다.','TRUE','무기 (던지는 나이프)',50,NULL,NULL,NULL,65,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2318, "name": "주조", "value": 1}]',NULL,'[{"ref": 730414, "name": "시대효과(16세기)", "value": 1}]',NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (733757,'하르파 EX',NULL,'낫과 같은 모양을 한 그리스의 고대 검.
+특수한 힘을 지니고 있다.','TRUE','무기 (검)',40,NULL,NULL,NULL,40,'[{"ref": 2433, "name": "응용검술", "value": 1}]',NULL,'[{"ref": 733755, "name": "시대효과(신화시대)", "value": 1}]',NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (733931,'학자의 아뮬렛 EX',NULL,'연금술로 만든，
+학자들을 위한 부적.
+특수한 힘을 지니고 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2278, "name": "미술", "value": 1}, {"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2287, "name": "종교학", "value": 1}]',NULL,'[{"ref": 733926, "name": "렐릭 피스 획득률 상승", "value": 10}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (742482,'카프탄 EX',NULL,'앞 여밈 형태의 장의
+터키와 동유럽에서 주로 입는다.
+(생산 가능한 카프탄 개화시 획득 가능합니다.)','TRUE','몸',NULL,8,18,NULL,50,'[{"ref": 2289, "name": "지리학", "value": 1}]',NULL,'[{"ref": 727066, "name": "시대효과(18세기)", "value": 1}]',NULL,NULL,NULL,'4,200',NULL,NULL,NULL,NULL),
+ (742956,'레콘키스타의 갑옷 EX',NULL,'레콘키스타에서 싸웠던 십자군이 착용했던 갑옷.
+특수한 힘을 지니고 있다.','TRUE','몸',NULL,35,20,NULL,70,'[{"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,'[{"ref": 730412, "name": "시대효과(15세기)", "value": 1}]',NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (742958,'미케네 병사의 방호복 EX',NULL,'고대 미케네 병사가 입었던 의상.
+특수한 힘을 지니고 있다.','TRUE','몸',NULL,40,NULL,NULL,30,'[{"ref": 2330, "name": "방어", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,'[{"ref": 733755, "name": "시대효과(신화시대)", "value": 1}]',NULL,NULL,NULL,'6,500',NULL,NULL,NULL,NULL),
+ (742964,'군왕의 깃털관 EX',NULL,'고대 크레타섬의 왕족이 쓰던 관.
+특수한 힘을 지니고 있다.','TRUE','머리',NULL,10,30,NULL,30,'[{"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2278, "name": "미술", "value": 1}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,'[{"ref": 733755, "name": "시대효과(신화시대)", "value": 1}]',NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (742966,'카우보이 부츠 EX',NULL,'북미 서부의 카우보이가 즐겨신는 실용적인 부츠.
+특수한 힘을 지니고 있다.','TRUE','다리',NULL,8,NULL,NULL,40,'[{"ref": 2294, "name": "가축 거래", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,'[{"ref": 709602, "name": "시대효과(19세기)", "value": 1}]',NULL,NULL,NULL,'11,000',NULL,NULL,NULL,NULL),
+ (743638,'바빌로니아 보병의 창 EX',NULL,'바빌로니아의 보병이 사용하는 창.
+특수한 힘을 지니고 있다.','TRUE','무기 (창)',38,NULL,NULL,10,30,'[{"ref": 2433, "name": "응용검술", "value": 1}]',NULL,'[{"ref": 727064, "name": "시대효과(기원전)", "value": 1}]',NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (751112,'여행자의 아뮬렛 EX',NULL,'연금술로 만든,
+여행자들을 위한 부적.
+특수한 힘을 지니고있다.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2282, "name": "생존", "value": 1}, {"ref": 2277, "name": "돛 조종", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,'[{"ref": 751098, "name": "기습, 강습률 감소", "value": 5}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (795000,'디바이더 EX',NULL,'거리를 산출하는 기구.
+삼각자와 함께 항로 설계에 사용.','TRUE','도구',NULL,NULL,NULL,NULL,15,'[{"ref": 2291, "name": "측량", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,'[{"ref": 795005, "name": "항해 속도 상승", "value": 5}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (795580,'인양 전문가 바이코르느해트',NULL,'뛰어난 능력의 인양 전문가가 애용했던 모자.
+양쪽 챙을 세로로 접는다.','TRUE','머리',NULL,20,NULL,5,40,'[{"ref": 2444, "name": "인양", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}, {"ref": 2288, "name": "주연", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (795983,'파이렛 소드','침몰선','해적들이 애용하는 곡도.','FALSE','무기 (검)',50,NULL,NULL,5,50,'[{"ref": 2341, "name": "조선", "value": 1}, {"ref": 2339, "name": "전술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (797961,'소드 브레이커 EX',NULL,'상대의 무기를 부러뜨리는 기능을 가진 소형 나이프.
+특별한 능력을 지니고 있다.','TRUE','무기 (던지는 나이프)',51,10,NULL,NULL,150,'[{"ref": 2330, "name": "방어", "value": 2}]',NULL,'[{"ref": 727066, "name": "시대효과(18세기)", "value": 1}]',NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (797963,'리시몽 원사의 전투용 망치 EX',NULL,'리시몽 원사가 애용했다고 전해지는 전투용 망치.
+특별한 능력을 지니고 있다.','TRUE','무기 (곤봉 지팡이)',60,NULL,10,NULL,30,'[{"ref": 2293, "name": "행군", "value": 2}, {"ref": 2347, "name": "포술", "value": 1}]',NULL,'[{"ref": 730412, "name": "시대효과(15세기)", "value": 1}]',NULL,NULL,NULL,'2,500',NULL,NULL,NULL,NULL),
+ (801293,'인양 전문가 재킷',NULL,'뛰어난 능력의 인양 전문가가
+애용했던 옷.
+특수 염료를 이용한 특별 주문품
+.','TRUE','몸',5,37,NULL,18,50,'[{"ref": 2444, "name": "인양", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}, {"ref": 2445, "name": "예항", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (815925,'철인왜도 EX',NULL,'정성공이 조직한 철인부대가
+사용하던 검.
+특별한 능력을 지니고 있다.','TRUE','무기 (검)',70,NULL,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,'[{"ref": 707667, "name": "남만 무역 교환률 증가", "value": 10}]',NULL,NULL,NULL,'45,000',NULL,NULL,NULL,NULL),
+ (819475,'금자수 부츠 EX',NULL,'금실로 화려한 자수를 수놓은 귀족용 부츠.
+특별한 능력을 지니고 있다.','TRUE','다리',NULL,4,5,10,30,NULL,NULL,'[{"ref": 730414, "name": "시대효과(16세기)", "value": 1}]',NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (820749,'마상통 EX',NULL,'다테 마사무네가 기마대에 도입한
+타네가시마총.
+특별한 능력을 지니고 있다.','TRUE','무기 (총)',70,NULL,NULL,NULL,60,'[{"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2325, "name": "검술", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,'[{"ref": 707667, "name": "남만 무역 교환률 증가", "value": 10}]',NULL,NULL,NULL,'45,000',NULL,NULL,NULL,NULL),
+ (825071,'바다 민족의 갑옷 EX',NULL,'히타이트를 멸망시켰다는 수수께끼의 민족이 남긴 철로 만든 갑옷.
+바다 민족의 갑옷이 기본재료로 시대효과(기원전)추가가 된 옷.','TRUE','몸',NULL,45,20,NULL,100,'[{"ref": 2277, "name": "돛 조종", "value": 1}, {"ref": 2342, "name": "조타", "value": 1}]',NULL,'[{"ref": 727064, "name": "시대효과(기원전)", "value": 1}]',NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (825090,'조선 수군의 활 EX',NULL,'조선 수군이 사용한 활.
+위력이 오르도록 고안되어 있다.
+특별한 능력을 지니고 있다.','TRUE','무기 (활)',70,NULL,NULL,NULL,60,'[{"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2325, "name": "검술", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,'[{"ref": 707667, "name": "남만 무역 교환률 증가", "value": 10}]',NULL,NULL,NULL,'45,000',NULL,NULL,NULL,NULL),
+ (825111,'백간 EX',NULL,'진양옥이 조직한 백간병이 사용했던 무기','TRUE','무기 (창)',70,NULL,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2338, "name": "응급처치", "value": 1}]',NULL,'[{"ref": 707667, "name": "남만 무역 교환률 증가", "value": 10}]',NULL,NULL,NULL,'45,000',NULL,NULL,NULL,NULL),
+ (825122,'아이언 미튼 EX',NULL,'갑옷과 함께 착용하는 벙어리 장갑 모양의 건틀렛.
+특별한 능력을 지니고 있다.','TRUE','팔',NULL,12,4,NULL,70,NULL,NULL,'[{"ref": 707618, "name": "수탈확률 상승", "value": 6}]',NULL,NULL,NULL,'1,200',NULL,NULL,NULL,NULL),
+ (825555,'포르투갈 공용 선원복 EX',NULL,'포르투갈 해군의 선원이 입는 제복. 특별한 능력을 지니고 있다.','TRUE','몸',NULL,14,NULL,NULL,50,NULL,NULL,'[{"ref": 707656, "name": "재해 발생률 감소", "value": 6}]',NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (825559,'셔츠 & 청바지 EX',NULL,'면 셔츠에 튼튼한 원단으로 만든 청바지를 함께 착용.
+특별한 능력을 지니고 있다.','TRUE','몸',NULL,10,NULL,NULL,30,NULL,NULL,'[{"ref": 709602, "name": "시대효과(19세기)", "value": 1}]',NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (825579,'파이렛 소드 EX',NULL,'해적들이 애용하는 곡도.
+특별한 능력을 지니고 있다.','TRUE','무기 (검)',50,NULL,NULL,5,50,'[{"ref": 2334, "name": "수탈", "value": 2}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,'[{"ref": 721981, "name": "백병전 전투력 상승", "value": 2}]',NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (826519,'잉글랜드 공용 선원복 EX',NULL,'잉글랜드 해군의 선원이 입는 제복. 특별한 능력을 지니고 있다.','TRUE','몸',NULL,14,NULL,NULL,50,NULL,NULL,'[{"ref": 707656, "name": "재해 발생률 감소", "value": 6}]',NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (826520,'에스파니아 공용 선원복 EX',NULL,'에스파니아 해군의 선원이 입는 제복. 특별한 능력을 지니고 있다.','TRUE','몸',NULL,14,NULL,NULL,50,NULL,NULL,'[{"ref": 707656, "name": "재해 발생률 감소", "value": 6}]',NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (826521,'베네치아 공용 선원복 EX',NULL,'베네치아 해군의 선원이 입는 제복. 특별한 능력을 지니고 있다.','TRUE','몸',NULL,14,NULL,NULL,50,NULL,NULL,'[{"ref": 707656, "name": "재해 발생률 감소", "value": 6}]',NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (826522,'프랑스 공용 선원복 EX',NULL,'프랑스 해군의 선원이 입는 제복. 특별한 능력을 지니고 있다.','TRUE','몸',NULL,14,NULL,NULL,50,NULL,NULL,'[{"ref": 707656, "name": "재해 발생률 감소", "value": 6}]',NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (826523,'네덜란드 선원복 EX',NULL,'네덜란드 해군의 선원이 입는 제복. 특별한 능력을 지니고 있다.','TRUE','몸',NULL,14,NULL,NULL,50,NULL,NULL,'[{"ref": 707656, "name": "재해 발생률 감소", "value": 6}]',NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (826524,'오스만 투르크 선원복 EX',NULL,'오스만 투르크 해군의 선원이 입는 제복. 특별한 능력을 지니고 있다.','TRUE','몸',NULL,14,NULL,NULL,50,NULL,NULL,'[{"ref": 707656, "name": "재해 발생률 감소", "value": 6}]',NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (833737,'네부카드네자르 원통인장 EX',NULL,'네부카드네자르 2세의
+원통형 인장. 특별한 능력을 지니고 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,35,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2281, "name": "생물학", "value": 1}, {"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,'[{"ref": 727064, "name": "시대효과(기원전)", "value": 1}]',NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (833765,'브르타뉴의 암사자의 검 EX',NULL,'브르타뉴의 암사자로 이름을 떨쳤던 여해적이 애용했다고 알려진검.
+특별한 능력을 지니고 있다.','TRUE','무기 (검)',65,NULL,NULL,NULL,50,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,'[{"ref": 724066, "name": "시대효과(14세기)", "value": 1}]',NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (875691,'프로토스 프루하','구입','아틀란티스의 귀족 여성이
+입는 옷.','FALSE','몸',NULL,15,15,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'500',NULL,'여성',NULL,NULL),
+ (875693,'액세스 월','구입','아틀란티스의 귀족 여성이 착용한 머리장식.','TRUE','머리',NULL,5,10,NULL,100,NULL,NULL,NULL,NULL,NULL,NULL,'500',NULL,'여성',NULL,NULL),
+ (875774,'프루하','구입','아틀란티스 사람들이 입는 일반적인 의복.','TRUE','몸',NULL,5,5,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (875776,'프로토스 프루하','구입','아틀란티스의 귀족 남성이
+입는 옷.','FALSE','몸',NULL,15,15,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'500',NULL,'남성',NULL,NULL),
+ (876476,'트로이 전쟁의 용사의 갑옷',NULL,'트로이 전쟁에서 활약한 용사가 입었다고 하는 갑옷.
+가볍지만 방어 효과는 높다.','TRUE','몸',NULL,50,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2328, "name": "노 젓기", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,NULL,NULL),
+ (876922,'테리어 아미나',NULL,'부러진 신전의 기둥에 쇠막대를 찔러 넣은 무기. 포세이돈 신전의 수호자의 무기를 모방 하였다.','TRUE','무기 (곤봉 지팡이)',80,20,NULL,NULL,100,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (877452,'신이 제작한 팔찌',NULL,'거상이 지니고 있던 팔찌.
+소재, 가공 방법 모두 현대와는 전혀 다르다.','TRUE','장신구',10,10,NULL,NULL,60,'[{"ref": 2330, "name": "방어", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}, {"ref": 2326, "name": "관통", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (877474,'빛나는 지팡이',NULL,'금과 그 합금으로 만들어진 특별제작 지팡이.  단단하면서 가볍다.','TRUE','무기 (곤봉 지팡이)',60,NULL,40,NULL,100,'[{"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2453, "name": "함정", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (877577,'워리어 샌들',NULL,'고대 그리스의 전사가 사용하는 가죽 샌들. 일반적인 것에 비해 다리를 고정할 수 있다.','TRUE','다리',5,13,NULL,NULL,50,'[{"ref": 2329, "name": "돌격", "value": 2}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,NULL,NULL,NULL),
+ (877666,'아카익 대거',NULL,'아득한 고대에 사용되고
+있었던 듯한 단검. 고풍스럽지만 고결함을
+느끼게 하는 장식이 있다.','TRUE','무기 (던지는 나이프)',35,NULL,10,NULL,100,'[{"ref": 2278, "name": "미술", "value": 2}, {"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (877723,'프루하','생산','고대기술의 연구를 통해 만들어진 고대의 옷.
+보기보다 가볍다.','TRUE','몸',NULL,10,5,NULL,50,'[{"ref": 2311, "name": "식료품 거래", "value": 2}, {"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (877725,'프로토스 프루하','생산','고대기술의 연구를 통해
+만들어진 고대의 남성 귀족용 의류.
+독특한 장식이 눈길을 끈다.','FALSE','몸',NULL,15,20,NULL,50,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (877727,'프로토스 프루하','생산','고대기술의 연구를 통해
+만들어진 고대의 여성 귀족용 의류.
+독특한 장식이 눈길을 끈다.','FALSE','몸',NULL,15,20,NULL,50,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (877731,'액세스 월','생산','고대기술의 연구를 통해
+만들어진 고대의 여성용 머리장식.','TRUE','머리',NULL,5,20,NULL,50,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (877733,'다프틸리디','생산','고대기술의 연구를 통해 만들어진 고대의 반지.
+독특한 빛을 발하고 있다.','TRUE','장신구',NULL,NULL,32,NULL,20,'[{"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2307, "name": "보석 거래", "value": 1}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (877791,'적금 헤드드레스',NULL,'적색 금의 합금을 이용한 머리장식.
+세월이 지나도 변하지 않고 눈부신 광택을 띠고 있다.','TRUE','머리',NULL,5,15,NULL,100,'[{"ref": 2307, "name": "보석 거래", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (878155,'영목관',NULL,'그리스신화의 아폴론 신의 영목, 월계수를 사용한 관.','TRUE','머리',NULL,10,10,NULL,50,'[{"ref": 2281, "name": "생물학", "value": 1}, {"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (882308,'아포트로스 아미나',NULL,'부러진 신전의 기둥에 쇠막대를
+찔러넣은 무기. 연금술의 힘으로
+특별한 힘이 담겨 있다.','TRUE','무기 (곤봉 지팡이)',80,30,NULL,NULL,100,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 2}]',NULL,'[{"ref": 733926, "name": "렐릭 피스 획득률 상승", "value": 12}]',NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (891564,'푸른 보석 목걸이',NULL,'푸르게 빛나는 특수한 보석을 장식한 목걸이.
+예술적 가치도 매우 높다.','TRUE','장신구',NULL,NULL,30,NULL,50,'[{"ref": 2307, "name": "보석 거래", "value": 2}, {"ref": 2304, "name": "미술품 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (893080,'사가리스',NULL,'어떤 괴물이 소유하고 있던 도끼와 동일한 도끼.
+연금술에 의해 특별한 힘이 담겨 있다.','TRUE','무기 (도끼)',90,NULL,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,'[{"ref": 707633, "name": "던전 체력 감소 억제", "value": 15}]',NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (895231,'로렐리스',NULL,'특별한 지엽을 엮어 만든, 아틀란티스의 귀족이 쓰는 왕관.','TRUE','머리',NULL,10,10,NULL,100,'[{"ref": 2305, "name": "바디 랭귀지", "value": 1}, {"ref": 2310, "name": "섬유 거래", "value": 2}, {"ref": 2319, "name": "직물 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (896190,'황금 장신구 EX',NULL,'황금으로 만들어진 장신구.
+정교하게 세공되어 있다.
+특별한 능력을 지니고 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,40,'[{"ref": 2312, "name": "염료 거래", "value": 2}, {"ref": 2285, "name": "자물쇠 따기", "value": 1}]',NULL,'[{"ref": 730414, "name": "시대효과(16세기)"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (896205,'레메게톤 EX',NULL,'마도서라 불리는 책 중에서도 특히 이름이 높다.
+특별한 능력을 지니고 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,35,'[{"ref": 2276, "name": "대화술", "value": 2}, {"ref": 2284, "name": "인식", "value": 1}]',NULL,'[{"ref": 733926, "name": "렐릭 피스 획득률 상승", "value": 8}]',NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (903710,'트로이 전쟁의 용사의 갑옷 EX',NULL,'트로이 전쟁에서 활약한 용사가 입었다고 하는 갑옷.
+특수한 힘을 지니고 있다.','TRUE','몸',NULL,50,NULL,NULL,60,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2328, "name": "노 젓기", "value": 1}]',NULL,'[{"ref": 721981, "name": "백병전 전투력 상승", "value": 2}]',NULL,NULL,NULL,'50,000',NULL,NULL,NULL,NULL),
+ (946861,'시작의 나팔',NULL,'일의 시작을 알리는 나팔.
+훌륭한 상아세공이 되어 있다.','TRUE','도구',NULL,NULL,NULL,NULL,50,'[{"ref": 2282, "name": "생존", "value": 2}, {"ref": 2293, "name": "행군", "value": 2}, {"ref": 2295, "name": "경계", "value": 2}]',NULL,'[{"ref": 707656, "name": "재해 발생률 감소", "value": 5}]',NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (947609,'카메오·아비레',NULL,'로렌조가 보낸 화려한 카메오.
+보석으로 장식되어 있다.','TRUE','장신구',NULL,NULL,40,NULL,50,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2333, "name": "수리", "value": 1}]',NULL,'[{"ref": 947603, "name": "스킬 지속시간 연장", "value": 3}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (947646,'에페·라피에르',NULL,'쥴리앙이 보낸 검.
+칼자루 머리에 보석을 박아 외형도 화려하며 칼날도 날카롭다.','TRUE','무기 (검)',55,30,30,NULL,100,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2453, "name": "함정", "value": 1}]',NULL,'[{"ref": 733926, "name": "렐릭 피스 획득률 상승", "value": 5}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (949888,'브레이블리 부츠',NULL,'용감한 항해자를 칭하며
+수여된 고급 부츠.','TRUE','다리',NULL,15,18,NULL,100,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,'[{"ref": 721981, "name": "백병전 전투력 상승", "value": 1}]',NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (951076,'기도의 월계관',NULL,'무사한 항해를 기원하며 만들어진 성스러운 왕관.','TRUE','머리',NULL,10,10,NULL,100,'[{"ref": 2306, "name": "보관", "value": 2}, {"ref": 2432, "name": "관리기술", "value": 2}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,'[{"ref": 707656, "name": "재해 발생률 감소", "value": 8}]',NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (962848,'코사크 캡 EX',NULL,'코사크 기병대장이 쓰던 모자.
+가볍지만 기능성이 뛰어나다.','TRUE','머리',5,15,NULL,5,30,NULL,NULL,'[{"ref": 725176, "name": "시대효과(17세기)", "value": 1}]',NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (976258,'깃털 악세사리','피렌체','북미 원주민들의 머리 장식.
+다양한 동물의 털과 깃털을
+사용했다.','FALSE','머리',NULL,10,NULL,NULL,80,'[{"ref": 2324, "name": "감시", "value": 1}, {"ref": 2310, "name": "섬유 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,500',NULL,NULL,NULL,NULL),
+ (996097,'푸푼데타','빨강','생화로 장식된 아름다운 모자
+의식에 사용 된다．','FALSE','몸',NULL,8,NULL,15,35,'[{"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (1000772,'유적탐험가의 가운 EX',NULL,'어떤 학자가 애용했던, 특별히 주문제작된 가운.
+특별한 능력을 지니고 있다.','TRUE','몸',NULL,25,25,NULL,50,'[{"ref": 2278, "name": "미술", "value": 1}, {"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,'[{"ref": 707633, "name": "던전 체력 감소 억제", "value": 10}]',NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (1001901,'수렵용 창 EX',NULL,'북미 원주민이 사용하는 무기.
+특별한 능력을 지니고 있다.','TRUE','무기 (창)',31,NULL,NULL,NULL,50,'[{"ref": 2433, "name": "응용검술", "value": 1}]',NULL,'[{"ref": 707579, "name": "육지 이동속도 상승", "value": 2}]',NULL,NULL,NULL,'3,100',NULL,NULL,NULL,NULL),
+ (1008109,'제독 코트 EX',NULL,'편안한 착용감이 특징인 제독을 위한 코트.
+특별한 능력을 지니고 있다.','TRUE','몸',8,20,15,NULL,35,'[{"ref": 2342, "name": "조타", "value": 1}]',NULL,'[{"ref": 751098, "name": "기습, 강습률 감소", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1016357,'볼캐닉 피스톨',NULL,'로켓식 케이스리스 탄을 사용한총.
+레버 조작으로 탄창에서 급탄되며 배협이 필요하지 않다.','TRUE','무기 (권총)',65,NULL,NULL,NULL,100,'[{"ref": 2344, "name": "총격", "value": 3}, {"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (1016506,'로브 드 마리',NULL,'어떤 국가의 여왕이 결혼식에서 착용했다고 하는 순백의 웨딩드레스','TRUE','몸',NULL,20,40,NULL,100,'[{"ref": 2304, "name": "미술품 거래", "value": 3}, {"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (1016534,'로브 드 스와레',NULL,'어떤 여왕의 남편이 된 인물이 결혼식에서 착용한 것으로 얄려진 의례복','TRUE','몸',NULL,20,40,NULL,100,'[{"ref": 2304, "name": "미술품 거래", "value": 3}, {"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'남성',NULL,NULL),
+ (1016570,'브리드 베일',NULL,'어떤 국가의 여왕이 결혼식에서 착용했다고 하는 순백의 베일','TRUE','머리',NULL,10,30,NULL,100,'[{"ref": 2301, "name": "기호품 거래", "value": 2}, {"ref": 2310, "name": "섬유 거래", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (1016689,'플린트락 피스톨',NULL,'타네가시마총의 불 대신 부싯돌을 격철 끝에 고정한 권총','TRUE','무기 (권총)',8,NULL,NULL,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1016755,'워킹 베스트','생산','공장 노동자에게 애용되는
+옷. 튼튼하고 움직이기 쉽다.','FALSE','몸',NULL,4,NULL,NULL,40,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1016770,'워킹 캡','생산','공장 노동자가 애용하는
+모자. 튼튼하고 움직이기 쉽다.','FALSE','머리',NULL,5,NULL,NULL,40,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1017209,'올디스트 리볼버',NULL,'가장 오래된 형태의 리볼버.
+탄창 등은 개별적으로 수동조작 하여야 한다.','TRUE','무기 (권총)',50,NULL,NULL,NULL,100,'[{"ref": 2344, "name": "총격", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (1017258,'엔지니어 캡',NULL,'기계를 능숙하게 다르는 기사가 쓰는 특제 모자.','TRUE','머리',NULL,5,10,NULL,100,'[{"ref": 2299, "name": "광물 거래", "value": 1}, {"ref": 2320, "name": "총포류 거래", "value": 1}, {"ref": 2296, "name": "공업품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (1017508,'라이트 크로스보우',NULL,'널리 사용되는 크로스보우를 개량한 무기. 
+경량화되어 다루기 쉽다.','TRUE','무기 (크로스보우)',10,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1017523,'레인저스 리볼버',NULL,'미국 남부를 지키는 민병대가 개량한 리볼버.','TRUE','무기 (권총)',60,NULL,NULL,NULL,50,'[{"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2320, "name": "총포류 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'40,000',NULL,NULL,NULL,NULL),
+ (1017679,'가스트라페테스',NULL,'고대 그리스의 크로스보우.
+배에 대고 고정하고 등골을 사용하여 줄을 당기고 화살을 놓는다.','TRUE','무기 (크로스보우)',45,NULL,NULL,NULL,100,'[{"ref": 1016435, "name": "활 쏘기", "value": 2}, {"ref": 2270, "name": "고고학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (1017976,'특별주문 루비 반지',NULL,'지역 독자적인 기술로 만들어진 특별주문 루비 반지','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (1017983,'특별주문 황금 반지',NULL,'지역 독자적인 기술로 만들어진 특별주문 황금 반지','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (1017991,'컨트리뷰트 코트',NULL,'지역에 상당한 공헌을 하였음을
+인정받은 사람만이 입을 수 있는
+호화로운 코트.','TRUE','몸',NULL,20,20,20,70,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}, {"ref": 2432, "name": "관리기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1018528,'워킹 캡','맨체구입','공장 노동자가 애용하는 모자. 튼튼하고 움직이기 쉽다.','TRUE','머리',NULL,5,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1018542,'워킹 베스트','맨체구입','공장 노동자에게 애용되는 옷. 튼튼하고 움직이기 쉽다.','TRUE','몸',NULL,4,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1018917,'버틀러 수트','맨체구입','남성 집사가 착용하는 수트','TRUE','몸',NULL,10,15,NULL,40,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (1018921,'중절모','구입','정수리를 세로로 접은 펠트제 모자','TRUE','머리',NULL,5,NULL,NULL,40,'[{"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (1018923,'메이드드레스','맨체구입','여성 급사가 착용하는 드레스.','FALSE','몸',NULL,10,5,NULL,40,'[{"ref": 2306, "name": "보관", "value": 1}, {"ref": 2298, "name": "공예품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (1018924,'레이스 브림','맨체구입','여성 급사가 쓰는 머리 장식','TRUE','머리',NULL,5,5,NULL,30,'[{"ref": 2315, "name": "잡화 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,'여성',NULL,NULL),
+ (1018988,'버틀러 수트','생산','남성 집사가 착용하는 수트.','FALSE','몸',NULL,10,15,5,40,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (1018993,'메이드드레스','생산','여성 급사가 착용하는 드레스.','FALSE','몸',NULL,10,5,NULL,40,'[{"ref": 2306, "name": "보관", "value": 1}, {"ref": 2298, "name": "공예품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (1018995,'레이스 브림','생산','여성 급사가 쓰는
+머리 장식.','FALSE','머리',NULL,5,5,NULL,40,'[{"ref": 2315, "name": "잡화 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,'여성',NULL,NULL),
+ (1020369,'샘즈 리볼버',NULL,'윤동식 탄창의 권총.
+격철, 탄창, 방아쇠가 연동하며 뇌관식 탄약을 사용한다.','TRUE','무기 (권총)',22,NULL,NULL,NULL,40,'[{"ref": 2344, "name": "총격", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (1020493,'스트롭 크로스보우',NULL,'다리걸이 장치가 끝에 달린 크로스보우. 감는 장치로 줄을 당기고 화살을 놓는다.','TRUE','무기 (크로스보우)',22,NULL,NULL,NULL,40,'[{"ref": 2435, "name": "저격술", "value": 1}, {"ref": 1016435, "name": "활 쏘기", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (1022702,'동방어족사전',NULL,'중국어, 태국 미얀마어를 번역하기 위한 사전','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1022682, "name": "동방어족 번역"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1022708,'독립어족사전',NULL,'조선어, 일본어를 번역하기 위한 사전','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1022694, "name": "독립어족 번역"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1027191,'스페이드 잭 EX',NULL,'트럼프 카드 1장.
+그림은 어떤 영웅을 뜻한다.
+특별한 능력을 지니고 있다.','TRUE','장신구',NULL,NULL,NULL,NULL,40,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,'[{"ref": 725176, "name": "시대효과(17세기)"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1032114,'바데렐 EX',NULL,'선상에서 사용하기 위해 짧게 만들어진 샤벨.
+특별한 능력을 지니고 있다.','TRUE','무기 (검)',66,NULL,NULL,NULL,150,NULL,NULL,'[{"ref": 707586, "name": "특수탄 효과 발생률 상승", "value": 8}]',NULL,NULL,NULL,'30,000',NULL,NULL,NULL,NULL),
+ (1035760,'실크 장갑 EX',NULL,'실크로 만든 고급스러운 디자인의 장갑.
+특별한 능력을 지니고 있다.','TRUE','팔',NULL,3,NULL,NULL,10,NULL,NULL,'[{"ref": 707601, "name": "행동력 감소 억제", "value": 2}]',NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (1035795,'카츠발게르 EX',NULL,'북유럽과 독일에서 자주 사용되는 무거운 검.
+무늬의 형태가 독특하다.
+특별한 능력을 지니고 있다.','TRUE','무기 (던지는 나이프)',12,NULL,NULL,NULL,45,'[{"ref": 2348, "name": "회피", "value": 2}]',NULL,'[{"ref": 730412, "name": "시대효과(15세기)", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1037838,'라비리스 EX',NULL,'크레타 문명을 상징하는 멋진 날도끼.
+특별한 능력을 지니고 있다.','TRUE','무기 (도끼)',48,NULL,10,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}]',NULL,'[{"ref": 733755, "name": "시대효과(신화시대)", "value": 1}]',NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1118713,'특별주문 실버 링',NULL,'지역 특유의 기술로 만들어진 특별주문 실버 링','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (1118898,'특별주문 터키석 반지',NULL,'지역 독자적인 기술로 만들어진 특별주문 터키석 반지.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (1118908,'특별주문 미트라프',NULL,'지역 독자적인 기술로 만들어진 특별주문 미트라프.','TRUE','몸',NULL,15,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'남성',NULL,NULL),
+ (1118920,'특별주문 라크스샬키',NULL,'지역 독자적인 기술로 만들어진 특별주문 라크스샬키.','TRUE','몸',NULL,NULL,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'여성',NULL,NULL),
+ (1118922,'특별주문 산호 반지',NULL,'지역 독자적인 기술로 만들어진 특별주문 산호 반지.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (1118947,'특별주문 마오리워리어',NULL,'지역 독자적인 기술로 만들어진 특별주문 마오리워리어.','TRUE','몸',16,8,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'남성',NULL,NULL),
+ (1118972,'특별주문 마오리드레스',NULL,'지역 독자적인 기술로 만들어진 특별주문 마오리드레스.','TRUE','몸',12,6,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'여성',NULL,NULL),
+ (1119199,'특별주문 줄루족 전사의 의상',NULL,'지역 독자적인 기술로 만들어진
+특별주문 줄루족 전사의 의상.','TRUE','몸',10,2,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'남성',NULL,NULL),
+ (1119206,'특별주문 마사이 비즈',NULL,'지역 독자적인 기술로 만들어진
+특별주문 마사이 비즈.','TRUE','몸',NULL,5,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'여성',NULL,NULL),
+ (1119225,'특별주문 에메랄드 반지',NULL,'지역 독자적인 기술로 만들어진
+특별주문 에메랄드 반지.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (1119667,'특별주문 골드 링',NULL,'지역 특유의 기술로 만들어진 특별주문 골드 링.','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (1119701,'특별 소맷부리가 좁은 일본 의복',NULL,'지역 독자적인 기술로 만들어진
+특별주문 소맷부리가 좁은 일본 의복.','FALSE','몸',NULL,4,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'남성',NULL,NULL),
+ (1119703,'특별 소맷부리가 좁은 일본 의복',NULL,'지역 독자적인 기술로 만들어진
+특별주문 소맷부리가 좁은 일본 의복.','FALSE','몸',NULL,4,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'여성',NULL,NULL),
+ (1119947,'특별주문 건 슬링거의 옷',NULL,'지역 독자적인 기술로 만들어진 특별주문 건 슬링거의 옷.','TRUE','몸',5,15,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'남성',NULL,NULL),
+ (1119955,'특별주문 건 슬링거의 조끼',NULL,'지역 독자적인 기술로 만들어진 특별주문 건 슬링거의 조끼.','TRUE','몸',5,15,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'여성',NULL,NULL),
+ (1119964,'특별주문 보안관 코트',NULL,'지역 독자적인 기술로 만들어진 특별주문 보안관 코트.','TRUE','몸',NULL,12,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (1120031,'특별주문 진주 반지',NULL,'지역 독자적인 기술로 만들어진 특별주문 진주 반지','TRUE','장신구',NULL,NULL,40,NULL,20,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (1120063,'특별주문 구군복',NULL,'지역 독자적인 기술로 만들어진 특별주문 구군복.','TRUE','몸',NULL,50,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'남성',NULL,NULL),
+ (1120069,'특별주문 치마 저고리',NULL,'지역 독자적인 기술로 만들어진 특별주문 치마 저고리.','TRUE','몸',NULL,7,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'여성',NULL,NULL),
+ (1120090,'특별주문 직거심의',NULL,'지역 독자적인 기술로 만들어진 특별주문 직거심의.','TRUE','몸',NULL,7,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'남성',NULL,NULL),
+ (1120093,'특별주문 착수삼유',NULL,'지역 독자적인 기술로 만들어진 특별주문 착수삼유.','TRUE','몸',NULL,7,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'여성',NULL,NULL),
+ (1120099,'특별주문 한족 관복',NULL,'지역 독자적인 기술로 만들어진 특별주문 한족 관복.','TRUE','몸',NULL,7,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'남성',NULL,NULL),
+ (1120104,'특별주문 소수배자',NULL,'지역 독자적인 기술로 만들어진 특별주문 소수배자.','TRUE','몸',NULL,7,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'여성',NULL,NULL),
+ (1120650,'특별주문 초리',NULL,'지역 독자적인 기술로 만들어진
+
+특별주문 초리.','TRUE','몸',NULL,15,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'여성',NULL,NULL),
+ (1120742,'특별주문 쉘와니',NULL,'지역 독자적인 기술로 만들어진 특별주문 쉘와니.','TRUE','몸',NULL,NULL,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (1121624,'특별주문 와스트라',NULL,'지역 특유의 기술로 만들어진 특별주문 와스트라.','TRUE','몸',NULL,12,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'여성',NULL,NULL),
+ (1121627,'특별주문 사룽',NULL,'지역 특유의 기술로 만들어진 특별주문 사룽.','TRUE','몸',NULL,NULL,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'남성',NULL,NULL),
+ (1125592,'황금 코로나','보라색,지도','황금으로 만든 관.
+섬세한 장식이 들어가 있다.','FALSE','머리',NULL,5,15,NULL,40,'[{"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (1129086,'제갈궁노',NULL,'명나라 때 발명된 연사식 크로스보우.
+삼국시대 중국의 군사 제갈량의 이름을 따서 명명되었다.','TRUE','무기 (크로스보우)',55,NULL,NULL,NULL,50,'[{"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2303, "name": "무기류 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (1129406,'삼국 궁노무예서',NULL,'삼국시대의 활, 크로스보우의 달인이 후대를 위해 기록한 것으로
+여겨지는 무예서.','TRUE','장신구',5,5,NULL,NULL,30,'[{"ref": 2435, "name": "저격술", "value": 2}, {"ref": 1016435, "name": "활 쏘기", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (1130473,'파이렛 부츠','지도','여러 개의 벨트가 달린 부츠. 
+격한 움직임에도 잘 벗겨지지 않는다.','TRUE','다리',NULL,15,5,NULL,40,'[{"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1130523,'헌터 크로스보우',NULL,'널리 사용되는 석궁을 사냥용으로 개량한 무기.','TRUE','무기 (크로스보우)',18,NULL,NULL,NULL,40,'[{"ref": 1016435, "name": "활 쏘기", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (1130827,'손찌','지도','손목부터 손가락까지 장식하는
+호화로운 장식품.','FALSE','팔',NULL,5,10,NULL,40,'[{"ref": 2304, "name": "미술품 거래", "value": 1}, {"ref": 2432, "name": "관리기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1134649,'모험가의 신발','지도','모험가용 가죽 부츠.
+버클로 폭을 조절할 수 있어서
+신고 벗기 편하다.','FALSE','다리',NULL,8,NULL,NULL,40,'[{"ref": 2280, "name": "보물 감정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1136416,'러시안 부츠','지도','러시아에서 주로 신는 긴 부츠.
+끝이 휘어져 있다.','TRUE','다리',NULL,10,NULL,NULL,40,'[{"ref": 2298, "name": "공예품 거래", "value": 1}, {"ref": 2432, "name": "관리기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1137084,'토르투가 햇','지도','토르투가 섬을 거점으로 하는
+해적들이 즐겨 착용하는 옷.','TRUE','머리',6,18,NULL,5,40,'[{"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (1137132,'코사크 캡','지도','코사크 기병대장이 쓰는 모자.
+가볍지만 뛰어난 기능성을 자랑한다.','TRUE','머리',6,18,NULL,NULL,40,'[{"ref": 2283, "name": "생태 조사", "value": 1}, {"ref": 2432, "name": "관리기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1137279,'제너럴 헬름','지도','고대 그리스 장군이 착용했다는 투구.
+코 보호대와 깃털 장식이 특징.','TRUE','머리',NULL,22,NULL,NULL,40,'[{"ref": 2348, "name": "회피", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (1143756,'호박 머리 장식','이벤트','호박의 속을 도려내어 만든
+머리 장식.','FALSE','머리',NULL,10,10,10,40,'[{"ref": 2305, "name": "바디 랭귀지", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}, {"ref": 2276, "name": "대화술", "value": 2}]',NULL,NULL,'거래 불가',NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1170523,'특별주문 잉카 노블 드레스',NULL,'지역 독자적인 기술로 만들어진
+특별주문 잉카 노블 드레스.','TRUE','몸',NULL,20,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'여성',NULL,NULL),
+ (1170529,'특별주문 잉카튜닉',NULL,'지역 독자적인 기술로 만들어진
+특별주문 잉카튜닉.','TRUE','몸',NULL,12,20,20,30,'[{"ref": 2309, "name": "사교", "value": 3}, {"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'남성',NULL,NULL),
+ (1174892,'북극어 사전',NULL,'북극어를 번역하기 위한 사전.','TRUE','장신구',NULL,NULL,NULL,NULL,30,NULL,'[{"ref": 1144767, "name": "북극어 번역"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1268514,'바리스타·크로스보우',NULL,'설치식의 석궁포를 소형 경량화 하여 휴대가 가능한 크로스보우','TRUE','무기 (크로스보우)',30,NULL,NULL,NULL,40,'[{"ref": 2435, "name": "저격술", "value": 1}, {"ref": 1016435, "name": "활 쏘기", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1268524,'스톤 크로스보우',NULL,'화살 대신 돌을 투사할 수 있다고 불리는 구조의 크로스보우','TRUE','무기 (크로스보우)',30,NULL,NULL,NULL,40,'[{"ref": 2435, "name": "저격술", "value": 1}, {"ref": 1016435, "name": "활 쏘기", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1268538,'드라이제 피스톨','구입','긴 바늘모양의 격침이 앞뒤로 슬라이드하여 뇌관을 때리는 더블 액션 리볼버 권총.','TRUE','무기 (권총)',30,NULL,NULL,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (1268554,'페퍼 박스 피스톨',NULL,'회전식 탄창과 총신이 일체화
+된 형태를 가진 리볼버 권총.','TRUE','무기 (권총)',50,NULL,NULL,NULL,100,'[{"ref": 2344, "name": "총격", "value": 2}, {"ref": 2347, "name": "포술", "value": 1}, {"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,NULL),
+ (1269554,'메이드드레스','길개지구입','여성 급사가 착용하는 드레스.','TRUE','몸',NULL,15,5,5,30,'[{"ref": 2369, "name": "조미료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (1269573,'레이스 브림','길개지구입','여성 급사가 쓰는 머리 장식.','TRUE','머리',NULL,10,5,NULL,30,'[{"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (1269590,'웨스턴 재킷','길개지구입','스웨드 재킷과 데님 팬츠로 구성된 의상.
+활동하기 편하고 튼튼하다.','TRUE','몸',NULL,25,10,NULL,30,'[{"ref": 2344, "name": "총격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (1269607,'웨스턴 햇','길개지구입','카우보이들이 애용하는
+스웨드 모자.','FALSE','머리',NULL,10,NULL,NULL,30,'[{"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1269614,'에미 그랜트 부츠',NULL,'신천지에 이주한 사람들을 위한 가죽 부츠. 익숙하지 않은 토지에도
+
+쉽게 신을 수 있도록 고안되어 있다.','TRUE','다리',NULL,20,NULL,NULL,70,'[{"ref": 2311, "name": "식료품 거래", "value": 2}, {"ref": 2369, "name": "조미료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1269664,'웨스턴 걸 의상','구입','스웨드 베스트와 숏 팬츠로 구성된 의상.
+활동하기 편하고 튼튼하다.','TRUE','몸',NULL,25,10,NULL,30,'[{"ref": 2344, "name": "총격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (1270552,'버틀러 수트','길개지구입','남성 집사가 착용하는 수트.','TRUE','몸',NULL,15,5,5,30,'[{"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (1270708,'경찰 유니폼','구입,파랑','경찰이 착용하는 유니폼을 본떠 만들어진 옷.','TRUE','몸',NULL,10,15,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (1270715,'경찰의 제모','구입,파랑','경찰이 착용하는 제모를 본떠 만든 모자.','TRUE','머리',NULL,5,10,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (1270773,'채굴자의 방호복','오마하구입','골드 러시의 채굴자가
+애용했던，가슴 보호대가 있는 방호복.
+인디고로 염색하였다.','FALSE','몸',NULL,15,5,5,30,NULL,NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (1270800,'경찰의 제모','생산,검정','경찰이 착용하는 제모를
+본떠 만든 모자.','FALSE','머리',NULL,5,10,NULL,60,'[{"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1270806,'경찰 유니폼','생산,검정','경찰이 착용하는 유니폼을
+본떠 만들어진 옷.','FALSE','몸',NULL,10,15,NULL,60,'[{"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1270903,'채굴자의 방호복','길개지구입','채굴자가 애용한
+가슴 보호대가 있는 보호복.
+인디고로 염색되어 있다.','FALSE','몸',NULL,15,5,5,30,'[{"ref": 2298, "name": "공예품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1270905,'세토라즈 셔츠',NULL,'개척자들이 애용하는 작업복.
+소재가 튼튼하여 어떤 상황에서도 착용 가능.','TRUE','몸',NULL,15,10,NULL,60,'[{"ref": 2287, "name": "종교학", "value": 1}, {"ref": 2281, "name": "생물학", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (1271146,'경찰의 제모','생산,빨강','경찰이 착용하는 제모를
+본떠 만든 모자.','FALSE','머리',NULL,5,10,NULL,60,'[{"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1271150,'경찰 유니폼','생산,빨강','경찰이 착용하는 유니폼을
+본떠 만들어진 옷.','FALSE','몸',NULL,10,15,NULL,60,'[{"ref": 2344, "name": "총격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1271427,'카테리나 드레스','길개지구입','메디치 가문의 여성이 혼례를 치를 때 입는 개성적인 드레스.','TRUE','몸',NULL,10,45,NULL,30,'[{"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (1272436,'워 액스',NULL,'북미 원주민이 사용하는 한손 도끼를 일반인용으로 개량한 것.
+경량화 되었다.','TRUE','무기 (도끼)',50,NULL,NULL,NULL,50,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,600',NULL,NULL,NULL,NULL),
+ (1272440,'반쿨 아머',NULL,'특별한 칭호를 가진 사람만 입을 수 있는 중후한 갑옷.','TRUE','몸',8,90,30,NULL,100,'[{"ref": 2335, "name": "수평사격", "value": 2}, {"ref": 2330, "name": "방어", "value": 1}, {"ref": 2345, "name": "탄도학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,'[{"ref": 1315739, "name": "반쿨"}]'),
+ (1272692,'헌터 부츠',NULL,'북미 서안의 사냥꾼들이 즐겨 사용하는 실용적인 부츠','TRUE','다리',NULL,8,NULL,NULL,50,'[{"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (1272705,'사냥꾼 글러브',NULL,'북미 서해안의 사냥꾼들이 즐겨 사용하는 실용적인 장갑','TRUE','팔',5,7,NULL,2,50,'[{"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (1276287,'수호자의 모자',NULL,'보안관이 착용하는 모자를
+일반인용으로 개량한 모자. 정수리 부분이 세로로 접혀져 있다.','TRUE','머리',NULL,8,NULL,NULL,30,'[{"ref": 2303, "name": "무기류 거래", "value": 1}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (1277275,'지리학자의 모자','길개지구입','일류 지리학자를 위해 만들어진 모자.','TRUE','머리',NULL,12,10,NULL,30,'[{"ref": 2289, "name": "지리학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1277289,'지리학자의 로브','길개지구입','일류 지리학자를 위해 만들어진 로브.','TRUE','몸',NULL,20,10,NULL,30,'[{"ref": 2289, "name": "지리학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1277454,'튜더 가운','봉제명인생산','소매의 모양이 특징적인 튜더 왕조 스타일의 드레스.','TRUE','몸',NULL,10,25,NULL,60,'[{"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (1277470,'챙 넓은 펠트 모자','봉제명인생산,보감','챙이 넓은 모자.
+화려하고 아름다워 귀족이 애용한다.','FALSE','머리',NULL,NULL,NULL,NULL,60,'[{"ref": 2280, "name": "보물 감정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,500',NULL,NULL,NULL,NULL),
+ (1277476,'드레이프 드레스','봉제명인생산','주름이 많이 잡힌 스커트를 겹쳐 종 모양 실루엣으로 만든 것이 특징적인 드레스.','TRUE','몸',NULL,15,60,NULL,60,'[{"ref": 2319, "name": "직물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (1277487,'바타데코라','봉제명인생산','세비야의 봄축제에서 착용하는
+아름다운 드레스.','FALSE','몸',NULL,5,25,NULL,60,'[{"ref": 2307, "name": "보석 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (1277497,'웨스턴 드레스','봉제명인생산,가축','북미 서부의 여성이 입는
+질 좋은 드레스','FALSE','몸',NULL,8,10,NULL,60,'[{"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (1277505,'웨스턴 드레스','봉제명인생산,주류','북미 서부의 여성이 입는
+질 좋은 드레스','FALSE','몸',NULL,8,10,NULL,60,'[{"ref": 2317, "name": "주류 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (1277528,'실크 모자','봉제명인생산','특별 주문제작 모자.
+유통 제품에 비해 고급 소재를
+사용하고있다.','FALSE','머리',NULL,6,30,NULL,60,'[{"ref": 2312, "name": "염료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,500',NULL,NULL,NULL,NULL),
+ (1277536,'프록 코트','봉제명인생산','특별 주문제작 코트.
+유통 제품에 비해 고급 소재를 사용하고있다.','TRUE','몸',NULL,8,50,NULL,60,'[{"ref": 2315, "name": "잡화 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1277630,'챙 넓은 펠트 모자','봉제명인생산,천문','챙이 넓은 모자.
+화려하고 아름다워 귀족이 애용한다.','FALSE','머리',NULL,NULL,NULL,NULL,60,'[{"ref": 137755, "name": "천문학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,500',NULL,NULL,NULL,NULL),
+ (1288000,'날개 장식이 달린 튜닉',NULL,'북미 원주민이 착용하는 옷을 일반용으로 개량한 복장.
+깃털 장식이 특징.','TRUE','몸',NULL,15,NULL,NULL,30,'[{"ref": 2319, "name": "직물 거래", "value": 1}, {"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (1299857,'수호자의 코트',NULL,'북미 서부의 보안관복을 일반용으로 개량한 복장.
+품위와 예절을 겸비한다.','TRUE','몸',NULL,15,10,NULL,40,'[{"ref": 2344, "name": "총격", "value": 1}, {"ref": 1016435, "name": "활 쏘기", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (1307469,'용기의 날개관',NULL,'북미 원주민의 머리 장식을 일반인용으로 개량한 것.
+날개가 충분히 사용되었다.','TRUE','머리',20,10,NULL,NULL,100,'[{"ref": 2334, "name": "수탈", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,NULL,NULL,NULL),
+ (1307501,'프론티어즈 셔츠',NULL,'채굴자가 애용하는 작업복을 일반용으로 개량한 복장.
+튼튼함과 기능성을 겸비함.','TRUE','몸',NULL,10,NULL,NULL,30,'[{"ref": 2299, "name": "광물 거래", "value": 1}, {"ref": 2280, "name": "보물 감정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'6,000',NULL,NULL,NULL,NULL),
+ (1307588,'사슴 가죽 부츠',NULL,'북미 원주민이 신는 신발을 일반인용으로 개량한 것.
+바느질 방법이 특징적이다.','TRUE','다리',3,5,NULL,NULL,50,'[{"ref": 2285, "name": "자물쇠 따기", "value": 1}, {"ref": 2453, "name": "함정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (1307597,'여행자의 빗',NULL,'긴 여행에 견딜 수 있도록 특별히 개량된 빗.
+아름다움과 높은 강도를 가졌다.','TRUE','장신구',NULL,NULL,10,NULL,20,'[{"ref": 2315, "name": "잡화 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (1307663,'드라군·리볼버',NULL,'검은색 화약을 사용하는 퍼커션식 싱글 액션 리볼버 권총.','TRUE','무기 (권총)',60,NULL,NULL,NULL,100,'[{"ref": 2344, "name": "총격", "value": 2}, {"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,NULL),
+ (1318359,'정강이 보호대','생산-비법서','일본 군인이 착용하는 방어구.
+무릎에서 발목까지를 보호한다.','TRUE','다리',NULL,15,NULL,NULL,100,'[{"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (1318370,'경번갑','내구 100','조선의 무관이 입는 갑옷
+무겁지만 튼튼하다.','TRUE','몸',20,50,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2431, "name": "던지기 기술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (1318489,'비단 각반','내구 100','조선 군인이 갑옷과 함께
+착용하는 정강이 보호대.
+두꺼운 비단으로 만든다.','FALSE','다리',NULL,15,NULL,NULL,100,'[{"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (1371618,'원융',NULL,'여러 개의 화살을 연사할 수 있는 석궁.
+연노라는 석궁을 개량한 것이라고 한다.','TRUE','무기 (크로스보우)',60,NULL,NULL,NULL,100,'[{"ref": 2435, "name": "저격술", "value": 1}, {"ref": 1016435, "name": "활 쏘기", "value": 1}, {"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (1374564,'사라판','이민자생산','여성용 원피스 드레스.
+러시아에서 즐겨 입는다.','TRUE','몸',NULL,7,10,NULL,40,'[{"ref": 2432, "name": "관리기술", "value": 1}, {"ref": 2317, "name": "주류 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (1374586,'페레즈&반 카프탄','이민자생산','긴 상의 위에 앞 여밈 형태의 반팔 옷을 겹쳐 입는 의상.','TRUE','몸',NULL,7,10,NULL,40,'[{"ref": 2432, "name": "관리기술", "value": 1}, {"ref": 2317, "name": "주류 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (1374619,'손찌','이민자생산','손목부터 손가락까지 장식하는
+호화로운 장식품.','FALSE','팔',NULL,5,10,NULL,40,'[{"ref": 2432, "name": "관리기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1374628,'사파이어 브로치','이민자생산','고급 사파이어로 장식된 아름다운 브로치.','TRUE','장신구',NULL,NULL,20,NULL,40,'[{"ref": 2432, "name": "관리기술", "value": 1}, {"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (1375219,'밴디트 크로스보우',NULL,'화살 대신 돌을 투사할 수 있는 구조의 크로스보우.
+전직 산적인 자가 개량하였다.','TRUE','무기 (크로스보우)',28,7,NULL,NULL,40,'[{"ref": 2435, "name": "저격술", "value": 1}, {"ref": 1016435, "name": "활 쏘기", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1375221,'모험가의 신발','이민자생산','모험가용 가죽 부츠.
+버클로 폭을 조절할 수 있어서
+신고 벗기 편하다.','FALSE','다리',NULL,8,NULL,NULL,40,'[{"ref": 1016435, "name": "활 쏘기", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1384003,'경찰의 제모','구입,초록','경찰이 착용하는 제모를 본떠 만든 모자.','TRUE','머리',NULL,5,10,NULL,50,'[{"ref": 2346, "name": "통솔", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (1385720,'웨스턴 글러브','여행자상인구입','카우보이들이 애용하는
+스웨드 글러브.','FALSE','팔',10,4,NULL,2,50,'[{"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (1386258,'워킹 캡','대부호구입','철도 이벤트 오마하 대부호(횡재품 No. 7) 판매','TRUE','머리',NULL,5,NULL,NULL,50,'[{"ref": 2315, "name": "잡화 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (1388492,'묵주','이민자생산','고대 로마 귀족이 착용하던 머리 장식. 풀꽃으로 만들었다.','TRUE','머리',NULL,5,NULL,NULL,40,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2289, "name": "지리학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1388494,'메르클리우스 부츠','이민자생산','복사뼈 부분에 날개를 장식한 신발.
+로마신화에 등장하는 신이 신는 신발을 모티브로 만들었다.','TRUE','다리',NULL,5,NULL,NULL,40,'[{"ref": 137755, "name": "천문학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1394010,'웨스턴 부츠','대부호구입','카우보이들이 애용하는 스웨드 부츠. 박차가 달려 있다.','TRUE','다리',NULL,7,NULL,2,50,'[{"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (1394663,'멕시칸 부츠','여행자상인구입','멕시코 카우보이가
+애용하는 부츠. 끝이 뾰촉하게
+말려 올라간 것이 특징.','TRUE','다리',NULL,7,NULL,NULL,50,'[{"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (1400921,'경찰 유니폼','구입,초록','경찰이 착용하는 유니폼을
+
+본떠 만들어진 옷.','TRUE','몸',NULL,10,15,NULL,50,'[{"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (1401034,'채굴자의 방호복','대부호','채굴자가 애용한 가슴 보호대가 있는 보호복.
+
+인디고로 염색되어 있다.','TRUE','몸',NULL,20,5,5,50,'[{"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (1402556,'워킹 베스트','대부호구입','공장 노동자에게 애용되는
+옷. 튼튼하고 움직이기 쉽다.','TRUE','몸',NULL,4,NULL,NULL,50,'[{"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (1438018,'욕군','이민자생산','욕군.
+기장이 짧은 상의와
+긴 치마를 합쳐 입는
+한족의 옷.','FALSE','몸',NULL,4,NULL,NULL,40,'[{"ref": 2312, "name": "염료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (1438104,'두건','이민자생산','머리카락을 하나로 묶은 다음, 천으로 머리를 감싸는 도구.
+한족이 평상 시에 사용한다.','TRUE','머리',NULL,5,NULL,NULL,40,'[{"ref": 2319, "name": "직물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (1438384,'작업복','이민자생산','야외에서 약초 등을  채집할때 주로 착용하는 의복.','TRUE','몸',NULL,10,NULL,NULL,40,'[{"ref": 2286, "name": "조달", "value": 1}, {"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (1438386,'홍식장도',NULL,'조선의 귀족이 호신용으로 가지고 있던 단검.
+홍이라는 글자가 새겨져 있다.','TRUE','무기 (던지는 나이프)',30,20,20,NULL,60,'[{"ref": 2431, "name": "던지기 기술", "value": 1}, {"ref": 2453, "name": "함정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (1438388,'홍식각궁',NULL,'물소 뿔 등을 사용한 조선의 활.
+홍(洪)이라는 글자가 새겨져 있다.','TRUE','무기 (활)',35,10,NULL,NULL,60,'[{"ref": 2435, "name": "저격술", "value": 1}, {"ref": 1016435, "name": "활 쏘기", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (1438410,'에미그랜트 햇',NULL,'신천지로 이주한 사람들을 위한 펠트 모자.','TRUE','머리',NULL,8,NULL,5,70,'[{"ref": 2296, "name": "공업품 거래", "value": 2}, {"ref": 2298, "name": "공예품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1439878,'부스테 델','방랑자의 수납상자','몽골 민족의 일반적인 장의.
+겨울용으로 모피를 사용했다.','FALSE','몸',NULL,7,15,NULL,40,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (1439880,'부스테 델','방랑자의 수납상자','몽골 민족의 일반적인 장의.
+겨울용으로 모피를 사용했다.','FALSE','몸',NULL,7,15,NULL,40,'[{"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (1439946,'사방평정건','이민자생산','요직에 종사하는 인물이 쓰는 한족의 모자. 별칭은 방건','TRUE','머리',NULL,5,5,NULL,40,'[{"ref": 2321, "name": "향료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'남성',NULL,NULL),
+ (1439953,'매화잠','길개지생산','매화 꽃을 사용하여 만든 머리 장식품.
+금이나, 다른것으로 만들기도 한다.','TRUE','머리',NULL,5,5,NULL,40,'[{"ref": 2321, "name": "향료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,'여성',NULL,NULL),
+ (1440245,'잔진 말가이','방랑자의 수납상자','길드 개척도시에 등장하는 npc 노마드가 파는 방랑자의 수납상자에서 나옵니다','TRUE','머리',NULL,5,5,NULL,40,'[{"ref": 2284, "name": "인식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1441395,'마법사의 옷','보석함정','마법사가 입었다고 하는 의복을
+본떠서 만든 옷.','FALSE','몸',5,25,20,10,60,'[{"ref": 2307, "name": "보석 거래", "value": 1}, {"ref": 2453, "name": "함정", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (1475476,'독일 기사단장의 검 EX',NULL,'독일 기사단의 단장이 애용했다는 장검.
+특별한 능력을 지니고 있다.','TRUE','무기 (검)',22,NULL,5,NULL,70,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,'[{"ref": 724066, "name": "시대효과(14세기)", "value": 1}]',NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (1488455,'반쿨 아머 EX',NULL,'특별한 칭호를 가진 사람만 입을 수 있는 중후한 갑옷.
+특수한 힘을 지니고 있다.','TRUE','몸',8,90,30,NULL,100,'[{"ref": 2335, "name": "수평사격", "value": 2}, {"ref": 2330, "name": "방어", "value": 1}, {"ref": 2345, "name": "탄도학", "value": 1}]',NULL,'[{"ref": 707586, "name": "특수탄 효과 발생률 상승", "value": 10}]',NULL,NULL,NULL,'40,000',NULL,NULL,NULL,'[{"ref": 1315739, "name": "반쿨"}]'),
+ (1518127,'피켈하우베',NULL,'정수리 부분의 장식이 특징적인 헬멧','TRUE','머리',NULL,5,10,NULL,100,'[{"ref": 2344, "name": "총격", "value": 1}, {"ref": 2325, "name": "검술", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (1519162,'북극 사람의 옷',NULL,'시베리아 북극 지역의 추위에도 견딜 수 있는 옷.','TRUE','몸',NULL,10,NULL,NULL,40,'[{"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1519167,'북극 사람의 모자',NULL,'시베리아 북극 지역의 추위에도 견딜 수 있는 모자.','TRUE','머리',NULL,5,NULL,NULL,40,'[{"ref": 2311, "name": "식료품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1519173,'북극 사람의 신발',NULL,'시베리아 북극 지역의 추위에도 견딜 수 있는 신발.','TRUE','다리',NULL,8,NULL,NULL,40,'[{"ref": 2369, "name": "조미료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1519246,'레 매트 리볼버',NULL,'권총탄과 산탄을 모두 발사할 수 있는 회전식 탄창 권총.','TRUE','무기 (권총)',45,NULL,NULL,NULL,50,'[{"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1519248,'크레인 퀸 크로스보우',NULL,'리프트 장치가 설치된 크로스보우.','TRUE','무기 (크로스보우)',45,NULL,NULL,NULL,50,'[{"ref": 1016435, "name": "활 쏘기", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1519380,'초원 사람의 옷',NULL,'카자흐족이 입는 옷.','TRUE','몸',NULL,8,NULL,NULL,40,'[{"ref": 2314, "name": "의약품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1519386,'초원 사람의 모자',NULL,'카자흐족이 쓰는 모자.','TRUE','머리',NULL,5,NULL,NULL,40,'[{"ref": 2298, "name": "공예품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1519521,'고산지대 사람의 옷',NULL,'셰르파족이 입는 옷.','TRUE','몸',NULL,10,NULL,NULL,40,'[{"ref": 2312, "name": "염료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1519525,'고산지대 사람의 모자',NULL,'셰르파족이 쓰는 모자.','TRUE','머리',NULL,5,NULL,NULL,40,'[{"ref": 2310, "name": "섬유 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1519561,'구르즈',NULL,'끝 모양이 특징적인 곤봉.','TRUE','무기 (곤봉 지팡이)',50,10,NULL,NULL,50,'[{"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1519631,'장인의 장갑',NULL,'장인의 손을 보호해주는 고급 장갑.','TRUE','팔',NULL,3,NULL,NULL,100,'[{"ref": 2299, "name": "광물 거래", "value": 2}, {"ref": 2310, "name": "섬유 거래", "value": 1}, {"ref": 2319, "name": "직물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (1519633,'코사크 카프탄','육지조사','어떤 지역의 기병대가 입는 의상. 통기성과 차광성이 뛰어나다.
+(녹색속옷, 주황색겉옷)','TRUE','몸',5,22,NULL,5,50,'[{"ref": 2279, "name": "보급", "value": 1}, {"ref": 2286, "name": "조달", "value": 1}, {"ref": 2281, "name": "생물학", "value": 1}]',NULL,'[{"ref": 707601, "name": "행동력 감소 억제", "value": 2}]',NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (1519725,'시베리아 모피신발',NULL,'시베리아 북극 지역의 추위에도 견딜 수 있는 신발.','TRUE','다리',NULL,5,10,NULL,40,'[{"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1520089,'유니콘의 뿔',NULL,'전설의 유니콘의 뿔. 상당히 오래되어 보이며 어딘가 신성한 분위기를 지니고 있다.','TRUE','장신구',5,NULL,NULL,NULL,10,NULL,'[{"ref": 1405, "name": "주술(낙뢰)"}]',NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (1520101,'일류 모험가의 조련술',NULL,'일류 모험가가 쓴 애완동물
+
+조련술이 적힌 해설서.','TRUE','장신구',NULL,NULL,NULL,NULL,50,'[{"ref": 1518281, "name": "조교", "value": 2}, {"ref": 2290, "name": "채집", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (1520110,'일류 상인의 조련술',NULL,'일류 상인이 쓴 애완동물
+
+조련술이 적힌 해설서.','TRUE','장신구',NULL,NULL,NULL,NULL,50,'[{"ref": 1518281, "name": "조교", "value": 2}, {"ref": 2323, "name": "회계", "value": 1}, {"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (1520121,'조개껍데기 목걸이',NULL,'귀중한 조개껍데기를 사용한 목걸이. 보석과는 다른 화려함이 특징.','TRUE','장신구',NULL,NULL,30,NULL,30,'[{"ref": 2304, "name": "미술품 거래", "value": 2}]','[{"ref": 1392, "name": "대화술 스킬 강화"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1522422,'페더 샌들',NULL,'육지조사 170곳 달성시 옥스포드 대학 내 교수한테서 수령','TRUE','다리',NULL,10,NULL,NULL,100,'[{"ref": 2293, "name": "행군", "value": 1}, {"ref": 2453, "name": "함정", "value": 1}]',NULL,'[{"ref": 707579, "name": "육지 이동속도 상승", "value": 3}]',NULL,'이벤트 보상',NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1522698,'별갑 부적',NULL,'별갑을 사용한 특별한 부적. 숙련된 기술로 가공하여 매우 비싸다.','TRUE','장신구',NULL,NULL,10,NULL,10,NULL,'[{"ref": 1585, "name": "포격 무효"}]',NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (1524837,'시베리아 모피모자',NULL,'시베리아 북극 지역의 추위에도 견딜 수 있는 모자.','TRUE','머리',NULL,5,10,NULL,50,'[{"ref": 2292, "name": "탐색", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (1525224,'고급 고래수염 낚시도구',NULL,'가볍고 탄력성이 좋은 고래수염을 사용한 낚싯대.','TRUE','장신구',NULL,NULL,NULL,NULL,50,'[{"ref": 2275, "name": "낚시", "value": 2}]','[{"ref": 2275, "name": "낚시"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1525283,'뱀허물 부적',NULL,'뱀허물을 넣은 부적. 재운 상승효과가 있다고 한다.','TRUE','장신구',NULL,NULL,10,NULL,50,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2301, "name": "기호품 거래", "value": 1}, {"ref": 2294, "name": "가축 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (1526506,'보석 거울',NULL,'보석을 가득 박아 훌륭한 세공을 한 손거울.','TRUE','장신구',NULL,NULL,70,NULL,30,'[{"ref": 2297, "name": "공예", "value": 1}, {"ref": 2315, "name": "잡화 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1527238,'셰르파족 의복',NULL,'셰르파족이 입는 옷.','TRUE','몸',NULL,NULL,10,10,100,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1527309,'모피 방한복',NULL,'추위에 견딜 수 있는 모피옷.','TRUE','몸',NULL,15,NULL,NULL,50,'[{"ref": 2286, "name": "조달", "value": 2}, {"ref": 2290, "name": "채집", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1527340,'모피 방한모자',NULL,'추위에 견딜 수 있는 모피모자.','TRUE','머리',NULL,5,NULL,NULL,40,'[{"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1527411,'셰르파족 모자',NULL,'셰르파족이 쓰는 모자.','TRUE','머리',NULL,5,NULL,NULL,40,'[{"ref": 2283, "name": "생태 조사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (1527483,'시베리아 모피옷',NULL,'시베리아 북극 지역의 추위에도 견딜 수 있는 옷.','TRUE','몸',NULL,20,NULL,NULL,50,'[{"ref": 2281, "name": "생물학", "value": 2}, {"ref": 2284, "name": "인식", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (1527489,'모피 방한신발',NULL,'추위에 견딜 수 있는
+
+모피신발.','TRUE','다리',NULL,8,5,NULL,40,'[{"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (1527872,'공작깃털 귀걸이',NULL,'공작깃털을 사용한 귀걸이. 눈부신 모습으로 널리 인기가 있다.','TRUE','장신구',NULL,NULL,30,NULL,30,'[{"ref": 2300, "name": "귀금속 거래", "value": 2}]','[{"ref": 1389, "name": "복장예절 강화"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1528619,'운철 부적',NULL,'하늘에서 날아온 돌을 가공하여 만들었다는 부적.','TRUE','장신구',5,NULL,NULL,NULL,10,NULL,'[{"ref": 1403, "name": "주술"}]',NULL,NULL,NULL,NULL,'8,000',NULL,NULL,NULL,NULL),
+ (1528623,'고양이수염 부적',NULL,'빠진 고양이수염을 넣은 부적. 재운 상승효과가 있다고 한다.','TRUE','장신구',NULL,NULL,10,NULL,50,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2307, "name": "보석 거래", "value": 1}, {"ref": 2312, "name": "염료 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (1530855,'카자흐족 의복',NULL,'카자흐족이 입는 옷.','TRUE','몸',NULL,10,25,20,50,'[{"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2270, "name": "고고학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (1530861,'카자흐족 모자',NULL,'카자흐족이 쓰는 모자.','TRUE','머리',NULL,5,10,5,40,'[{"ref": 2270, "name": "고고학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (1531950,'바냐도르',NULL,'물가에서 활동하기 편하도록
+제작된 남성용 의상.','FALSE','몸',NULL,2,NULL,NULL,100,NULL,NULL,NULL,NULL,NULL,NULL,'500',NULL,'남성',NULL,NULL),
+ (1535763,'고급 자수정 귀걸이',NULL,'자수정이 곁들여진 아름다운 귀걸이.','TRUE','장신구',NULL,NULL,40,NULL,30,'[{"ref": 2300, "name": "귀금속 거래", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1535768,'고급 사파이어 귀걸이',NULL,'사파이어가 곁들여진 아름다운 목걸이.','TRUE','장신구',NULL,NULL,40,NULL,30,'[{"ref": 2300, "name": "귀금속 거래", "value": 1}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1537604,'보석 목걸이',NULL,'눈물 방울 모양으로 가공한 보석 목걸이.','TRUE','장신구',NULL,NULL,70,NULL,30,'[{"ref": 2307, "name": "보석 거래", "value": 2}, {"ref": 2300, "name": "귀금속 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1537615,'보석 상자',NULL,'아름다운 세공의 보석 상자
+예술적 가치가 높다.','TRUE','장신구',NULL,NULL,70,NULL,30,'[{"ref": 2307, "name": "보석 거래", "value": 2}, {"ref": 2315, "name": "잡화 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1537922,'보석 오브',NULL,'고대 명장이 가지고 있었다는 옥주. 주인을 지킨다고 한다.','TRUE','장신구',NULL,NULL,70,NULL,30,'[{"ref": 2316, "name": "조리", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1549866,'보석 펜던트',NULL,'별을 본따서 만든, 아름답게 반짝이는 목걸이.','TRUE','장신구',NULL,NULL,70,NULL,30,'[{"ref": 2315, "name": "잡화 거래", "value": 2}, {"ref": 2304, "name": "미술품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1586503,'백금 거울',NULL,'뛰어난 은세공 기술이 구사된 아름다운 손거울','TRUE','장신구',NULL,NULL,70,NULL,30,'[{"ref": 2436, "name": "연금술", "value": 1}, {"ref": 2315, "name": "잡화 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1586505,'백금 브로치',NULL,'표면에 얼음의 결정 같은 무늬가
+장식되어 있는 브로치.
+기품과 아름다움을 느끼게 한다.','TRUE','장신구',NULL,NULL,70,NULL,30,'[{"ref": 2297, "name": "공예", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1586507,'보석 시계',NULL,'보석세공이 훌륭한 탁상 시계.
+어느 장인의 유품이다.','TRUE','장신구',NULL,NULL,70,NULL,30,'[{"ref": 2432, "name": "관리기술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1586514,'광부의 수트',NULL,'숙련된 채굴자가 애용하던
+제품을 재현한 고급 보호복.','TRUE','몸',NULL,20,5,5,50,'[{"ref": 2292, "name": "탐색", "value": 2}, {"ref": 2290, "name": "채집", "value": 2}, {"ref": 2286, "name": "조달", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (1624465,'소맷부리가 좁은 일본 의복',NULL,'일본에서 입는 전통 의복.
+소매통은 넓고 소맷부리는 좁다.','FALSE','몸',NULL,4,NULL,NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (1625366,'스펀툰',NULL,'선상에서 다루기 편하도록
+
+길이를 조절한 창.','TRUE','무기 (창)',58,NULL,NULL,NULL,80,'[{"ref": 2433, "name": "응용검술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'16,000',NULL,NULL,NULL,NULL),
+ (1625381,'레가투스 그리브','피렌체생산','고대 로마에서 사령관 등이
+착용하던 철로 된 긴 신발.','FALSE','다리',5,20,NULL,NULL,80,NULL,NULL,NULL,NULL,NULL,NULL,'1,800',NULL,NULL,NULL,NULL),
+ (1625419,'레가투스 글러브','피렌체생산','고대 로마에서 사령관 등이
+착용하던 철로 된 글러브.','FALSE','팔',5,15,NULL,NULL,80,NULL,NULL,NULL,NULL,NULL,NULL,'3,600',NULL,NULL,NULL,NULL),
+ (1631511,'장인의 부츠',NULL,'장인의 발을 보호해 주는 튼튼한 부츠.','TRUE','다리',NULL,5,NULL,NULL,100,'[{"ref": 2311, "name": "식료품 거래", "value": 1}, {"ref": 2301, "name": "기호품 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1669165,'증기기관식 크로스보우',NULL,'혁신적인 증기기사가 설계한 증기기관으로 가동되는 크로스보우.','TRUE','무기 (크로스보우)',100,20,NULL,30,100,'[{"ref": 2344, "name": "총격", "value": 2}, {"ref": 2435, "name": "저격술", "value": 2}, {"ref": 1016435, "name": "활 쏘기", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (1669167,'증기기사의 드레스수트','군용','증기기사의 취향이 많이 반영된 참신한 옷차림의 드레스수트','TRUE','몸',43,85,40,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 3}, {"ref": 2330, "name": "방어", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (1669171,'증기기사의 워크수트','군용','증기기사의 취향이 많이 반영된 참신한 옷차림의 워크수트.','TRUE','몸',43,85,40,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 3}, {"ref": 2330, "name": "방어", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'남성',NULL,NULL),
+ (1705350,'증기기사의 글러브','군용','증기기사의 기호가 많이 반영된
+참신한 옷차림의 글러브.','FALSE','팔',25,20,20,NULL,80,'[{"ref": 2339, "name": "전술", "value": 2}, {"ref": 2342, "name": "조타", "value": 2}, {"ref": 2328, "name": "노 젓기", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'남성',NULL,NULL),
+ (1705362,'증기기사의 글러브','군용','증기기사의 취향이 많이 반영된
+참신한 옷차림의 글러브.','FALSE','팔',25,20,20,NULL,80,'[{"ref": 2339, "name": "전술", "value": 2}, {"ref": 2342, "name": "조타", "value": 2}, {"ref": 2328, "name": "노 젓기", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (1705372,'증기기관식 피스톨',NULL,'혁신적인 증기기사가 설계한 증기기관으로 가동되는 권총.','TRUE','무기 (권총)',100,20,NULL,30,100,'[{"ref": 2344, "name": "총격", "value": 2}, {"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2434, "name": "병기기술", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (1705404,'고급 자수정 목걸이',NULL,'자수정이 곁들여진 아름다운 목걸이.(피렌체 공헌도 400소비)','TRUE','장신구',NULL,NULL,40,NULL,30,'[{"ref": 2298, "name": "공예품 거래", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1705430,'고급 가넷트 귀걸이',NULL,'석류석이 곁들여진 세공이 훌륭한 귀걸이','TRUE','장신구',NULL,NULL,40,NULL,30,'[{"ref": 2300, "name": "귀금속 거래", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1705446,'고급 다이아몬드 목걸이',NULL,'다이아몬드를 곁들인 아주 아름다운 목걸이.','TRUE','장신구',NULL,NULL,40,NULL,30,'[{"ref": 2298, "name": "공예품 거래", "value": 1}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1705471,'고급 사파이어 목걸이',NULL,'사파이어가 곁들여진 아름다운 목걸이.','TRUE','장신구',NULL,NULL,40,NULL,30,'[{"ref": 2298, "name": "공예품 거래", "value": 1}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1705498,'고급 에메랄드 귀걸이',NULL,'에메랄드가 곁들여진 세공이 훌륭한 귀걸이.','TRUE','장신구',NULL,NULL,40,NULL,30,'[{"ref": 2300, "name": "귀금속 거래", "value": 1}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1705545,'사대원소 펜던트 (땅)',NULL,'고도의 연금술로 농축한 땅의 원소를 넣은 펜던트.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2311, "name": "식료품 거래", "value": 1}]','[{"ref": 1453, "name": "낙뢰공격(적 전원)"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1705547,'사대원소 펜던트 (물)',NULL,'고도의 연금술로 농축한 물의 원소를 넣은 펜던트.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2317, "name": "주류 거래", "value": 1}]','[{"ref": 1455, "name": "해일 공격(적 전원)"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1705549,'사대원소 펜던트 (바람)',NULL,'고도의 연금술로 농축한 바람의 원소를 넣은 펜던트.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2319, "name": "직물 거래", "value": 1}]','[{"ref": 1452, "name": "선풍공격(적 전원)"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1705552,'사대원소 펜던트 (불)',NULL,'고도의 연금술로 농축한 불의 원소를 넣은 펜던트.','TRUE','장신구',NULL,NULL,NULL,NULL,5,'[{"ref": 2320, "name": "총포류 거래", "value": 1}]','[{"ref": 1451, "name": "작렬공격(적 전원)"}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1705623,'현자의 모자',NULL,'숙련된 연금술사가 착용하는 모자.','TRUE','머리',NULL,5,NULL,NULL,100,'[{"ref": 2436, "name": "연금술", "value": 1}, {"ref": 2307, "name": "보석 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (1705780,'러시안 가운',NULL,'러시아의 남성 귀족이 입는
+호화로운 방한복.','TRUE','몸',NULL,25,30,NULL,100,'[{"ref": 2317, "name": "주류 거래", "value": 2}, {"ref": 2298, "name": "공예품 거래", "value": 2}, {"ref": 2323, "name": "회계", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'남성',NULL,NULL),
+ (1705789,'러시안 햇',NULL,'러시아 귀족들이 착용하는
+호화로운 방한용 모자.','TRUE','머리',NULL,10,20,NULL,100,'[{"ref": 2300, "name": "귀금속 거래", "value": 1}, {"ref": 2299, "name": "광물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1705799,'러시안 드레스',NULL,'러시아의 여성 귀족이 입는
+호화로운 방한복.','TRUE','몸',NULL,25,30,NULL,100,'[{"ref": 2317, "name": "주류 거래", "value": 2}, {"ref": 2298, "name": "공예품 거래", "value": 2}, {"ref": 2323, "name": "회계", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (1705886,'애니버서리 블레이드',NULL,'새벽의 여신과 별이 총총한 하늘의 신을 찬양하는
+눈부신 장식의 대검.','TRUE','무기 (검)',50,NULL,NULL,NULL,100,'[{"ref": 2303, "name": "무기류 거래", "value": 2}, {"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2318, "name": "주조", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (1705892,'주얼리 롯드',NULL,'보석이 가득 박힌
+화려한 지팡이.','TRUE','무기 (곤봉 지팡이)',20,NULL,20,NULL,100,'[{"ref": 2307, "name": "보석 거래", "value": 2}, {"ref": 2304, "name": "미술품 거래", "value": 2}, {"ref": 2297, "name": "공예", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (1707199,'아비 아 라 프랑세즈',NULL,'긴 상의와 바지를 매치한
+귀족의 옷. 프랑스에서 유행.
+모험하기 쉽도록 고안되었다.','FALSE','몸',NULL,20,35,NULL,100,'[{"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2285, "name": "자물쇠 따기", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'남성',NULL,NULL),
+ (1707215,'브리올 & 레더 벨트',NULL,'몸에 밀착되도록 튜닉을
+가죽 벨트로 조이는 옷.
+모험하기 쉽도록 고안되었다.','FALSE','몸',NULL,20,35,NULL,100,'[{"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2285, "name": "자물쇠 따기", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'여성',NULL,NULL),
+ (1707222,'모험귀족의 확대경',NULL,'[12주년 기념행운권]','TRUE','도구',NULL,NULL,10,10,100,'[{"ref": 2289, "name": "지리학", "value": 2}, {"ref": 2284, "name": "인식", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (1707269,'웨스턴 부츠','병기돌격','카우보이들이 애용하는
+스웨드 부츠.
+박차가 달려 있다.','FALSE','다리',NULL,7,NULL,2,100,'[{"ref": 2434, "name": "병기기술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (1707279,'웨스턴 햇','12주년','카우보이들이 애용하는
+스웨드 모자.','FALSE','머리',NULL,10,NULL,NULL,100,'[{"ref": 2317, "name": "주류 거래", "value": 2}, {"ref": 2435, "name": "저격술", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (1720754,'카프탄','수탈','앞 여밈 형태의 장의.
+터키와 동유럽에서 주로 입는다.','TRUE','몸',NULL,13,15,NULL,40,'[{"ref": 2345, "name": "탄도학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1727734,'웨스턴 걸 의상','12주년','스웨드 베스트와 숏 팬츠로
+구성된 의상.
+활동하기 편하고 튼튼하다.','FALSE','몸',NULL,12,10,NULL,100,'[{"ref": 2453, "name": "함정", "value": 1}, {"ref": 2294, "name": "가축 거래", "value": 1}, {"ref": 1518281, "name": "조교", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'여성',NULL,NULL),
+ (1738129,'연철 완갑 스페셜',NULL,'한족 군인이 갑옷과 함께 착용하는 완갑. 연철로 만든다.','TRUE','팔',15,25,15,NULL,50,'[{"ref": 2342, "name": "조타", "value": 2}, {"ref": 2328, "name": "노 젓기", "value": 2}, {"ref": 2345, "name": "탄도학", "value": 2}]',NULL,NULL,'거래 불가','캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (1748601,'영국탐정의 코트',NULL,'영국의 한 탐정이 애용한
+코트. 케이프와 함께
+착용한다.','FALSE','몸',NULL,10,10,10,100,'[{"ref": 2292, "name": "탐색", "value": 2}, {"ref": 2278, "name": "미술", "value": 2}, {"ref": 2270, "name": "고고학", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (1748607,'영국식 메이드드레스',NULL,'여성 급사가 착용하는 드레스.','TRUE','몸',NULL,10,15,NULL,100,'[{"ref": 2311, "name": "식료품 거래", "value": 2}, {"ref": 2369, "name": "조미료 거래", "value": 2}, {"ref": 2306, "name": "보관", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'여성',NULL,NULL),
+ (1748610,'영국식 버틀러 수트',NULL,'남성 집사가 착용하는 수트.','TRUE','몸',NULL,20,30,NULL,100,'[{"ref": 2306, "name": "보관", "value": 2}, {"ref": 2311, "name": "식료품 거래", "value": 2}, {"ref": 2369, "name": "조미료 거래", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'남성',NULL,NULL),
+ (1748612,'트라데스칸트 애용의 모험복',NULL,'존 트라데스칸트가 오랫동안 애용하고 있는 모험용 옷.','TRUE','몸',5,35,8,20,100,'[{"ref": 2281, "name": "생물학", "value": 3}, {"ref": 2289, "name": "지리학", "value": 2}, {"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'남성',NULL,NULL),
+ (1748614,'조피 특주 드레스',NULL,'조피가 고향을 떠날 때 만들게 한 드레스. 진홍색이 강한 존재감을 부여한다.','TRUE','몸',NULL,15,40,NULL,100,'[{"ref": 2301, "name": "기호품 거래", "value": 3}, {"ref": 2298, "name": "공예품 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'여성',NULL,NULL),
+ (1748617,'크리스티나의 약장',NULL,'크리스티나의 의상. 어머니와 시녀가 만든 드레스를 활동하기 편하도록 개조했다.','TRUE','몸',NULL,20,35,NULL,50,'[{"ref": 2292, "name": "탐색", "value": 3}, {"ref": 2278, "name": "미술", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'여성',NULL,NULL),
+ (1748619,'구스타프 2세 아돌프 약장',NULL,'구스타프 2세 아돌프가 즐겨 입었다고 하는 가벼운 의장. 의도적으로 루즈하게 입는다.','TRUE','몸',NULL,25,35,NULL,50,'[{"ref": 2435, "name": "저격술", "value": 3}, {"ref": 2344, "name": "총격", "value": 2}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'남성',NULL,NULL),
+ (1766733,'장식 머스캣',NULL,'등록된 아이템 설명: ※
+2017년 이벤트 2차 구입 홀리 기프트 박스 개봉을 통해 얻을 수 있다.','TRUE','무기 (총)',50,NULL,30,NULL,100,'[{"ref": 2278, "name": "미술", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'2,500',NULL,NULL,NULL,NULL),
+ (1766937,'바요넷',NULL,'총검이 달린 총. 근접전에도 대응이 가능하다.','TRUE','무기 (총)',65,15,NULL,NULL,200,'[{"ref": 2344, "name": "총격", "value": 2}, {"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'1,000',NULL,NULL,NULL,NULL),
+ (1766945,'증기기사의 부츠','군용','증기기사의 취향이 많이 반영된
+참신한 옷차림의 부츠.','FALSE','다리',20,30,20,NULL,80,'[{"ref": 2338, "name": "응급처치", "value": 2}, {"ref": 2328, "name": "노 젓기", "value": 2}, {"ref": 2333, "name": "수리", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'남성',NULL,NULL),
+ (1766948,'증기기사의 부츠','군용','증기기사의 취향이 많이 반영된
+참신한 옷차림의 부츠.','FALSE','다리',20,30,20,NULL,80,'[{"ref": 2338, "name": "응급처치", "value": 2}, {"ref": 2328, "name": "노 젓기", "value": 2}, {"ref": 2333, "name": "수리", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (1766954,'금색 인장 반지',NULL,'파나마의 총독에게서 헨리모건에게로 넘어간 인장반지를 본따 만든 것.','TRUE','장신구',10,10,NULL,NULL,100,'[{"ref": 2334, "name": "수탈", "value": 2}, {"ref": 2329, "name": "돌격", "value": 2}, {"ref": 2342, "name": "조타", "value": 1}]','[{"ref": 1360, "name": "침수 회복"}]',NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (1774810,'고급 사파이어 반지',NULL,'사파이어가 곁들어진
+아름다운 반지.','TRUE','장신구',NULL,NULL,40,NULL,30,'[{"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1800942,'트라이덴트',NULL,'포세이돈이 들고 있는 삼지창. 이 창으로 폭풍과 홍수를 일으켜 바람을 자유자재로 조종했다는 전설이 있다.','TRUE','무기 (창)',90,NULL,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 3}, {"ref": 2339, "name": "전술", "value": 3}]',NULL,'[{"ref": 721981, "name": "백병전 전투력 상승", "value": 4}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (1800944,'영국탐정의 모자',NULL,'영국의 한 탐정이 애용한
+모자. 사냥할 때 쓰기도 하므로
+사슴사냥 모자라고도 불린다.','FALSE','머리',NULL,5,NULL,10,100,'[{"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2281, "name": "생물학", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (1801318,'박아의 드레스',NULL,'학문에 정통한 귀인이 입는
+호화찬란한 드레스.','TRUE','몸',NULL,20,30,NULL,100,'[{"ref": 137755, "name": "천문학", "value": 2}, {"ref": 2289, "name": "지리학", "value": 2}, {"ref": 2284, "name": "인식", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'2,000',NULL,'여성',NULL,NULL),
+ (1801320,'박아의 가운',NULL,'학문에 정통한 귀인이 입는
+
+호화찬란한 가운.','TRUE','몸',NULL,20,30,NULL,100,'[{"ref": 137755, "name": "천문학", "value": 2}, {"ref": 2289, "name": "지리학", "value": 2}, {"ref": 2284, "name": "인식", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'2,000',NULL,'남성',NULL,NULL),
+ (1801332,'박아의 코로넷',NULL,'학문에 능통한 귀인이 착용하는
+호화찬란한 제관.','TRUE','머리',NULL,10,20,NULL,100,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2287, "name": "종교학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'2,000',NULL,'여성',NULL,NULL),
+ (1801338,'박아의 모자',NULL,'학문에 능통한 귀인이 착용하는
+
+호화찬란한 모자.','TRUE','머리',NULL,10,20,NULL,100,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2287, "name": "종교학", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'2,000',NULL,'남성',NULL,NULL),
+ (1807197,'노블 코로넷',NULL,'신분이 높은 사람이 착용하는
+호화찬란한 제관.','FALSE','머리',NULL,5,20,NULL,40,'[{"ref": 2307, "name": "보석 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,'여성',NULL,NULL),
+ (1807217,'노블 드레스',NULL,'신분이 높은 사람이 입는
+호화찬란한 드레스.','FALSE','몸',NULL,15,30,NULL,40,'[{"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,'여성',NULL,NULL),
+ (1810776,'노블 가운',NULL,'신분이 높은 사람이 입는
+호화찬란한 가운.','FALSE','몸',NULL,15,30,NULL,40,'[{"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,'남성',NULL,NULL),
+ (1810780,'노블 햇',NULL,'신분이 높은 사람이 착용하는
+호화찬란한 모자.','FALSE','머리',NULL,5,20,NULL,40,'[{"ref": 2307, "name": "보석 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,000',NULL,'남성',NULL,NULL),
+ (1840221,'S·소드 브레이커',NULL,'해적대전 포상 상자에서 획득','TRUE','무기 (검)',60,15,NULL,NULL,50,'[{"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2325, "name": "검술", "value": 1}, {"ref": 2339, "name": "전술", "value": 1}]',NULL,'[{"ref": 721981, "name": "백병전 전투력 상승", "value": 4}]',NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (1840231,'빌',NULL,'해적대전 포상 상자에서 획득','TRUE','무기 (창)',75,NULL,NULL,NULL,50,'[{"ref": 2334, "name": "수탈", "value": 2}, {"ref": 2325, "name": "검술", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,'[{"ref": 707618, "name": "수탈확률 상승", "value": 10}]',NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (1845517,'일본식 관모','해상 수탈','일본의 무관이 쓰는 모자.
+원래는 더 높게 만들었다.','FALSE','머리',NULL,10,5,NULL,50,'[{"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (1852065,'브릴리언트 햇',NULL,'모피로 장식된 세련된 모자.
+눈 번쩍 뜨일 법한 핑크색으로
+물들여져 있다.','TRUE','머리',NULL,10,20,NULL,100,'[{"ref": 2430, "name": "항해기술", "value": 2}, {"ref": 2444, "name": "인양", "value": 1}, {"ref": 2445, "name": "예항", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'2,000',NULL,NULL,NULL,NULL),
+ (1853197,'고급 에메랄드 반지',NULL,'자택 생산(공예)으로 습득할 수 있다.','TRUE','장신구',NULL,NULL,40,NULL,30,'[{"ref": 2280, "name": "보물 감정", "value": 1}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1854794,'백금의 액세스 월',NULL,'피렌체 레시피 생산','TRUE','머리',NULL,5,20,NULL,50,'[{"ref": 2321, "name": "향료 거래", "value": 1}, {"ref": 2300, "name": "귀금속 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'여성',NULL,NULL),
+ (1859057,'백금의 로렐리스',NULL,'월계수 잎을 모방하여 백금으로 만든 왕관.','TRUE','머리',NULL,5,10,NULL,50,'[{"ref": 2318, "name": "주조", "value": 1}, {"ref": 2299, "name": "광물 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,NULL,NULL,NULL),
+ (1867132,'석류석의 이마 장식',NULL,'석류석으로 장식한 아름다운 이마 장식.','TRUE','머리',NULL,5,10,20,50,'[{"ref": 2312, "name": "염료 거래", "value": 1}, {"ref": 2310, "name": "섬유 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,'여성',NULL,NULL),
+ (1867141,'고급 가넷트 목걸이',NULL,'석류석이 곁들여진 세공이 훌륭한 목걸이.','TRUE','장신구',NULL,NULL,40,NULL,30,'[{"ref": 2298, "name": "공예품 거래", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1867177,'고급 에메랄드 목걸이',NULL,'에메랄드가 곁들여진 세공이 훌륭한 목걸이.','TRUE','장신구',NULL,NULL,40,NULL,30,'[{"ref": 2298, "name": "공예품 거래", "value": 1}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1867190,'고급 다이아몬드 귀걸이',NULL,'다이아몬드를 곁들인 아주 아름다운 귀걸이.','TRUE','장신구',NULL,NULL,40,NULL,30,'[{"ref": 2300, "name": "귀금속 거래", "value": 1}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1867197,'금강석의 손찌',NULL,'손목부터 손끝을 장식하는 화려한 장식품.
+다이아몬드로 장식되어 있다.','TRUE','팔',NULL,5,20,NULL,50,'[{"ref": 2306, "name": "보관", "value": 1}, {"ref": 2290, "name": "채집", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1867201,'푸른 옥의 단검',NULL,'사파이어로 장식한 정교한 구조의 단검.','TRUE','무기 (던지는 나이프)',30,NULL,10,NULL,50,'[{"ref": 2297, "name": "공예", "value": 1}, {"ref": 2296, "name": "공업품 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'7,000',NULL,NULL,NULL,NULL),
+ (1869382,'웨스턴 재킷','트레져박스','스웨드 재킷과 데님 팬츠로
+
+구성된 의상.
+
+활동하기 편하고 튼튼하다.','TRUE','몸',NULL,25,10,NULL,100,'[{"ref": 2453, "name": "함정", "value": 1}, {"ref": 2320, "name": "총포류 거래", "value": 1}, {"ref": 2435, "name": "저격술", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'남성',NULL,NULL),
+ (1869390,'나이트 사바톤',NULL,'앞코가 뾰족하게 튀어나온
+
+금속 신발. 뛰어난 기사만이
+
+신을 수 있다.','TRUE','다리',5,20,NULL,NULL,150,'[{"ref": 2326, "name": "관통", "value": 2}, {"ref": 2332, "name": "속사", "value": 1}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (1885599,'우편배달부의 제복',NULL,'우편배달부가 착용하는 제복.
+어깨에 건 가방에는 수많은
+편지가 들어간다.','FALSE','몸',NULL,20,10,10,100,'[{"ref": 2289, "name": "지리학", "value": 2}, {"ref": 2306, "name": "보관", "value": 2}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (1885604,'레갈리아 수트',NULL,'어떤 귀족 자제가 결혼식에서 착용했다는 의례복.
+
+캐시템 : 3,900원','TRUE','몸',NULL,20,40,NULL,100,'[{"ref": 2307, "name": "보석 거래", "value": 1}, {"ref": 2296, "name": "공업품 거래", "value": 1}, {"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'남성',NULL,NULL),
+ (1885770,'투 핸디드 소드',NULL,'ONE FINE HOLIDAY 트레저박스','TRUE','무기 (검)',90,NULL,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 3}, {"ref": 2329, "name": "돌격", "value": 3}]',NULL,'[{"ref": 721981, "name": "백병전 전투력 상승", "value": 4}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (1885998,'어도러블 드레스',NULL,'어떤 귀족의 따님이 결혼식에 착용했다는 드레스.','TRUE','몸',NULL,20,40,NULL,100,'[{"ref": 2307, "name": "보석 거래", "value": 1}, {"ref": 2296, "name": "공업품 거래", "value": 1}, {"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (1886041,'비질랜티 부츠',NULL,'거리의 치안을 지키는 자경단원이
+착용하는 부츠.','FALSE','다리',NULL,5,NULL,NULL,45,'[{"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (1886051,'비질랜티 햇',NULL,'거리의 치안을 지키는
+
+자경단원이 착용하는 모자.','FALSE','머리',NULL,5,NULL,NULL,45,'[{"ref": 2431, "name": "던지기 기술", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (1903892,'이모탈 햇',NULL,'수 많은 해적 중에서
+그 재능을 인정받은 사람만이
+착용할 수 있는 모자.','TRUE','머리',5,20,NULL,NULL,50,'[{"ref": 2348, "name": "회피", "value": 1}, {"ref": 2342, "name": "조타", "value": 1}, {"ref": 2340, "name": "접현", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,'8000',NULL,NULL,'[{"ref": 1840836, "name": "해황"}]'),
+ (1903898,'이모탈 부츠',NULL,'수 많은 해적 중에서
+그 재능을 인정받은 사람만이
+착용하는 신발.','TRUE','다리',NULL,20,NULL,NULL,50,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2333, "name": "수리", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,'6000',NULL,NULL,'[{"ref": 1840836, "name": "해황"}]'),
+ (1903900,'이모탈 코트',NULL,'수 많은 해적 중에서
+그 재능을 인정받은 사람만이
+착용할 수 있는 긴 옷.','TRUE','몸',10,22,NULL,5,50,'[{"ref": 2326, "name": "관통", "value": 2}, {"ref": 2345, "name": "탄도학", "value": 2}, {"ref": 2332, "name": "속사", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,'10000',NULL,NULL,'[{"ref": 1840836, "name": "해황"}]'),
+ (1903902,'이모탈 웨어',NULL,'수 많은 해적 중에서
+그 재능을 인정받은 사람만이
+착용할 수 있는 의복.','TRUE','몸',10,22,NULL,5,50,'[{"ref": 2344, "name": "총격", "value": 2}, {"ref": 2435, "name": "저격술", "value": 2}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,'10000',NULL,NULL,'[{"ref": 1840836, "name": "해황"}]'),
+ (1909483,'로드 헬름',NULL,'신분이 높은 사람이 착용하는 격식 높은 헬름.','TRUE','머리',NULL,20,NULL,NULL,100,'[{"ref": 2347, "name": "포술", "value": 3}]',NULL,'[{"ref": 707656, "name": "재해 발생률 감소", "value": 9}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (1909491,'갈고리 발톱 그리브',NULL,'발 끝이 날카로운 발톱 모양으로 되어있다.
+야성미 넘치는 그리브.','TRUE','다리',15,25,NULL,NULL,100,'[{"ref": 2333, "name": "수리", "value": 3}, {"ref": 2336, "name": "외과의술", "value": 2}]',NULL,'[{"ref": 707579, "name": "육지 이동속도 상승", "value": 4}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (1929401,'코류스','트레져박스','고대 로마 군인이 착용하던
+투구. 부채꼴로 펼쳐진 장식이 용감해 보인다.','FALSE','머리',NULL,20,NULL,NULL,80,'[{"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'8,600',NULL,NULL,NULL,NULL),
+ (1944180,'증기기사의 워크수트','상용','증기기사의 취향이 많이 반영된
+참신한 옷차림의 워크수트.','FALSE','몸',NULL,10,10,10,100,'[{"ref": 2432, "name": "관리기술", "value": 2}, {"ref": 2320, "name": "총포류 거래", "value": 2}, {"ref": 2318, "name": "주조", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'남성',NULL,NULL),
+ (1944195,'시코미즈에총',NULL,'지팡이 속에 총을 장비한 최신예무기, 주로 암살과 호신에 사용된다.
+
+트레져박스 &quot;카잔의 기적&quot;에서 습득 가능','TRUE','무기 (총)',60,NULL,NULL,NULL,100,'[{"ref": 2344, "name": "총격", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}, {"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'30,000',NULL,NULL,NULL,NULL),
+ (1956605,'탐구자의 손찌',NULL,'손목에서 손끝까지를
+
+화려하게 장식한다. 전설을 찾는 자에게
+
+가호를 준다.','TRUE','팔',NULL,NULL,25,NULL,100,'[{"ref": 137755, "name": "천문학", "value": 2}, {"ref": 2270, "name": "고고학", "value": 1}, {"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1956652,'증기기사의 모자','군용','증기기사의 취향이 많이 반영된
+참신한 옷차림의 모자.','FALSE','머리',23,55,NULL,20,100,'[{"ref": 2348, "name": "회피", "value": 2}, {"ref": 2333, "name": "수리", "value": 2}, {"ref": 2347, "name": "포술", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'남성',NULL,NULL),
+ (1956915,'래더 리본',NULL,'항해사를 꿈꾸는 여성이 착용하는 장식품을 본뜬 것.','TRUE','장신구',NULL,NULL,NULL,NULL,100,'[{"ref": 2333, "name": "수리", "value": 2}, {"ref": 2279, "name": "보급", "value": 2}, {"ref": 2313, "name": "운용", "value": 2}]','[{"ref": 2291, "name": "측량"}]',NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (1972432,'프린스 콘소트',NULL,'「왕비전하」라는 이름을 가진 의례장검. 아름다운 황금장식이 검신에 새겨져 있다.','TRUE','무기 (검)',40,NULL,30,NULL,100,'[{"ref": 2307, "name": "보석 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 2}, {"ref": 2432, "name": "관리기술", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (1972439,'유카타',NULL,'일본인 남성이 입는 약식 복장.
+통기성과 흡수력이 뛰어서，여름철이나
+목욕한 뒤 입기에 적합하다.','FALSE','몸',NULL,4,NULL,NULL,100,NULL,NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'여성',NULL,NULL),
+ (1972484,'증기기사의 글러브','상용','증기기사의 기호가 많이 반영된
+참신한 옷차림의 글러브.','FALSE','팔',NULL,8,5,5,100,'[{"ref": 2299, "name": "광물 거래", "value": 1}, {"ref": 2452, "name": "상품지식", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (1973111,'유카타',NULL,'일본인 남성이 입는 약식 복장.
+통기성과 흡수력이 뛰어서，여름철이나
+목욕한 뒤 입기에 적합하다.','FALSE','몸',NULL,4,NULL,NULL,100,NULL,NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'남성',NULL,NULL),
+ (1974386,'미케네 병사의 다리 보호대 EX',NULL,'고대 미케네의 병사가
+장착하고 있던 정강이 보호대의 일종.
+특수한 힘을 지니고 있다.','TRUE','다리',NULL,8,NULL,NULL,30,'[{"ref": 2348, "name": "회피", "value": 1}]',NULL,'[{"ref": 733755, "name": "시대효과(신화시대)"}]',NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (1987566,'증기기사의 드레스수트','상용','증기기사의 취향이 많이 반영된
+참신한 옷차림의 드레스수트.','FALSE','몸',NULL,10,10,10,100,'[{"ref": 2432, "name": "관리기술", "value": 2}, {"ref": 2320, "name": "총포류 거래", "value": 2}, {"ref": 2318, "name": "주조", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,'여성',NULL,NULL),
+ (1987600,'증기기사의 모자','군용','증기기사의 취향이 많이 반영된
+참신한 옷차림의 모자.','FALSE','머리',23,55,NULL,20,100,'[{"ref": 2348, "name": "회피", "value": 2}, {"ref": 2333, "name": "수리", "value": 2}, {"ref": 2347, "name": "포술", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (2014762,'불가사리 머리장식',NULL,'불가사리를 모방하여
+만든 머리장식.
+(2018년 10월 트박 보상)','TRUE','머리',NULL,5,NULL,NULL,100,'[{"ref": 2275, "name": "낚시", "value": 3}, {"ref": 2290, "name": "채집", "value": 2}, {"ref": 2292, "name": "탐색", "value": 2}]',NULL,'[{"ref": 707656, "name": "재해 발생률 감소", "value": 9}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2014798,'갈고리 발톱 건틀릿',NULL,'손가락 끝이 날카로운 발톱 모양으로 되어있다. 
+
+야성미 넘치는 건틀릿.','TRUE','팔',20,25,NULL,NULL,100,'[{"ref": 2334, "name": "수탈", "value": 3}, {"ref": 2326, "name": "관통", "value": 2}]',NULL,'[{"ref": 721981, "name": "백병전 전투력 상승", "value": 4}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2014817,'전통 유카타',NULL,'차분한 느낌의
+전통 유카타.','FALSE','몸',NULL,15,10,10,100,'[{"ref": 2298, "name": "공예품 거래", "value": 3}, {"ref": 2321, "name": "향료 거래", "value": 2}, {"ref": 2317, "name": "주류 거래", "value": 1}]',NULL,'[{"ref": 707667, "name": "남만 무역 교환률 증가", "value": 12}]',NULL,'캐시 아이템',NULL,NULL,NULL,'남성',NULL,NULL),
+ (2015638,'다마스커스 소드',NULL,'특수 다마스쿠스 강철로 만들어진 예리하고 튼튼한 도검. 검신에 신비한 나뭇결 문양이 드러나 있다.','TRUE','무기 (검)',85,NULL,NULL,NULL,80,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 3}, {"ref": 2339, "name": "전술", "value": 2}]',NULL,'[{"ref": 721981, "name": "백병전 전투력 상승", "value": 4}]',NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (2015856,'시커 코트',NULL,'일등공훈포상(NO.1), 이등공훈포상(NO.1), 삼등공훈포상(NO.1)에서 습득 가능','TRUE','몸',NULL,30,10,10,60,'[{"ref": 2292, "name": "탐색", "value": 2}, {"ref": 2284, "name": "인식", "value": 2}, {"ref": 2293, "name": "행군", "value": 2}]',NULL,'[{"ref": 707601, "name": "행동력 감소 억제", "value": 3}]',NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (2016586,'항해왕자의 외알안경',NULL,'항해왕자 엔리케가
+애용하고 있는 것과 같은 모양의
+외알안경.','TRUE','도구',NULL,NULL,30,NULL,100,'[{"ref": 2430, "name": "항해기술", "value": 2}, {"ref": 2289, "name": "지리학", "value": 2}, {"ref": 2284, "name": "인식", "value": 2}]','[{"ref": 2291, "name": "측량"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (2016693,'H·W·스프링클러',NULL,'메이스의 일종. 금속 갑옷에 유효한 타격을 준다. H·W는 성수를 의미하며 성직자가 많이 사용했다.','TRUE','무기 (곤봉 지팡이)',70,10,NULL,NULL,50,'[{"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2348, "name": "회피", "value": 1}, {"ref": 2306, "name": "보관", "value": 2}]',NULL,'[{"ref": 751098, "name": "기습, 강습률 감소", "value": 3}]',NULL,NULL,NULL,'10,000',NULL,NULL,NULL,NULL),
+ (2017039,'비제우 공의 모자',NULL,'초대 비제우 공이 착용했다고
+불리는 모자를 본뜬 것.
+긴 천 장식이 특징.','FALSE','머리',NULL,5,15,NULL,40,'[{"ref": 2430, "name": "항해기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (2017083,'비제우 공의 옷',NULL,'초대 비제우 공이 착용했다고
+불리는 의상을 본뜬 것.
+소박한 구조다.','FALSE','몸',NULL,10,20,NULL,40,'[{"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (2017091,'비제우 공의 부츠',NULL,'초대 비제우 공이 착용했다고
+불리는 부츠를 본뜬 것.
+장식 없이 실용적.','FALSE','다리',NULL,NULL,15,NULL,40,'[{"ref": 2289, "name": "지리학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (2033397,'고양이 인형',NULL,'고양이 모양의 인형','TRUE','도구',NULL,NULL,NULL,10,100,'[{"ref": 2301, "name": "기호품 거래", "value": 2}, {"ref": 2310, "name": "섬유 거래", "value": 2}, {"ref": 2306, "name": "보관", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2033399,'고양이 장갑',NULL,'인간에게 친숙한 동물의
+앞발을 본뜬 장갑.','FALSE','팔',NULL,8,NULL,10,100,'[{"ref": 2292, "name": "탐색", "value": 3}, {"ref": 2281, "name": "생물학", "value": 2}, {"ref": 2290, "name": "채집", "value": 2}]',NULL,'[{"ref": 947603, "name": "스킬 지속시간 연장", "value": 5}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2049751,'증기기사의 기술서',NULL,'증기기사의 기술이
+
+적혀있는 책.','TRUE','장신구',21,15,NULL,15,50,'[{"ref": 2344, "name": "총격", "value": 2}, {"ref": 2435, "name": "저격술", "value": 2}, {"ref": 1016435, "name": "활 쏘기", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2071833,'레시 글러브',NULL,'레이스로 만든 얇은 장갑.','TRUE','팔',NULL,3,20,NULL,100,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2322, "name": "향신료 거래", "value": 1}, {"ref": 2300, "name": "귀금속 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (2071920,'순록의 머리장식',NULL,'순록의 뿔과 귀를 본뜬
+머리장식.','FALSE','머리',NULL,5,NULL,10,100,NULL,NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (2071941,'비제우 공의 보검',NULL,'초대 비제우공이 착용했다고하는 검을 본뜬 것.','TRUE','무기 (검)',60,10,30,NULL,100,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2346, "name": "통솔", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (2084509,'영국식 메이드드레스','13주년 한정판매','여성 급사가 착용하는 드레스.','TRUE','몸',5,15,15,NULL,100,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2306, "name": "보관", "value": 2}, {"ref": 2323, "name": "회계", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (2084541,'영국풍 헤드드레스','13주년 한정판매','여성 급사가 쓰는 머리 장식.','TRUE','머리',NULL,10,15,NULL,100,'[{"ref": 2311, "name": "식료품 거래", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (2088836,'사방평정건','탐색','요직에 종사하는 인물이 쓰는
+
+한족의 모자. 별칭은 방건','TRUE','머리',NULL,7,5,NULL,30,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (2091794,'홍옥의 손거울',NULL,'조피가 어린 시절부터 애용하고 있는 손거울을 본따 만든 것. 뒷면에 루비가 장식되어 있다.','TRUE','장신구',NULL,5,40,NULL,100,'[{"ref": 2307, "name": "보석 거래", "value": 2}, {"ref": 2319, "name": "직물 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]','[{"ref": 1389, "name": "복장예절 강화"}]',NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (2091798,'원더러즈 웨어',NULL,'전세계를 돌아다니는 자를 위해
+
+움직이기 쉽도록 고안된 옷.','TRUE','몸',NULL,10,NULL,10,100,'[{"ref": 2430, "name": "항해기술", "value": 2}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,'[{"ref": 795005, "name": "항해 속도 상승", "value": 8}]',NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (2091802,'윈터 스태프',NULL,'눈의 결정이 장식된 매우 섬세한 지팡이','TRUE','무기 (곤봉 지팡이)',60,10,NULL,20,100,'[{"ref": 2322, "name": "향신료 거래", "value": 3}, {"ref": 2300, "name": "귀금속 거래", "value": 2}]',NULL,'[{"ref": 707601, "name": "행동력 감소 억제", "value": 5}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2091814,'북극곰의 신발',NULL,'북극곰을 본뜬 신발. 신으면 매우 덥다.','TRUE','다리',NULL,6,NULL,10,100,'[{"ref": 2279, "name": "보급", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2091816,'북극곰의 장갑',NULL,'북극곰을 본뜬 장갑. 끼면 꽤 덥다','TRUE','팔',NULL,2,NULL,NULL,100,'[{"ref": 2275, "name": "낚시", "value": 2}, {"ref": 2277, "name": "돛 조종", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2092068,'베이 그랜트웨어',NULL,'전세계를 돌아다니는 자를 위해 움직이기 쉽도록 고안된 옷.','TRUE','몸',NULL,10,NULL,10,100,'[{"ref": 2430, "name": "항해기술", "value": 2}, {"ref": 2313, "name": "운용", "value": 1}]',NULL,'[{"ref": 795005, "name": "항해 속도 상승", "value": 8}]',NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (2116392,'북극곰의 모자',NULL,'북극곰을 본뜬 모자. 쓰면 꽤 덥다.','TRUE','머리',NULL,8,NULL,15,100,'[{"ref": 2290, "name": "채집", "value": 2}, {"ref": 2286, "name": "조달", "value": 1}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (2116409,'북극곰의 옷',NULL,'북극곰을 본뜬 옷. 입으면 매우 덥다.','TRUE','몸',NULL,10,NULL,20,100,'[{"ref": 2293, "name": "행군", "value": 2}, {"ref": 2282, "name": "생존", "value": 1}, {"ref": 2305, "name": "바디 랭귀지", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (2116415,'더블림 보우',NULL,'두 활줄기를 함께 사용하여 현을 팽팽하게 펴 위력이 향상 되도록 만든 활.','TRUE','무기 (활)',85,10,NULL,NULL,100,'[{"ref": 1016435, "name": "활 쏘기", "value": 3}, {"ref": 2435, "name": "저격술", "value": 3}]',NULL,'[{"ref": 707586, "name": "특수탄 효과 발생률 상승", "value": 12}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2116604,'쥬얼리 글러브','트레져박스','펠트 장갑을 보석과 자수로 장식해 만든 호화로운 장갑.','TRUE','팔',NULL,3,45,NULL,50,'[{"ref": 2301, "name": "기호품 거래", "value": 2}, {"ref": 2314, "name": "의약품 거래", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,'15,000',NULL,NULL,NULL,NULL),
+ (2146311,'밀리오네어 수트',NULL,'많은 경험과 명성을 얻었다
+
+상인이 입을 수 있는 옷','TRUE','몸',NULL,20,20,NULL,80,'[{"ref": 2436, "name": "연금술", "value": 2}, {"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2432, "name": "관리기술", "value": 2}]',NULL,'[{"ref": 795005, "name": "항해 속도 상승", "value": 4}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[{"ref": 2146866, "name": "희대의 대상인"}]'),
+ (2146829,'코멘더 플레이트',NULL,'군인 조합 상점 구입 (40,000 포인트)
+장비효과 랭크 미확인','TRUE','몸',5,35,NULL,NULL,80,'[{"ref": 2348, "name": "회피", "value": 2}, {"ref": 2326, "name": "관통", "value": 2}, {"ref": 2345, "name": "탄도학", "value": 2}]',NULL,'[{"ref": 707586, "name": "특수탄 효과 발생률 상승", "value": 5}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[{"ref": 2146860, "name": "역전의 영웅"}]'),
+ (2146836,'익스플로러 코트',NULL,'모험가 조합 상점 구입 (40,000 포인트)','TRUE','몸',NULL,30,5,5,80,'[{"ref": 2292, "name": "탐색", "value": 2}, {"ref": 2285, "name": "자물쇠 따기", "value": 2}, {"ref": 2270, "name": "고고학", "value": 2}]',NULL,'[{"ref": 707633, "name": "던전 체력 감소 억제", "value": 8}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[{"ref": 2146848, "name": "세계를 답파하는 자"}]'),
+ (2147045,'별 목걸이',NULL,'밤하늘을 수놓은 별을 보고
+
+디자인한 목걸이.','TRUE','장신구',NULL,NULL,NULL,NULL,100,'[{"ref": 2300, "name": "귀금속 거래", "value": 1}, {"ref": 2299, "name": "광물 거래", "value": 1}, {"ref": 2309, "name": "사교", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (2147714,'등대 귀걸이',NULL,'이전에 존재했던 등대의 빛을 본떠 만들어진 한쪽 귀 장식.','TRUE','머리',5,10,5,20,80,'[{"ref": 2283, "name": "생태 조사", "value": 2}, {"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2292, "name": "탐색", "value": 3}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2147721,'등대의 도끼',NULL,'등대의 불빛과 함께 밤바다를 비추는 달을 본떠 만들어진 도끼.','TRUE','무기 (도끼)',90,30,NULL,20,100,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2344, "name": "총격", "value": 2}, {"ref": 2329, "name": "돌격", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2167631,'허니 앰버 링',NULL,'호박 반지. 구스타프 아돌프 2세의 반지를 본따 제작했다.','TRUE','장신구',NULL,5,40,NULL,100,'[{"ref": 2279, "name": "보급", "value": 2}, {"ref": 2313, "name": "운용", "value": 2}, {"ref": 2306, "name": "보관", "value": 2}]','[{"ref": 1389, "name": "복장예절 강화"}]',NULL,NULL,'캐시 아이템',NULL,'5,000',NULL,NULL,NULL,NULL),
+ (2187169,'금륜',NULL,'손오공이 착용했다고 하는 금륜.','TRUE','머리',NULL,15,NULL,10,100,'[{"ref": 2346, "name": "통솔", "value": 2}, {"ref": 2339, "name": "전술", "value": 2}]',NULL,'[{"ref": 707656, "name": "재해 발생률 감소", "value": 9}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2187171,'여의봉',NULL,'손오공이 지녔다고 하는 무기.','TRUE','무기 (곤봉 지팡이)',70,15,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2334, "name": "수탈", "value": 2}]',NULL,'[{"ref": 721981, "name": "백병전 전투력 상승", "value": 5}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2187176,'웨스턴 글러브','흰색','카우보이들이 애용하는
+스웨드 글러브.','FALSE','팔',10,4,NULL,2,100,'[{"ref": 2431, "name": "던지기 기술", "value": 1}, {"ref": 2292, "name": "탐색", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (2187184,'헤르메스의 샌들','캐시','그리스 신화에 나오는 헤르메스가
+신는 신발을 본딴 날개가 달려 있는 샌들.','TRUE','다리',NULL,5,NULL,NULL,100,'[{"ref": 2277, "name": "돛 조종", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (2196301,'바다의 여왕 귀걸이',NULL,'세상의 것이라고 생각되지 않을 만큼 맑은 에메랄드를 특징으로 하는 멋진 귀걸이.','TRUE','장신구',NULL,NULL,40,NULL,30,'[{"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2307, "name": "보석 거래", "value": 2}, {"ref": 2298, "name": "공예품 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (2196507,'제독의 의례검',NULL,'어느 제독이 사용했다고 한다
+
+의례용 좁은 검.','TRUE','무기 (검)',58,NULL,30,NULL,70,'[{"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2432, "name": "관리기술", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (2196740,'은 장식 목걸이',NULL,'소중한 은을 잔뜩 사용하여 만든 화려한 목걸이.','TRUE','장신구',NULL,NULL,25,NULL,20,'[{"ref": 2299, "name": "광물 거래", "value": 2}, {"ref": 2300, "name": "귀금속 거래", "value": 2}, {"ref": 2296, "name": "공업품 거래", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (2213095,'오월 여왕의 왕관',NULL,'매우 섬세한 장식이 새겨져 기품이 넘치는 왕관','TRUE','머리',NULL,5,20,NULL,100,'[{"ref": 2297, "name": "공예", "value": 2}, {"ref": 2298, "name": "공예품 거래", "value": 2}, {"ref": 2312, "name": "염료 거래", "value": 2}]',NULL,'[{"ref": 751098, "name": "기습, 강습률 감소", "value": 5}]',NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (2213098,'오월 여왕의 드레스',NULL,'가슴에 장식된 꽃이 화사함을 더해주어 기품이 넘치는 드레스.','TRUE','몸',NULL,10,40,10,100,'[{"ref": 2308, "name": "봉제", "value": 2}, {"ref": 2319, "name": "직물 거래", "value": 2}, {"ref": 2432, "name": "관리기술", "value": 2}]',NULL,'[{"ref": 707601, "name": "행동력 감소 억제", "value": 5}]',NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (2213102,'오월 신사의 모자',NULL,'다채로운 꽃이 장식되어 화려하고 기품 넘치는 모자','TRUE','머리',NULL,5,20,NULL,100,'[{"ref": 2297, "name": "공예", "value": 2}, {"ref": 2298, "name": "공예품 거래", "value": 2}, {"ref": 2312, "name": "염료 거래", "value": 2}]',NULL,'[{"ref": 751098, "name": "기습, 강습률 감소", "value": 5}]',NULL,'캐시 아이템',NULL,NULL,NULL,'남성',NULL,NULL),
+ (2213108,'오월 신사의 예복',NULL,'가슴에 장식된 꽃이 화사함을 더해주어 기품이 넘치는 예복.','TRUE','몸',NULL,10,40,10,100,'[{"ref": 2308, "name": "봉제", "value": 2}, {"ref": 2319, "name": "직물 거래", "value": 2}, {"ref": 2432, "name": "관리기술", "value": 2}]',NULL,'[{"ref": 707601, "name": "행동력 감소 억제", "value": 5}]',NULL,'캐시 아이템',NULL,NULL,NULL,'남성',NULL,NULL),
+ (2213141,'손오공의 장화',NULL,'손오공이 착용했다고 하는 신발.','TRUE','다리',NULL,15,NULL,10,100,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2333, "name": "수리", "value": 2}]',NULL,'[{"ref": 707579, "name": "육지 이동속도 상승", "value": 4}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2213149,'스파이더 모자',NULL,'거미 장식이 인상적인 개성적인 모자.
+(2019/4/30 트레져박스 성웅을 기리며... 아이템)','TRUE','머리',NULL,5,NULL,10,100,'[{"ref": 2281, "name": "생물학", "value": 3}, {"ref": 2283, "name": "생태 조사", "value": 2}]',NULL,'[{"ref": 707667, "name": "남만 무역 교환률 증가", "value": 13}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2213222,'손오공의 옷',NULL,'손오공이 착용했다고 하는 옷.','TRUE','몸',15,65,NULL,20,100,'[{"ref": 2348, "name": "회피", "value": 3}, {"ref": 2330, "name": "방어", "value": 2}, {"ref": 2329, "name": "돌격", "value": 2}]',NULL,'[{"ref": 707586, "name": "특수탄 효과 발생률 상승", "value": 12}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2235058,'로드 아머',NULL,'신분이 높은 사람이 입는 격식 높은 아머','TRUE','몸',10,75,15,NULL,100,'[{"ref": 2348, "name": "회피", "value": 2}, {"ref": 2330, "name": "방어", "value": 2}, {"ref": 2329, "name": "돌격", "value": 2}]',NULL,'[{"ref": 751098, "name": "기습, 강습률 감소", "value": 5}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2235060,'칠흑의 샌들',NULL,'까마귀처럼 검은 날개가 장식된 샌들.','TRUE','다리',NULL,5,NULL,NULL,100,'[{"ref": 2453, "name": "함정", "value": 1}, {"ref": 2282, "name": "생존", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (2235064,'카르나의 귀걸이',NULL,'영웅 카르나가 착용했다고 하는 귀걸이.','TRUE','머리',NULL,10,NULL,NULL,100,'[{"ref": 2338, "name": "응급처치", "value": 2}, {"ref": 2336, "name": "외과의술", "value": 2}, {"ref": 2346, "name": "통솔", "value": 3}]',NULL,'[{"ref": 707656, "name": "재해 발생률 감소", "value": 9}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2253039,'윙 보우',NULL,'날개 모양이 우아한 활.','TRUE','무기 (활)',85,10,NULL,NULL,100,'[{"ref": 1016435, "name": "활 쏘기", "value": 3}, {"ref": 2435, "name": "저격술", "value": 3}]',NULL,'[{"ref": 2253041, "name": "부관 성장 촉진", "value": 7}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2253044,'이야기꾼의 그림책',NULL,'존 트라데스칸트가 소중히
+지녔다는 그림책을 본따 만든 것.
+미지의 세계가 그려져 있다.','TRUE','장신구',NULL,5,NULL,NULL,100,'[{"ref": 2284, "name": "인식", "value": 2}, {"ref": 2283, "name": "생태 조사", "value": 2}, {"ref": 2282, "name": "생존", "value": 1}]','[{"ref": 2283, "name": "생태 조사"}]',NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (2253062,'천사의 고리',NULL,'천사의 고리.
+장비하면 머리 위에 후광이
+떠오른다.','FALSE','머리',NULL,5,NULL,NULL,100,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2287, "name": "종교학", "value": 2}]',NULL,'[{"ref": 707601, "name": "행동력 감소 억제", "value": 5}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2264369,'깃털장식 헤어밴드',NULL,'북미의 남성 원주민이
+착용하는 머리 장식.
+독수리 깃털을 달려 있다.','FALSE','머리',8,13,NULL,NULL,50,NULL,NULL,NULL,NULL,NULL,NULL,'5,600',NULL,'남성',NULL,NULL),
+ (2268588,'토크블랑쉬',NULL,'조리사가 재료를 요리할 때
+쓰는 모자. 위생 측면을 배려하여
+만들었다.','FALSE','머리',NULL,5,NULL,NULL,100,'[{"ref": 2297, "name": "공예", "value": 2}, {"ref": 2301, "name": "기호품 거래", "value": 2}, {"ref": 2317, "name": "주류 거래", "value": 2}]',NULL,'[{"ref": 2253041, "name": "부관 성장 촉진", "value": 3}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2268836,'천사 날개',NULL,'천사의 날개.
+장비하면 등 뒤에 날개가
+돋아난 것처럼 보인다.','TRUE','도구',NULL,NULL,NULL,NULL,100,'[{"ref": 2278, "name": "미술", "value": 1}, {"ref": 2287, "name": "종교학", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (2281786,'돌고래 인형',NULL,'돌고래 모양의 인형.','TRUE','도구',NULL,NULL,NULL,10,100,'[{"ref": 2312, "name": "염료 거래", "value": 3}, {"ref": 2308, "name": "봉제", "value": 2}, {"ref": 2306, "name": "보관", "value": 2}]',NULL,'[{"ref": 795005, "name": "항해 속도 상승", "value": 6}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2281811,'카르나의 갑옷',NULL,'영웅 카르나가 착용했다고하는 갑옷','TRUE','몸',NULL,55,10,10,100,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 1016435, "name": "활 쏘기", "value": 3}, {"ref": 2435, "name": "저격술", "value": 3}]',NULL,'[{"ref": 707586, "name": "특수탄 효과 발생률 상승", "value": 12}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2282035,'기억 답파자의 모자',NULL,'거상이 그려진 종이조각 교환
+머시드 (간디아)','TRUE','머리',NULL,15,10,10,80,'[{"ref": 2284, "name": "인식", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 137755, "name": "천문학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2282940,'기억 답파자의 부츠',NULL,'수많은 어려움을 극복한 사람이 착용했다고 하는 부츠.
+(환상항로 로도스섬의 거상 보상-거상이 그려진 종이조각 교환아이템)','TRUE','다리',NULL,10,10,10,80,'[{"ref": 2348, "name": "회피", "value": 2}, {"ref": 2293, "name": "행군", "value": 2}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2282944,'기억 답파자의 코트',NULL,'수많은 어려움을 극복한 사람이 착용했다고 하는 코트
+(환상항로 로도스섬의 거상 보상-거상이 그려진 종이조각 교환아이템)','TRUE','몸',NULL,50,10,10,80,'[{"ref": 2282, "name": "생존", "value": 2}, {"ref": 2285, "name": "자물쇠 따기", "value": 2}, {"ref": 2453, "name": "함정", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2283329,'백은 펜던트',NULL,'기품 넘치고 매우 아름다운
+백은 펜던트.','TRUE','장신구',NULL,NULL,50,NULL,100,'[{"ref": 2342, "name": "조타", "value": 2}, {"ref": 2289, "name": "지리학", "value": 1}, {"ref": 2430, "name": "항해기술", "value": 1}]','[{"ref": 1376, "name": "피로도 회복"}]',NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (2284720,'투사의 너클 가드',NULL,'투사가 주먹에 받는 충격을
+완화하기 위해 감는 붕대.','TRUE','팔',5,10,NULL,10,50,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2284722,'투사의 레그 가드',NULL,'투사가 다리를 보호하기 위해
+감는 포대.','TRUE','다리',5,10,NULL,10,50,'[{"ref": 2329, "name": "돌격", "value": 2}, {"ref": 2339, "name": "전술", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2299442,'램다오',NULL,'만곡을 이루며 폭이 넓은 칼날이 있는 무거운 검. 칼날의 몸체 양면에 눈 문양이 있다.','TRUE','무기 (검)',75,NULL,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 3}, {"ref": 2348, "name": "회피", "value": 3}]',NULL,'[{"ref": 721981, "name": "백병전 전투력 상승", "value": 5}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2299618,'이야기꾼의 귀걸이',NULL,'로마의 이야기꾼 알리아스가 애용하는 의상.','TRUE','장신구',NULL,NULL,NULL,NULL,30,'[{"ref": 2293, "name": "행군", "value": 1}, {"ref": 2282, "name": "생존", "value": 1}, {"ref": 2436, "name": "연금술", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'10,000',NULL,NULL,NULL,NULL),
+ (2299778,'셰프 코트',NULL,'조리사가 재료를 요리할 때 입는 의상.
+위생 측면을 배려하여 만들었다.','TRUE','몸',NULL,30,10,10,100,'[{"ref": 2316, "name": "조리", "value": 2}, {"ref": 2306, "name": "보관", "value": 2}, {"ref": 2311, "name": "식료품 거래", "value": 2}]',NULL,'[{"ref": 707656, "name": "재해 발생률 감소", "value": 9}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2303530,'해룡의 반지',NULL,'메모리얼 - 환상의 바다에 사는 용 보상','TRUE','장신구',NULL,NULL,40,NULL,100,'[{"ref": 2347, "name": "포술", "value": 2}, {"ref": 2339, "name": "전술", "value": 2}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,000',NULL,NULL,NULL,NULL),
+ (2316383,'영국탐정의 확대경',NULL,'영국의 한 탐정이 애용한
+확대경. 어떤 흔적도
+절대 놓치지 않는다고 한다.','TRUE','도구',NULL,NULL,10,10,100,'[{"ref": 2281, "name": "생물학", "value": 2}, {"ref": 2290, "name": "채집", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2348399,'데스 사이즈',NULL,'사신의 것이라 여겨지는 낫.
+그 불길한 진홍의 날로
+영혼을 거둬간다고 한다.','TRUE','무기 (도끼)',90,NULL,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 3}, {"ref": 2334, "name": "수탈", "value": 3}]',NULL,'[{"ref": 707618, "name": "수탈확률 상승", "value": 10}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2348408,'레이스 프릴 드레스',NULL,'레이스와 프릴을 달아
+만든 드레스.','FALSE','몸',NULL,10,30,NULL,100,'[{"ref": 2308, "name": "봉제", "value": 3}, {"ref": 2310, "name": "섬유 거래", "value": 2}, {"ref": 2319, "name": "직물 거래", "value": 2}]',NULL,'[{"ref": 2253041, "name": "부관 성장 촉진", "value": 10}]',NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (2348528,'순무 머리','운용','큰 순무의 속을
+파내서 만든 쓸 것.','FALSE','머리',NULL,5,NULL,30,100,'[{"ref": 2306, "name": "보관", "value": 2}, {"ref": 2313, "name": "운용", "value": 2}, {"ref": 2311, "name": "식료품 거래", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (2360751,'페리 아모르','트레져박스','타탄으로 짠 옷감으로 만든 의상.','TRUE','몸',NULL,30,NULL,NULL,100,'[{"ref": 2294, "name": "가축 거래", "value": 2}, {"ref": 2310, "name": "섬유 거래", "value": 2}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (2360757,'코피아','트레져박스','작은 깃발장식이 있는 기병창.','TRUE','무기 (창)',90,NULL,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2329, "name": "돌격", "value": 2}]',NULL,'[{"ref": 721981, "name": "백병전 전투력 상승 ", "value": 5}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2378419,'타락천사의 날개','트레져박스','타락천사의 날개.
+
+장비하면 등에 날개가 돋아난
+
+것처럼 보인다.','TRUE','도구',NULL,NULL,NULL,NULL,100,'[{"ref": 2278, "name": "미술", "value": 1}, {"ref": 2270, "name": "고고학", "value": 1}}',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2382795,'마법사의 옷','물자 감소 억제','마법사가 입었다고 하는 의복을 본떠서 만든 옷.','FALSE','몸',5,25,30,20,60,'[{"ref": 2307, "name": "보석 거래", "value": 1}, {"ref": 2293, "name": "행군", "value": 1}]',NULL,'[{"ref": 727106, "name": "물자 감소 억제", "value": 1}]',NULL,'이벤트 보상',NULL,'500',NULL,NULL,NULL,NULL),
+ (2397222,'증기기사의 글러브',NULL,'※','FALSE','팔',NULL,8,5,NULL,60,'[{"ref": 2297, "name": "공예", "value": 1}, {"ref": 2333, "name": "수리", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2401799,'증기기사의 모자','트레져박스','증기기사의 취향이 많이 반영된
+참신한 옷차림의 모자.','FALSE','머리',NULL,5,5,5,100,'[{"ref": 2298, "name": "공예품 거래", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (2402124,'하트 브로치','트레져박스','하트 모양의 작은 브로치.','TRUE','장신구',NULL,NULL,10,NULL,50,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2300, "name": "귀금속 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (2402126,'흰색 토끼인형','트레져박스','시골 토끼를 모티브로 한 흰 토끼 봉제인형.','TRUE','도구',NULL,10,NULL,NULL,100,'[{"ref": 2312, "name": "염료 거래", "value": 2}, {"ref": 2306, "name": "보관", "value": 2}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (2405622,'리본',NULL,'머리에 쓰는 큰 리본','FALSE','머리',NULL,5,NULL,NULL,100,'[{"ref": 2309, "name": "사교", "value": 1}, {"ref": 2338, "name": "응급처치", "value": 2}]',NULL,NULL,NULL,'이벤트 보상',NULL,'500',NULL,NULL,NULL,NULL),
+ (2433087,'태양의 도끼',NULL,'타오르는 태양을 본떠 만들어진 도끼.','TRUE','무기 (도끼)',85,NULL,NULL,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2346, "name": "통솔", "value": 2}]',NULL,'[{"ref": 721981, "name": "백병전 전투력 상승", "value": 5}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2433120,'물개 인형',NULL,'물개 모양의 인형','FALSE','도구',NULL,NULL,NULL,10,100,'[{"ref": 2310, "name": "섬유 거래", "value": 3}, {"ref": 2308, "name": "봉제", "value": 2}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,'[{"ref": 795005, "name": "항해 속도 상승", "value": 6}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2433215,'악당의 재킷',NULL,'해적이 즐겨 사용하는
+
+튼튼한 의복. 특수 염료를
+
+이용한 특별 주문품.','TRUE','몸',5,35,NULL,30,100,'[{"ref": 2345, "name": "탄도학", "value": 2}, {"ref": 2347, "name": "포술", "value": 2}, {"ref": 2342, "name": "조타", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (2433217,'악당의 모자',NULL,'해적이 즐겨 사용하는
+
+날개 장식이 된 양뿔 모자.
+
+특수 염료가 사용되었다.','TRUE','머리',10,25,NULL,5,100,'[{"ref": 2348, "name": "회피", "value": 2}, {"ref": 2330, "name": "방어", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (2475405,'전통 유카타',NULL,'차분한 느낌의 전통 유카타.','FALSE','몸',NULL,15,10,10,100,'[{"ref": 2298, "name": "공예품 거래", "value": 3}, {"ref": 2321, "name": "향료 거래", "value": 2}, {"ref": 2317, "name": "주류 거래", "value": 1}]',NULL,'[{"ref": 707667, "name": "남만 무역 교환률 증가", "value": 12}]',NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (2478259,'고급 가넷트 브로치','자택생산','석류석이 곁들여진
+
+세공이 훌륭한 브로치.','TRUE','장신구',NULL,NULL,40,NULL,30,'[{"ref": 2307, "name": "보석 거래", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (2478284,'고급 에메랄드 브로치','자택생산','에메랄드가 곁들여진
+
+세공이 훌륭한 브로치.','TRUE','장신구',NULL,NULL,40,NULL,30,'[{"ref": 2307, "name": "보석 거래", "value": 1}, {"ref": 2276, "name": "대화술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (2495664,'해달 우샨카','수탈','해달의 털과 꼬리로 만든 귀마개 모자
+
+(색상: 흰색)',NULL,'머리',NULL,15,25,NULL,50,'[{"ref": 2330, "name": "방어", "value": 1}, {"ref": 2336, "name": "외과의술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'3,000',NULL,NULL,NULL,NULL),
+ (2503932,'열정 넘치는 꽃장식',NULL,'화려한 남국의 꽃.
+
+장비하면
+
+머리 위에 나비가 춤춘다.','TRUE','머리',NULL,10,10,NULL,100,'[{"ref": 2270, "name": "고고학", "value": 3}, {"ref": 2287, "name": "종교학", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL),
+ (2503947,'브릴리언트 페더',NULL,'카리브의 사냥꾼이 제례 때
+
+붙이는 깃털 장식.
+
+장비하면 머리 위에
+
+나비가 춤춘다.','TRUE','머리',NULL,10,10,NULL,100,'[{"ref": 2270, "name": "고고학", "value": 3}, {"ref": 2287, "name": "종교학", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'남성',NULL,NULL),
+ (2503954,'은방울꽃 지팡이',NULL,'늘어진 은방울꽃
+
+장식이 사랑스러운 지팡이.','TRUE','무기 (곤봉 지팡이)',60,15,NULL,NULL,100,'[{"ref": 2270, "name": "고고학", "value": 3}, {"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2281, "name": "생물학", "value": 2}]',NULL,'[{"ref": 707601, "name": "행동력 감소 억제", "value": 5}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2503960,'딥 로즈 블루 가운',NULL,'「푸른 장미」를 의미하는
+
+호화로운 가운. 쥴리앙이
+
+애용하는 것과 같은 물건이다.','TRUE','몸',NULL,20,35,20,50,'[{"ref": 2306, "name": "보관", "value": 3}, {"ref": 2298, "name": "공예품 거래", "value": 3}, {"ref": 2297, "name": "공예", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,'남성',NULL,NULL),
+ (2503963,'플라워 햇',NULL,'다양한 꽃을 장식한
+챙이 넓은 모자.','TRUE','머리',NULL,8,NULL,5,100,'[{"ref": 2309, "name": "사교", "value": 2}, {"ref": 2278, "name": "미술", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (2507133,'용감한 사람의 전투 투구',NULL,'먼 옛날 용기가 많은 영웅이 사용하였다고 하는 투구','TRUE','머리',NULL,35,NULL,NULL,100,'[{"ref": 2330, "name": "방어", "value": 2}, {"ref": 2329, "name": "돌격", "value": 1}, {"ref": 2334, "name": "수탈", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'1,500',NULL,NULL,NULL,NULL),
+ (2529923,'로브 드 벨트',NULL,'결혼식에서 착용하는
+
+신랑의 의례복.','TRUE','몸',NULL,10,30,NULL,100,'[{"ref": 2308, "name": "봉제", "value": 3}, {"ref": 2310, "name": "섬유 거래", "value": 2}, {"ref": 2319, "name": "직물 거래", "value": 2}]',NULL,'[{"ref": 2253041, "name": "부관 성장 촉진", "value": 10}]',NULL,'캐시 아이템',NULL,NULL,NULL,'남성',NULL,NULL),
+ (2530033,'로브 드 비올레트',NULL,'결혼식에서 착용하는
+
+신부의 드레스.','TRUE','몸',NULL,20,40,NULL,100,'[{"ref": 2301, "name": "기호품 거래", "value": 2}, {"ref": 2304, "name": "미술품 거래", "value": 2}, {"ref": 2321, "name": "향료 거래", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'여성',NULL,NULL),
+ (2530039,'브와르 비올레트',NULL,'결혼식에서 착용하는
+
+신부의 베일.','TRUE','머리',NULL,5,30,NULL,100,'[{"ref": 2323, "name": "회계", "value": 1}, {"ref": 2309, "name": "사교", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,'여성',NULL,NULL),
+ (2545491,'비라코차의 창',NULL,'잉카의 신 비라코차의
+
+가호를 받은 성스러운 창.',NULL,'무기 (창)',55,10,20,10,100,'[{"ref": 2336, "name": "외과의술", "value": 2}, {"ref": 2281, "name": "생물학", "value": 2}, {"ref": 2300, "name": "귀금속 거래", "value": 2}]','[{"ref": 1374, "name": "선원 상태 회복"}]',NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (2549620,'버밀리언 햇',NULL,'색에 걸맞는 이름이 붙은 모자.
+
+선명한 색상과 장식이 눈길을 끈다.
+
+실용성도 뛰어나다.','TRUE','머리',NULL,20,10,NULL,150,'[{"ref": 2285, "name": "자물쇠 따기", "value": 1}, {"ref": 2321, "name": "향료 거래", "value": 1}, {"ref": 2333, "name": "수리", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (2549737,'전승의 열쇠 지팡이',NULL,'고대의 열쇠 지팡이 더욱 전승을 탐구하기
+
+위해 필요하다.',NULL,'무기 (곤봉 지팡이)',20,NULL,NULL,10,100,'[{"ref": 2292, "name": "탐색", "value": 1}, {"ref": 2270, "name": "고고학", "value": 1}]',NULL,NULL,'거래 불가',NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2550279,'해수의 후드','생산','환상적인 해수의 모습에
+
+자극을 받고 만들어진
+
+개성적인 후드.','FALSE','머리',NULL,10,NULL,10,100,'[{"ref": 2342, "name": "조타", "value": 1}, {"ref": 2328, "name": "노 젓기", "value": 2}]',NULL,'[{"ref": 795005, "name": "항해 속도 상승", "value": 4}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2550498,'반짝이는 귀걸이',NULL,'빛의 반짝임을 본떠 만든 한쪽 귀걸이.
+
+
+
+(알렉산드리아 등대 희귀 해역에서 입수했습니다)','FALSE','머리',10,20,5,20,100,'[{"ref": 2283, "name": "생태 조사", "value": 2}, {"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2292, "name": "탐색", "value": 3}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2550750,'고대의 모자',NULL,'챙이 넓은 고대의 자외선 차단 모자.
+
+심하게 너덜너덜해서 금방이라도 해질 것 같다.
+
+
+
+(알렉산드리아 전승 희귀 해역에서 입수)','FALSE','머리',NULL,10,NULL,NULL,40,'[{"ref": 2293 "name": "행군", "value": 1}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (2550954,'해수의 로브','생산','환상적인 해수의 모습에
+
+자극을 받고 만들어진
+
+개성적인 옷.','FALSE','몸',NULL,60,NULL,30,100,'[{"ref": 2332, "name": "속사", "value": 2}, {"ref": 2326, "name": "관통", "value": 2}, {"ref": 2347, "name": "포술", "value": 2}]',NULL,'[{"ref": 2550952, "name": "환수 공격 시 선원 감소 억제", "value": 5}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2552590,'고대 의상',NULL,'한 장의 천을 사용한 고대의 상의.
+심하게 너덜너덜해서 금방이라도 해질 것 같다.',NULL,'몸',NULL,25,NULL,NULL,40,'[{"ref": 2298, "name": "공예품 거래", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (2553707,'해수의 마창',NULL,'환상적인 해수의 모습에
+
+자극을 받고 만들어진 창.','FALSE','무기 (창)',75,NULL,NULL,NULL,100,'[{"ref": 2327, "name": "기뢰 설치", "value": 2}, {"ref": 2345, "name": "탄도학", "value": 2}, {"ref": 2335, "name": "수평사격", "value": 2}]',NULL,'[{"ref": 2553675, "name": "기뢰 데미지 상승", "value": 5}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2555912,'해수의 반지',NULL,'전설의 해수를 모티브로 만들어진 아름다운 반지.','FALSE','장신구',NULL,NULL,40,NULL,100,'[{"ref": 2341, "name": "조선", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'500',NULL,NULL,NULL,NULL),
+ (2562042,'전승 탐구자의 부츠',NULL,'전승을 탐구하는 자가 착용한 부츠.',NULL,'다리',5,20,10,10,100,'[{"ref": 2348, "name": "회피", "value": 2}, {"ref": 2293, "name": "행군", "value": 2}, {"ref": 2279, "name": "보급", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (2566513,'히마티온','생산','한 장의 천을 사용한 고대의 상의.',NULL,'몸',NULL,50,15,15,80,'[{"ref": 2298, "name": "공예품 거래", "value": 2}, {"ref": 2306, "name": "보관", "value": 2}, {"ref": 2323, "name": "회계", "value": 2}]',NULL,'[{"ref": 707608, "name": "교역 구입량 증가", "value": 5}]',NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (2566922,'전승 탐구자의 모자',NULL,'전승을 탐구하는 자가 착용한 모자.',NULL,'머리',6,27,10,10,100,'[{"ref": 2284, "name": "인식", "value": 2}, {"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 137755, "name": "천문학", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (2567661,'전승 탐구자의 코트',NULL,'전승을 탐구하는 자가 착용한 코트.',NULL,'몸',11,60,10,10,100,'[{"ref": 2282, "name": "생존", "value": 2}, {"ref": 2285, "name": "자물쇠 따기", "value": 2}, {"ref": 2453, "name": "함정", "value": 2}]',NULL,NULL,NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (2569916,'페타소스','생산','챙이 넓은 고대의 자외선 차단 모자.','FALSE','머리',NULL,20,10,10,80,'[{"ref": 2293, "name": "행군", "value": 2}, {"ref": 2279, "name": "보급", "value": 2}, {"ref": 2290, "name": "채집", "value": 2}]',NULL,'[{"ref": 707601, "name": "행동력 감소 억제", "value": 4}]',NULL,NULL,NULL,'5,000',NULL,NULL,NULL,NULL),
+ (2570623,'로드 메이스',NULL,'보석 모양의 타격부가
+
+특징적인 합성 곤봉',NULL,'무기 (곤봉 지팡이)',60,10,10,NULL,100,'[{"ref": 2270, "name": "고고학", "value": 3}, {"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2278, "name": "미술", "value": 2}]',NULL,'[{"ref": 707601, "name": "행동력 감소 억제", "value": 5}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2570681,'라이딩 수트',NULL,'승마를 할 때 착용하는 의상.
+
+말 위에서 움직이기 쉽게 코트
+
+밑단이 잘려져 있다.',NULL,'몸',NULL,30,25,NULL,100,'[{"ref": 2430, "name": "항해기술", "value": 2}, {"ref": 2434, "name": "병기기술", "value": 2}, {"ref": 2432, "name": "관리기술", "value": 2}]',NULL,'[{"ref": 795005, "name": "항해 속도 상승", "value": 5}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2570720,'귀족의 우쁠랑드',NULL,'귀족이 입는 로브.
+
+소맷부리가 길고 넓은 것이
+
+특징이다.',NULL,'몸',NULL,30,20,20,100,'[{"ref": 2322, "name": "향신료 거래", "value": 3}, {"ref": 2298, "name": "공예품 거래", "value": 2}, {"ref": 2313, "name": "운용", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2584574,'여름 도시의 장의',NULL,'동아시아 내륙 지방의
+
+한 도시에서 남성들이 입는
+
+산뜻한 장의.',NULL,'몸',NULL,15,30,NULL,100,'[{"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2289, "name": "지리학", "value": 2}, {"ref": 2305, "name": "바디 랭귀지", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,'5,000',NULL,'남',NULL,NULL),
+ (2584576,'여름 도시의 의복',NULL,'동아시아 내륙 지방의
+
+한 도시에서 여성들이 입는
+
+산뜻한 의복.',NULL,'몸',NULL,15,30,NULL,100,'[{"ref": 2280, "name": "보물 감정", "value": 2}, {"ref": 2289, "name": "지리학", "value": 2}, {"ref": 2305, "name": "바디 랭귀지", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,'5,000',NULL,'여',NULL,NULL),
+ (2584578,'여름 도시의 장식모',NULL,'동아시아 내륙 지방의
+
+한 도시에서 주민들이
+
+착용하는 산뜻한 모자.',NULL,'머리',NULL,5,20,NULL,100,'[{"ref": 2292, "name": "탐색", "value": 1}, {"ref": 2285, "name": "자물쇠 따기", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'5,000',NULL,NULL,NULL,NULL),
+ (2601018,'증기기사의 모자','특수효과','증기기사의 취향이 많이 반영된
+
+참신한 옷차림의 모자.',NULL,'머리',5,5,5,5,100,'[{"ref": 2303, "name": "무기류 거래", "value": 2}, {"ref": 2306, "name": "보관", "value": 2}]',NULL,'[{"ref": 2253041, "name": "부관 성장 촉진", "value": 3}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2601039,'증기기사의 부츠','특수효과','증기기사의 취향이 많이 반영된
+
+참신한 옷차림의 부츠.',NULL,'다리',5,8,5,5,100,'[{"ref": 2298, "name": "공예품 거래", "value": 2}, {"ref": 2296, "name": "공업품 거래", "value": 2}]',NULL,'[{"ref": 727106, "name": "물자 감소 억제", "value": 6}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2601123,'증기기사의 글러브','특수효과','증기기사의 취향이 많이 반영된
+
+참신한 옷차림의 글러브.',NULL,'팔',NULL,8,5,5,100,'[{"ref": 2299, "name": "광물 거래", "value": 2}, {"ref": 2452, "name": "상품지식", "value": 2}]',NULL,'[{"ref": 947603, "name": "스킬 지속시간 연장", "value": 5}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2601380,'해수의 부츠','생산','환상적인 해수의 모습에
+
+자극을 받고 만들어진
+
+개성적인 부츠.',NULL,'다리',10,15,NULL,NULL,100,'[{"ref": 2430, "name": "항해기술", "value": 1}, {"ref": 2432, "name": "관리기술", "value": 1}, {"ref": 2348, "name": "회피", "value": 2}]',NULL,'[{"ref": 707601, "name": "행동력 감소 억제", "value": 5}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2602206,'해수의 후드','상자1','환상적인 해수의 모습에
+
+자극을 받고 만들어진
+
+개성적인 후드.',NULL,'머리',NULL,10,NULL,10,100,'[{"ref": 2342, "name": "조타", "value": 1}, {"ref": 2328, "name": "노 젓기", "value": 2}]',NULL,'[{"ref": 2602204, "name": "환수 충돌 시 방화, 방수 대책", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2602582,'해수의 부츠','상자1','환상적인 해수의 모습에
+
+자극을 받고 만들어진
+
+개성적인 부츠.',NULL,'다리',10,15,NULL,NULL,100,'[{"ref": 2430, "name": "항해기술", "value": 1}, {"ref": 2432, "name": "관리기술", "value": 1}, {"ref": 2348, "name": "회피", "value": 2}]',NULL,'[{"ref": 2550952, "name": "환수 공격 시 선원 감소 억제", "value": 7}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2602661,'해수의 로브','상자1','환상적인 해수의 모습에
+
+자극을 받고 만들어진
+
+개성적인 옷.',NULL,'몸',NULL,60,NULL,30,100,'[{"ref": 2332, "name": "속사", "value": 2}, {"ref": 2326, "name": "관통", "value": 2}, {"ref": 2347, "name": "포술", "value": 2}]',NULL,'[{"ref": 2602679, "name": "일의전심(화재, 침수)", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2602665,'해수의 부츠','상자2','환상적인 해수의 모습에
+
+자극을 받고 만들어진
+
+개성적인 부츠.',NULL,'다리',10,15,NULL,NULL,100,'[{"ref": 2430, "name": "항해기술", "value": 1}, {"ref": 2432, "name": "관리기술", "value": 1}, {"ref": 2348, "name": "회피", "value": 2}]',NULL,'[{"ref": 795005, "name": "항해 속도 상승", "value": 5}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2602677,'해수의 후드','상자2','환상적인 해수의 모습에
+
+자극을 받고 만들어진
+
+개성적인 후드.',NULL,'머리',NULL,10,NULL,10,100,'[{"ref": 2342, "name": "조타", "value": 1}, {"ref": 2328, "name": "노 젓기", "value": 2}]',NULL,'[{"ref": 2602675, "name": "정박 기술 향상", "value": 10}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2602685,'해수의 로브','상자2','환상적인 해수의 모습에
+
+자극을 받고 만들어진
+
+개성적인 옷.',NULL,'몸',NULL,60,NULL,30,100,'[{"ref": 2332, "name": "속사", "value": 2}, {"ref": 2326, "name": "관통", "value": 2}, {"ref": 2347, "name": "포술", "value": 2}]',NULL,'[{"ref": 2602681, "name": "일의전심(장전)", "value": 4}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2617879,'얼어붙은 바다의 영웅의 부츠',NULL,'얼어붙은 바다의 영웅이라 불리던 명제독이 신었다는 부츠.','TRUE','다리',NULL,15,NULL,NULL,100,'[{"ref": 2332, "name": "속사", "value": 2}, {"ref": 2326, "name": "관통", "value": 1}, {"ref": 2329, "name": "돌격", "value": 1}]',NULL,NULL,NULL,'캐시 아이템',NULL,'500',NULL,NULL,NULL,NULL),
+ (2634229,'무신의 학창의',NULL,'조선의 고위 유생이
+
+착용하는 의상.',NULL,'몸',40,75,NULL,30,150,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 2}, {"ref": 2326, "name": "관통", "value": 3}]',NULL,NULL,NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2655609,'악마의 삼지창',NULL,'악마가 손에 든 삼지창.','TRUE','무기 (창)',90,NULL,NULL,10,100,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2334, "name": "수탈", "value": 3}, {"ref": 2329, "name": "돌격", "value": 2}]',NULL,'[{"ref": 721981, "name": "백병전 전투력 상승", "value": 4}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2655772,'순무 머리','기호품','큰 순무의 속을
+
+파내서 만든 쓸 것.',NULL,'머리',NULL,10,NULL,NULL,100,'[{"ref": 2306, "name": "보관", "value": 2}, {"ref": 2301, "name": "기호품 거래", "value": 2}, {"ref": 2311, "name": "식료품 거래", "value": 2}]',NULL,'[{"ref": 751098, "name": "기습, 강습률 감소", "value": 5}]',NULL,'캐시 아이템',NULL,NULL,NULL,NULL,NULL,NULL),
+ (2656977,'건축가의 헤어밴드',NULL,'고대 유적 건축가가 착용했다고 전해지는 머리띠.',NULL,'머리',5,5,NULL,NULL,20,'[{"ref": 2292, "name": "탐색", "value": 1}, {"ref": 2306, "name": "보관", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (2656979,'건축가의 허리띠',NULL,'고대 유적 건축가가 착용했다고 전해지는 허리띠.',NULL,'몸',NULL,5,NULL,NULL,30,'[{"ref": 2293, "name": "행군", "value": 2}, {"ref": 2299, "name": "광물 거래", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'10,000',NULL,'남성',NULL,NULL),
+ (2657274,'태양의 귀걸이',NULL,'태양의 반짝임을 본떠
+
+만든 한쪽 귀걸이.',NULL,'머리',5,5,5,10,40,'[{"ref": 2338, "name": "응급처치", "value": 1}, {"ref": 2434, "name": "병기기술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'15,000',NULL,NULL,NULL,NULL),
+ (2657278,'고대 이집트의 보석 왕관',NULL,'고대 이집트의 권력자가
+
+착용했다는 보석 왕관.',NULL,'머리',NULL,5,30,NULL,20,'[{"ref": 2436, "name": "연금술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'100,000',NULL,'여성','상급기사작',NULL),
+ (2657318,'빛나는 왕의 검',NULL,'왕과 함께 있었으며 호수로
+
+돌아갔다고 전해지는
+
+전설의 명검의 다른 모습.',NULL,'무기 (검)',100,5,15,NULL,100,'[{"ref": 2325, "name": "검술", "value": 3}, {"ref": 2433, "name": "응용검술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'12,000',NULL,NULL,NULL,NULL),
+ (2658050,'에인션트 스톤',NULL,'고대의 돌로 만들어졌다고
+
+전해지는 신비한 물체.
+
+무언가의 신의 도구라고도 한다.',NULL,'무기 (검)',20,NULL,20,NULL,20,'[{"ref": 1518281, "name": "조교", "value": 1}, {"ref": 2444, "name": "인양", "value": 1}, {"ref": 2286, "name": "조달", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'100,000',NULL,NULL,'상급기사작',NULL),
+ (2658055,'고대 이집트의 귀인복',NULL,'고대 이집트의
+
+권력자가 입었다는
+
+곱고 아름다운 의상.',NULL,'몸',NULL,10,40,NULL,20,'[{"ref": 2297, "name": "공예", "value": 1}, {"ref": 2318, "name": "주조", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'120,000',NULL,'여성','상급기사작',NULL),
+ (2658165,'고대 신관의 지식 서적',NULL,'다양한 분야에 정통한
+
+고대 신관의 지식을
+
+한데 모은 서적.',NULL,'장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2285, "name": "자물쇠 따기", "value": 2}, {"ref": 2436, "name": "연금술", "value": 2}, {"ref": 137755, "name": "천문학", "value": 2}]',NULL,'[{"ref": 2658163, "name": "일품 입수율 상승", "value": 4}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2658897,'헤르메스의 샌들','탐색','그리스 신화에 나오는
+
+헤르메스가 신는 신발을 본딴
+
+날개가 달려있는 샌들.',NULL,'다리',NULL,10,NULL,NULL,20,'[{"ref": 2327, "name": "기뢰 설치", "value": 1}, {"ref": 2348, "name": "회피", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'30,000',NULL,NULL,NULL,NULL),
+ (2658905,'고대 도시의 월계관',NULL,'검붉은색의 지엽으로
+
+만든 고대의 관.',NULL,'머리',NULL,10,5,NULL,40,'[{"ref": 1016435, "name": "활 쏘기", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'20,000',NULL,NULL,NULL,NULL),
+ (2658914,'히마티온','탐색','한 장의 천을 사용한 고대의 상의.',NULL,'몸',NULL,10,5,NULL,40,'[{"ref": 2308, "name": "봉제", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'50,000',NULL,NULL,NULL,NULL),
+ (2659699,'페타소스','탐색','챙이 넓은 고대의 자외선 차단 모자.',NULL,'머리',NULL,10,5,NULL,40,'[{"ref": 2290, "name": "채집", "value": 1}, {"ref": 2295, "name": "경계", "value": 1}]',NULL,NULL,NULL,NULL,NULL,'4,000',NULL,NULL,NULL,NULL),
+ (2660914,'고대 로마의 의식용 투구',NULL,'고대 로마의 권력자가
+
+의식 때 착용했다는 투구.',NULL,'머리',3,8,20,10,100,'[{"ref": 2325, "name": "검술", "value": 1}, {"ref": 2345, "name": "탄도학", "value": 1}, {"ref": 2346, "name": "통솔", "value": 2}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (2660935,'고대 로마의 의식용 갑옷',NULL,'고대 로마의 권력자가
+
+의식 때 착용했다는 갑옷.',NULL,'몸',18,40,NULL,10,100,'[{"ref": 2325, "name": "검술", "value": 2}, {"ref": 2433, "name": "응용검술", "value": 1}, {"ref": 2347, "name": "포술", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'남성',NULL,NULL),
+ (2661792,'왕가의 목걸이',NULL,'고대 이집트 왕가의 것으로 추정되는 목걸이.
+
+유적에서 발굴된 부장품.',NULL,'장신구',NULL,NULL,40,NULL,100,'[{"ref": 2342, "name": "조타", "value": 2}, {"ref": 2430, "name": "항해기술", "value": 2}, {"ref": 2432, "name": "관리기술", "value": 2}]',NULL,'[{"ref": 2664322, "name": "연성 스킬 촉진", "value": 5}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2661863,'고대 여왕의 조선술',NULL,'고대 여왕의 조타 기술을 최신 지식으로 정리한 지침서.',NULL,'장신구',NULL,NULL,NULL,NULL,100,'[{"ref": 2328, "name": "노 젓기", "value": 2}, {"ref": 2336, "name": "외과의술", "value": 2}, {"ref": 2348, "name": "회피", "value": 2}]',NULL,'[{"ref": 2664329, "name": "접적 전법", "value": 5}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2662412,'옛 희곡의 수기',NULL,'한때 원형 극장에서
+
+선보인 옛 희곡이
+
+적힌 수기.',NULL,'장신구',NULL,NULL,NULL,NULL,20,'[{"ref": 2270, "name": "고고학", "value": 2}, {"ref": 2287, "name": "종교학", "value": 2}, {"ref": 2289, "name": "지리학", "value": 2}]',NULL,'[{"ref": 2662410, "name": "재해 피해 감소", "value": 1}]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2679008,'셰이프 코트',NULL,'오스만 투르크 귀족들 사이에서
+
+유행하는 호화로운 의상.',NULL,'몸',10,35,10,30,100,'[{"ref": 2289, "name": "지리학", "value": 2}, {"ref": 2328, "name": "노 젓기", "value": 2}, {"ref": 2307, "name": "보석 거래", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,'5,000',NULL,'남성',NULL,NULL),
+ (2679010,'이크발 드레스',NULL,'오스만 투르크의 궁정에서 일하는
+
+여성들이 즐겨 입는 호화로운
+
+의상.',NULL,'몸',10,35,10,30,100,'[{"ref": 2289, "name": "지리학", "value": 2}, {"ref": 2328, "name": "노 젓기", "value": 2}, {"ref": 2307, "name": "보석 거래", "value": 2}]',NULL,NULL,NULL,'캐시 아이템',NULL,'5,000',NULL,'여성',NULL,NULL),
+ (2679012,'미니 실크 햇','캐시','여성용 헤어 스타일에
+
+작은 실크 햇을 장식한
+
+참신한 가발.',NULL,'머리',NULL,5,5,5,100,'[{"ref": 2307, "name": "보석 거래", "value": 2}, {"ref": 2297, "name": "공예", "value": 2}]',NULL,'[{"ref": 707608, "name": "교역 구입량 증가", "value": 9}]',NULL,'캐시 아이템',NULL,NULL,NULL,'여성',NULL,NULL);
 INSERT INTO "field" VALUES (11785,'브리튼 섬 남쪽 해안',NULL,'유럽 북부','상륙지',NULL,NULL,NULL,NULL,NULL,'4051','618','16208','2482',NULL,NULL,'소비품 - 마늘닭 통구이 10, 침몰선의 조각지도 2, 표시용 리본 10 
 장비품 - 간이 망원경 1 
 보물지도 - 화려한 갑옷의 지도(15137) 1','1 - 광맥을 찾는 사람의 다우징로드, 녹슨 에스토크, 외눈안경, 이빠진 롱소드, 돌
@@ -102574,17 +108076,17 @@ INSERT INTO "technic" VALUES (40282,'내려 베기','상대를 위에서 아래�
 INSERT INTO "tradegoods" VALUES (2533,'종이','삼 등의 섬유를 원료로 만드는 필기, 인쇄용의 소재.','공업품',NULL,1,1,1,1),
  (2534,'목재','건재 등에 적합한 뒤틀림이 없는 경질의 목재.','공업품',NULL,8,12,10,12),
  (2535,'보리','메마른 토지에서도 잘 자라는 보리. 술의 원료가 되기도 한다.','식료품',NULL,1,1,1,1),
- (2536,'산호세공','빛깔 선명한 산호를 갈아서 조각한 고가의 공예품.','공예품',NULL,70,66,64,46),
+ (2536,'산호세공','빛깔 선명한 산호를 갈아서 조각한 고가의 공예품.','공예품',NULL,0,0,0,0),
  (2537,'풀','지면에 나 있던 풀. 어디에서도 입수할 수 있는데 가치는 거의 없다.','염료',NULL,0,0,0,0),
  (2538,'모래','지면에서 모은 모래. 가치는 거의 없다.','광석',NULL,0,0,0,0),
- (2539,'상아세공','상아를 세밀하게 조각한 공예품. 예술적 가치가 있기 때문에 귀하게 여겨진다.','공예품',NULL,80,76,74,52),
+ (2539,'상아세공','상아를 세밀하게 조각한 공예품. 예술적 가치가 있기 때문에 귀하게 여겨진다.','공예품',NULL,0,0,0,0),
  (2540,'고대 미술품','고대의 조각이나 그릇 등의 공예품. 희소하여 고가로 거래된다.','미술품',NULL,52,94,82,64),
  (2541,'돌','암석지대에 굴러다니는 돌. 물자로서의 가치는 거의 없다.','공업품',NULL,0,0,0,0),
  (2542,'곡도','북유럽이나 이슬람권에서 사용되는 칼날이 곡선을 이루는 한손검.','무기류',NULL,18,48,24,14),
  (2543,'어육','물고기를 소금에 절이거나 말려서 보존하기 쉽게 한 것.','식료품',NULL,1,1,1,1),
  (2544,'치즈','소나 산양의 우유를 발효시킨 가공 식품.','식료품',NULL,10,14,14,22),
  (2545,'밀가루','밀을 빻아 가루로 만든 것으로 폭 넓게 주식으로 사용된다.','식료품',NULL,0,0,0,0),
- (2546,'고급의류','비단이나 고급 레이스 등으로 만들어진 의류. 굉장히 고가.','공예품',NULL,80,76,74,80),
+ (2546,'고급의류','비단이나 고급 레이스 등으로 만들어진 의류. 굉장히 고가.','공예품',NULL,0,0,0,0),
  (2547,'수은제','아랍에서 고안된 수은을 포함하고 있는 연골.','의약품','이베리아',34,66,52,52),
  (2548,'보드카','호밀이 원료인 증류주. 자작나무의 활성탄으로 여과된다.','주류',NULL,24,12,14,14),
  (2549,'공작의 깃털','공작의 깃털. 그 아름다움 때문에 귀중히 여겨진다.','섬유',NULL,10,12,6,8),
@@ -102738,18 +108240,18 @@ INSERT INTO "tradegoods" VALUES (2533,'종이','삼 등의 섬유를 원료로 �
  (2687,'포탄','대포에 이용되는 탄. 납이나 철로 만들어져 있다.','총포류',NULL,40,32,32,40),
  (2688,'화승총','양식 소총. 20g 이하의 탄환을 쏴 내는 것.','총포류',NULL,78,40,38,68),
  (2689,'화약','총이나 대포에 사용하는 검은색 화약. 재료는 초석, 유황, 목탄.','총포류',NULL,20,16,16,78),
- (2690,'고급가구','로즈우드나 마호가니 재목으로 만들어진 가구. 장식도 호화.','공예품',NULL,50,48,46,52),
+ (2690,'고급가구','로즈우드나 마호가니 재목으로 만들어진 가구. 장식도 호화.','공예품',NULL,0,0,0,0),
  (2691,'금세공','금으로 도금 한 공예품. 
 
-식기 류나 장신구, 장식품 등.','공예품',NULL,60,38,36,40),
- (2692,'금실','명주실에 금을 사용하여 광택을 넣은 실. 고급의류의 장식에 사용한다.','공예품',NULL,80,76,74,52),
- (2693,'도자기','아름다운 색채나 장식이 이루어진 도자기류.','공예품',NULL,60,76,74,32),
- (2694,'보석세공','보석과 귀금속으로 만든 공예품. 작은 것이라도 굉장히 고가.','공예품',NULL,100,76,74,80),
- (2695,'유리세공','유리의 정교한 세공. 향수병이나 장식품 등.','공예품','이탈리아/남프랑스',100,100,100,52),
- (2696,'유리알','섬세한 세공을 입힌 유리의 아주 아름답고 작은 구슬.','공예품',NULL,100,100,28,40),
- (2697,'은세공','은으로 만들어진 공예품. 주로 식기 류나 장식품 등.','공예품',NULL,80,56,54,52),
- (2698,'자수실','명주실에 색을 넣은 실. 고급의류의 자수장식에 사용한다.','공예품',NULL,60,56,54,40),
- (2699,'피혁제품','피혁이나 모피를 가공한 제품. 튼튼하고 사용하기 쉽지만 물에 약하다.','공예품',NULL,30,28,28,18),
+식기 류나 장신구, 장식품 등.','공예품',NULL,0,0,0,0),
+ (2692,'금실','명주실에 금을 사용하여 광택을 넣은 실. 고급의류의 장식에 사용한다.','공예품',NULL,0,0,0,0),
+ (2693,'도자기','아름다운 색채나 장식이 이루어진 도자기류.','공예품',NULL,0,0,0,0),
+ (2694,'보석세공','보석과 귀금속으로 만든 공예품. 작은 것이라도 굉장히 고가.','공예품',NULL,0,0,0,0),
+ (2695,'유리세공','유리의 정교한 세공. 향수병이나 장식품 등.','공예품','이탈리아/남프랑스',0,0,0,0),
+ (2696,'유리알','섬세한 세공을 입힌 유리의 아주 아름답고 작은 구슬.','공예품',NULL,0,0,0,0),
+ (2697,'은세공','은으로 만들어진 공예품. 주로 식기 류나 장식품 등.','공예품',NULL,0,0,0,0),
+ (2698,'자수실','명주실에 색을 넣은 실. 고급의류의 자수장식에 사용한다.','공예품',NULL,0,0,0,0),
+ (2699,'피혁제품','피혁이나 모피를 가공한 제품. 튼튼하고 사용하기 쉽지만 물에 약하다.','공예품',NULL,0,0,0,0),
  (2700,'대리석상','대리석을 깎아 내어 만든 상. 고급품으로 고가임.','미술품',NULL,58,76,66,84),
  (2701,'동판화','에칭이라고도 한다. 책의 삽화로 자주 사용된다.','미술품',NULL,8,10,8,10),
  (2702,'목상','나무를 조각한 조각상. 돌상과 달리 따뜻함이 있다.','미술품',NULL,14,20,16,22),
@@ -103105,7 +108607,7 @@ INSERT INTO "tradegoods" VALUES (2533,'종이','삼 등의 섬유를 원료로 �
  (2984,'플레코스토무스','아마존 강의 담수 메기.
 
 외모와는 달리 맛있다.','식료품',NULL,0,0,0,0),
- (2985,'툼바가','금에 동이나 주석을 섞은 합금으로 만든 공예품.','공예품','중남미 서해안',94,44,42,62),
+ (2985,'툼바가','금에 동이나 주석을 섞은 합금으로 만든 공예품.','공예품','중남미 서해안',0,0,0,0),
  (2986,'잉카 로즈','로도크로사이트의 별칭
 
 분홍색과 흰색의 줄무늬가 특징.','보석','중남미 서해안',100,98,100,100),
@@ -103177,7 +108679,7 @@ INSERT INTO "tradegoods" VALUES (2533,'종이','삼 등의 섬유를 원료로 �
 
 색깔, 형태, 문양 등이 매우 아름답고 
 
-제작기법이 정교해서 매우 고가로 거래된다.','공예품','조선',0,78,50,40),
+제작기법이 정교해서 매우 고가로 거래된다.','공예품','조선',0,0,0,0),
  (3008,'산초 된장','동아시아 원산의 향신료
 
 독특하게 강한 향기가 난다.','조미료','조선',50,0,46,44),
@@ -103314,7 +108816,7 @@ INSERT INTO "tradegoods" VALUES (2533,'종이','삼 등의 섬유를 원료로 �
 일본산은 빛깔이 흐리고 투명하다.','보석','일본',0,50,50,52),
  (3052,'칠기','나무 용기에 옻을 칠한
 
-공예품. 동양에서 만들어진다.','공예품','일본',42,0,40,74),
+공예품. 동양에서 만들어진다.','공예품','일본',0,0,0,0),
  (3053,'일본화','일본 독자의 기법으로 그려진
 
 회화. 일본화라고도 한다.','미술품','일본',0,50,78,54),
@@ -103339,7 +108841,7 @@ INSERT INTO "tradegoods" VALUES (2533,'종이','삼 등의 섬유를 원료로 �
 여러 물건으로 가공된다.','섬유','일본',0,94,42,70),
  (3059,'가는 끈','탄력있는 튼튼한 끈.
 
-무기와 갑옷에도 사용된다.','공예품','일본',82,0,84,74),
+무기와 갑옷에도 사용된다.','공예품','일본',0,0,0,0),
  (3060,'초롱','불 붙인 초를 종이 등으로
 
 감싼 조명 기구.','잡화','일본',0,86,90,76),
@@ -103427,7 +108929,7 @@ INSERT INTO "tradegoods" VALUES (2533,'종이','삼 등의 섬유를 원료로 �
 투명한 색조가 특징적이다','보석','대만 섬',60,50,0,120),
  (3085,'각 세공','물소나 사슴 등의 뿔에
 
-조각을 새긴 공예품.','공예품','대만 섬',52,50,0,60),
+조각을 새긴 공예품.','공예품','대만 섬',0,0,0,0),
  (3086,'대만 목각','대만 섬에서 제작한 나무 조각상.
 
 뱀을 본떠 만든 것이 많다.','미술품','대만 섬',44,50,0,54),
@@ -103488,7 +108990,7 @@ INSERT INTO "tradegoods" VALUES (2533,'종이','삼 등의 섬유를 원료로 �
 흰색 보석. 매우 귀하다.','보석','화남',60,50,50,0),
  (3106,'송백자','중국의 도자기. 특히 새하얀 것이
 
-인기다.','공예품','화남',52,106,50,0),
+인기다.','공예품','화남',0,0,0,0),
  (3107,'중국 서화','붓으로 쓴 문자와 문장.
 
 미술품으로서의 가치가 있다','미술품','화남',108,50,46,0),
@@ -103506,13 +109008,13 @@ INSERT INTO "tradegoods" VALUES (2533,'종이','삼 등의 섬유를 원료로 �
 유연하고 잘 부러지지 않아 여러 용도로 널리 쓰인다.','공업품','화남',36,44,42,0),
  (3112,'오수','중국의 도자기.
 
-청색과 적색 염료로 무늬가 그려져 있다.','공예품','화남',100,86,84,0),
+청색과 적색 염료로 무늬가 그려져 있다.','공예품','화남',0,0,0,0),
  (3113,'고묵','송연으로 만든 먹.
 
 오래된 것일수록 가치가 높다.','잡화','화남',68,94,80,0),
  (3114,'호필','중국 호주에서 만든 질 좋은 붓.
 
-붓털이 부드러우며, 탄력이 있다.','공예품','화남',100,100,84,0),
+붓털이 부드러우며, 탄력이 있다.','공예품','화남',0,0,0,0),
  (3115,'면죽연화','색채가 또렷하며 안정된 구도가 특징인 목판화','미술품','화남',66,88,92,0),
  (3116,'크랜베리','북미 대륙이 원산인 과일.
 
@@ -107418,6 +112920,14 @@ SELECT
     'dungeon' AS category,
     COALESCE(a.isComplete, 0)
 FROM dungeon s
+LEFT JOIN allData a ON s.id = a.id
+UNION
+SELECT 
+    s.id, 
+    '장비품 - [장비품] ' || s.name, 
+    'equipment' AS category,
+    COALESCE(a.isComplete, 0)
+FROM tradegoods s
 LEFT JOIN allData a ON s.id = a.id
 UNION
 SELECT 
