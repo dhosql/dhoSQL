@@ -18,7 +18,16 @@ DHOSQL 환경에서는 수정이 불가능하므로, 데이터베이스를 편�
 
 ## 사용 방법 요약
 
-- DHOSQL에서 **읽기 전용**으로 사용하실 분 → DHOSQL로 바로 열기  
-- 데이터베이스 구조나 데이터를 수정하고 싶으신 분 → SQLite 편집 도구 사용  
+- **읽기 전용으로 사용할 경우**  
+  → DHOSQL을 설치한 뒤, 이 저장소의 데이터베이스 파일을 DHOSQL에서 바로 열기  
+
+- **데이터베이스를 수정하고 싶은 경우**  
+  1. `install.bat`을 **2회 실행**합니다.  
+  2. [SQLite Browser](https://sqlitebrowser.org/) 등 SQLite 편집 도구를 설치합니다.  
+  3. 아래 경로에 위치한 데이터베이스 파일을 엽니다:  
+     ```
+     %AppData%\Roaming\electron-react-boilerplate\dhoDatabase.sqlite3
+     ```
+  4. 원하는 테이블/데이터를 수정 후 저장합니다.  
 
 ---
