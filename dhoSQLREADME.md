@@ -30,7 +30,7 @@
 ### 데이터파일 경로
 - %AppData%\electron-react-boilerplate\dhoDatabase.sqlite3
 
-### 문의
+### 문의(필요한 텝 요청하면 추가해줌)
 - [https://open.kakao.com/o/sDgUTE5g](https://open.kakao.com/o/sDgUTE5g)
 - [https://open.kakao.com/o/sDgUTE5g](https://open.kakao.com/o/sDgUTE5g)
 - [https://open.kakao.com/o/sDgUTE5g](https://open.kakao.com/o/sDgUTE5g)
