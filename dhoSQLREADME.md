@@ -38,7 +38,8 @@
 
 ### 문의
 - [https://open.kakao.com/o/sDgUTE5g](https://open.kakao.com/o/sDgUTE5g)
--
+- [https://open.kakao.com/o/sDgUTE5g](https://open.kakao.com/o/sDgUTE5g)
+- [https://open.kakao.com/o/sDgUTE5g](https://open.kakao.com/o/sDgUTE5g)
 -
 ---
 ---
